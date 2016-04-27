@@ -1,0 +1,31 @@
+{
+  "name": "weather-app-api-exercise",
+  "version": "1.0.0",
+  "description": "Mark Price Udemy Course | React JS and Flux Web Development for Beginners Exercise: Weather App API Section 5, Lecture 49",
+  "main": "index.js",
+  "scripts": {
+    "start": "watchify src/main.jsx -v -t [babelify --presets [react] ] -o public/js/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbarnes722/Lesson-49-Weather-App-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbarnes722/Lesson-49-Weather-App-API/issues"
+  },
+  "homepage": "https://github.com/rbarnes722/Lesson-49-Weather-App-API#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "country-data": "0.0.24",
+    "http-server": "^0.9.0",
+    "moment": "^2.13.0",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "watchify": "^3.7.0",
+    "whatwg-fetch": "^0.11.0"
+  }
+}
