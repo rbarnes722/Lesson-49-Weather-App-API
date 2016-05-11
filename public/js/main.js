@@ -1,4 +1,9481 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
+var _ = require('underscore');
+var regions = require('./regions.js');
+var continents = {};
+
+continents.asia = {
+  name: 'Asia',
+  regions: ['centralAsia', 'southernAsia', 'southeastAsia', 'eastAsia', 'westernAsia'],
+  countries: _.flatten([
+    regions.centralAsia.countries,
+    regions.southernAsia.countries,
+    regions.southeastAsia.countries,
+    regions.eastAsia.countries,
+    regions.westernAsia.countries
+  ])
+  .sort()
+};
+
+continents.africa = {
+  name: 'Africa',
+  regions: ['centralAfrica', 'northAfrica', 'southernAfrica', 'eastAfrica', 'westAfrica'],
+  countries: _.flatten([
+      regions.centralAfrica.countries,
+      regions.northAfrica.countries,
+      regions.southernAfrica.countries,
+      regions.eastAfrica.countries,
+      regions.westAfrica.countries
+  ])
+  .sort()
+};
+
+continents.northAmerica = {
+  name: 'North America',
+  regions: ['centralAmerica', 'northernAmerica', 'caribbean'],
+  countries: _.flatten([
+    regions.centralAmerica.countries,
+    regions.northernAmerica.countries,
+    regions.caribbean.countries
+  ])
+  .sort()
+};
+
+continents.southAmerica = {
+  name: 'South America',
+  regions: ['southAmerica'],
+  countries: _.flatten([
+    regions.southAmerica.countries
+  ])
+  .sort()
+}
+
+continents.antartica = {
+  name: 'Antartica',
+  regions: ['antartica'],
+  countries: _.flatten([
+    regions.antartica.countries
+  ])
+  .sort()
+}
+
+continents.europe = {
+  name: 'Europe',
+  regions: ['northernEurope', 'southernEurope', 'easternEurope', 'westernEurope'],
+  countries: _.flatten([
+    regions.northernEurope.countries,
+    regions.southernEurope.countries,
+    regions.easternEurope.countries,
+    regions.westernEurope.countries
+  ])
+  .sort()
+}
+
+continents.oceania = {
+  name: 'Oceania',
+  regions: ['australia', 'melanesia', 'micronesia', 'polynesia'],
+  countries: _.flatten([
+    regions.australia.countries,
+    regions.melanesia.countries,
+    regions.micronesia.countries,
+    regions.polynesia.countries
+  ])
+  .sort()
+};
+
+module.exports = continents;
+
+},{"./regions.js":5,"underscore":176}],2:[function(require,module,exports){
+module.exports=[
+  {
+    "alpha2": "AC",
+    "alpha3": "",
+    "countryCallingCodes": [
+      "+247"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "SHP",
+    "languages": [
+      "eng"
+    ],
+    "name": "Ascension Island",
+    "status": "reserved"
+  },
+  {
+    "alpha2": "AD",
+    "alpha3": "AND",
+    "countryCallingCodes": [
+      "+376"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "AND",
+    "languages": [
+      "cat"
+    ],
+    "name": "Andorra",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AE",
+    "alpha3": "ARE",
+    "countryCallingCodes": [
+      "+971"
+    ],
+    "currencies": [
+      "AED"
+    ],
+    "ioc": "UAE",
+    "languages": [
+      "ara"
+    ],
+    "name": "United Arab Emirates",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AF",
+    "alpha3": "AFG",
+    "countryCallingCodes": [
+      "+93"
+    ],
+    "currencies": [
+      "AFN"
+    ],
+    "ioc": "AFG",
+    "languages": [
+      "pus"
+    ],
+    "name": "Afghanistan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AG",
+    "alpha3": "ATG",
+    "countryCallingCodes": [
+      "+1 268"
+    ],
+    "currencies": [
+      "XCD"
+    ],
+    "ioc": "ANT",
+    "languages": [
+      "eng"
+    ],
+    "name": "Antigua And Barbuda",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AI",
+    "alpha3": "AIA",
+    "countryCallingCodes": [
+      "+1 264"
+    ],
+    "currencies": [
+      "XCD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Anguilla",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AL",
+    "alpha3": "ALB",
+    "countryCallingCodes": [
+      "+355"
+    ],
+    "currencies": [
+      "ALL"
+    ],
+    "ioc": "ALB",
+    "languages": [
+      "sqi"
+    ],
+    "name": "Albania",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AM",
+    "alpha3": "ARM",
+    "countryCallingCodes": [
+      "+374"
+    ],
+    "currencies": [
+      "AMD"
+    ],
+    "ioc": "ARM",
+    "languages": [
+      "hye",
+      "rus"
+    ],
+    "name": "Armenia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AO",
+    "alpha3": "AGO",
+    "countryCallingCodes": [
+      "+244"
+    ],
+    "currencies": [
+      "AOA"
+    ],
+    "ioc": "ANG",
+    "languages": [
+      "por"
+    ],
+    "name": "Angola",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AQ",
+    "alpha3": "ATA",
+    "countryCallingCodes": [
+      "+672"
+    ],
+    "currencies": [],
+    "ioc": "",
+    "languages": [],
+    "name": "Antarctica",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AR",
+    "alpha3": "ARG",
+    "countryCallingCodes": [
+      "+54"
+    ],
+    "currencies": [
+      "ARS"
+    ],
+    "ioc": "ARG",
+    "languages": [
+      "spa"
+    ],
+    "name": "Argentina",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AS",
+    "alpha3": "ASM",
+    "countryCallingCodes": [
+      "+1 684"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "ASA",
+    "languages": [
+      "eng",
+      "smo"
+    ],
+    "name": "American Samoa",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AT",
+    "alpha3": "AUT",
+    "countryCallingCodes": [
+      "+43"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "AUT",
+    "languages": [
+      "deu"
+    ],
+    "name": "Austria",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AU",
+    "alpha3": "AUS",
+    "countryCallingCodes": [
+      "+61"
+    ],
+    "currencies": [
+      "AUD"
+    ],
+    "ioc": "AUS",
+    "languages": [
+      "eng"
+    ],
+    "name": "Australia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AW",
+    "alpha3": "ABW",
+    "countryCallingCodes": [
+      "+297"
+    ],
+    "currencies": [
+      "AWG"
+    ],
+    "ioc": "ARU",
+    "languages": [
+      "nld"
+    ],
+    "name": "Aruba",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AX",
+    "alpha3": "ALA",
+    "countryCallingCodes": [
+      "+358"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "swe"
+    ],
+    "name": "Åland Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "AZ",
+    "alpha3": "AZE",
+    "countryCallingCodes": [
+      "+994"
+    ],
+    "currencies": [
+      "AZN"
+    ],
+    "ioc": "AZE",
+    "languages": [
+      "aze"
+    ],
+    "name": "Azerbaijan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BA",
+    "alpha3": "BIH",
+    "countryCallingCodes": [
+      "+387"
+    ],
+    "currencies": [
+      "BAM"
+    ],
+    "ioc": "BIH",
+    "languages": [
+      "bos",
+      "cre",
+      "srp"
+    ],
+    "name": "Bosnia & Herzegovina",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BB",
+    "alpha3": "BRB",
+    "countryCallingCodes": [
+      "+1 246"
+    ],
+    "currencies": [
+      "BBD"
+    ],
+    "ioc": "BAR",
+    "languages": [
+      "eng"
+    ],
+    "name": "Barbados",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BD",
+    "alpha3": "BGD",
+    "countryCallingCodes": [
+      "+880"
+    ],
+    "currencies": [
+      "BDT"
+    ],
+    "ioc": "BAN",
+    "languages": [
+      "ben"
+    ],
+    "name": "Bangladesh",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BE",
+    "alpha3": "BEL",
+    "countryCallingCodes": [
+      "+32"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "BEL",
+    "languages": [
+      "nld",
+      "fra",
+      "deu"
+    ],
+    "name": "Belgium",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BF",
+    "alpha3": "BFA",
+    "countryCallingCodes": [
+      "+226"
+    ],
+    "currencies": [
+      "XOF"
+    ],
+    "ioc": "BUR",
+    "languages": [
+      "fra"
+    ],
+    "name": "Burkina Faso",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BG",
+    "alpha3": "BGR",
+    "countryCallingCodes": [
+      "+359"
+    ],
+    "currencies": [
+      "BGN"
+    ],
+    "ioc": "BUL",
+    "languages": [
+      "bul"
+    ],
+    "name": "Bulgaria",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BH",
+    "alpha3": "BHR",
+    "countryCallingCodes": [
+      "+973"
+    ],
+    "currencies": [
+      "BHD"
+    ],
+    "ioc": "BRN",
+    "languages": [
+      "ara"
+    ],
+    "name": "Bahrain",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BI",
+    "alpha3": "BDI",
+    "countryCallingCodes": [
+      "+257"
+    ],
+    "currencies": [
+      "BIF"
+    ],
+    "ioc": "BDI",
+    "languages": [
+      "fra"
+    ],
+    "name": "Burundi",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BJ",
+    "alpha3": "BEN",
+    "countryCallingCodes": [
+      "+229"
+    ],
+    "currencies": [
+      "XOF"
+    ],
+    "ioc": "BEN",
+    "languages": [
+      "fra"
+    ],
+    "name": "Benin",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BL",
+    "alpha3": "BLM",
+    "countryCallingCodes": [
+      "+590"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "Saint Barthélemy",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BM",
+    "alpha3": "BMU",
+    "countryCallingCodes": [
+      "+1 441"
+    ],
+    "currencies": [
+      "BMD"
+    ],
+    "ioc": "BER",
+    "languages": [
+      "eng"
+    ],
+    "name": "Bermuda",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BN",
+    "alpha3": "BRN",
+    "countryCallingCodes": [
+      "+673"
+    ],
+    "currencies": [
+      "BND"
+    ],
+    "ioc": "BRU",
+    "languages": [
+      "msa",
+      "eng"
+    ],
+    "name": "Brunei Darussalam",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BO",
+    "alpha3": "BOL",
+    "countryCallingCodes": [
+      "+591"
+    ],
+    "currencies": [
+      "BOB",
+      "BOV"
+    ],
+    "ioc": "BOL",
+    "languages": [
+      "spa",
+      "aym",
+      "que"
+    ],
+    "name": "Bolivia, Plurinational State Of",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BQ",
+    "alpha3": "BES",
+    "countryCallingCodes": [
+      "+599"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "",
+    "languages": [
+      "nld"
+    ],
+    "name": "Bonaire, Saint Eustatius And Saba",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BR",
+    "alpha3": "BRA",
+    "countryCallingCodes": [
+      "+55"
+    ],
+    "currencies": [
+      "BRL"
+    ],
+    "ioc": "BRA",
+    "languages": [
+      "por"
+    ],
+    "name": "Brazil",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BS",
+    "alpha3": "BHS",
+    "countryCallingCodes": [
+      "+1 242"
+    ],
+    "currencies": [
+      "BSD"
+    ],
+    "ioc": "BAH",
+    "languages": [
+      "eng"
+    ],
+    "name": "Bahamas",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BT",
+    "alpha3": "BTN",
+    "countryCallingCodes": [
+      "+975"
+    ],
+    "currencies": [
+      "INR",
+      "BTN"
+    ],
+    "ioc": "BHU",
+    "languages": [
+      "dzo"
+    ],
+    "name": "Bhutan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BV",
+    "alpha3": "BVT",
+    "countryCallingCodes": [],
+    "currencies": [
+      "NOK"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Bouvet Island",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BW",
+    "alpha3": "BWA",
+    "countryCallingCodes": [
+      "+267"
+    ],
+    "currencies": [
+      "BWP"
+    ],
+    "ioc": "BOT",
+    "languages": [
+      "eng",
+      "tsn"
+    ],
+    "name": "Botswana",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BY",
+    "alpha3": "BLR",
+    "countryCallingCodes": [
+      "+375"
+    ],
+    "currencies": [
+      "BYR"
+    ],
+    "ioc": "BLR",
+    "languages": [
+      "bel",
+      "rus"
+    ],
+    "name": "Belarus",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "BZ",
+    "alpha3": "BLZ",
+    "countryCallingCodes": [
+      "+501"
+    ],
+    "currencies": [
+      "BZD"
+    ],
+    "ioc": "BIZ",
+    "languages": [
+      "eng"
+    ],
+    "name": "Belize",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CA",
+    "alpha3": "CAN",
+    "countryCallingCodes": [
+      "+1"
+    ],
+    "currencies": [
+      "CAD"
+    ],
+    "ioc": "CAN",
+    "languages": [
+      "eng",
+      "fra"
+    ],
+    "name": "Canada",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CC",
+    "alpha3": "CCK",
+    "countryCallingCodes": [
+      "+61"
+    ],
+    "currencies": [
+      "AUD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Cocos (Keeling) Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CD",
+    "alpha3": "COD",
+    "countryCallingCodes": [
+      "+243"
+    ],
+    "currencies": [
+      "CDF"
+    ],
+    "ioc": "COD",
+    "languages": [
+      "fra",
+      "lin",
+      "kon",
+      "swa"
+    ],
+    "name": "Democratic Republic Of Congo",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CF",
+    "alpha3": "CAF",
+    "countryCallingCodes": [
+      "+236"
+    ],
+    "currencies": [
+      "XAF"
+    ],
+    "ioc": "CAF",
+    "languages": [
+      "fra",
+      "sag"
+    ],
+    "name": "Central African Republic",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CG",
+    "alpha3": "COG",
+    "countryCallingCodes": [
+      "+242"
+    ],
+    "currencies": [
+      "XAF"
+    ],
+    "ioc": "CGO",
+    "languages": [
+      "fra",
+      "lin"
+    ],
+    "name": "Republic Of Congo",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CH",
+    "alpha3": "CHE",
+    "countryCallingCodes": [
+      "+41"
+    ],
+    "currencies": [
+      "CHF",
+      "CHE",
+      "CHW"
+    ],
+    "ioc": "SUI",
+    "languages": [
+      "deu",
+      "fra",
+      "ita",
+      "roh"
+    ],
+    "name": "Switzerland",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CI",
+    "alpha3": "CIV",
+    "countryCallingCodes": [
+      "+225"
+    ],
+    "currencies": [
+      "XOF"
+    ],
+    "ioc": "CIV",
+    "languages": [
+      "fra"
+    ],
+    "name": "Cote d'Ivoire",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CK",
+    "alpha3": "COK",
+    "countryCallingCodes": [
+      "+682"
+    ],
+    "currencies": [
+      "NZD"
+    ],
+    "ioc": "COK",
+    "languages": [
+      "eng",
+      "mri"
+    ],
+    "name": "Cook Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CL",
+    "alpha3": "CHL",
+    "countryCallingCodes": [
+      "+56"
+    ],
+    "currencies": [
+      "CLP",
+      "CLF"
+    ],
+    "ioc": "CHI",
+    "languages": [
+      "spa"
+    ],
+    "name": "Chile",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CM",
+    "alpha3": "CMR",
+    "countryCallingCodes": [
+      "+237"
+    ],
+    "currencies": [
+      "XAF"
+    ],
+    "ioc": "CMR",
+    "languages": [
+      "eng",
+      "fra"
+    ],
+    "name": "Cameroon",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CN",
+    "alpha3": "CHN",
+    "countryCallingCodes": [
+      "+86"
+    ],
+    "currencies": [
+      "CNY"
+    ],
+    "ioc": "CHN",
+    "languages": [
+      "zho"
+    ],
+    "name": "China",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CO",
+    "alpha3": "COL",
+    "countryCallingCodes": [
+      "+57"
+    ],
+    "currencies": [
+      "COP",
+      "COU"
+    ],
+    "ioc": "COL",
+    "languages": [
+      "spa"
+    ],
+    "name": "Colombia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CP",
+    "alpha3": "",
+    "countryCallingCodes": [],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Clipperton Island",
+    "status": "reserved"
+  },
+  {
+    "alpha2": "CR",
+    "alpha3": "CRI",
+    "countryCallingCodes": [
+      "+506"
+    ],
+    "currencies": [
+      "CRC"
+    ],
+    "ioc": "CRC",
+    "languages": [
+      "spa"
+    ],
+    "name": "Costa Rica",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CU",
+    "alpha3": "CUB",
+    "countryCallingCodes": [
+      "+53"
+    ],
+    "currencies": [
+      "CUP",
+      "CUC"
+    ],
+    "ioc": "CUB",
+    "languages": [
+      "spa"
+    ],
+    "name": "Cuba",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CV",
+    "alpha3": "CPV",
+    "countryCallingCodes": [
+      "+238"
+    ],
+    "currencies": [
+      "CVE"
+    ],
+    "ioc": "CPV",
+    "languages": [
+      "por"
+    ],
+    "name": "Cabo Verde",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CW",
+    "alpha3": "CUW",
+    "countryCallingCodes": [
+      "+599"
+    ],
+    "currencies": [
+      "ANG"
+    ],
+    "ioc": "",
+    "languages": [
+      "nld"
+    ],
+    "name": "Curacao",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CX",
+    "alpha3": "CXR",
+    "countryCallingCodes": [
+      "+61"
+    ],
+    "currencies": [
+      "AUD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Christmas Island",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CY",
+    "alpha3": "CYP",
+    "countryCallingCodes": [
+      "+357"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "CYP",
+    "languages": [
+      "ell",
+      "tur"
+    ],
+    "name": "Cyprus",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "CZ",
+    "alpha3": "CZE",
+    "countryCallingCodes": [
+      "+420"
+    ],
+    "currencies": [
+      "CZK"
+    ],
+    "ioc": "CZE",
+    "languages": [
+      "ces"
+    ],
+    "name": "Czech Republic",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "DE",
+    "alpha3": "DEU",
+    "countryCallingCodes": [
+      "+49"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "GER",
+    "languages": [
+      "deu"
+    ],
+    "name": "Germany",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "DG",
+    "alpha3": "",
+    "countryCallingCodes": [],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Diego Garcia",
+    "status": "reserved"
+  },
+  {
+    "alpha2": "DJ",
+    "alpha3": "DJI",
+    "countryCallingCodes": [
+      "+253"
+    ],
+    "currencies": [
+      "DJF"
+    ],
+    "ioc": "DJI",
+    "languages": [
+      "ara",
+      "fra"
+    ],
+    "name": "Djibouti",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "DK",
+    "alpha3": "DNK",
+    "countryCallingCodes": [
+      "+45"
+    ],
+    "currencies": [
+      "DKK"
+    ],
+    "ioc": "DEN",
+    "languages": [
+      "dan"
+    ],
+    "name": "Denmark",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "DM",
+    "alpha3": "DMA",
+    "countryCallingCodes": [
+      "+1 767"
+    ],
+    "currencies": [
+      "XCD"
+    ],
+    "ioc": "DMA",
+    "languages": [
+      "eng"
+    ],
+    "name": "Dominica",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "DO",
+    "alpha3": "DOM",
+    "countryCallingCodes": [
+      "+1 809",
+      "+1 829",
+      "+1 849"
+    ],
+    "currencies": [
+      "DOP"
+    ],
+    "ioc": "DOM",
+    "languages": [
+      "spa"
+    ],
+    "name": "Dominican Republic",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "DZ",
+    "alpha3": "DZA",
+    "countryCallingCodes": [
+      "+213"
+    ],
+    "currencies": [
+      "DZD"
+    ],
+    "ioc": "ALG",
+    "languages": [
+      "ara"
+    ],
+    "name": "Algeria",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "EA",
+    "alpha3": "",
+    "countryCallingCodes": [],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Ceuta, Mulilla",
+    "status": "reserved"
+  },
+  {
+    "alpha2": "EC",
+    "alpha3": "ECU",
+    "countryCallingCodes": [
+      "+593"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "ECU",
+    "languages": [
+      "spa",
+      "que"
+    ],
+    "name": "Ecuador",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "EE",
+    "alpha3": "EST",
+    "countryCallingCodes": [
+      "+372"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "EST",
+    "languages": [
+      "est"
+    ],
+    "name": "Estonia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "EG",
+    "alpha3": "EGY",
+    "countryCallingCodes": [
+      "+20"
+    ],
+    "currencies": [
+      "EGP"
+    ],
+    "ioc": "EGY",
+    "languages": [
+      "ara"
+    ],
+    "name": "Egypt",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "EH",
+    "alpha3": "ESH",
+    "countryCallingCodes": [
+      "+212"
+    ],
+    "currencies": [
+      "MAD"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Western Sahara",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "ER",
+    "alpha3": "ERI",
+    "countryCallingCodes": [
+      "+291"
+    ],
+    "currencies": [
+      "ERN"
+    ],
+    "ioc": "ERI",
+    "languages": [
+      "eng",
+      "ara",
+      "tir"
+    ],
+    "name": "Eritrea",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "ES",
+    "alpha3": "ESP",
+    "countryCallingCodes": [
+      "+34"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "ESP",
+    "languages": [
+      "spa"
+    ],
+    "name": "Spain",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "ET",
+    "alpha3": "ETH",
+    "countryCallingCodes": [
+      "+251"
+    ],
+    "currencies": [
+      "ETB"
+    ],
+    "ioc": "ETH",
+    "languages": [
+      "amh"
+    ],
+    "name": "Ethiopia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "EU",
+    "alpha3": "",
+    "countryCallingCodes": [
+      "+388"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "European Union",
+    "status": "reserved"
+  },
+  {
+    "alpha2": "FI",
+    "alpha3": "FIN",
+    "countryCallingCodes": [
+      "+358"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "FIN",
+    "languages": [
+      "fin",
+      "swe"
+    ],
+    "name": "Finland",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "FJ",
+    "alpha3": "FJI",
+    "countryCallingCodes": [
+      "+679"
+    ],
+    "currencies": [
+      "FJD"
+    ],
+    "ioc": "FIJ",
+    "languages": [
+      "eng",
+      "fij"
+    ],
+    "name": "Fiji",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "FK",
+    "alpha3": "FLK",
+    "countryCallingCodes": [
+      "+500"
+    ],
+    "currencies": [
+      "FKP"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Falkland Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "FM",
+    "alpha3": "FSM",
+    "countryCallingCodes": [
+      "+691"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Micronesia, Federated States Of",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "FO",
+    "alpha3": "FRO",
+    "countryCallingCodes": [
+      "+298"
+    ],
+    "currencies": [
+      "DKK"
+    ],
+    "ioc": "FAI",
+    "languages": [
+      "fao",
+      "dan"
+    ],
+    "name": "Faroe Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "FR",
+    "alpha3": "FRA",
+    "countryCallingCodes": [
+      "+33"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "FRA",
+    "languages": [
+      "fra"
+    ],
+    "name": "France",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "FX",
+    "alpha3": "",
+    "countryCallingCodes": [
+      "+241"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "France, Metropolitan",
+    "status": "reserved"
+  },
+  {
+    "alpha2": "GA",
+    "alpha3": "GAB",
+    "countryCallingCodes": [
+      "+241"
+    ],
+    "currencies": [
+      "XAF"
+    ],
+    "ioc": "GAB",
+    "languages": [
+      "fra"
+    ],
+    "name": "Gabon",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GB",
+    "alpha3": "GBR",
+    "countryCallingCodes": [
+      "+44"
+    ],
+    "currencies": [
+      "GBP"
+    ],
+    "ioc": "GBR",
+    "languages": [
+      "eng",
+      "cor",
+      "gle",
+      "gla",
+      "cym"
+    ],
+    "name": "United Kingdom",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GD",
+    "alpha3": "GRD",
+    "countryCallingCodes": [
+      "+473"
+    ],
+    "currencies": [
+      "XCD"
+    ],
+    "ioc": "GRN",
+    "languages": [
+      "eng"
+    ],
+    "name": "Grenada",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GE",
+    "alpha3": "GEO",
+    "countryCallingCodes": [
+      "+995"
+    ],
+    "currencies": [
+      "GEL"
+    ],
+    "ioc": "GEO",
+    "languages": [
+      "kat"
+    ],
+    "name": "Georgia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GF",
+    "alpha3": "GUF",
+    "countryCallingCodes": [
+      "+594"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "French Guiana",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GG",
+    "alpha3": "GGY",
+    "countryCallingCodes": [
+      "+44"
+    ],
+    "currencies": [
+      "GBP"
+    ],
+    "ioc": "GCI",
+    "languages": [
+      "fra"
+    ],
+    "name": "Guernsey",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GH",
+    "alpha3": "GHA",
+    "countryCallingCodes": [
+      "+233"
+    ],
+    "currencies": [
+      "GHS"
+    ],
+    "ioc": "GHA",
+    "languages": [
+      "eng"
+    ],
+    "name": "Ghana",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GI",
+    "alpha3": "GIB",
+    "countryCallingCodes": [
+      "+350"
+    ],
+    "currencies": [
+      "GIP"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Gibraltar",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GL",
+    "alpha3": "GRL",
+    "countryCallingCodes": [
+      "+299"
+    ],
+    "currencies": [
+      "DKK"
+    ],
+    "ioc": "",
+    "languages": [
+      "kal"
+    ],
+    "name": "Greenland",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GM",
+    "alpha3": "GMB",
+    "countryCallingCodes": [
+      "+220"
+    ],
+    "currencies": [
+      "GMD"
+    ],
+    "ioc": "GAM",
+    "languages": [
+      "eng"
+    ],
+    "name": "Gambia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GN",
+    "alpha3": "GIN",
+    "countryCallingCodes": [
+      "+224"
+    ],
+    "currencies": [
+      "GNF"
+    ],
+    "ioc": "GUI",
+    "languages": [
+      "fra"
+    ],
+    "name": "Guinea",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GP",
+    "alpha3": "GLP",
+    "countryCallingCodes": [
+      "+590"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "Guadeloupe",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GQ",
+    "alpha3": "GNQ",
+    "countryCallingCodes": [
+      "+240"
+    ],
+    "currencies": [
+      "XAF"
+    ],
+    "ioc": "GEQ",
+    "languages": [
+      "spa",
+      "fra",
+      "por"
+    ],
+    "name": "Equatorial Guinea",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GR",
+    "alpha3": "GRC",
+    "countryCallingCodes": [
+      "+30"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "GRE",
+    "languages": [
+      "ell"
+    ],
+    "name": "Greece",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GS",
+    "alpha3": "SGS",
+    "countryCallingCodes": [],
+    "currencies": [
+      "GBP"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "South Georgia And The South Sandwich Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GT",
+    "alpha3": "GTM",
+    "countryCallingCodes": [
+      "+502"
+    ],
+    "currencies": [
+      "GTQ"
+    ],
+    "ioc": "GUA",
+    "languages": [
+      "spa"
+    ],
+    "name": "Guatemala",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GU",
+    "alpha3": "GUM",
+    "countryCallingCodes": [
+      "+1 671"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "GUM",
+    "languages": [
+      "eng"
+    ],
+    "name": "Guam",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GW",
+    "alpha3": "GNB",
+    "countryCallingCodes": [
+      "+245"
+    ],
+    "currencies": [
+      "XOF"
+    ],
+    "ioc": "GBS",
+    "languages": [
+      "por"
+    ],
+    "name": "Guinea-bissau",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "GY",
+    "alpha3": "GUY",
+    "countryCallingCodes": [
+      "+592"
+    ],
+    "currencies": [
+      "GYD"
+    ],
+    "ioc": "GUY",
+    "languages": [
+      "eng"
+    ],
+    "name": "Guyana",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "HK",
+    "alpha3": "HKG",
+    "countryCallingCodes": [
+      "+852"
+    ],
+    "currencies": [
+      "HKD"
+    ],
+    "ioc": "HKG",
+    "languages": [
+      "zho",
+      "eng"
+    ],
+    "name": "Hong Kong",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "HM",
+    "alpha3": "HMD",
+    "countryCallingCodes": [],
+    "currencies": [
+      "AUD"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Heard Island And McDonald Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "HN",
+    "alpha3": "HND",
+    "countryCallingCodes": [
+      "+504"
+    ],
+    "currencies": [
+      "HNL"
+    ],
+    "ioc": "HON",
+    "languages": [
+      "spa"
+    ],
+    "name": "Honduras",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "HR",
+    "alpha3": "HRV",
+    "countryCallingCodes": [
+      "+385"
+    ],
+    "currencies": [
+      "HRK"
+    ],
+    "ioc": "CRO",
+    "languages": [
+      "hrv"
+    ],
+    "name": "Croatia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "HT",
+    "alpha3": "HTI",
+    "countryCallingCodes": [
+      "+509"
+    ],
+    "currencies": [
+      "HTG",
+      "USD"
+    ],
+    "ioc": "HAI",
+    "languages": [
+      "fra",
+      "hat"
+    ],
+    "name": "Haiti",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "HU",
+    "alpha3": "HUN",
+    "countryCallingCodes": [
+      "+36"
+    ],
+    "currencies": [
+      "HUF"
+    ],
+    "ioc": "HUN",
+    "languages": [
+      "hun"
+    ],
+    "name": "Hungary",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "IC",
+    "alpha3": "",
+    "countryCallingCodes": [],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Canary Islands",
+    "status": "reserved"
+  },
+  {
+    "alpha2": "ID",
+    "alpha3": "IDN",
+    "countryCallingCodes": [
+      "+62"
+    ],
+    "currencies": [
+      "IDR"
+    ],
+    "ioc": "INA",
+    "languages": [
+      "ind"
+    ],
+    "name": "Indonesia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "IE",
+    "alpha3": "IRL",
+    "countryCallingCodes": [
+      "+353"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "IRL",
+    "languages": [
+      "eng",
+      "gle"
+    ],
+    "name": "Ireland",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "IL",
+    "alpha3": "ISR",
+    "countryCallingCodes": [
+      "+972"
+    ],
+    "currencies": [
+      "ILS"
+    ],
+    "ioc": "ISR",
+    "languages": [
+      "heb",
+      "ara",
+      "eng"
+    ],
+    "name": "Israel",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "IM",
+    "alpha3": "IMN",
+    "countryCallingCodes": [
+      "+44"
+    ],
+    "currencies": [
+      "GBP"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng",
+      "glv"
+    ],
+    "name": "Isle Of Man",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "IN",
+    "alpha3": "IND",
+    "countryCallingCodes": [
+      "+91"
+    ],
+    "currencies": [
+      "INR"
+    ],
+    "ioc": "IND",
+    "languages": [
+      "eng",
+      "hin"
+    ],
+    "name": "India",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "IO",
+    "alpha3": "IOT",
+    "countryCallingCodes": [
+      "+246"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "British Indian Ocean Territory",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "IQ",
+    "alpha3": "IRQ",
+    "countryCallingCodes": [
+      "+964"
+    ],
+    "currencies": [
+      "IQD"
+    ],
+    "ioc": "IRQ",
+    "languages": [
+      "ara",
+      "kur"
+    ],
+    "name": "Iraq",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "IR",
+    "alpha3": "IRN",
+    "countryCallingCodes": [
+      "+98"
+    ],
+    "currencies": [
+      "IRR"
+    ],
+    "ioc": "IRI",
+    "languages": [
+      "fas"
+    ],
+    "name": "Iran, Islamic Republic Of",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "IS",
+    "alpha3": "ISL",
+    "countryCallingCodes": [
+      "+354"
+    ],
+    "currencies": [
+      "ISK"
+    ],
+    "ioc": "ISL",
+    "languages": [
+      "isl"
+    ],
+    "name": "Iceland",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "IT",
+    "alpha3": "ITA",
+    "countryCallingCodes": [
+      "+39"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "ITA",
+    "languages": [
+      "ita"
+    ],
+    "name": "Italy",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "JE",
+    "alpha3": "JEY",
+    "countryCallingCodes": [
+      "+44"
+    ],
+    "currencies": [
+      "GBP"
+    ],
+    "ioc": "JCI",
+    "languages": [
+      "eng",
+      "fra"
+    ],
+    "name": "Jersey",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "JM",
+    "alpha3": "JAM",
+    "countryCallingCodes": [
+      "+1 876"
+    ],
+    "currencies": [
+      "JMD"
+    ],
+    "ioc": "JAM",
+    "languages": [
+      "eng"
+    ],
+    "name": "Jamaica",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "JO",
+    "alpha3": "JOR",
+    "countryCallingCodes": [
+      "+962"
+    ],
+    "currencies": [
+      "JOD"
+    ],
+    "ioc": "JOR",
+    "languages": [
+      "ara"
+    ],
+    "name": "Jordan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "JP",
+    "alpha3": "JPN",
+    "countryCallingCodes": [
+      "+81"
+    ],
+    "currencies": [
+      "JPY"
+    ],
+    "ioc": "JPN",
+    "languages": [
+      "jpn"
+    ],
+    "name": "Japan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KE",
+    "alpha3": "KEN",
+    "countryCallingCodes": [
+      "+254"
+    ],
+    "currencies": [
+      "KES"
+    ],
+    "ioc": "KEN",
+    "languages": [
+      "eng",
+      "swa"
+    ],
+    "name": "Kenya",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KG",
+    "alpha3": "KGZ",
+    "countryCallingCodes": [
+      "+996"
+    ],
+    "currencies": [
+      "KGS"
+    ],
+    "ioc": "KGZ",
+    "languages": [
+      "rus"
+    ],
+    "name": "Kyrgyzstan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KH",
+    "alpha3": "KHM",
+    "countryCallingCodes": [
+      "+855"
+    ],
+    "currencies": [
+      "KHR"
+    ],
+    "ioc": "CAM",
+    "languages": [
+      "khm"
+    ],
+    "name": "Cambodia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KI",
+    "alpha3": "KIR",
+    "countryCallingCodes": [
+      "+686"
+    ],
+    "currencies": [
+      "AUD"
+    ],
+    "ioc": "KIR",
+    "languages": [
+      "eng"
+    ],
+    "name": "Kiribati",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KM",
+    "alpha3": "COM",
+    "countryCallingCodes": [
+      "+269"
+    ],
+    "currencies": [
+      "KMF"
+    ],
+    "ioc": "COM",
+    "languages": [
+      "ara",
+      "fra"
+    ],
+    "name": "Comoros",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KN",
+    "alpha3": "KNA",
+    "countryCallingCodes": [
+      "+1 869"
+    ],
+    "currencies": [
+      "XCD"
+    ],
+    "ioc": "SKN",
+    "languages": [
+      "eng"
+    ],
+    "name": "Saint Kitts And Nevis",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KP",
+    "alpha3": "PRK",
+    "countryCallingCodes": [
+      "+850"
+    ],
+    "currencies": [
+      "KPW"
+    ],
+    "ioc": "PRK",
+    "languages": [
+      "kor"
+    ],
+    "name": "Korea, Democratic People's Republic Of",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KR",
+    "alpha3": "KOR",
+    "countryCallingCodes": [
+      "+82"
+    ],
+    "currencies": [
+      "KRW"
+    ],
+    "ioc": "KOR",
+    "languages": [
+      "kor"
+    ],
+    "name": "Korea, Republic Of",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KW",
+    "alpha3": "KWT",
+    "countryCallingCodes": [
+      "+965"
+    ],
+    "currencies": [
+      "KWD"
+    ],
+    "ioc": "KUW",
+    "languages": [
+      "ara"
+    ],
+    "name": "Kuwait",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KY",
+    "alpha3": "CYM",
+    "countryCallingCodes": [
+      "+1 345"
+    ],
+    "currencies": [
+      "KYD"
+    ],
+    "ioc": "CAY",
+    "languages": [
+      "eng"
+    ],
+    "name": "Cayman Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "KZ",
+    "alpha3": "KAZ",
+    "countryCallingCodes": [
+      "+7",
+      "+7 6",
+      "+7 7"
+    ],
+    "currencies": [
+      "KZT"
+    ],
+    "ioc": "KAZ",
+    "languages": [
+      "kaz",
+      "rus"
+    ],
+    "name": "Kazakhstan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LA",
+    "alpha3": "LAO",
+    "countryCallingCodes": [
+      "+856"
+    ],
+    "currencies": [
+      "LAK"
+    ],
+    "ioc": "LAO",
+    "languages": [
+      "lao"
+    ],
+    "name": "Lao People's Democratic Republic",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LB",
+    "alpha3": "LBN",
+    "countryCallingCodes": [
+      "+961"
+    ],
+    "currencies": [
+      "LBP"
+    ],
+    "ioc": "LIB",
+    "languages": [
+      "ara",
+      "hye"
+    ],
+    "name": "Lebanon",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LC",
+    "alpha3": "LCA",
+    "countryCallingCodes": [
+      "+1 758"
+    ],
+    "currencies": [
+      "XCD"
+    ],
+    "ioc": "LCA",
+    "languages": [
+      "eng"
+    ],
+    "name": "Saint Lucia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LI",
+    "alpha3": "LIE",
+    "countryCallingCodes": [
+      "+423"
+    ],
+    "currencies": [
+      "CHF"
+    ],
+    "ioc": "LIE",
+    "languages": [
+      "deu"
+    ],
+    "name": "Liechtenstein",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LK",
+    "alpha3": "LKA",
+    "countryCallingCodes": [
+      "+94"
+    ],
+    "currencies": [
+      "LKR"
+    ],
+    "ioc": "SRI",
+    "languages": [
+      "sin",
+      "tam"
+    ],
+    "name": "Sri Lanka",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LR",
+    "alpha3": "LBR",
+    "countryCallingCodes": [
+      "+231"
+    ],
+    "currencies": [
+      "LRD"
+    ],
+    "ioc": "LBR",
+    "languages": [
+      "eng"
+    ],
+    "name": "Liberia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LS",
+    "alpha3": "LSO",
+    "countryCallingCodes": [
+      "+266"
+    ],
+    "currencies": [
+      "LSL",
+      "ZAR"
+    ],
+    "ioc": "LES",
+    "languages": [
+      "eng",
+      "sot"
+    ],
+    "name": "Lesotho",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LT",
+    "alpha3": "LTU",
+    "countryCallingCodes": [
+      "+370"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "LTU",
+    "languages": [
+      "lit"
+    ],
+    "name": "Lithuania",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LU",
+    "alpha3": "LUX",
+    "countryCallingCodes": [
+      "+352"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "LUX",
+    "languages": [
+      "fra",
+      "deu",
+      "ltz"
+    ],
+    "name": "Luxembourg",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LV",
+    "alpha3": "LVA",
+    "countryCallingCodes": [
+      "+371"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "LAT",
+    "languages": [
+      "lav"
+    ],
+    "name": "Latvia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "LY",
+    "alpha3": "LBY",
+    "countryCallingCodes": [
+      "+218"
+    ],
+    "currencies": [
+      "LYD"
+    ],
+    "ioc": "LBA",
+    "languages": [
+      "ara"
+    ],
+    "name": "Libya",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MA",
+    "alpha3": "MAR",
+    "countryCallingCodes": [
+      "+212"
+    ],
+    "currencies": [
+      "MAD"
+    ],
+    "ioc": "MAR",
+    "languages": [
+      "ara"
+    ],
+    "name": "Morocco",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MC",
+    "alpha3": "MCO",
+    "countryCallingCodes": [
+      "+377"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "MON",
+    "languages": [
+      "fra"
+    ],
+    "name": "Monaco",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MD",
+    "alpha3": "MDA",
+    "countryCallingCodes": [
+      "+373"
+    ],
+    "currencies": [
+      "MDL"
+    ],
+    "ioc": "MDA",
+    "languages": [
+      "ron"
+    ],
+    "name": "Moldova",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "ME",
+    "alpha3": "MNE",
+    "countryCallingCodes": [
+      "+382"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "MNE",
+    "languages": [
+      "mot"
+    ],
+    "name": "Montenegro",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MF",
+    "alpha3": "MAF",
+    "countryCallingCodes": [
+      "+590"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "Saint Martin",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MG",
+    "alpha3": "MDG",
+    "countryCallingCodes": [
+      "+261"
+    ],
+    "currencies": [
+      "MGA"
+    ],
+    "ioc": "MAD",
+    "languages": [
+      "fra",
+      "mlg"
+    ],
+    "name": "Madagascar",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MH",
+    "alpha3": "MHL",
+    "countryCallingCodes": [
+      "+692"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "MHL",
+    "languages": [
+      "eng",
+      "mah"
+    ],
+    "name": "Marshall Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MK",
+    "alpha3": "MKD",
+    "countryCallingCodes": [
+      "+389"
+    ],
+    "currencies": [
+      "MKD"
+    ],
+    "ioc": "MKD",
+    "languages": [
+      "mkd"
+    ],
+    "name": "Macedonia, The Former Yugoslav Republic Of",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "ML",
+    "alpha3": "MLI",
+    "countryCallingCodes": [
+      "+223"
+    ],
+    "currencies": [
+      "XOF"
+    ],
+    "ioc": "MLI",
+    "languages": [
+      "fra"
+    ],
+    "name": "Mali",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MM",
+    "alpha3": "MMR",
+    "countryCallingCodes": [
+      "+95"
+    ],
+    "currencies": [
+      "MMK"
+    ],
+    "ioc": "MYA",
+    "languages": [
+      "mya"
+    ],
+    "name": "Myanmar",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MN",
+    "alpha3": "MNG",
+    "countryCallingCodes": [
+      "+976"
+    ],
+    "currencies": [
+      "MNT"
+    ],
+    "ioc": "MGL",
+    "languages": [
+      "mon"
+    ],
+    "name": "Mongolia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MO",
+    "alpha3": "MAC",
+    "countryCallingCodes": [
+      "+853"
+    ],
+    "currencies": [
+      "MOP"
+    ],
+    "ioc": "MAC",
+    "languages": [
+      "zho",
+      "por"
+    ],
+    "name": "Macao",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MP",
+    "alpha3": "MNP",
+    "countryCallingCodes": [
+      "+1 670"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Northern Mariana Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MQ",
+    "alpha3": "MTQ",
+    "countryCallingCodes": [
+      "+596"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Martinique",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MR",
+    "alpha3": "MRT",
+    "countryCallingCodes": [
+      "+222"
+    ],
+    "currencies": [
+      "MRO"
+    ],
+    "ioc": "MTN",
+    "languages": [
+      "ara",
+      "fra"
+    ],
+    "name": "Mauritania",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MS",
+    "alpha3": "MSR",
+    "countryCallingCodes": [
+      "+1 664"
+    ],
+    "currencies": [
+      "XCD"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Montserrat",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MT",
+    "alpha3": "MLT",
+    "countryCallingCodes": [
+      "+356"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "MLT",
+    "languages": [
+      "mlt",
+      "eng"
+    ],
+    "name": "Malta",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MU",
+    "alpha3": "MUS",
+    "countryCallingCodes": [
+      "+230"
+    ],
+    "currencies": [
+      "MUR"
+    ],
+    "ioc": "MRI",
+    "languages": [
+      "eng",
+      "fra"
+    ],
+    "name": "Mauritius",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MV",
+    "alpha3": "MDV",
+    "countryCallingCodes": [
+      "+960"
+    ],
+    "currencies": [
+      "MVR"
+    ],
+    "ioc": "MDV",
+    "languages": [
+      "div"
+    ],
+    "name": "Maldives",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MW",
+    "alpha3": "MWI",
+    "countryCallingCodes": [
+      "+265"
+    ],
+    "currencies": [
+      "MWK"
+    ],
+    "ioc": "MAW",
+    "languages": [
+      "eng",
+      "nya"
+    ],
+    "name": "Malawi",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MX",
+    "alpha3": "MEX",
+    "countryCallingCodes": [
+      "+52"
+    ],
+    "currencies": [
+      "MXN",
+      "MXV"
+    ],
+    "ioc": "MEX",
+    "languages": [
+      "spa"
+    ],
+    "name": "Mexico",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MY",
+    "alpha3": "MYS",
+    "countryCallingCodes": [
+      "+60"
+    ],
+    "currencies": [
+      "MYR"
+    ],
+    "ioc": "MAS",
+    "languages": [
+      "msa",
+      "eng"
+    ],
+    "name": "Malaysia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "MZ",
+    "alpha3": "MOZ",
+    "countryCallingCodes": [
+      "+258"
+    ],
+    "currencies": [
+      "MZN"
+    ],
+    "ioc": "MOZ",
+    "languages": [
+      "por"
+    ],
+    "name": "Mozambique",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NA",
+    "alpha3": "NAM",
+    "countryCallingCodes": [
+      "+264"
+    ],
+    "currencies": [
+      "NAD",
+      "ZAR"
+    ],
+    "ioc": "NAM",
+    "languages": [
+      "eng"
+    ],
+    "name": "Namibia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NC",
+    "alpha3": "NCL",
+    "countryCallingCodes": [
+      "+687"
+    ],
+    "currencies": [
+      "XPF"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "New Caledonia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NE",
+    "alpha3": "NER",
+    "countryCallingCodes": [
+      "+227"
+    ],
+    "currencies": [
+      "XOF"
+    ],
+    "ioc": "NIG",
+    "languages": [
+      "fra"
+    ],
+    "name": "Niger",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NF",
+    "alpha3": "NFK",
+    "countryCallingCodes": [
+      "+672"
+    ],
+    "currencies": [
+      "AUD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Norfolk Island",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NG",
+    "alpha3": "NGA",
+    "countryCallingCodes": [
+      "+234"
+    ],
+    "currencies": [
+      "NGN"
+    ],
+    "ioc": "NGR",
+    "languages": [
+      "eng"
+    ],
+    "name": "Nigeria",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NI",
+    "alpha3": "NIC",
+    "countryCallingCodes": [
+      "+505"
+    ],
+    "currencies": [
+      "NIO"
+    ],
+    "ioc": "NCA",
+    "languages": [
+      "spa"
+    ],
+    "name": "Nicaragua",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NL",
+    "alpha3": "NLD",
+    "countryCallingCodes": [
+      "+31"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "NED",
+    "languages": [
+      "nld"
+    ],
+    "name": "Netherlands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NO",
+    "alpha3": "NOR",
+    "countryCallingCodes": [
+      "+47"
+    ],
+    "currencies": [
+      "NOK"
+    ],
+    "ioc": "NOR",
+    "languages": [
+      "nor"
+    ],
+    "name": "Norway",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NP",
+    "alpha3": "NPL",
+    "countryCallingCodes": [
+      "+977"
+    ],
+    "currencies": [
+      "NPR"
+    ],
+    "ioc": "NEP",
+    "languages": [
+      "nep"
+    ],
+    "name": "Nepal",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NR",
+    "alpha3": "NRU",
+    "countryCallingCodes": [
+      "+674"
+    ],
+    "currencies": [
+      "AUD"
+    ],
+    "ioc": "NRU",
+    "languages": [
+      "eng",
+      "nau"
+    ],
+    "name": "Nauru",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NU",
+    "alpha3": "NIU",
+    "countryCallingCodes": [
+      "+683"
+    ],
+    "currencies": [
+      "NZD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Niue",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "NZ",
+    "alpha3": "NZL",
+    "countryCallingCodes": [
+      "+64"
+    ],
+    "currencies": [
+      "NZD"
+    ],
+    "ioc": "NZL",
+    "languages": [
+      "eng"
+    ],
+    "name": "New Zealand",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "OM",
+    "alpha3": "OMN",
+    "countryCallingCodes": [
+      "+968"
+    ],
+    "currencies": [
+      "OMR"
+    ],
+    "ioc": "OMA",
+    "languages": [
+      "ara"
+    ],
+    "name": "Oman",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PA",
+    "alpha3": "PAN",
+    "countryCallingCodes": [
+      "+507"
+    ],
+    "currencies": [
+      "PAB",
+      "USD"
+    ],
+    "ioc": "PAN",
+    "languages": [
+      "spa"
+    ],
+    "name": "Panama",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PE",
+    "alpha3": "PER",
+    "countryCallingCodes": [
+      "+51"
+    ],
+    "currencies": [
+      "PEN"
+    ],
+    "ioc": "PER",
+    "languages": [
+      "spa",
+      "aym",
+      "que"
+    ],
+    "name": "Peru",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PF",
+    "alpha3": "PYF",
+    "countryCallingCodes": [
+      "+689"
+    ],
+    "currencies": [
+      "XPF"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "French Polynesia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PG",
+    "alpha3": "PNG",
+    "countryCallingCodes": [
+      "+675"
+    ],
+    "currencies": [
+      "PGK"
+    ],
+    "ioc": "PNG",
+    "languages": [
+      "eng"
+    ],
+    "name": "Papua New Guinea",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PH",
+    "alpha3": "PHL",
+    "countryCallingCodes": [
+      "+63"
+    ],
+    "currencies": [
+      "PHP"
+    ],
+    "ioc": "PHI",
+    "languages": [
+      "eng"
+    ],
+    "name": "Philippines",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PK",
+    "alpha3": "PAK",
+    "countryCallingCodes": [
+      "+92"
+    ],
+    "currencies": [
+      "PKR"
+    ],
+    "ioc": "PAK",
+    "languages": [
+      "urd",
+      "eng"
+    ],
+    "name": "Pakistan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PL",
+    "alpha3": "POL",
+    "countryCallingCodes": [
+      "+48"
+    ],
+    "currencies": [
+      "PLN"
+    ],
+    "ioc": "POL",
+    "languages": [
+      "pol"
+    ],
+    "name": "Poland",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PM",
+    "alpha3": "SPM",
+    "countryCallingCodes": [
+      "+508"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Saint Pierre And Miquelon",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PN",
+    "alpha3": "PCN",
+    "countryCallingCodes": [
+      "+872"
+    ],
+    "currencies": [
+      "NZD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Pitcairn",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PR",
+    "alpha3": "PRI",
+    "countryCallingCodes": [
+      "+1 787",
+      "+1 939"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "PUR",
+    "languages": [
+      "spa",
+      "eng"
+    ],
+    "name": "Puerto Rico",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PS",
+    "alpha3": "PSE",
+    "countryCallingCodes": [
+      "+970"
+    ],
+    "currencies": [
+      "JOD",
+      "EGP",
+      "ILS"
+    ],
+    "ioc": "PLE",
+    "languages": [
+      "ara"
+    ],
+    "name": "Palestinian Territory, Occupied",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PT",
+    "alpha3": "PRT",
+    "countryCallingCodes": [
+      "+351"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "POR",
+    "languages": [
+      "por"
+    ],
+    "name": "Portugal",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PW",
+    "alpha3": "PLW",
+    "countryCallingCodes": [
+      "+680"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "PLW",
+    "languages": [
+      "eng"
+    ],
+    "name": "Palau",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "PY",
+    "alpha3": "PRY",
+    "countryCallingCodes": [
+      "+595"
+    ],
+    "currencies": [
+      "PYG"
+    ],
+    "ioc": "PAR",
+    "languages": [
+      "spa"
+    ],
+    "name": "Paraguay",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "QA",
+    "alpha3": "QAT",
+    "countryCallingCodes": [
+      "+974"
+    ],
+    "currencies": [
+      "QAR"
+    ],
+    "ioc": "QAT",
+    "languages": [
+      "ara"
+    ],
+    "name": "Qatar",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "RE",
+    "alpha3": "REU",
+    "countryCallingCodes": [
+      "+262"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "Reunion",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "RO",
+    "alpha3": "ROU",
+    "countryCallingCodes": [
+      "+40"
+    ],
+    "currencies": [
+      "RON"
+    ],
+    "ioc": "ROU",
+    "languages": [
+      "ron"
+    ],
+    "name": "Romania",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "RS",
+    "alpha3": "SRB",
+    "countryCallingCodes": [
+      "+381"
+    ],
+    "currencies": [
+      "RSD"
+    ],
+    "ioc": "SRB",
+    "languages": [
+      "srp"
+    ],
+    "name": "Serbia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "RU",
+    "alpha3": "RUS",
+    "countryCallingCodes": [
+      "+7",
+      "+7 3",
+      "+7 4",
+      "+7 8"
+    ],
+    "currencies": [
+      "RUB"
+    ],
+    "ioc": "RUS",
+    "languages": [
+      "rus"
+    ],
+    "name": "Russian Federation",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "RW",
+    "alpha3": "RWA",
+    "countryCallingCodes": [
+      "+250"
+    ],
+    "currencies": [
+      "RWF"
+    ],
+    "ioc": "RWA",
+    "languages": [
+      "eng",
+      "fra",
+      "kin"
+    ],
+    "name": "Rwanda",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SA",
+    "alpha3": "SAU",
+    "countryCallingCodes": [
+      "+966"
+    ],
+    "currencies": [
+      "SAR"
+    ],
+    "ioc": "KSA",
+    "languages": [
+      "ara"
+    ],
+    "name": "Saudi Arabia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SB",
+    "alpha3": "SLB",
+    "countryCallingCodes": [
+      "+677"
+    ],
+    "currencies": [
+      "SBD"
+    ],
+    "ioc": "SOL",
+    "languages": [
+      "eng"
+    ],
+    "name": "Solomon Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SC",
+    "alpha3": "SYC",
+    "countryCallingCodes": [
+      "+248"
+    ],
+    "currencies": [
+      "SCR"
+    ],
+    "ioc": "SEY",
+    "languages": [
+      "eng",
+      "fra"
+    ],
+    "name": "Seychelles",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SD",
+    "alpha3": "SDN",
+    "countryCallingCodes": [
+      "+249"
+    ],
+    "currencies": [
+      "SDG"
+    ],
+    "ioc": "SUD",
+    "languages": [
+      "ara",
+      "eng"
+    ],
+    "name": "Sudan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SE",
+    "alpha3": "SWE",
+    "countryCallingCodes": [
+      "+46"
+    ],
+    "currencies": [
+      "SEK"
+    ],
+    "ioc": "SWE",
+    "languages": [
+      "swe"
+    ],
+    "name": "Sweden",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SG",
+    "alpha3": "SGP",
+    "countryCallingCodes": [
+      "+65"
+    ],
+    "currencies": [
+      "SGD"
+    ],
+    "ioc": "SIN",
+    "languages": [
+      "eng",
+      "zho",
+      "msa",
+      "tam"
+    ],
+    "name": "Singapore",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SH",
+    "alpha3": "SHN",
+    "countryCallingCodes": [
+      "+290"
+    ],
+    "currencies": [
+      "SHP"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Saint Helena, Ascension And Tristan Da Cunha",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SI",
+    "alpha3": "SVN",
+    "countryCallingCodes": [
+      "+386"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "SLO",
+    "languages": [
+      "slv"
+    ],
+    "name": "Slovenia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SJ",
+    "alpha3": "SJM",
+    "countryCallingCodes": [
+      "+47"
+    ],
+    "currencies": [
+      "NOK"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Svalbard And Jan Mayen",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SK",
+    "alpha3": "SVK",
+    "countryCallingCodes": [
+      "+421"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "SVK",
+    "languages": [
+      "slk"
+    ],
+    "name": "Slovakia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SL",
+    "alpha3": "SLE",
+    "countryCallingCodes": [
+      "+232"
+    ],
+    "currencies": [
+      "SLL"
+    ],
+    "ioc": "SLE",
+    "languages": [
+      "eng"
+    ],
+    "name": "Sierra Leone",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SM",
+    "alpha3": "SMR",
+    "countryCallingCodes": [
+      "+378"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "SMR",
+    "languages": [
+      "ita"
+    ],
+    "name": "San Marino",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SN",
+    "alpha3": "SEN",
+    "countryCallingCodes": [
+      "+221"
+    ],
+    "currencies": [
+      "XOF"
+    ],
+    "ioc": "SEN",
+    "languages": [
+      "fra"
+    ],
+    "name": "Senegal",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SO",
+    "alpha3": "SOM",
+    "countryCallingCodes": [
+      "+252"
+    ],
+    "currencies": [
+      "SOS"
+    ],
+    "ioc": "SOM",
+    "languages": [
+      "som"
+    ],
+    "name": "Somalia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SR",
+    "alpha3": "SUR",
+    "countryCallingCodes": [
+      "+597"
+    ],
+    "currencies": [
+      "SRD"
+    ],
+    "ioc": "SUR",
+    "languages": [
+      "nld"
+    ],
+    "name": "Suriname",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SS",
+    "alpha3": "SSD",
+    "countryCallingCodes": [
+      "+211"
+    ],
+    "currencies": [
+      "SSP"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "South Sudan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "ST",
+    "alpha3": "STP",
+    "countryCallingCodes": [
+      "+239"
+    ],
+    "currencies": [
+      "STD"
+    ],
+    "ioc": "STP",
+    "languages": [
+      "por"
+    ],
+    "name": "São Tomé and Príncipe",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SU",
+    "alpha3": "",
+    "countryCallingCodes": [],
+    "currencies": [
+      "RUB"
+    ],
+    "ioc": "",
+    "languages": [
+      "rus"
+    ],
+    "name": "USSR",
+    "status": "reserved"
+  },
+  {
+    "alpha2": "SV",
+    "alpha3": "SLV",
+    "countryCallingCodes": [
+      "+503"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "ESA",
+    "languages": [
+      "spa"
+    ],
+    "name": "El Salvador",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SX",
+    "alpha3": "SXM",
+    "countryCallingCodes": [
+      "+1 721"
+    ],
+    "currencies": [
+      "ANG"
+    ],
+    "ioc": "",
+    "languages": [
+      "nld"
+    ],
+    "name": "Sint Maarten",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SY",
+    "alpha3": "SYR",
+    "countryCallingCodes": [
+      "+963"
+    ],
+    "currencies": [
+      "SYP"
+    ],
+    "ioc": "SYR",
+    "languages": [
+      "ara"
+    ],
+    "name": "Syrian Arab Republic",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "SZ",
+    "alpha3": "SWZ",
+    "countryCallingCodes": [
+      "+268"
+    ],
+    "currencies": [
+      "SZL"
+    ],
+    "ioc": "SWZ",
+    "languages": [
+      "eng",
+      "ssw"
+    ],
+    "name": "Swaziland",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TA",
+    "alpha3": "",
+    "countryCallingCodes": [
+      "+290"
+    ],
+    "currencies": [
+      "GBP"
+    ],
+    "ioc": "",
+    "languages": [],
+    "name": "Tristan de Cunha",
+    "status": "reserved"
+  },
+  {
+    "alpha2": "TC",
+    "alpha3": "TCA",
+    "countryCallingCodes": [
+      "+1 649"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Turks And Caicos Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TD",
+    "alpha3": "TCD",
+    "countryCallingCodes": [
+      "+235"
+    ],
+    "currencies": [
+      "XAF"
+    ],
+    "ioc": "CHA",
+    "languages": [
+      "ara",
+      "fra"
+    ],
+    "name": "Chad",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TF",
+    "alpha3": "ATF",
+    "countryCallingCodes": [],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "French Southern Territories",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TG",
+    "alpha3": "TGO",
+    "countryCallingCodes": [
+      "+228"
+    ],
+    "currencies": [
+      "XOF"
+    ],
+    "ioc": "TOG",
+    "languages": [
+      "fra"
+    ],
+    "name": "Togo",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TH",
+    "alpha3": "THA",
+    "countryCallingCodes": [
+      "+66"
+    ],
+    "currencies": [
+      "THB"
+    ],
+    "ioc": "THA",
+    "languages": [
+      "tha"
+    ],
+    "name": "Thailand",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TJ",
+    "alpha3": "TJK",
+    "countryCallingCodes": [
+      "+992"
+    ],
+    "currencies": [
+      "TJS"
+    ],
+    "ioc": "TJK",
+    "languages": [
+      "tgk",
+      "rus"
+    ],
+    "name": "Tajikistan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TK",
+    "alpha3": "TKL",
+    "countryCallingCodes": [
+      "+690"
+    ],
+    "currencies": [
+      "NZD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "Tokelau",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TL",
+    "alpha3": "TLS",
+    "countryCallingCodes": [
+      "+670"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "TLS",
+    "languages": [
+      "por"
+    ],
+    "name": "Timor-Leste, Democratic Republic of",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TM",
+    "alpha3": "TKM",
+    "countryCallingCodes": [
+      "+993"
+    ],
+    "currencies": [
+      "TMT"
+    ],
+    "ioc": "TKM",
+    "languages": [
+      "tuk",
+      "rus"
+    ],
+    "name": "Turkmenistan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TN",
+    "alpha3": "TUN",
+    "countryCallingCodes": [
+      "+216"
+    ],
+    "currencies": [
+      "TND"
+    ],
+    "ioc": "TUN",
+    "languages": [
+      "ara"
+    ],
+    "name": "Tunisia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TO",
+    "alpha3": "TON",
+    "countryCallingCodes": [
+      "+676"
+    ],
+    "currencies": [
+      "TOP"
+    ],
+    "ioc": "TGA",
+    "languages": [
+      "eng"
+    ],
+    "name": "Tonga",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TR",
+    "alpha3": "TUR",
+    "countryCallingCodes": [
+      "+90"
+    ],
+    "currencies": [
+      "TRY"
+    ],
+    "ioc": "TUR",
+    "languages": [
+      "tur"
+    ],
+    "name": "Turkey",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TT",
+    "alpha3": "TTO",
+    "countryCallingCodes": [
+      "+1 868"
+    ],
+    "currencies": [
+      "TTD"
+    ],
+    "ioc": "TRI",
+    "languages": [
+      "eng"
+    ],
+    "name": "Trinidad And Tobago",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TV",
+    "alpha3": "TUV",
+    "countryCallingCodes": [
+      "+688"
+    ],
+    "currencies": [
+      "AUD"
+    ],
+    "ioc": "TUV",
+    "languages": [
+      "eng"
+    ],
+    "name": "Tuvalu",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TW",
+    "alpha3": "TWN",
+    "countryCallingCodes": [
+      "+886"
+    ],
+    "currencies": [
+      "TWD"
+    ],
+    "ioc": "TPE",
+    "languages": [
+      "zho"
+    ],
+    "name": "Taiwan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "TZ",
+    "alpha3": "TZA",
+    "countryCallingCodes": [
+      "+255"
+    ],
+    "currencies": [
+      "TZS"
+    ],
+    "ioc": "TAN",
+    "languages": [
+      "swa",
+      "eng"
+    ],
+    "name": "Tanzania, United Republic Of",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "UA",
+    "alpha3": "UKR",
+    "countryCallingCodes": [
+      "+380"
+    ],
+    "currencies": [
+      "UAH"
+    ],
+    "ioc": "UKR",
+    "languages": [
+      "ukr",
+      "rus"
+    ],
+    "name": "Ukraine",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "UG",
+    "alpha3": "UGA",
+    "countryCallingCodes": [
+      "+256"
+    ],
+    "currencies": [
+      "UGX"
+    ],
+    "ioc": "UGA",
+    "languages": [
+      "eng",
+      "swa"
+    ],
+    "name": "Uganda",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "UK",
+    "alpha3": "",
+    "countryCallingCodes": [],
+    "currencies": [
+      "GBP"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng",
+      "cor",
+      "gle",
+      "gla",
+      "cym"
+    ],
+    "name": "United Kingdom",
+    "status": "reserved"
+  },
+  {
+    "alpha2": "UM",
+    "alpha3": "UMI",
+    "countryCallingCodes": [
+      "+1"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "",
+    "languages": [
+      "eng"
+    ],
+    "name": "United States Minor Outlying Islands",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "US",
+    "alpha3": "USA",
+    "countryCallingCodes": [
+      "+1"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "USA",
+    "languages": [
+      "eng"
+    ],
+    "name": "United States",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "UY",
+    "alpha3": "URY",
+    "countryCallingCodes": [
+      "+598"
+    ],
+    "currencies": [
+      "UYU",
+      "UYI"
+    ],
+    "ioc": "URU",
+    "languages": [
+      "spa"
+    ],
+    "name": "Uruguay",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "UZ",
+    "alpha3": "UZB",
+    "countryCallingCodes": [
+      "+998"
+    ],
+    "currencies": [
+      "UZS"
+    ],
+    "ioc": "UZB",
+    "languages": [
+      "uzb",
+      "rus"
+    ],
+    "name": "Uzbekistan",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "VA",
+    "alpha3": "VAT",
+    "countryCallingCodes": [
+      "+379",
+      "+39"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "ita"
+    ],
+    "name": "Vatican City State",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "VC",
+    "alpha3": "VCT",
+    "countryCallingCodes": [
+      "+1 784"
+    ],
+    "currencies": [
+      "XCD"
+    ],
+    "ioc": "VIN",
+    "languages": [
+      "eng"
+    ],
+    "name": "Saint Vincent And The Grenadines",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "VE",
+    "alpha3": "VEN",
+    "countryCallingCodes": [
+      "+58"
+    ],
+    "currencies": [
+      "VEF"
+    ],
+    "ioc": "VEN",
+    "languages": [
+      "spa"
+    ],
+    "name": "Venezuela, Bolivarian Republic Of",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "VG",
+    "alpha3": "VGB",
+    "countryCallingCodes": [
+      "+1 284"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "ISV",
+    "languages": [
+      "eng"
+    ],
+    "name": "Virgin Islands (British)",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "VI",
+    "alpha3": "VIR",
+    "countryCallingCodes": [
+      "+1 340"
+    ],
+    "currencies": [
+      "USD"
+    ],
+    "ioc": "ISV",
+    "languages": [
+      "eng"
+    ],
+    "name": "Virgin Islands (US)",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "VN",
+    "alpha3": "VNM",
+    "countryCallingCodes": [
+      "+84"
+    ],
+    "currencies": [
+      "VND"
+    ],
+    "ioc": "VIE",
+    "languages": [
+      "vie"
+    ],
+    "name": "Viet Nam",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "VU",
+    "alpha3": "VUT",
+    "countryCallingCodes": [
+      "+678"
+    ],
+    "currencies": [
+      "VUV"
+    ],
+    "ioc": "VAN",
+    "languages": [
+      "bis",
+      "eng",
+      "fra"
+    ],
+    "name": "Vanuatu",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "WF",
+    "alpha3": "WLF",
+    "countryCallingCodes": [
+      "+681"
+    ],
+    "currencies": [
+      "XPF"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "Wallis And Futuna",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "WS",
+    "alpha3": "WSM",
+    "countryCallingCodes": [
+      "+685"
+    ],
+    "currencies": [
+      "WST"
+    ],
+    "ioc": "SAM",
+    "languages": [
+      "eng",
+      "smo"
+    ],
+    "name": "Samoa",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "XK",
+    "alpha3": "",
+    "countryCallingCodes": [
+      "+383"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "sqi",
+      "srp",
+      "bos",
+      "tur",
+      "rom"
+    ],
+    "name": "Kosovo",
+    "status": "user assigned"
+  },
+  {
+    "alpha2": "YE",
+    "alpha3": "YEM",
+    "countryCallingCodes": [
+      "+967"
+    ],
+    "currencies": [
+      "YER"
+    ],
+    "ioc": "YEM",
+    "languages": [
+      "ara"
+    ],
+    "name": "Yemen",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "YT",
+    "alpha3": "MYT",
+    "countryCallingCodes": [
+      "+262"
+    ],
+    "currencies": [
+      "EUR"
+    ],
+    "ioc": "",
+    "languages": [
+      "fra"
+    ],
+    "name": "Mayotte",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "ZA",
+    "alpha3": "ZAF",
+    "countryCallingCodes": [
+      "+27"
+    ],
+    "currencies": [
+      "ZAR"
+    ],
+    "ioc": "RSA",
+    "languages": [
+      "afr",
+      "eng",
+      "nbl",
+      "som",
+      "tso",
+      "ven",
+      "xho",
+      "zul"
+    ],
+    "name": "South Africa",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "ZM",
+    "alpha3": "ZMB",
+    "countryCallingCodes": [
+      "+260"
+    ],
+    "currencies": [
+      "ZMW"
+    ],
+    "ioc": "ZAM",
+    "languages": [
+      "eng"
+    ],
+    "name": "Zambia",
+    "status": "assigned"
+  },
+  {
+    "alpha2": "ZW",
+    "alpha3": "ZWE",
+    "countryCallingCodes": [
+      "+263"
+    ],
+    "currencies": [
+      "USD",
+      "ZAR",
+      "BWP",
+      "GBP",
+      "EUR"
+    ],
+    "ioc": "ZIM",
+    "languages": [
+      "eng",
+      "sna",
+      "nde"
+    ],
+    "name": "Zimbabwe",
+    "status": "assigned"
+  }
+]
+
+},{}],3:[function(require,module,exports){
+module.exports=[
+  {
+    "code": "AED",
+    "decimals": 2,
+    "name": "United Arab Emirates dirham",
+    "number": "784"
+  },
+  {
+    "code": "AFN",
+    "decimals": 2,
+    "name": "Afghan afghani",
+    "number": "971"
+  },
+  {
+    "code": "ALL",
+    "decimals": 2,
+    "name": "Albanian lek",
+    "number": "8"
+  },
+  {
+    "code": "AMD",
+    "decimals": 2,
+    "name": "Armenian dram",
+    "number": "51"
+  },
+  {
+    "code": "ANG",
+    "decimals": 2,
+    "name": "Netherlands Antillean guilder",
+    "number": "532"
+  },
+  {
+    "code": "AOA",
+    "decimals": 2,
+    "name": "Angolan kwanza",
+    "number": "973"
+  },
+  {
+    "code": "ARS",
+    "decimals": 2,
+    "name": "Argentine peso",
+    "number": "32"
+  },
+  {
+    "code": "AUD",
+    "decimals": 2,
+    "name": "Australian dollar",
+    "number": "36"
+  },
+  {
+    "code": "AWG",
+    "decimals": 2,
+    "name": "Aruban florin",
+    "number": "533"
+  },
+  {
+    "code": "AZN",
+    "decimals": 2,
+    "name": "Azerbaijani manat",
+    "number": "944"
+  },
+  {
+    "code": "BAM",
+    "decimals": 2,
+    "name": "Bosnia and Herzegovina convertible mark",
+    "number": "977"
+  },
+  {
+    "code": "BBD",
+    "decimals": 2,
+    "name": "Barbados dollar",
+    "number": "52"
+  },
+  {
+    "code": "BDT",
+    "decimals": 2,
+    "name": "Bangladeshi taka",
+    "number": "50"
+  },
+  {
+    "code": "BGN",
+    "decimals": 2,
+    "name": "Bulgarian lev",
+    "number": "975"
+  },
+  {
+    "code": "BHD",
+    "decimals": 3,
+    "name": "Bahraini dinar",
+    "number": "48"
+  },
+  {
+    "code": "BIF",
+    "decimals": 0,
+    "name": "Burundian franc",
+    "number": "108"
+  },
+  {
+    "code": "BMD",
+    "decimals": 2,
+    "name": "Bermudian dollar (customarily known as Bermuda dollar)",
+    "number": "60"
+  },
+  {
+    "code": "BND",
+    "decimals": 2,
+    "name": "Brunei dollar",
+    "number": "96"
+  },
+  {
+    "code": "BOB",
+    "decimals": 2,
+    "name": "Boliviano",
+    "number": "68"
+  },
+  {
+    "code": "BOV",
+    "decimals": 2,
+    "name": "Bolivian Mvdol (funds code)",
+    "number": "984"
+  },
+  {
+    "code": "BRL",
+    "decimals": 2,
+    "name": "Brazilian real",
+    "number": "986"
+  },
+  {
+    "code": "BSD",
+    "decimals": 2,
+    "name": "Bahamian dollar",
+    "number": "44"
+  },
+  {
+    "code": "BTN",
+    "decimals": 2,
+    "name": "Bhutanese ngultrum",
+    "number": "64"
+  },
+  {
+    "code": "BWP",
+    "decimals": 2,
+    "name": "Botswana pula",
+    "number": "72"
+  },
+  {
+    "code": "BYR",
+    "decimals": 0,
+    "name": "Belarusian ruble",
+    "number": "974"
+  },
+  {
+    "code": "BZD",
+    "decimals": 2,
+    "name": "Belize dollar",
+    "number": "84"
+  },
+  {
+    "code": "CAD",
+    "decimals": 2,
+    "name": "Canadian dollar",
+    "number": "124"
+  },
+  {
+    "code": "CDF",
+    "decimals": 2,
+    "name": "Congolese franc",
+    "number": "976"
+  },
+  {
+    "code": "CHE",
+    "decimals": 2,
+    "name": "WIR Euro (complementary currency)",
+    "number": "947"
+  },
+  {
+    "code": "CHF",
+    "decimals": 2,
+    "name": "Swiss franc",
+    "number": "756"
+  },
+  {
+    "code": "CHW",
+    "decimals": 2,
+    "name": "WIR Franc (complementary currency)",
+    "number": "948"
+  },
+  {
+    "code": "CLF",
+    "decimals": 0,
+    "name": "Unidad de Fomento (funds code)",
+    "number": "990"
+  },
+  {
+    "code": "CLP",
+    "decimals": 0,
+    "name": "Chilean peso",
+    "number": "152"
+  },
+  {
+    "code": "CNY",
+    "decimals": 2,
+    "name": "Chinese yuan",
+    "number": "156"
+  },
+  {
+    "code": "COP",
+    "decimals": 2,
+    "name": "Colombian peso",
+    "number": "170"
+  },
+  {
+    "code": "COU",
+    "decimals": 2,
+    "name": "Unidad de Valor Real",
+    "number": "970"
+  },
+  {
+    "code": "CRC",
+    "decimals": 2,
+    "name": "Costa Rican colon",
+    "number": "188"
+  },
+  {
+    "code": "CUC",
+    "decimals": 2,
+    "name": "Cuban convertible peso",
+    "number": "931"
+  },
+  {
+    "code": "CUP",
+    "decimals": 2,
+    "name": "Cuban peso",
+    "number": "192"
+  },
+  {
+    "code": "CVE",
+    "decimals": 0,
+    "name": "Cape Verde escudo",
+    "number": "132"
+  },
+  {
+    "code": "CZK",
+    "decimals": 2,
+    "name": "Czech koruna",
+    "number": "203"
+  },
+  {
+    "code": "DJF",
+    "decimals": 0,
+    "name": "Djiboutian franc",
+    "number": "262"
+  },
+  {
+    "code": "DKK",
+    "decimals": 2,
+    "name": "Danish krone",
+    "number": "208"
+  },
+  {
+    "code": "DOP",
+    "decimals": 2,
+    "name": "Dominican peso",
+    "number": "214"
+  },
+  {
+    "code": "DZD",
+    "decimals": 2,
+    "name": "Algerian dinar",
+    "number": "12"
+  },
+  {
+    "code": "EGP",
+    "decimals": 2,
+    "name": "Egyptian pound",
+    "number": "818"
+  },
+  {
+    "code": "ERN",
+    "decimals": 2,
+    "name": "Eritrean nakfa",
+    "number": "232"
+  },
+  {
+    "code": "ETB",
+    "decimals": 2,
+    "name": "Ethiopian birr",
+    "number": "230"
+  },
+  {
+    "code": "EUR",
+    "decimals": 2,
+    "name": "Euro",
+    "number": "978"
+  },
+  {
+    "code": "FJD",
+    "decimals": 2,
+    "name": "Fiji dollar",
+    "number": "242"
+  },
+  {
+    "code": "FKP",
+    "decimals": 2,
+    "name": "Falkland Islands pound",
+    "number": "238"
+  },
+  {
+    "code": "GBP",
+    "decimals": 2,
+    "name": "Pound sterling",
+    "number": "826"
+  },
+  {
+    "code": "GEL",
+    "decimals": 2,
+    "name": "Georgian lari",
+    "number": "981"
+  },
+  {
+    "code": "GHS",
+    "decimals": 2,
+    "name": "Ghanaian cedi",
+    "number": "936"
+  },
+  {
+    "code": "GIP",
+    "decimals": 2,
+    "name": "Gibraltar pound",
+    "number": "292"
+  },
+  {
+    "code": "GMD",
+    "decimals": 2,
+    "name": "Gambian dalasi",
+    "number": "270"
+  },
+  {
+    "code": "GNF",
+    "decimals": 0,
+    "name": "Guinean franc",
+    "number": "324"
+  },
+  {
+    "code": "GTQ",
+    "decimals": 2,
+    "name": "Guatemalan quetzal",
+    "number": "320"
+  },
+  {
+    "code": "GYD",
+    "decimals": 2,
+    "name": "Guyanese dollar",
+    "number": "328"
+  },
+  {
+    "code": "HKD",
+    "decimals": 2,
+    "name": "Hong Kong dollar",
+    "number": "344"
+  },
+  {
+    "code": "HNL",
+    "decimals": 2,
+    "name": "Honduran lempira",
+    "number": "340"
+  },
+  {
+    "code": "HRK",
+    "decimals": 2,
+    "name": "Croatian kuna",
+    "number": "191"
+  },
+  {
+    "code": "HTG",
+    "decimals": 2,
+    "name": "Haitian gourde",
+    "number": "332"
+  },
+  {
+    "code": "HUF",
+    "decimals": 2,
+    "name": "Hungarian forint",
+    "number": "348"
+  },
+  {
+    "code": "IDR",
+    "decimals": 2,
+    "name": "Indonesian rupiah",
+    "number": "360"
+  },
+  {
+    "code": "ILS",
+    "decimals": 2,
+    "name": "Israeli new shekel",
+    "number": "376"
+  },
+  {
+    "code": "INR",
+    "decimals": 2,
+    "name": "Indian rupee",
+    "number": "356"
+  },
+  {
+    "code": "IQD",
+    "decimals": 3,
+    "name": "Iraqi dinar",
+    "number": "368"
+  },
+  {
+    "code": "IRR",
+    "decimals": 0,
+    "name": "Iranian rial",
+    "number": "364"
+  },
+  {
+    "code": "ISK",
+    "decimals": 0,
+    "name": "Icelandic króna",
+    "number": "352"
+  },
+  {
+    "code": "JMD",
+    "decimals": 2,
+    "name": "Jamaican dollar",
+    "number": "388"
+  },
+  {
+    "code": "JOD",
+    "decimals": 3,
+    "name": "Jordanian dinar",
+    "number": "400"
+  },
+  {
+    "code": "JPY",
+    "decimals": 0,
+    "name": "Japanese yen",
+    "number": "392"
+  },
+  {
+    "code": "KES",
+    "decimals": 2,
+    "name": "Kenyan shilling",
+    "number": "404"
+  },
+  {
+    "code": "KGS",
+    "decimals": 2,
+    "name": "Kyrgyzstani som",
+    "number": "417"
+  },
+  {
+    "code": "KHR",
+    "decimals": 2,
+    "name": "Cambodian riel",
+    "number": "116"
+  },
+  {
+    "code": "KMF",
+    "decimals": 0,
+    "name": "Comoro franc",
+    "number": "174"
+  },
+  {
+    "code": "KPW",
+    "decimals": 0,
+    "name": "North Korean won",
+    "number": "408"
+  },
+  {
+    "code": "KRW",
+    "decimals": 0,
+    "name": "South Korean won",
+    "number": "410"
+  },
+  {
+    "code": "KWD",
+    "decimals": 3,
+    "name": "Kuwaiti dinar",
+    "number": "414"
+  },
+  {
+    "code": "KYD",
+    "decimals": 2,
+    "name": "Cayman Islands dollar",
+    "number": "136"
+  },
+  {
+    "code": "KZT",
+    "decimals": 2,
+    "name": "Kazakhstani tenge",
+    "number": "398"
+  },
+  {
+    "code": "LAK",
+    "decimals": 0,
+    "name": "Lao kip",
+    "number": "418"
+  },
+  {
+    "code": "LBP",
+    "decimals": 0,
+    "name": "Lebanese pound",
+    "number": "422"
+  },
+  {
+    "code": "LKR",
+    "decimals": 2,
+    "name": "Sri Lankan rupee",
+    "number": "144"
+  },
+  {
+    "code": "LRD",
+    "decimals": 2,
+    "name": "Liberian dollar",
+    "number": "430"
+  },
+  {
+    "code": "LSL",
+    "decimals": 2,
+    "name": "Lesotho loti",
+    "number": "426"
+  },
+  {
+    "code": "LTL",
+    "decimals": 2,
+    "name": "Lithuanian litas",
+    "number": "440"
+  },
+  {
+    "code": "LVL",
+    "decimals": 2,
+    "name": "Latvian lats",
+    "number": "428"
+  },
+  {
+    "code": "LYD",
+    "decimals": 3,
+    "name": "Libyan dinar",
+    "number": "434"
+  },
+  {
+    "code": "MAD",
+    "decimals": 2,
+    "name": "Moroccan dirham",
+    "number": "504"
+  },
+  {
+    "code": "MDL",
+    "decimals": 2,
+    "name": "Moldovan leu",
+    "number": "498"
+  },
+  {
+    "code": "MGA",
+    "decimals": 0,
+    "name": "Malagasy ariary",
+    "number": "969"
+  },
+  {
+    "code": "MKD",
+    "decimals": 0,
+    "name": "Macedonian denar",
+    "number": "807"
+  },
+  {
+    "code": "MMK",
+    "decimals": 0,
+    "name": "Myanma kyat",
+    "number": "104"
+  },
+  {
+    "code": "MNT",
+    "decimals": 2,
+    "name": "Mongolian tugrik",
+    "number": "496"
+  },
+  {
+    "code": "MOP",
+    "decimals": 2,
+    "name": "Macanese pataca",
+    "number": "446"
+  },
+  {
+    "code": "MRO",
+    "decimals": 0,
+    "name": "Mauritanian ouguiya",
+    "number": "478"
+  },
+  {
+    "code": "MUR",
+    "decimals": 2,
+    "name": "Mauritian rupee",
+    "number": "480"
+  },
+  {
+    "code": "MVR",
+    "decimals": 2,
+    "name": "Maldivian rufiyaa",
+    "number": "462"
+  },
+  {
+    "code": "MWK",
+    "decimals": 2,
+    "name": "Malawian kwacha",
+    "number": "454"
+  },
+  {
+    "code": "MXN",
+    "decimals": 2,
+    "name": "Mexican peso",
+    "number": "484"
+  },
+  {
+    "code": "MXV",
+    "decimals": 2,
+    "name": "Mexican Unidad de Inversion (UDI) (funds code)",
+    "number": "979"
+  },
+  {
+    "code": "MYR",
+    "decimals": 2,
+    "name": "Malaysian ringgit",
+    "number": "458"
+  },
+  {
+    "code": "MZN",
+    "decimals": 2,
+    "name": "Mozambican metical",
+    "number": "943"
+  },
+  {
+    "code": "NAD",
+    "decimals": 2,
+    "name": "Namibian dollar",
+    "number": "516"
+  },
+  {
+    "code": "NGN",
+    "decimals": 2,
+    "name": "Nigerian naira",
+    "number": "566"
+  },
+  {
+    "code": "NIO",
+    "decimals": 2,
+    "name": "Nicaraguan córdoba",
+    "number": "558"
+  },
+  {
+    "code": "NOK",
+    "decimals": 2,
+    "name": "Norwegian krone",
+    "number": "578"
+  },
+  {
+    "code": "NPR",
+    "decimals": 2,
+    "name": "Nepalese rupee",
+    "number": "524"
+  },
+  {
+    "code": "NZD",
+    "decimals": 2,
+    "name": "New Zealand dollar",
+    "number": "554"
+  },
+  {
+    "code": "OMR",
+    "decimals": 3,
+    "name": "Omani rial",
+    "number": "512"
+  },
+  {
+    "code": "PAB",
+    "decimals": 2,
+    "name": "Panamanian balboa",
+    "number": "590"
+  },
+  {
+    "code": "PEN",
+    "decimals": 2,
+    "name": "Peruvian nuevo sol",
+    "number": "604"
+  },
+  {
+    "code": "PGK",
+    "decimals": 2,
+    "name": "Papua New Guinean kina",
+    "number": "598"
+  },
+  {
+    "code": "PHP",
+    "decimals": 2,
+    "name": "Philippine peso",
+    "number": "608"
+  },
+  {
+    "code": "PKR",
+    "decimals": 2,
+    "name": "Pakistani rupee",
+    "number": "586"
+  },
+  {
+    "code": "PLN",
+    "decimals": 2,
+    "name": "Polish złoty",
+    "number": "985"
+  },
+  {
+    "code": "PYG",
+    "decimals": 0,
+    "name": "Paraguayan guaraní",
+    "number": "600"
+  },
+  {
+    "code": "QAR",
+    "decimals": 2,
+    "name": "Qatari riyal",
+    "number": "634"
+  },
+  {
+    "code": "RON",
+    "decimals": 2,
+    "name": "Romanian new leu",
+    "number": "946"
+  },
+  {
+    "code": "RSD",
+    "decimals": 2,
+    "name": "Serbian dinar",
+    "number": "941"
+  },
+  {
+    "code": "RUB",
+    "decimals": 2,
+    "name": "Russian rouble",
+    "number": "643"
+  },
+  {
+    "code": "RWF",
+    "decimals": 0,
+    "name": "Rwandan franc",
+    "number": "646"
+  },
+  {
+    "code": "SAR",
+    "decimals": 2,
+    "name": "Saudi riyal",
+    "number": "682"
+  },
+  {
+    "code": "SBD",
+    "decimals": 2,
+    "name": "Solomon Islands dollar",
+    "number": "90"
+  },
+  {
+    "code": "SCR",
+    "decimals": 2,
+    "name": "Seychelles rupee",
+    "number": "690"
+  },
+  {
+    "code": "SDG",
+    "decimals": 2,
+    "name": "Sudanese pound",
+    "number": "938"
+  },
+  {
+    "code": "SEK",
+    "decimals": 2,
+    "name": "Swedish krona/kronor",
+    "number": "752"
+  },
+  {
+    "code": "SGD",
+    "decimals": 2,
+    "name": "Singapore dollar",
+    "number": "702"
+  },
+  {
+    "code": "SHP",
+    "decimals": 2,
+    "name": "Saint Helena pound",
+    "number": "654"
+  },
+  {
+    "code": "SLL",
+    "decimals": 0,
+    "name": "Sierra Leonean leone",
+    "number": "694"
+  },
+  {
+    "code": "SOS",
+    "decimals": 2,
+    "name": "Somali shilling",
+    "number": "706"
+  },
+  {
+    "code": "SRD",
+    "decimals": 2,
+    "name": "Surinamese dollar",
+    "number": "968"
+  },
+  {
+    "code": "SSP",
+    "decimals": 2,
+    "name": "South Sudanese pound",
+    "number": "728"
+  },
+  {
+    "code": "STD",
+    "decimals": 0,
+    "name": "São Tomé and Príncipe dobra",
+    "number": "678"
+  },
+  {
+    "code": "SYP",
+    "decimals": 2,
+    "name": "Syrian pound",
+    "number": "760"
+  },
+  {
+    "code": "SZL",
+    "decimals": 2,
+    "name": "Swazi lilangeni",
+    "number": "748"
+  },
+  {
+    "code": "THB",
+    "decimals": 2,
+    "name": "Thai baht",
+    "number": "764"
+  },
+  {
+    "code": "TJS",
+    "decimals": 2,
+    "name": "Tajikistani somoni",
+    "number": "972"
+  },
+  {
+    "code": "TMT",
+    "decimals": 2,
+    "name": "Turkmenistani manat",
+    "number": "934"
+  },
+  {
+    "code": "TND",
+    "decimals": 3,
+    "name": "Tunisian dinar",
+    "number": "788"
+  },
+  {
+    "code": "TOP",
+    "decimals": 2,
+    "name": "Tongan paʻanga",
+    "number": "776"
+  },
+  {
+    "code": "TRY",
+    "decimals": 2,
+    "name": "Turkish lira",
+    "number": "949"
+  },
+  {
+    "code": "TTD",
+    "decimals": 2,
+    "name": "Trinidad and Tobago dollar",
+    "number": "780"
+  },
+  {
+    "code": "TWD",
+    "decimals": 2,
+    "name": "New Taiwan dollar",
+    "number": "901"
+  },
+  {
+    "code": "TZS",
+    "decimals": 2,
+    "name": "Tanzanian shilling",
+    "number": "834"
+  },
+  {
+    "code": "UAH",
+    "decimals": 2,
+    "name": "Ukrainian hryvnia",
+    "number": "980"
+  },
+  {
+    "code": "UGX",
+    "decimals": 2,
+    "name": "Ugandan shilling",
+    "number": "800"
+  },
+  {
+    "code": "USD",
+    "decimals": 2,
+    "name": "United States dollar",
+    "number": "840"
+  },
+  {
+    "code": "USN",
+    "decimals": 2,
+    "name": "United States dollar (next day) (funds code)",
+    "number": "997"
+  },
+  {
+    "code": "USS",
+    "decimals": 2,
+    "name": "United States dollar (same day) (funds code) (one source[who?] claims it is no longer used, but it is still on the ISO 4217-MA list)",
+    "number": "998"
+  },
+  {
+    "code": "UYI",
+    "decimals": 0,
+    "name": "Uruguay Peso en Unidades Indexadas (URUIURUI) (funds code)",
+    "number": "940"
+  },
+  {
+    "code": "UYU",
+    "decimals": 2,
+    "name": "Uruguayan peso",
+    "number": "858"
+  },
+  {
+    "code": "UZS",
+    "decimals": 2,
+    "name": "Uzbekistan som",
+    "number": "860"
+  },
+  {
+    "code": "VEF",
+    "decimals": 2,
+    "name": "Venezuelan bolívar fuerte",
+    "number": "937"
+  },
+  {
+    "code": "VND",
+    "decimals": 0,
+    "name": "Vietnamese dong",
+    "number": "704"
+  },
+  {
+    "code": "VUV",
+    "decimals": 0,
+    "name": "Vanuatu vatu",
+    "number": "548"
+  },
+  {
+    "code": "WST",
+    "decimals": 2,
+    "name": "Samoan tala",
+    "number": "882"
+  },
+  {
+    "code": "XAF",
+    "decimals": 0,
+    "name": "CFA franc BEAC",
+    "number": "950"
+  },
+  {
+    "code": "XAG",
+    "decimals": null,
+    "name": "Silver (one troy ounce)",
+    "number": "961"
+  },
+  {
+    "code": "XAU",
+    "decimals": null,
+    "name": "Gold (one troy ounce)",
+    "number": "959"
+  },
+  {
+    "code": "XBA",
+    "decimals": null,
+    "name": "European Composite Unit (EURCO) (bond market unit)",
+    "number": "955"
+  },
+  {
+    "code": "XBB",
+    "decimals": null,
+    "name": "European Monetary Unit (E.M.U.-6) (bond market unit)",
+    "number": "956"
+  },
+  {
+    "code": "XBC",
+    "decimals": null,
+    "name": "European Unit of Account 9 (E.U.A.-9) (bond market unit)",
+    "number": "957"
+  },
+  {
+    "code": "XBD",
+    "decimals": null,
+    "name": "European Unit of Account 17 (E.U.A.-17) (bond market unit)",
+    "number": "958"
+  },
+  {
+    "code": "XCD",
+    "decimals": 2,
+    "name": "East Caribbean dollar",
+    "number": "951"
+  },
+  {
+    "code": "XDR",
+    "decimals": null,
+    "name": "Special drawing rights",
+    "number": "960"
+  },
+  {
+    "code": "XFU",
+    "decimals": null,
+    "name": "UIC franc (special settlement currency)",
+    "number": "Nil"
+  },
+  {
+    "code": "XOF",
+    "decimals": 0,
+    "name": "CFA franc BCEAO",
+    "number": "952"
+  },
+  {
+    "code": "XPD",
+    "decimals": null,
+    "name": "Palladium (one troy ounce)",
+    "number": "964"
+  },
+  {
+    "code": "XPF",
+    "decimals": 0,
+    "name": "CFP franc",
+    "number": "953"
+  },
+  {
+    "code": "XPT",
+    "decimals": null,
+    "name": "Platinum (one troy ounce)",
+    "number": "962"
+  },
+  {
+    "code": "XTS",
+    "decimals": null,
+    "name": "Code reserved for testing purposes",
+    "number": "963"
+  },
+  {
+    "code": "XXX",
+    "decimals": null,
+    "name": "No currency",
+    "number": "999"
+  },
+  {
+    "code": "YER",
+    "decimals": 2,
+    "name": "Yemeni rial",
+    "number": "886"
+  },
+  {
+    "code": "ZAR",
+    "decimals": 2,
+    "name": "South African rand",
+    "number": "710"
+  },
+  {
+    "code": "ZMW",
+    "decimals": 2,
+    "name": "Zambian kwacha",
+    "number": "967"
+  }
+]
+
+},{}],4:[function(require,module,exports){
+module.exports=[
+  {
+    "alpha2": "aa",
+    "alpha3": "aar",
+    "bibliographic": "",
+    "name": "Afar"
+  },
+  {
+    "alpha2": "ab",
+    "alpha3": "abk",
+    "bibliographic": "",
+    "name": "Abkhazian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ace",
+    "bibliographic": "",
+    "name": "Achinese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ach",
+    "bibliographic": "",
+    "name": "Acoli"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ada",
+    "bibliographic": "",
+    "name": "Adangme"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ady",
+    "bibliographic": "",
+    "name": "Adygei"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ady",
+    "bibliographic": "",
+    "name": "Adyghe"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "afa",
+    "bibliographic": "",
+    "name": "Afro-Asiatic languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "afh",
+    "bibliographic": "",
+    "name": "Afrihili"
+  },
+  {
+    "alpha2": "af",
+    "alpha3": "afr",
+    "bibliographic": "",
+    "name": "Afrikaans"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ain",
+    "bibliographic": "",
+    "name": "Ainu"
+  },
+  {
+    "alpha2": "ak",
+    "alpha3": "aka",
+    "bibliographic": "",
+    "name": "Akan"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "akk",
+    "bibliographic": "",
+    "name": "Akkadian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ale",
+    "bibliographic": "",
+    "name": "Aleut"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "alg",
+    "bibliographic": "",
+    "name": "Algonquian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "alt",
+    "bibliographic": "",
+    "name": "Southern Altai"
+  },
+  {
+    "alpha2": "am",
+    "alpha3": "amh",
+    "bibliographic": "",
+    "name": "Amharic"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ang",
+    "bibliographic": "",
+    "name": "English, Old (ca.450-1100)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "anp",
+    "bibliographic": "",
+    "name": "Angika"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "apa",
+    "bibliographic": "",
+    "name": "Apache languages"
+  },
+  {
+    "alpha2": "ar",
+    "alpha3": "ara",
+    "bibliographic": "",
+    "name": "Arabic"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "arc",
+    "bibliographic": "",
+    "name": "Imperial Aramaic (700-300 BCE)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "arc",
+    "bibliographic": "",
+    "name": "Official Aramaic (700-300 BCE)"
+  },
+  {
+    "alpha2": "an",
+    "alpha3": "arg",
+    "bibliographic": "",
+    "name": "Aragonese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "arn",
+    "bibliographic": "",
+    "name": "Mapuche"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "arn",
+    "bibliographic": "",
+    "name": "Mapudungun"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "arp",
+    "bibliographic": "",
+    "name": "Arapaho"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "art",
+    "bibliographic": "",
+    "name": "Artificial languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "arw",
+    "bibliographic": "",
+    "name": "Arawak"
+  },
+  {
+    "alpha2": "as",
+    "alpha3": "asm",
+    "bibliographic": "",
+    "name": "Assamese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ast",
+    "bibliographic": "",
+    "name": "Asturian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ast",
+    "bibliographic": "",
+    "name": "Asturleonese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ast",
+    "bibliographic": "",
+    "name": "Bable"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ast",
+    "bibliographic": "",
+    "name": "Leonese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ath",
+    "bibliographic": "",
+    "name": "Athapascan languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "aus",
+    "bibliographic": "",
+    "name": "Australian languages"
+  },
+  {
+    "alpha2": "av",
+    "alpha3": "ava",
+    "bibliographic": "",
+    "name": "Avaric"
+  },
+  {
+    "alpha2": "ae",
+    "alpha3": "ave",
+    "bibliographic": "",
+    "name": "Avestan"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "awa",
+    "bibliographic": "",
+    "name": "Awadhi"
+  },
+  {
+    "alpha2": "ay",
+    "alpha3": "aym",
+    "bibliographic": "",
+    "name": "Aymara"
+  },
+  {
+    "alpha2": "az",
+    "alpha3": "aze",
+    "bibliographic": "",
+    "name": "Azerbaijani"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bad",
+    "bibliographic": "",
+    "name": "Banda languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bai",
+    "bibliographic": "",
+    "name": "Bamileke languages"
+  },
+  {
+    "alpha2": "ba",
+    "alpha3": "bak",
+    "bibliographic": "",
+    "name": "Bashkir"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bal",
+    "bibliographic": "",
+    "name": "Baluchi"
+  },
+  {
+    "alpha2": "bm",
+    "alpha3": "bam",
+    "bibliographic": "",
+    "name": "Bambara"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ban",
+    "bibliographic": "",
+    "name": "Balinese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bas",
+    "bibliographic": "",
+    "name": "Basa"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bat",
+    "bibliographic": "",
+    "name": "Baltic languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bej",
+    "bibliographic": "",
+    "name": "Bedawiyet"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bej",
+    "bibliographic": "",
+    "name": "Beja"
+  },
+  {
+    "alpha2": "be",
+    "alpha3": "bel",
+    "bibliographic": "",
+    "name": "Belarusian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bem",
+    "bibliographic": "",
+    "name": "Bemba"
+  },
+  {
+    "alpha2": "bn",
+    "alpha3": "ben",
+    "bibliographic": "",
+    "name": "Bengali"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ber",
+    "bibliographic": "",
+    "name": "Berber languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bho",
+    "bibliographic": "",
+    "name": "Bhojpuri"
+  },
+  {
+    "alpha2": "bh",
+    "alpha3": "bih",
+    "bibliographic": "",
+    "name": "Bihari languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bik",
+    "bibliographic": "",
+    "name": "Bikol"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bin",
+    "bibliographic": "",
+    "name": "Bini"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bin",
+    "bibliographic": "",
+    "name": "Edo"
+  },
+  {
+    "alpha2": "bi",
+    "alpha3": "bis",
+    "bibliographic": "",
+    "name": "Bislama"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bla",
+    "bibliographic": "",
+    "name": "Siksika"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bnt",
+    "bibliographic": "",
+    "name": "Bantu languages"
+  },
+  {
+    "alpha2": "bo",
+    "alpha3": "bod",
+    "bibliographic": "tib",
+    "name": "Tibetan"
+  },
+  {
+    "alpha2": "bs",
+    "alpha3": "bos",
+    "bibliographic": "",
+    "name": "Bosnian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bra",
+    "bibliographic": "",
+    "name": "Braj"
+  },
+  {
+    "alpha2": "br",
+    "alpha3": "bre",
+    "bibliographic": "",
+    "name": "Breton"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "btk",
+    "bibliographic": "",
+    "name": "Batak languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bua",
+    "bibliographic": "",
+    "name": "Buriat"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "bug",
+    "bibliographic": "",
+    "name": "Buginese"
+  },
+  {
+    "alpha2": "bg",
+    "alpha3": "bul",
+    "bibliographic": "",
+    "name": "Bulgarian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "byn",
+    "bibliographic": "",
+    "name": "Bilin"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "byn",
+    "bibliographic": "",
+    "name": "Blin"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cad",
+    "bibliographic": "",
+    "name": "Caddo"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cai",
+    "bibliographic": "",
+    "name": "Central American Indian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "car",
+    "bibliographic": "",
+    "name": "Galibi Carib"
+  },
+  {
+    "alpha2": "ca",
+    "alpha3": "cat",
+    "bibliographic": "",
+    "name": "Catalan"
+  },
+  {
+    "alpha2": "ca",
+    "alpha3": "cat",
+    "bibliographic": "",
+    "name": "Valencian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cau",
+    "bibliographic": "",
+    "name": "Caucasian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ceb",
+    "bibliographic": "",
+    "name": "Cebuano"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cel",
+    "bibliographic": "",
+    "name": "Celtic languages"
+  },
+  {
+    "alpha2": "cs",
+    "alpha3": "ces",
+    "bibliographic": "cze",
+    "name": "Czech"
+  },
+  {
+    "alpha2": "ch",
+    "alpha3": "cha",
+    "bibliographic": "",
+    "name": "Chamorro"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "chb",
+    "bibliographic": "",
+    "name": "Chibcha"
+  },
+  {
+    "alpha2": "ce",
+    "alpha3": "che",
+    "bibliographic": "",
+    "name": "Chechen"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "chg",
+    "bibliographic": "",
+    "name": "Chagatai"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "chk",
+    "bibliographic": "",
+    "name": "Chuukese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "chm",
+    "bibliographic": "",
+    "name": "Mari"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "chn",
+    "bibliographic": "",
+    "name": "Chinook jargon"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cho",
+    "bibliographic": "",
+    "name": "Choctaw"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "chp",
+    "bibliographic": "",
+    "name": "Chipewyan"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "chp",
+    "bibliographic": "",
+    "name": "Dene Suline"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "chr",
+    "bibliographic": "",
+    "name": "Cherokee"
+  },
+  {
+    "alpha2": "cu",
+    "alpha3": "chu",
+    "bibliographic": "",
+    "name": "Church Slavic"
+  },
+  {
+    "alpha2": "cu",
+    "alpha3": "chu",
+    "bibliographic": "",
+    "name": "Church Slavonic"
+  },
+  {
+    "alpha2": "cu",
+    "alpha3": "chu",
+    "bibliographic": "",
+    "name": "Old Bulgarian"
+  },
+  {
+    "alpha2": "cu",
+    "alpha3": "chu",
+    "bibliographic": "",
+    "name": "Old Church Slavonic"
+  },
+  {
+    "alpha2": "cu",
+    "alpha3": "chu",
+    "bibliographic": "",
+    "name": "Old Slavonic"
+  },
+  {
+    "alpha2": "cv",
+    "alpha3": "chv",
+    "bibliographic": "",
+    "name": "Chuvash"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "chy",
+    "bibliographic": "",
+    "name": "Cheyenne"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cmc",
+    "bibliographic": "",
+    "name": "Chamic languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cop",
+    "bibliographic": "",
+    "name": "Coptic"
+  },
+  {
+    "alpha2": "kw",
+    "alpha3": "cor",
+    "bibliographic": "",
+    "name": "Cornish"
+  },
+  {
+    "alpha2": "co",
+    "alpha3": "cos",
+    "bibliographic": "",
+    "name": "Corsican"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cpe",
+    "bibliographic": "",
+    "name": "Creoles and pidgins, English based"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cpf",
+    "bibliographic": "",
+    "name": "Creoles and pidgins, French-based"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cpp",
+    "bibliographic": "",
+    "name": "Creoles and pidgins, Portuguese-based"
+  },
+  {
+    "alpha2": "cr",
+    "alpha3": "cre",
+    "bibliographic": "",
+    "name": "Cree"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "crh",
+    "bibliographic": "",
+    "name": "Crimean Tatar"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "crh",
+    "bibliographic": "",
+    "name": "Crimean Turkish"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "crp",
+    "bibliographic": "",
+    "name": "Creoles and pidgins"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "csb",
+    "bibliographic": "",
+    "name": "Kashubian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "cus",
+    "bibliographic": "",
+    "name": "Cushitic languages"
+  },
+  {
+    "alpha2": "cy",
+    "alpha3": "cym",
+    "bibliographic": "wel",
+    "name": "Welsh"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "dak",
+    "bibliographic": "",
+    "name": "Dakota"
+  },
+  {
+    "alpha2": "da",
+    "alpha3": "dan",
+    "bibliographic": "",
+    "name": "Danish"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "dar",
+    "bibliographic": "",
+    "name": "Dargwa"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "day",
+    "bibliographic": "",
+    "name": "Land Dayak languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "del",
+    "bibliographic": "",
+    "name": "Delaware"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "den",
+    "bibliographic": "",
+    "name": "Slave (Athapascan)"
+  },
+  {
+    "alpha2": "de",
+    "alpha3": "deu",
+    "bibliographic": "ger",
+    "name": "German"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "dgr",
+    "bibliographic": "",
+    "name": "Dogrib"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "din",
+    "bibliographic": "",
+    "name": "Dinka"
+  },
+  {
+    "alpha2": "dv",
+    "alpha3": "div",
+    "bibliographic": "",
+    "name": "Dhivehi"
+  },
+  {
+    "alpha2": "dv",
+    "alpha3": "div",
+    "bibliographic": "",
+    "name": "Divehi"
+  },
+  {
+    "alpha2": "dv",
+    "alpha3": "div",
+    "bibliographic": "",
+    "name": "Maldivian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "doi",
+    "bibliographic": "",
+    "name": "Dogri"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "dra",
+    "bibliographic": "",
+    "name": "Dravidian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "dsb",
+    "bibliographic": "",
+    "name": "Lower Sorbian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "dua",
+    "bibliographic": "",
+    "name": "Duala"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "dum",
+    "bibliographic": "",
+    "name": "Dutch, Middle (ca.1050-1350)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "dyu",
+    "bibliographic": "",
+    "name": "Dyula"
+  },
+  {
+    "alpha2": "dz",
+    "alpha3": "dzo",
+    "bibliographic": "",
+    "name": "Dzongkha"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "efi",
+    "bibliographic": "",
+    "name": "Efik"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "egy",
+    "bibliographic": "",
+    "name": "Egyptian (Ancient)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "eka",
+    "bibliographic": "",
+    "name": "Ekajuk"
+  },
+  {
+    "alpha2": "el",
+    "alpha3": "ell",
+    "bibliographic": "gre",
+    "name": "Greek, Modern (1453-)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "elx",
+    "bibliographic": "",
+    "name": "Elamite"
+  },
+  {
+    "alpha2": "en",
+    "alpha3": "eng",
+    "bibliographic": "",
+    "name": "English"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "enm",
+    "bibliographic": "",
+    "name": "English, Middle (1100-1500)"
+  },
+  {
+    "alpha2": "eo",
+    "alpha3": "epo",
+    "bibliographic": "",
+    "name": "Esperanto"
+  },
+  {
+    "alpha2": "et",
+    "alpha3": "est",
+    "bibliographic": "",
+    "name": "Estonian"
+  },
+  {
+    "alpha2": "eu",
+    "alpha3": "eus",
+    "bibliographic": "baq",
+    "name": "Basque"
+  },
+  {
+    "alpha2": "ee",
+    "alpha3": "ewe",
+    "bibliographic": "",
+    "name": "Ewe"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ewo",
+    "bibliographic": "",
+    "name": "Ewondo"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "fan",
+    "bibliographic": "",
+    "name": "Fang"
+  },
+  {
+    "alpha2": "fo",
+    "alpha3": "fao",
+    "bibliographic": "",
+    "name": "Faroese"
+  },
+  {
+    "alpha2": "fa",
+    "alpha3": "fas",
+    "bibliographic": "per",
+    "name": "Persian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "fat",
+    "bibliographic": "",
+    "name": "Fanti"
+  },
+  {
+    "alpha2": "fj",
+    "alpha3": "fij",
+    "bibliographic": "",
+    "name": "Fijian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "fil",
+    "bibliographic": "",
+    "name": "Filipino"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "fil",
+    "bibliographic": "",
+    "name": "Pilipino"
+  },
+  {
+    "alpha2": "fi",
+    "alpha3": "fin",
+    "bibliographic": "",
+    "name": "Finnish"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "fiu",
+    "bibliographic": "",
+    "name": "Finno-Ugrian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "fon",
+    "bibliographic": "",
+    "name": "Fon"
+  },
+  {
+    "alpha2": "fr",
+    "alpha3": "fra",
+    "bibliographic": "fre",
+    "name": "French"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "frm",
+    "bibliographic": "",
+    "name": "French, Middle (ca.1400-1600)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "fro",
+    "bibliographic": "",
+    "name": "French, Old (842-ca.1400)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "frr",
+    "bibliographic": "",
+    "name": "Northern Frisian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "frs",
+    "bibliographic": "",
+    "name": "Eastern Frisian"
+  },
+  {
+    "alpha2": "fy",
+    "alpha3": "fry",
+    "bibliographic": "",
+    "name": "Western Frisian"
+  },
+  {
+    "alpha2": "ff",
+    "alpha3": "ful",
+    "bibliographic": "",
+    "name": "Fulah"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "fur",
+    "bibliographic": "",
+    "name": "Friulian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gaa",
+    "bibliographic": "",
+    "name": "Ga"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gay",
+    "bibliographic": "",
+    "name": "Gayo"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gba",
+    "bibliographic": "",
+    "name": "Gbaya"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gem",
+    "bibliographic": "",
+    "name": "Germanic languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gez",
+    "bibliographic": "",
+    "name": "Geez"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gil",
+    "bibliographic": "",
+    "name": "Gilbertese"
+  },
+  {
+    "alpha2": "gd",
+    "alpha3": "gla",
+    "bibliographic": "",
+    "name": "Gaelic"
+  },
+  {
+    "alpha2": "gd",
+    "alpha3": "gla",
+    "bibliographic": "",
+    "name": "Scottish Gaelic"
+  },
+  {
+    "alpha2": "ga",
+    "alpha3": "gle",
+    "bibliographic": "",
+    "name": "Irish"
+  },
+  {
+    "alpha2": "gl",
+    "alpha3": "glg",
+    "bibliographic": "",
+    "name": "Galician"
+  },
+  {
+    "alpha2": "gv",
+    "alpha3": "glv",
+    "bibliographic": "",
+    "name": "Manx"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gmh",
+    "bibliographic": "",
+    "name": "German, Middle High (ca.1050-1500)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "goh",
+    "bibliographic": "",
+    "name": "German, Old High (ca.750-1050)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gon",
+    "bibliographic": "",
+    "name": "Gondi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gor",
+    "bibliographic": "",
+    "name": "Gorontalo"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "got",
+    "bibliographic": "",
+    "name": "Gothic"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "grb",
+    "bibliographic": "",
+    "name": "Grebo"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "grc",
+    "bibliographic": "",
+    "name": "Greek, Ancient (to 1453)"
+  },
+  {
+    "alpha2": "gn",
+    "alpha3": "grn",
+    "bibliographic": "",
+    "name": "Guarani"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gsw",
+    "bibliographic": "",
+    "name": "Alemannic"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gsw",
+    "bibliographic": "",
+    "name": "Alsatian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gsw",
+    "bibliographic": "",
+    "name": "Swiss German"
+  },
+  {
+    "alpha2": "gu",
+    "alpha3": "guj",
+    "bibliographic": "",
+    "name": "Gujarati"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "gwi",
+    "bibliographic": "",
+    "name": "Gwich'in"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "hai",
+    "bibliographic": "",
+    "name": "Haida"
+  },
+  {
+    "alpha2": "ht",
+    "alpha3": "hat",
+    "bibliographic": "",
+    "name": "Haitian"
+  },
+  {
+    "alpha2": "ht",
+    "alpha3": "hat",
+    "bibliographic": "",
+    "name": "Haitian Creole"
+  },
+  {
+    "alpha2": "ha",
+    "alpha3": "hau",
+    "bibliographic": "",
+    "name": "Hausa"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "haw",
+    "bibliographic": "",
+    "name": "Hawaiian"
+  },
+  {
+    "alpha2": "he",
+    "alpha3": "heb",
+    "bibliographic": "",
+    "name": "Hebrew"
+  },
+  {
+    "alpha2": "hz",
+    "alpha3": "her",
+    "bibliographic": "",
+    "name": "Herero"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "hil",
+    "bibliographic": "",
+    "name": "Hiligaynon"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "him",
+    "bibliographic": "",
+    "name": "Himachali languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "him",
+    "bibliographic": "",
+    "name": "Western Pahari languages"
+  },
+  {
+    "alpha2": "hi",
+    "alpha3": "hin",
+    "bibliographic": "",
+    "name": "Hindi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "hit",
+    "bibliographic": "",
+    "name": "Hittite"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "hmn",
+    "bibliographic": "",
+    "name": "Hmong"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "hmn",
+    "bibliographic": "",
+    "name": "Mong"
+  },
+  {
+    "alpha2": "ho",
+    "alpha3": "hmo",
+    "bibliographic": "",
+    "name": "Hiri Motu"
+  },
+  {
+    "alpha2": "hr",
+    "alpha3": "hrv",
+    "bibliographic": "",
+    "name": "Croatian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "hsb",
+    "bibliographic": "",
+    "name": "Upper Sorbian"
+  },
+  {
+    "alpha2": "hu",
+    "alpha3": "hun",
+    "bibliographic": "",
+    "name": "Hungarian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "hup",
+    "bibliographic": "",
+    "name": "Hupa"
+  },
+  {
+    "alpha2": "hy",
+    "alpha3": "hye",
+    "bibliographic": "arm",
+    "name": "Armenian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "iba",
+    "bibliographic": "",
+    "name": "Iban"
+  },
+  {
+    "alpha2": "ig",
+    "alpha3": "ibo",
+    "bibliographic": "",
+    "name": "Igbo"
+  },
+  {
+    "alpha2": "io",
+    "alpha3": "ido",
+    "bibliographic": "",
+    "name": "Ido"
+  },
+  {
+    "alpha2": "ii",
+    "alpha3": "iii",
+    "bibliographic": "",
+    "name": "Nuosu"
+  },
+  {
+    "alpha2": "ii",
+    "alpha3": "iii",
+    "bibliographic": "",
+    "name": "Sichuan Yi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ijo",
+    "bibliographic": "",
+    "name": "Ijo languages"
+  },
+  {
+    "alpha2": "iu",
+    "alpha3": "iku",
+    "bibliographic": "",
+    "name": "Inuktitut"
+  },
+  {
+    "alpha2": "ie",
+    "alpha3": "ile",
+    "bibliographic": "",
+    "name": "Interlingue"
+  },
+  {
+    "alpha2": "ie",
+    "alpha3": "ile",
+    "bibliographic": "",
+    "name": "Occidental"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ilo",
+    "bibliographic": "",
+    "name": "Iloko"
+  },
+  {
+    "alpha2": "ia",
+    "alpha3": "ina",
+    "bibliographic": "",
+    "name": "Interlingua (International Auxiliary Language Association)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "inc",
+    "bibliographic": "",
+    "name": "Indic languages"
+  },
+  {
+    "alpha2": "id",
+    "alpha3": "ind",
+    "bibliographic": "",
+    "name": "Indonesian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ine",
+    "bibliographic": "",
+    "name": "Indo-European languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "inh",
+    "bibliographic": "",
+    "name": "Ingush"
+  },
+  {
+    "alpha2": "ik",
+    "alpha3": "ipk",
+    "bibliographic": "",
+    "name": "Inupiaq"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ira",
+    "bibliographic": "",
+    "name": "Iranian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "iro",
+    "bibliographic": "",
+    "name": "Iroquoian languages"
+  },
+  {
+    "alpha2": "is",
+    "alpha3": "isl",
+    "bibliographic": "ice",
+    "name": "Icelandic"
+  },
+  {
+    "alpha2": "it",
+    "alpha3": "ita",
+    "bibliographic": "",
+    "name": "Italian"
+  },
+  {
+    "alpha2": "jv",
+    "alpha3": "jav",
+    "bibliographic": "",
+    "name": "Javanese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "jbo",
+    "bibliographic": "",
+    "name": "Lojban"
+  },
+  {
+    "alpha2": "ja",
+    "alpha3": "jpn",
+    "bibliographic": "",
+    "name": "Japanese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "jpr",
+    "bibliographic": "",
+    "name": "Judeo-Persian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "jrb",
+    "bibliographic": "",
+    "name": "Judeo-Arabic"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kaa",
+    "bibliographic": "",
+    "name": "Kara-Kalpak"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kab",
+    "bibliographic": "",
+    "name": "Kabyle"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kac",
+    "bibliographic": "",
+    "name": "Jingpho"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kac",
+    "bibliographic": "",
+    "name": "Kachin"
+  },
+  {
+    "alpha2": "kl",
+    "alpha3": "kal",
+    "bibliographic": "",
+    "name": "Greenlandic"
+  },
+  {
+    "alpha2": "kl",
+    "alpha3": "kal",
+    "bibliographic": "",
+    "name": "Kalaallisut"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kam",
+    "bibliographic": "",
+    "name": "Kamba"
+  },
+  {
+    "alpha2": "kn",
+    "alpha3": "kan",
+    "bibliographic": "",
+    "name": "Kannada"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kar",
+    "bibliographic": "",
+    "name": "Karen languages"
+  },
+  {
+    "alpha2": "ks",
+    "alpha3": "kas",
+    "bibliographic": "",
+    "name": "Kashmiri"
+  },
+  {
+    "alpha2": "ka",
+    "alpha3": "kat",
+    "bibliographic": "geo",
+    "name": "Georgian"
+  },
+  {
+    "alpha2": "kr",
+    "alpha3": "kau",
+    "bibliographic": "",
+    "name": "Kanuri"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kaw",
+    "bibliographic": "",
+    "name": "Kawi"
+  },
+  {
+    "alpha2": "kk",
+    "alpha3": "kaz",
+    "bibliographic": "",
+    "name": "Kazakh"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kbd",
+    "bibliographic": "",
+    "name": "Kabardian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kha",
+    "bibliographic": "",
+    "name": "Khasi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "khi",
+    "bibliographic": "",
+    "name": "Khoisan languages"
+  },
+  {
+    "alpha2": "km",
+    "alpha3": "khm",
+    "bibliographic": "",
+    "name": "Central Khmer"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kho",
+    "bibliographic": "",
+    "name": "Khotanese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kho",
+    "bibliographic": "",
+    "name": "Sakan"
+  },
+  {
+    "alpha2": "ki",
+    "alpha3": "kik",
+    "bibliographic": "",
+    "name": "Gikuyu"
+  },
+  {
+    "alpha2": "ki",
+    "alpha3": "kik",
+    "bibliographic": "",
+    "name": "Kikuyu"
+  },
+  {
+    "alpha2": "rw",
+    "alpha3": "kin",
+    "bibliographic": "",
+    "name": "Kinyarwanda"
+  },
+  {
+    "alpha2": "ky",
+    "alpha3": "kir",
+    "bibliographic": "",
+    "name": "Kirghiz"
+  },
+  {
+    "alpha2": "ky",
+    "alpha3": "kir",
+    "bibliographic": "",
+    "name": "Kyrgyz"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kmb",
+    "bibliographic": "",
+    "name": "Kimbundu"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kok",
+    "bibliographic": "",
+    "name": "Konkani"
+  },
+  {
+    "alpha2": "kv",
+    "alpha3": "kom",
+    "bibliographic": "",
+    "name": "Komi"
+  },
+  {
+    "alpha2": "kg",
+    "alpha3": "kon",
+    "bibliographic": "",
+    "name": "Kongo"
+  },
+  {
+    "alpha2": "ko",
+    "alpha3": "kor",
+    "bibliographic": "",
+    "name": "Korean"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kos",
+    "bibliographic": "",
+    "name": "Kosraean"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kpe",
+    "bibliographic": "",
+    "name": "Kpelle"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "krc",
+    "bibliographic": "",
+    "name": "Karachay-Balkar"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "krl",
+    "bibliographic": "",
+    "name": "Karelian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kro",
+    "bibliographic": "",
+    "name": "Kru languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kru",
+    "bibliographic": "",
+    "name": "Kurukh"
+  },
+  {
+    "alpha2": "kj",
+    "alpha3": "kua",
+    "bibliographic": "",
+    "name": "Kuanyama"
+  },
+  {
+    "alpha2": "kj",
+    "alpha3": "kua",
+    "bibliographic": "",
+    "name": "Kwanyama"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kum",
+    "bibliographic": "",
+    "name": "Kumyk"
+  },
+  {
+    "alpha2": "ku",
+    "alpha3": "kur",
+    "bibliographic": "",
+    "name": "Kurdish"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "kut",
+    "bibliographic": "",
+    "name": "Kutenai"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "lad",
+    "bibliographic": "",
+    "name": "Ladino"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "lah",
+    "bibliographic": "",
+    "name": "Lahnda"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "lam",
+    "bibliographic": "",
+    "name": "Lamba"
+  },
+  {
+    "alpha2": "lo",
+    "alpha3": "lao",
+    "bibliographic": "",
+    "name": "Lao"
+  },
+  {
+    "alpha2": "la",
+    "alpha3": "lat",
+    "bibliographic": "",
+    "name": "Latin"
+  },
+  {
+    "alpha2": "lv",
+    "alpha3": "lav",
+    "bibliographic": "",
+    "name": "Latvian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "lez",
+    "bibliographic": "",
+    "name": "Lezghian"
+  },
+  {
+    "alpha2": "li",
+    "alpha3": "lim",
+    "bibliographic": "",
+    "name": "Limburgan"
+  },
+  {
+    "alpha2": "li",
+    "alpha3": "lim",
+    "bibliographic": "",
+    "name": "Limburger"
+  },
+  {
+    "alpha2": "li",
+    "alpha3": "lim",
+    "bibliographic": "",
+    "name": "Limburgish"
+  },
+  {
+    "alpha2": "ln",
+    "alpha3": "lin",
+    "bibliographic": "",
+    "name": "Lingala"
+  },
+  {
+    "alpha2": "lt",
+    "alpha3": "lit",
+    "bibliographic": "",
+    "name": "Lithuanian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "lol",
+    "bibliographic": "",
+    "name": "Mongo"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "loz",
+    "bibliographic": "",
+    "name": "Lozi"
+  },
+  {
+    "alpha2": "lb",
+    "alpha3": "ltz",
+    "bibliographic": "",
+    "name": "Letzeburgesch"
+  },
+  {
+    "alpha2": "lb",
+    "alpha3": "ltz",
+    "bibliographic": "",
+    "name": "Luxembourgish"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "lua",
+    "bibliographic": "",
+    "name": "Luba-Lulua"
+  },
+  {
+    "alpha2": "lu",
+    "alpha3": "lub",
+    "bibliographic": "",
+    "name": "Luba-Katanga"
+  },
+  {
+    "alpha2": "lg",
+    "alpha3": "lug",
+    "bibliographic": "",
+    "name": "Ganda"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "lui",
+    "bibliographic": "",
+    "name": "Luiseno"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "lun",
+    "bibliographic": "",
+    "name": "Lunda"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "luo",
+    "bibliographic": "",
+    "name": "Luo (Kenya and Tanzania)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "lus",
+    "bibliographic": "",
+    "name": "Lushai"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mad",
+    "bibliographic": "",
+    "name": "Madurese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mag",
+    "bibliographic": "",
+    "name": "Magahi"
+  },
+  {
+    "alpha2": "mh",
+    "alpha3": "mah",
+    "bibliographic": "",
+    "name": "Marshallese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mai",
+    "bibliographic": "",
+    "name": "Maithili"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mak",
+    "bibliographic": "",
+    "name": "Makasar"
+  },
+  {
+    "alpha2": "ml",
+    "alpha3": "mal",
+    "bibliographic": "",
+    "name": "Malayalam"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "man",
+    "bibliographic": "",
+    "name": "Mandingo"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "map",
+    "bibliographic": "",
+    "name": "Austronesian languages"
+  },
+  {
+    "alpha2": "mr",
+    "alpha3": "mar",
+    "bibliographic": "",
+    "name": "Marathi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mas",
+    "bibliographic": "",
+    "name": "Masai"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mdf",
+    "bibliographic": "",
+    "name": "Moksha"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mdr",
+    "bibliographic": "",
+    "name": "Mandar"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "men",
+    "bibliographic": "",
+    "name": "Mende"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mga",
+    "bibliographic": "",
+    "name": "Irish, Middle (900-1200)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mic",
+    "bibliographic": "",
+    "name": "Mi'kmaq"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mic",
+    "bibliographic": "",
+    "name": "Micmac"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "min",
+    "bibliographic": "",
+    "name": "Minangkabau"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mis",
+    "bibliographic": "",
+    "name": "Uncoded languages"
+  },
+  {
+    "alpha2": "mk",
+    "alpha3": "mkd",
+    "bibliographic": "mac",
+    "name": "Macedonian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mkh",
+    "bibliographic": "",
+    "name": "Mon-Khmer languages"
+  },
+  {
+    "alpha2": "mg",
+    "alpha3": "mlg",
+    "bibliographic": "",
+    "name": "Malagasy"
+  },
+  {
+    "alpha2": "mt",
+    "alpha3": "mlt",
+    "bibliographic": "",
+    "name": "Maltese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mnc",
+    "bibliographic": "",
+    "name": "Manchu"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mni",
+    "bibliographic": "",
+    "name": "Manipuri"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mno",
+    "bibliographic": "",
+    "name": "Manobo languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "moh",
+    "bibliographic": "",
+    "name": "Mohawk"
+  },
+  {
+    "alpha2": "mn",
+    "alpha3": "mon",
+    "bibliographic": "",
+    "name": "Mongolian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mos",
+    "bibliographic": "",
+    "name": "Mossi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mot",
+    "bibliographic": "",
+    "name": "Montenegrin"
+  },
+  {
+    "alpha2": "mi",
+    "alpha3": "mri",
+    "bibliographic": "mao",
+    "name": "Maori"
+  },
+  {
+    "alpha2": "ms",
+    "alpha3": "msa",
+    "bibliographic": "may",
+    "name": "Malay"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mul",
+    "bibliographic": "",
+    "name": "Multiple languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mun",
+    "bibliographic": "",
+    "name": "Munda languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mus",
+    "bibliographic": "",
+    "name": "Creek"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mwl",
+    "bibliographic": "",
+    "name": "Mirandese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "mwr",
+    "bibliographic": "",
+    "name": "Marwari"
+  },
+  {
+    "alpha2": "my",
+    "alpha3": "mya",
+    "bibliographic": "bur",
+    "name": "Burmese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "myn",
+    "bibliographic": "",
+    "name": "Mayan languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "myv",
+    "bibliographic": "",
+    "name": "Erzya"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nah",
+    "bibliographic": "",
+    "name": "Nahuatl languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nai",
+    "bibliographic": "",
+    "name": "North American Indian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nap",
+    "bibliographic": "",
+    "name": "Neapolitan"
+  },
+  {
+    "alpha2": "na",
+    "alpha3": "nau",
+    "bibliographic": "",
+    "name": "Nauru"
+  },
+  {
+    "alpha2": "nv",
+    "alpha3": "nav",
+    "bibliographic": "",
+    "name": "Navaho"
+  },
+  {
+    "alpha2": "nv",
+    "alpha3": "nav",
+    "bibliographic": "",
+    "name": "Navajo"
+  },
+  {
+    "alpha2": "nr",
+    "alpha3": "nbl",
+    "bibliographic": "",
+    "name": "Ndebele, South"
+  },
+  {
+    "alpha2": "nr",
+    "alpha3": "nbl",
+    "bibliographic": "",
+    "name": "South Ndebele"
+  },
+  {
+    "alpha2": "nd",
+    "alpha3": "nde",
+    "bibliographic": "",
+    "name": "Ndebele, North"
+  },
+  {
+    "alpha2": "nd",
+    "alpha3": "nde",
+    "bibliographic": "",
+    "name": "North Ndebele"
+  },
+  {
+    "alpha2": "ng",
+    "alpha3": "ndo",
+    "bibliographic": "",
+    "name": "Ndonga"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nds",
+    "bibliographic": "",
+    "name": "German, Low"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nds",
+    "bibliographic": "",
+    "name": "Low German"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nds",
+    "bibliographic": "",
+    "name": "Low Saxon"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nds",
+    "bibliographic": "",
+    "name": "Saxon, Low"
+  },
+  {
+    "alpha2": "ne",
+    "alpha3": "nep",
+    "bibliographic": "",
+    "name": "Nepali"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "new",
+    "bibliographic": "",
+    "name": "Nepal Bhasa"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "new",
+    "bibliographic": "",
+    "name": "Newari"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nia",
+    "bibliographic": "",
+    "name": "Nias"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nic",
+    "bibliographic": "",
+    "name": "Niger-Kordofanian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "niu",
+    "bibliographic": "",
+    "name": "Niuean"
+  },
+  {
+    "alpha2": "nl",
+    "alpha3": "nld",
+    "bibliographic": "dut",
+    "name": "Dutch"
+  },
+  {
+    "alpha2": "nl",
+    "alpha3": "nld",
+    "bibliographic": "dut",
+    "name": "Flemish"
+  },
+  {
+    "alpha2": "nn",
+    "alpha3": "nno",
+    "bibliographic": "",
+    "name": "Norwegian Nynorsk"
+  },
+  {
+    "alpha2": "nn",
+    "alpha3": "nno",
+    "bibliographic": "",
+    "name": "Nynorsk, Norwegian"
+  },
+  {
+    "alpha2": "nb",
+    "alpha3": "nob",
+    "bibliographic": "",
+    "name": "Bokmål, Norwegian"
+  },
+  {
+    "alpha2": "nb",
+    "alpha3": "nob",
+    "bibliographic": "",
+    "name": "Norwegian Bokmål"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nog",
+    "bibliographic": "",
+    "name": "Nogai"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "non",
+    "bibliographic": "",
+    "name": "Norse, Old"
+  },
+  {
+    "alpha2": "no",
+    "alpha3": "nor",
+    "bibliographic": "",
+    "name": "Norwegian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nqo",
+    "bibliographic": "",
+    "name": "N'Ko"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nso",
+    "bibliographic": "",
+    "name": "Northern Sotho"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nso",
+    "bibliographic": "",
+    "name": "Pedi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nso",
+    "bibliographic": "",
+    "name": "Sepedi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nso",
+    "bibliographic": "",
+    "name": "Sotho, Northern"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nub",
+    "bibliographic": "",
+    "name": "Nubian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nwc",
+    "bibliographic": "",
+    "name": "Classical Nepal Bhasa"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nwc",
+    "bibliographic": "",
+    "name": "Classical Newari"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nwc",
+    "bibliographic": "",
+    "name": "Old Newari"
+  },
+  {
+    "alpha2": "ny",
+    "alpha3": "nya",
+    "bibliographic": "",
+    "name": "Chewa"
+  },
+  {
+    "alpha2": "ny",
+    "alpha3": "nya",
+    "bibliographic": "",
+    "name": "Chichewa"
+  },
+  {
+    "alpha2": "ny",
+    "alpha3": "nya",
+    "bibliographic": "",
+    "name": "Nyanja"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nym",
+    "bibliographic": "",
+    "name": "Nyamwezi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nyn",
+    "bibliographic": "",
+    "name": "Nyankole"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nyo",
+    "bibliographic": "",
+    "name": "Nyoro"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "nzi",
+    "bibliographic": "",
+    "name": "Nzima"
+  },
+  {
+    "alpha2": "oc",
+    "alpha3": "oci",
+    "bibliographic": "",
+    "name": "Occitan (post 1500)"
+  },
+  {
+    "alpha2": "oj",
+    "alpha3": "oji",
+    "bibliographic": "",
+    "name": "Ojibwa"
+  },
+  {
+    "alpha2": "or",
+    "alpha3": "ori",
+    "bibliographic": "",
+    "name": "Oriya"
+  },
+  {
+    "alpha2": "om",
+    "alpha3": "orm",
+    "bibliographic": "",
+    "name": "Oromo"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "osa",
+    "bibliographic": "",
+    "name": "Osage"
+  },
+  {
+    "alpha2": "os",
+    "alpha3": "oss",
+    "bibliographic": "",
+    "name": "Ossetian"
+  },
+  {
+    "alpha2": "os",
+    "alpha3": "oss",
+    "bibliographic": "",
+    "name": "Ossetic"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ota",
+    "bibliographic": "",
+    "name": "Turkish, Ottoman (1500-1928)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "oto",
+    "bibliographic": "",
+    "name": "Otomian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "paa",
+    "bibliographic": "",
+    "name": "Papuan languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "pag",
+    "bibliographic": "",
+    "name": "Pangasinan"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "pal",
+    "bibliographic": "",
+    "name": "Pahlavi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "pam",
+    "bibliographic": "",
+    "name": "Kapampangan"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "pam",
+    "bibliographic": "",
+    "name": "Pampanga"
+  },
+  {
+    "alpha2": "pa",
+    "alpha3": "pan",
+    "bibliographic": "",
+    "name": "Panjabi"
+  },
+  {
+    "alpha2": "pa",
+    "alpha3": "pan",
+    "bibliographic": "",
+    "name": "Punjabi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "pap",
+    "bibliographic": "",
+    "name": "Papiamento"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "pau",
+    "bibliographic": "",
+    "name": "Palauan"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "peo",
+    "bibliographic": "",
+    "name": "Persian, Old (ca.600-400 B.C.)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "phi",
+    "bibliographic": "",
+    "name": "Philippine languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "phn",
+    "bibliographic": "",
+    "name": "Phoenician"
+  },
+  {
+    "alpha2": "pi",
+    "alpha3": "pli",
+    "bibliographic": "",
+    "name": "Pali"
+  },
+  {
+    "alpha2": "pl",
+    "alpha3": "pol",
+    "bibliographic": "",
+    "name": "Polish"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "pon",
+    "bibliographic": "",
+    "name": "Pohnpeian"
+  },
+  {
+    "alpha2": "pt",
+    "alpha3": "por",
+    "bibliographic": "",
+    "name": "Portuguese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "pra",
+    "bibliographic": "",
+    "name": "Prakrit languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "pro",
+    "bibliographic": "",
+    "name": "Occitan, Old (to 1500)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "pro",
+    "bibliographic": "",
+    "name": "Provençal, Old (to 1500)"
+  },
+  {
+    "alpha2": "ps",
+    "alpha3": "pus",
+    "bibliographic": "",
+    "name": "Pashto"
+  },
+  {
+    "alpha2": "ps",
+    "alpha3": "pus",
+    "bibliographic": "",
+    "name": "Pushto"
+  },
+  {
+    "alpha2": "qu",
+    "alpha3": "que",
+    "bibliographic": "",
+    "name": "Quechua"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "raj",
+    "bibliographic": "",
+    "name": "Rajasthani"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "rap",
+    "bibliographic": "",
+    "name": "Rapanui"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "rar",
+    "bibliographic": "",
+    "name": "Cook Islands Maori"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "rar",
+    "bibliographic": "",
+    "name": "Rarotongan"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "roa",
+    "bibliographic": "",
+    "name": "Romance languages"
+  },
+  {
+    "alpha2": "rm",
+    "alpha3": "roh",
+    "bibliographic": "",
+    "name": "Romansh"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "rom",
+    "bibliographic": "",
+    "name": "Romany"
+  },
+  {
+    "alpha2": "ro",
+    "alpha3": "ron",
+    "bibliographic": "rum",
+    "name": "Moldavian"
+  },
+  {
+    "alpha2": "ro",
+    "alpha3": "ron",
+    "bibliographic": "rum",
+    "name": "Romanian"
+  },
+  {
+    "alpha2": "rn",
+    "alpha3": "run",
+    "bibliographic": "",
+    "name": "Rundi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "rup",
+    "bibliographic": "",
+    "name": "Aromanian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "rup",
+    "bibliographic": "",
+    "name": "Arumanian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "rup",
+    "bibliographic": "",
+    "name": "Macedo-Romanian"
+  },
+  {
+    "alpha2": "ru",
+    "alpha3": "rus",
+    "bibliographic": "",
+    "name": "Russian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sad",
+    "bibliographic": "",
+    "name": "Sandawe"
+  },
+  {
+    "alpha2": "sg",
+    "alpha3": "sag",
+    "bibliographic": "",
+    "name": "Sango"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sah",
+    "bibliographic": "",
+    "name": "Yakut"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sai",
+    "bibliographic": "",
+    "name": "South American Indian languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sal",
+    "bibliographic": "",
+    "name": "Salishan languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sam",
+    "bibliographic": "",
+    "name": "Samaritan Aramaic"
+  },
+  {
+    "alpha2": "sa",
+    "alpha3": "san",
+    "bibliographic": "",
+    "name": "Sanskrit"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sas",
+    "bibliographic": "",
+    "name": "Sasak"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sat",
+    "bibliographic": "",
+    "name": "Santali"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "scn",
+    "bibliographic": "",
+    "name": "Sicilian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sco",
+    "bibliographic": "",
+    "name": "Scots"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sel",
+    "bibliographic": "",
+    "name": "Selkup"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sem",
+    "bibliographic": "",
+    "name": "Semitic languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sga",
+    "bibliographic": "",
+    "name": "Irish, Old (to 900)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sgn",
+    "bibliographic": "",
+    "name": "Sign Languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "shn",
+    "bibliographic": "",
+    "name": "Shan"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sid",
+    "bibliographic": "",
+    "name": "Sidamo"
+  },
+  {
+    "alpha2": "si",
+    "alpha3": "sin",
+    "bibliographic": "",
+    "name": "Sinhala"
+  },
+  {
+    "alpha2": "si",
+    "alpha3": "sin",
+    "bibliographic": "",
+    "name": "Sinhalese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sio",
+    "bibliographic": "",
+    "name": "Siouan languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sit",
+    "bibliographic": "",
+    "name": "Sino-Tibetan languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sla",
+    "bibliographic": "",
+    "name": "Slavic languages"
+  },
+  {
+    "alpha2": "sk",
+    "alpha3": "slk",
+    "bibliographic": "slo",
+    "name": "Slovak"
+  },
+  {
+    "alpha2": "sl",
+    "alpha3": "slv",
+    "bibliographic": "",
+    "name": "Slovenian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sma",
+    "bibliographic": "",
+    "name": "Southern Sami"
+  },
+  {
+    "alpha2": "se",
+    "alpha3": "sme",
+    "bibliographic": "",
+    "name": "Northern Sami"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "smi",
+    "bibliographic": "",
+    "name": "Sami languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "smj",
+    "bibliographic": "",
+    "name": "Lule Sami"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "smn",
+    "bibliographic": "",
+    "name": "Inari Sami"
+  },
+  {
+    "alpha2": "sm",
+    "alpha3": "smo",
+    "bibliographic": "",
+    "name": "Samoan"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sms",
+    "bibliographic": "",
+    "name": "Skolt Sami"
+  },
+  {
+    "alpha2": "sn",
+    "alpha3": "sna",
+    "bibliographic": "",
+    "name": "Shona"
+  },
+  {
+    "alpha2": "sd",
+    "alpha3": "snd",
+    "bibliographic": "",
+    "name": "Sindhi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "snk",
+    "bibliographic": "",
+    "name": "Soninke"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sog",
+    "bibliographic": "",
+    "name": "Sogdian"
+  },
+  {
+    "alpha2": "so",
+    "alpha3": "som",
+    "bibliographic": "",
+    "name": "Somali"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "son",
+    "bibliographic": "",
+    "name": "Songhai languages"
+  },
+  {
+    "alpha2": "st",
+    "alpha3": "sot",
+    "bibliographic": "",
+    "name": "Sotho, Southern"
+  },
+  {
+    "alpha2": "es",
+    "alpha3": "spa",
+    "bibliographic": "",
+    "name": "Castilian"
+  },
+  {
+    "alpha2": "es",
+    "alpha3": "spa",
+    "bibliographic": "",
+    "name": "Spanish"
+  },
+  {
+    "alpha2": "sq",
+    "alpha3": "sqi",
+    "bibliographic": "alb",
+    "name": "Albanian"
+  },
+  {
+    "alpha2": "sc",
+    "alpha3": "srd",
+    "bibliographic": "",
+    "name": "Sardinian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "srn",
+    "bibliographic": "",
+    "name": "Sranan Tongo"
+  },
+  {
+    "alpha2": "sr",
+    "alpha3": "srp",
+    "bibliographic": "",
+    "name": "Serbian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "srr",
+    "bibliographic": "",
+    "name": "Serer"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ssa",
+    "bibliographic": "",
+    "name": "Nilo-Saharan languages"
+  },
+  {
+    "alpha2": "ss",
+    "alpha3": "ssw",
+    "bibliographic": "",
+    "name": "Swati"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "suk",
+    "bibliographic": "",
+    "name": "Sukuma"
+  },
+  {
+    "alpha2": "su",
+    "alpha3": "sun",
+    "bibliographic": "",
+    "name": "Sundanese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sus",
+    "bibliographic": "",
+    "name": "Susu"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "sux",
+    "bibliographic": "",
+    "name": "Sumerian"
+  },
+  {
+    "alpha2": "sw",
+    "alpha3": "swa",
+    "bibliographic": "",
+    "name": "Swahili"
+  },
+  {
+    "alpha2": "sv",
+    "alpha3": "swe",
+    "bibliographic": "",
+    "name": "Swedish"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "syc",
+    "bibliographic": "",
+    "name": "Classical Syriac"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "syr",
+    "bibliographic": "",
+    "name": "Syriac"
+  },
+  {
+    "alpha2": "ty",
+    "alpha3": "tah",
+    "bibliographic": "",
+    "name": "Tahitian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tai",
+    "bibliographic": "",
+    "name": "Tai languages"
+  },
+  {
+    "alpha2": "ta",
+    "alpha3": "tam",
+    "bibliographic": "",
+    "name": "Tamil"
+  },
+  {
+    "alpha2": "tt",
+    "alpha3": "tat",
+    "bibliographic": "",
+    "name": "Tatar"
+  },
+  {
+    "alpha2": "te",
+    "alpha3": "tel",
+    "bibliographic": "",
+    "name": "Telugu"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tem",
+    "bibliographic": "",
+    "name": "Timne"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ter",
+    "bibliographic": "",
+    "name": "Tereno"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tet",
+    "bibliographic": "",
+    "name": "Tetum"
+  },
+  {
+    "alpha2": "tg",
+    "alpha3": "tgk",
+    "bibliographic": "",
+    "name": "Tajik"
+  },
+  {
+    "alpha2": "tl",
+    "alpha3": "tgl",
+    "bibliographic": "",
+    "name": "Tagalog"
+  },
+  {
+    "alpha2": "th",
+    "alpha3": "tha",
+    "bibliographic": "",
+    "name": "Thai"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tig",
+    "bibliographic": "",
+    "name": "Tigre"
+  },
+  {
+    "alpha2": "ti",
+    "alpha3": "tir",
+    "bibliographic": "",
+    "name": "Tigrinya"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tiv",
+    "bibliographic": "",
+    "name": "Tiv"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tkl",
+    "bibliographic": "",
+    "name": "Tokelau"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tlh",
+    "bibliographic": "",
+    "name": "Klingon"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tlh",
+    "bibliographic": "",
+    "name": "tlhIngan-Hol"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tli",
+    "bibliographic": "",
+    "name": "Tlingit"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tmh",
+    "bibliographic": "",
+    "name": "Tamashek"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tog",
+    "bibliographic": "",
+    "name": "Tonga (Nyasa)"
+  },
+  {
+    "alpha2": "to",
+    "alpha3": "ton",
+    "bibliographic": "",
+    "name": "Tonga (Tonga Islands)"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tpi",
+    "bibliographic": "",
+    "name": "Tok Pisin"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tsi",
+    "bibliographic": "",
+    "name": "Tsimshian"
+  },
+  {
+    "alpha2": "tn",
+    "alpha3": "tsn",
+    "bibliographic": "",
+    "name": "Tswana"
+  },
+  {
+    "alpha2": "ts",
+    "alpha3": "tso",
+    "bibliographic": "",
+    "name": "Tsonga"
+  },
+  {
+    "alpha2": "tk",
+    "alpha3": "tuk",
+    "bibliographic": "",
+    "name": "Turkmen"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tum",
+    "bibliographic": "",
+    "name": "Tumbuka"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tup",
+    "bibliographic": "",
+    "name": "Tupi languages"
+  },
+  {
+    "alpha2": "tr",
+    "alpha3": "tur",
+    "bibliographic": "",
+    "name": "Turkish"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tut",
+    "bibliographic": "",
+    "name": "Altaic languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tvl",
+    "bibliographic": "",
+    "name": "Tuvalu"
+  },
+  {
+    "alpha2": "tw",
+    "alpha3": "twi",
+    "bibliographic": "",
+    "name": "Twi"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "tyv",
+    "bibliographic": "",
+    "name": "Tuvinian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "udm",
+    "bibliographic": "",
+    "name": "Udmurt"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "uga",
+    "bibliographic": "",
+    "name": "Ugaritic"
+  },
+  {
+    "alpha2": "ug",
+    "alpha3": "uig",
+    "bibliographic": "",
+    "name": "Uighur"
+  },
+  {
+    "alpha2": "ug",
+    "alpha3": "uig",
+    "bibliographic": "",
+    "name": "Uyghur"
+  },
+  {
+    "alpha2": "uk",
+    "alpha3": "ukr",
+    "bibliographic": "",
+    "name": "Ukrainian"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "umb",
+    "bibliographic": "",
+    "name": "Umbundu"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "und",
+    "bibliographic": "",
+    "name": "Undetermined"
+  },
+  {
+    "alpha2": "ur",
+    "alpha3": "urd",
+    "bibliographic": "",
+    "name": "Urdu"
+  },
+  {
+    "alpha2": "uz",
+    "alpha3": "uzb",
+    "bibliographic": "",
+    "name": "Uzbek"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "vai",
+    "bibliographic": "",
+    "name": "Vai"
+  },
+  {
+    "alpha2": "ve",
+    "alpha3": "ven",
+    "bibliographic": "",
+    "name": "Venda"
+  },
+  {
+    "alpha2": "vi",
+    "alpha3": "vie",
+    "bibliographic": "",
+    "name": "Vietnamese"
+  },
+  {
+    "alpha2": "vo",
+    "alpha3": "vol",
+    "bibliographic": "",
+    "name": "Volapük"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "vot",
+    "bibliographic": "",
+    "name": "Votic"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "wak",
+    "bibliographic": "",
+    "name": "Wakashan languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "wal",
+    "bibliographic": "",
+    "name": "Wolaitta"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "wal",
+    "bibliographic": "",
+    "name": "Wolaytta"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "war",
+    "bibliographic": "",
+    "name": "Waray"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "was",
+    "bibliographic": "",
+    "name": "Washo"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "wen",
+    "bibliographic": "",
+    "name": "Sorbian languages"
+  },
+  {
+    "alpha2": "wa",
+    "alpha3": "wln",
+    "bibliographic": "",
+    "name": "Walloon"
+  },
+  {
+    "alpha2": "wo",
+    "alpha3": "wol",
+    "bibliographic": "",
+    "name": "Wolof"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "xal",
+    "bibliographic": "",
+    "name": "Kalmyk"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "xal",
+    "bibliographic": "",
+    "name": "Oirat"
+  },
+  {
+    "alpha2": "xh",
+    "alpha3": "xho",
+    "bibliographic": "",
+    "name": "Xhosa"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "yao",
+    "bibliographic": "",
+    "name": "Yao"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "yap",
+    "bibliographic": "",
+    "name": "Yapese"
+  },
+  {
+    "alpha2": "yi",
+    "alpha3": "yid",
+    "bibliographic": "",
+    "name": "Yiddish"
+  },
+  {
+    "alpha2": "yo",
+    "alpha3": "yor",
+    "bibliographic": "",
+    "name": "Yoruba"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "ypk",
+    "bibliographic": "",
+    "name": "Yupik languages"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zap",
+    "bibliographic": "",
+    "name": "Zapotec"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zbl",
+    "bibliographic": "",
+    "name": "Bliss"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zbl",
+    "bibliographic": "",
+    "name": "Blissymbolics"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zbl",
+    "bibliographic": "",
+    "name": "Blissymbols"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zen",
+    "bibliographic": "",
+    "name": "Zenaga"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zgh",
+    "bibliographic": "",
+    "name": "Standard Moroccan Tamazight"
+  },
+  {
+    "alpha2": "za",
+    "alpha3": "zha",
+    "bibliographic": "",
+    "name": "Chuang"
+  },
+  {
+    "alpha2": "za",
+    "alpha3": "zha",
+    "bibliographic": "",
+    "name": "Zhuang"
+  },
+  {
+    "alpha2": "zh",
+    "alpha3": "zho",
+    "bibliographic": "chi",
+    "name": "Chinese"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "znd",
+    "bibliographic": "",
+    "name": "Zande languages"
+  },
+  {
+    "alpha2": "zu",
+    "alpha3": "zul",
+    "bibliographic": "",
+    "name": "Zulu"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zun",
+    "bibliographic": "",
+    "name": "Zuni"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zxx",
+    "bibliographic": "",
+    "name": "No linguistic content"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zxx",
+    "bibliographic": "",
+    "name": "Not applicable"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zza",
+    "bibliographic": "",
+    "name": "Dimili"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zza",
+    "bibliographic": "",
+    "name": "Dimli"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zza",
+    "bibliographic": "",
+    "name": "Kirdki"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zza",
+    "bibliographic": "",
+    "name": "Kirmanjki"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zza",
+    "bibliographic": "",
+    "name": "Zaza"
+  },
+  {
+    "alpha2": "",
+    "alpha3": "zza",
+    "bibliographic": "",
+    "name": "Zazaki"
+  }
+]
+
+},{}],5:[function(require,module,exports){
+'use strict';
+
+var regions = {};
+
+regions.centralAsia = {
+  name: 'Central Asia',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Central_Asia
+    'KZ', // Kazakhstan
+    'KG', // Kyrgyzstan
+    'TJ', // Tajikistan
+    'TM', // Turkmenistan
+    'UZ', // Uzbekistan
+  ]
+}
+
+regions.southernAsia = {
+  name: 'Southern Asia',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/South_Asia
+    'AF', // Afghanistan
+    'BD', // Bangladesh
+    'BT', // Bhutan
+    'IO', // British Indian Ocean Territory
+    'IN', // India
+    'IR', // Iran
+    'MV', // Maldives
+    'NP', // Nepal
+    'PK', // Pakistan
+    'LK', // Sri Lanka
+  ]
+}
+
+regions.southeastAsia = {
+  name: 'Southeast Asia',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Southeast_Asia
+    'BN', // Brunei
+    'KH', // Cambodia
+    'CX', // Christmas Island
+    'CC', // Cocos (Keeling) Islands
+    'TL', // East Timor
+    'ID', // Indonesia
+    'LA', // Laos
+    'MY', // Malaysia
+    'MM', // Myanmar (Burma)
+    'PH', // Philippines
+    'SG', // Singapore
+    'TH', // Thailand
+    'VN', // Vietnam
+  ]
+}
+
+regions.eastAsia = {
+  name: 'East Asia',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/East_Asia
+    'CN', // China
+    'HK', // Hong Kong
+    'JP', // Japan
+    'KP', // North Korea
+    'KR', // South Korea
+    'MO', // Macao
+    'MN', // Mongolia
+    'TW', // Taiwan
+  ]
+}
+
+regions.westernAsia = {
+  name: 'Western Asia',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Western_Asia
+    'AM', // Armenia
+    'AZ', // Azerbaijan
+    'BH', // Bahrain
+    'IQ', // Iraq
+    'IL', // Israel
+    'JO', // Jordan
+    'KW', // Kuwait
+    'LB', // Lebanon
+    'OM', // Oman
+    'PS', // Palestinian territories
+    'QA', // Qatar
+    'SA', // Saudi Arabia
+    'SY', // Syria
+    'TR', // Turkey
+    'AE', // United Arab Emirates
+    'YE', // Yemen
+  ]
+}
+
+regions.centralAfrica = {
+  name: 'Central Aftrica',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Central_Africa
+    'AO', // Angola
+    'CM', // Cameroon
+    'CF', // Central African Republic
+    'TD', // Chad
+    'CG', // Republic of the Congo
+    'CD', // Democratic Republic of the Congo
+    'GQ', // Equatorial Guinea
+    'GA', // Gabon
+    'ST', // São Tomé and Príncipe
+  ]
+};
+
+regions.northAfrica = {
+  name: 'North Africa',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/North_Africa
+    'DZ', // Algeria
+    'EG', // Egypt
+    'LY', // Libya
+    'MA', // Morocco
+    'SD', // Sudan
+    'TN', // Tunisia
+    'EH', // Western Sahara
+  ]
+};
+
+regions.southernAfrica = {
+  name: 'Southern Africa',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Southern_Africa
+    'BW', // Botswana
+    'LS', // Lesotho
+    'NA', // Namibia
+    'ZA', // South Africa
+    'SZ', // Swaziland
+  ]
+};
+
+regions.eastAfrica = {
+  name: 'East Africa',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/East_Africa
+    'BI', // Burundi
+    'KM', // Comoros
+    'DJ', // Djibouti
+    'ER', // Eritrea
+    'ET', // Ethiopia
+    'KE', // Kenya
+    'MG', // Madagascar
+    'MW', // Malawi
+    'MU', // Mauritius
+    'YT', // Mayotte (France)
+    'MZ', // Mozambique
+    'RE', // Réunion (France)
+    'RW', // Rwanda
+    'SC', // Seychelles
+    'SO', // Somalia
+    'SS', // South Sudan
+    'TZ', // Tanzania
+    'UG', // Uganda
+    'ZM', // Zambia
+    'ZW', // Zimbabwe
+  ]
+};
+
+regions.westAfrica = {
+  name: 'West Africa',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/West_Africa
+    'BJ', // Benin
+    'BF', // Burkina Faso
+    'CV', // Cabo Verde
+    'CI', // Côte d'Ivoire
+    'GM', // Gambia
+    'GH', // Ghana
+    'GN', // Guinea
+    'GW', // Guinea-Bissau
+    'LR', // Liberia
+    'ML', // Mali
+    'MR', // Mauritania
+    'NE', // Niger
+    'NG', // Nigeria
+    'SH', // Saint Helena, Ascension and Tristan da Cunha (United Kingdom)
+    'SN', // Senegal
+    'SL', // Sierra Leone
+    'TG', // Togo
+  ]
+};
+
+regions.centralAmerica = {
+  name: 'Central America',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Central_America
+    'BZ', // Belize
+    'CR', // Costa Rica
+    'SV', // El Salvador
+    'GT', // Guatemala
+    'HN', // Honduras
+    'NI', // Nicaragua
+    'PA', // Panama
+  ]
+}
+
+regions.northernAmerica = {
+  name: 'Northern America',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Northern_America
+    'BM', // Bermuda
+    'CA', // Canada
+    'GL', // Greenland
+    'MX', // Mexico
+    'PM', // Saint Pierre and Miquelon
+    'US', // United States
+  ]
+}
+
+regions.caribbean = {
+  name: 'Caribbean',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Caribbean
+    'AI', // Anguilla
+    'AG', // Antigua and Barbuda
+    'AW', // Aruba
+    'BS', // Bahamas
+    'BB', // Barbados
+    'BQ', // Bonaire, Sint Eustatius & Saba
+    'VG', // British Virgin Islands
+    'KY', // Cayman Islands
+    'CU', // Cuba
+    'CW', // Curaçao
+    'DM', // Dominica
+    'DO', // Dominican Republic
+    'GD', // Grenada
+    'GP', // Guadeloupe
+    'HT', // Haiti
+    'JM', // Jamaica
+    'MQ', // Martinique
+    'MS', // Montserrat
+    'PR', // Puerto Rico
+    'BL', // Saint Barthélemy
+    'KN', // St. Kitts & Nevis
+    'LC', // Saint Lucia
+    'MF', // Saint Martin
+    'VC', // Saint Vincent and the Grenadines
+    'SX', // Sint Maarten
+    'TT', // Trinidad and Tobago
+    'TC', // Turks & Caicos
+    'VI', // United States Virgin Islands
+  ]
+}
+
+regions.southAmerica = {
+  name: 'South America',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/South_America
+    'AR', // Argentina
+    'BO', // Bolivia
+    'BR', // Brazil
+    'CL', // Chile
+    'CO', // Colombia
+    'EC', // Ecuador
+    'FK', // Falkland Islands
+    'GF', // French Guiana
+    'GY', // Guyana
+    'PY', // Paraguay
+    'PE', // Peru
+    'SR', // Suriname
+    'UY', // Uruguay
+    'VE', // Venezuela
+  ]
+}
+
+regions.antartica = {
+  name: 'Antartica',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Antarctica
+    'AQ', // Antarctica
+    'BV', // Bouvet Island
+    'TF', // French Southern Territories
+    'HM', // Heard Island and McDonald Islands
+    'GS', // South Georgia and the South Sandwich Islands
+  ]
+}
+
+regions.northernEurope = {
+  name: 'Northern Europe',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Northern_Europe
+    'AX', // Åland
+    'DK', // Denmark
+    'EE', // Estonia
+    'FO', // Faroe Islands
+    'FI', // Finland
+    'GG', // Guernsey
+    'IS', // Iceland
+    'IE', // Republic of Ireland
+    'JE', // Jersey (UK)
+    'IM', // Isle of Man
+    'LV', // Latvia
+    'LT', // Lithuania
+    'NO', // Norway
+    'SJ', // Svalbard and Jan Mayen
+    'SE', // Sweden
+    'GB', // United Kingdom
+  ]
+}
+
+regions.southernEurope = {
+  name: 'Southern Europe',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Southern_Europe
+    'AL', // Albania
+    'AD', // Andorra
+    'BA', // Bosnia and Herzegovina
+    'HR', // Croatia
+    'CY', // Cyprus
+    'GI', // Gibraltar
+    'GR', // Greece
+    'IT', // Italy
+    'MK', // Republic of Macedonia
+    'VA', // Vatican City
+    'MT', // Malta
+    'ME', // Montenegro
+    'PT', // Portugal
+    'SM', // San Marino
+    'RS', // Serbia
+    'SI', // Slovenia
+    'ES', // Spain
+  ]
+}
+
+regions.easternEurope = {
+  name: 'Eastern Europe',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Eastern_Europe
+    'BY', // Belarus
+    'BG', // Bulgaria
+    'CZ', // Czech Republic
+    'GE', // Georgia
+    'HU', // Hungary
+    'MD', // Moldova
+    'PL', // Poland
+    'RO', // Romania
+    'RU', // Russia
+    'SK', // Slovakia
+    'UA', // Ukraine
+  ]
+}
+
+regions.westernEurope = {
+  name: 'Western Europe',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Western_Europe
+    'AT', // Austria
+    'BE', // Belgium
+    'FR', // France
+    'DE', // Germany
+    'LI', // Liechtenstein
+    'LU', // Luxembourg
+    'MC', // Monaco
+    'NL', // Netherlands
+    'CH', // Switzerland
+  ],
+};
+ 
+regions.australia = {
+  name: 'Australia',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Oceania
+    'AU', // Australia
+    'NF', // Norfolk Island
+    'NZ', // New Zealand
+  ]
+};
+
+regions.melanesia = {
+  name: 'Melanesia',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Oceania
+    'FJ', // Fiji
+    'NC', //  New Caledonia
+    'PG', // Papua New Guinea
+    'SB', // Solomon Islands
+    'VU', // Vanuatu
+  ]
+};    
+
+regions.micronesia = {
+  name: 'Micronesia',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Oceania
+    'GU', // Guam
+    'KI', // Kiribati
+    'MH', // Marshall Islands
+    'FM', // Micronesia, Fed. Sts.
+    'NR', // Nauru
+    'MP', // Northern Mariana Islands
+    'PW', // Palau
+    'UM', // United States Minor Outlying Islands
+  ]
+};    
+
+regions.polynesia = {
+  name: 'Polynesia',
+  countries: [
+    // source is http://en.wikipedia.org/wiki/Oceania
+    'AS', // American Samoa
+    'CK', // Cook Islands
+    'PF', // French Polynesia
+    'NU', // Niue
+    'PN', // Pitcairn Islands
+    'WS', // Samoa
+    'TK', // Tokelau
+    'TO', // Tonga
+    'TV', // Tuvalu
+    'WF', // Wallis and Futuna
+  ]
+};
+
+module.exports = regions;
+
+},{}],6:[function(require,module,exports){
+'use strict';
+
+var _ = require('underscore');
+var continents = require('./data/continents');
+var regions = require('./data/regions');
+var countriesAll = require('./data/countries.json');
+var currenciesAll = require('./data/currencies.json');
+var languagesAll = require('./data/languages.json');
+var lookup = require('./lookup');
+
+var getSymbol = require('currency-symbol-map')
+
+exports.continents = continents;
+exports.regions = regions;
+
+exports.countries = {
+  all: countriesAll,
+};
+
+_.each(countriesAll, function (country) {
+  exports.countries[country.alpha2] = country;
+  exports.countries[country.alpha3] = country;
+});
+
+exports.currencies = {
+  all: currenciesAll,
+};
+
+_.each(currenciesAll, function (currency) {
+  //If the symbol isn't available, default to the currency code
+  var symbol = getSymbol(currency.code);
+  if (symbol == '?') {
+    symbol = currency.code;
+  }
+
+  currency.symbol = symbol;
+  exports.currencies[currency.code] = currency;
+});
+
+exports.languages = {
+  all: languagesAll,
+};
+
+// Note that for the languages there are several entries with the same alpha3 -
+// eg Dutch and Flemish. Not sure how to best deal with that - here whichever
+// comes last wins.
+_.each(languagesAll, function (language) {
+  exports.languages[language.alpha2] = language;
+  exports.languages[language.bibliographic] = language;
+  exports.languages[language.alpha3] = language;
+});
+
+exports.lookup = lookup({
+    countries: countriesAll,
+    currencies: currenciesAll,
+    languages: languagesAll
+});
+
+var callingCountries = {all: []};
+
+var callingCodesAll = _.reduce(countriesAll, function (codes, country) {
+  if (country.countryCallingCodes && country.countryCallingCodes.length) {
+    callingCountries.all.push(country);
+
+    callingCountries[country.alpha2] = country;
+    callingCountries[country.alpha3] = country;
+
+    _.each(country.countryCallingCodes, function (code) {
+      if (codes.indexOf(code) == -1) {
+        codes.push(code);
+      }
+    });
+  }
+  return codes;
+}, []);
+
+delete callingCountries['']; // remove empty alpha3s
+exports.callingCountries = callingCountries;
+
+callingCodesAll.sort(function (a, b) {
+  var parse = function (str) { return parseInt(str) };
+  var splitA = _.map(a.split(' '), parse);
+  var splitB = _.map(b.split(' '), parse);
+
+  if (splitA[0] < splitB[0]) {
+    return -1;
+  } else if (splitA[0] > splitB[0]) {
+    return 1;
+  } else {
+    // Same - check split[1]
+    if (splitA[1] === undefined && splitB[1] !== undefined) {
+      return -1;
+    } else if (splitA[1] !== undefined && splitB[1] === undefined) {
+      return 1;
+    } else if (splitA[1] < splitB[1]) {
+      return -1;
+    } else if (splitA[1] > splitB[1]) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+});
+
+exports.callingCodes = {
+  all: callingCodesAll
+};
+
+},{"./data/continents":1,"./data/countries.json":2,"./data/currencies.json":3,"./data/languages.json":4,"./data/regions":5,"./lookup":7,"currency-symbol-map":8,"underscore":176}],7:[function(require,module,exports){
+var _ = require('underscore');
+
+module.exports = init;
+
+function init(o) {
+  return {
+    countries: search.bind(null, o.countries),
+    currencies: search.bind(null, o.currencies),
+    languages: search.bind(null, o.languages)
+  };
+}
+
+function search(data, query) {
+  var q = _.pairs(query);
+
+  return data.filter(function(d) {
+    return q.filter(function(v) {
+      var prop = d[v[0]];
+
+      if(_.isArray(prop)) return prop.indexOf(v[1]) >= 0;
+
+      return prop == v[1];
+    }).length == q.length;
+  });
+}
+},{"underscore":176}],8:[function(require,module,exports){
+module.exports = mapSymbol
+
+var map = require('./map')
+
+function mapSymbol(currencyCode) {
+  if (map.hasOwnProperty(currencyCode)) {
+    return map[currencyCode]
+  } else {
+    return '?'
+  }
+}
+},{"./map":9}],9:[function(require,module,exports){
+module.exports =
+{ "ALL": "L"
+, "AFN": "؋"
+, "ARS": "$"
+, "AWG": "ƒ"
+, "AUD": "$"
+, "AZN": "₼"
+, "BSD": "$"
+, "BBD": "$"
+, "BYR": "p."
+, "BZD": "BZ$"
+, "BMD": "$"
+, "BOB": "Bs."
+, "BAM": "KM"
+, "BWP": "P"
+, "BGN": "лв"
+, "BRL": "R$"
+, "BND": "$"
+, "KHR": "៛"
+, "CAD": "$"
+, "KYD": "$"
+, "CLP": "$"
+, "CNY": "¥"
+, "COP": "$"
+, "CRC": "₡"
+, "HRK": "kn"
+, "CUP": "₱"
+, "CZK": "Kč"
+, "DKK": "kr"
+, "DOP": "RD$"
+, "XCD": "$"
+, "EGP": "£"
+, "SVC": "$"
+, "EEK": "kr"
+, "EUR": "€"
+, "FKP": "£"
+, "FJD": "$"
+, "GHC": "¢"
+, "GIP": "£"
+, "GTQ": "Q"
+, "GGP": "£"
+, "GYD": "$"
+, "HNL": "L"
+, "HKD": "$"
+, "HUF": "Ft"
+, "ISK": "kr"
+, "INR": "₹"
+, "IDR": "Rp"
+, "IRR": "﷼"
+, "IMP": "£"
+, "ILS": "₪"
+, "JMD": "J$"
+, "JPY": "¥"
+, "JEP": "£"
+, "KES": "KSh"
+, "KZT": "лв"
+, "KPW": "₩"
+, "KRW": "₩"
+, "KGS": "лв"
+, "LAK": "₭"
+, "LVL": "Ls"
+, "LBP": "£"
+, "LRD": "$"
+, "LTL": "Lt"
+, "MKD": "ден"
+, "MYR": "RM"
+, "MUR": "₨"
+, "MXN": "$"
+, "MNT": "₮"
+, "MZN": "MT"
+, "NAD": "$"
+, "NPR": "₨"
+, "ANG": "ƒ"
+, "NZD": "$"
+, "NIO": "C$"
+, "NGN": "₦"
+, "NOK": "kr"
+, "OMR": "﷼"
+, "PKR": "₨"
+, "PAB": "B/."
+, "PYG": "Gs"
+, "PEN": "S/."
+, "PHP": "₱"
+, "PLN": "zł"
+, "QAR": "﷼"
+, "RON": "lei"
+, "RUB": "₽"
+, "SHP": "£"
+, "SAR": "﷼"
+, "RSD": "Дин."
+, "SCR": "₨"
+, "SGD": "$"
+, "SBD": "$"
+, "SOS": "S"
+, "ZAR": "R"
+, "LKR": "₨"
+, "SEK": "kr"
+, "CHF": "CHF"
+, "SRD": "$"
+, "SYP": "£"
+, "TZS": "TSh"
+, "TWD": "NT$"
+, "THB": "฿"
+, "TTD": "TT$"
+, "TRY": ""
+, "TRL": "₤"
+, "TVD": "$"
+, "UGX": "USh"
+, "UAH": "₴"
+, "GBP": "£"
+, "USD": "$"
+, "UYU": "$U"
+, "UZS": "лв"
+, "VEF": "Bs"
+, "VND": "₫"
+, "YER": "﷼"
+, "ZWD": "Z$"
+}
+
+},{}],10:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -84,7 +9561,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":8,"_process":28}],2:[function(require,module,exports){
+},{"./emptyFunction":17,"_process":38}],11:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -120,7 +9597,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],3:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 "use strict";
 
 /**
@@ -152,7 +9629,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],4:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -192,7 +9669,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":3}],5:[function(require,module,exports){
+},{"./camelize":12}],14:[function(require,module,exports){
 'use strict';
 
 /**
@@ -236,7 +9713,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":18}],6:[function(require,module,exports){
+},{"./isTextNode":27}],15:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -365,7 +9842,7 @@ function createArrayFromMixed(obj) {
 
 module.exports = createArrayFromMixed;
 }).call(this,require('_process'))
-},{"./invariant":16,"_process":28}],7:[function(require,module,exports){
+},{"./invariant":25,"_process":38}],16:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -451,7 +9928,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
 module.exports = createNodesFromMarkup;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":2,"./createArrayFromMixed":6,"./getMarkupWrap":12,"./invariant":16,"_process":28}],8:[function(require,module,exports){
+},{"./ExecutionEnvironment":11,"./createArrayFromMixed":15,"./getMarkupWrap":21,"./invariant":25,"_process":38}],17:[function(require,module,exports){
 "use strict";
 
 /**
@@ -489,7 +9966,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],9:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -511,7 +9988,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":28}],10:[function(require,module,exports){
+},{"_process":38}],19:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -538,7 +10015,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],11:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';
 
 /**
@@ -573,7 +10050,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],12:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -670,7 +10147,7 @@ function getMarkupWrap(nodeName) {
 
 module.exports = getMarkupWrap;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":2,"./invariant":16,"_process":28}],13:[function(require,module,exports){
+},{"./ExecutionEnvironment":11,"./invariant":25,"_process":38}],22:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -709,7 +10186,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],14:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 /**
@@ -742,7 +10219,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],15:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -781,7 +10258,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":14}],16:[function(require,module,exports){
+},{"./hyphenate":23}],25:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -833,7 +10310,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":28}],17:[function(require,module,exports){
+},{"_process":38}],26:[function(require,module,exports){
 'use strict';
 
 /**
@@ -856,7 +10333,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],18:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 'use strict';
 
 /**
@@ -881,7 +10358,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":17}],19:[function(require,module,exports){
+},{"./isNode":26}],28:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -931,7 +10408,7 @@ var keyMirror = function (obj) {
 
 module.exports = keyMirror;
 }).call(this,require('_process'))
-},{"./invariant":16,"_process":28}],20:[function(require,module,exports){
+},{"./invariant":25,"_process":38}],29:[function(require,module,exports){
 "use strict";
 
 /**
@@ -966,7 +10443,7 @@ var keyOf = function (oneKeyObj) {
 };
 
 module.exports = keyOf;
-},{}],21:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1017,7 +10494,7 @@ function mapObject(object, callback, context) {
 }
 
 module.exports = mapObject;
-},{}],22:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1049,7 +10526,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],23:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1072,7 +10549,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":2}],24:[function(require,module,exports){
+},{"./ExecutionEnvironment":11}],33:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1106,7 +10583,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":23}],25:[function(require,module,exports){
+},{"./performance":32}],34:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1173,7 +10650,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],26:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -1232,7 +10709,4048 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":8,"_process":28}],27:[function(require,module,exports){
+},{"./emptyFunction":17,"_process":38}],36:[function(require,module,exports){
+//! moment.js
+//! version : 2.13.0
+//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
+//! license : MIT
+//! momentjs.com
+
+;(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    global.moment = factory()
+}(this, function () { 'use strict';
+
+    var hookCallback;
+
+    function utils_hooks__hooks () {
+        return hookCallback.apply(null, arguments);
+    }
+
+    // This is done to register the method called with moment()
+    // without creating circular dependencies.
+    function setHookCallback (callback) {
+        hookCallback = callback;
+    }
+
+    function isArray(input) {
+        return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
+    }
+
+    function isDate(input) {
+        return input instanceof Date || Object.prototype.toString.call(input) === '[object Date]';
+    }
+
+    function map(arr, fn) {
+        var res = [], i;
+        for (i = 0; i < arr.length; ++i) {
+            res.push(fn(arr[i], i));
+        }
+        return res;
+    }
+
+    function hasOwnProp(a, b) {
+        return Object.prototype.hasOwnProperty.call(a, b);
+    }
+
+    function extend(a, b) {
+        for (var i in b) {
+            if (hasOwnProp(b, i)) {
+                a[i] = b[i];
+            }
+        }
+
+        if (hasOwnProp(b, 'toString')) {
+            a.toString = b.toString;
+        }
+
+        if (hasOwnProp(b, 'valueOf')) {
+            a.valueOf = b.valueOf;
+        }
+
+        return a;
+    }
+
+    function create_utc__createUTC (input, format, locale, strict) {
+        return createLocalOrUTC(input, format, locale, strict, true).utc();
+    }
+
+    function defaultParsingFlags() {
+        // We need to deep clone this object.
+        return {
+            empty           : false,
+            unusedTokens    : [],
+            unusedInput     : [],
+            overflow        : -2,
+            charsLeftOver   : 0,
+            nullInput       : false,
+            invalidMonth    : null,
+            invalidFormat   : false,
+            userInvalidated : false,
+            iso             : false,
+            parsedDateParts : [],
+            meridiem        : null
+        };
+    }
+
+    function getParsingFlags(m) {
+        if (m._pf == null) {
+            m._pf = defaultParsingFlags();
+        }
+        return m._pf;
+    }
+
+    var some;
+    if (Array.prototype.some) {
+        some = Array.prototype.some;
+    } else {
+        some = function (fun) {
+            var t = Object(this);
+            var len = t.length >>> 0;
+
+            for (var i = 0; i < len; i++) {
+                if (i in t && fun.call(this, t[i], i, t)) {
+                    return true;
+                }
+            }
+
+            return false;
+        };
+    }
+
+    function valid__isValid(m) {
+        if (m._isValid == null) {
+            var flags = getParsingFlags(m);
+            var parsedParts = some.call(flags.parsedDateParts, function (i) {
+                return i != null;
+            });
+            m._isValid = !isNaN(m._d.getTime()) &&
+                flags.overflow < 0 &&
+                !flags.empty &&
+                !flags.invalidMonth &&
+                !flags.invalidWeekday &&
+                !flags.nullInput &&
+                !flags.invalidFormat &&
+                !flags.userInvalidated &&
+                (!flags.meridiem || (flags.meridiem && parsedParts));
+
+            if (m._strict) {
+                m._isValid = m._isValid &&
+                    flags.charsLeftOver === 0 &&
+                    flags.unusedTokens.length === 0 &&
+                    flags.bigHour === undefined;
+            }
+        }
+        return m._isValid;
+    }
+
+    function valid__createInvalid (flags) {
+        var m = create_utc__createUTC(NaN);
+        if (flags != null) {
+            extend(getParsingFlags(m), flags);
+        }
+        else {
+            getParsingFlags(m).userInvalidated = true;
+        }
+
+        return m;
+    }
+
+    function isUndefined(input) {
+        return input === void 0;
+    }
+
+    // Plugins that add properties should also add the key here (null value),
+    // so we can properly clone ourselves.
+    var momentProperties = utils_hooks__hooks.momentProperties = [];
+
+    function copyConfig(to, from) {
+        var i, prop, val;
+
+        if (!isUndefined(from._isAMomentObject)) {
+            to._isAMomentObject = from._isAMomentObject;
+        }
+        if (!isUndefined(from._i)) {
+            to._i = from._i;
+        }
+        if (!isUndefined(from._f)) {
+            to._f = from._f;
+        }
+        if (!isUndefined(from._l)) {
+            to._l = from._l;
+        }
+        if (!isUndefined(from._strict)) {
+            to._strict = from._strict;
+        }
+        if (!isUndefined(from._tzm)) {
+            to._tzm = from._tzm;
+        }
+        if (!isUndefined(from._isUTC)) {
+            to._isUTC = from._isUTC;
+        }
+        if (!isUndefined(from._offset)) {
+            to._offset = from._offset;
+        }
+        if (!isUndefined(from._pf)) {
+            to._pf = getParsingFlags(from);
+        }
+        if (!isUndefined(from._locale)) {
+            to._locale = from._locale;
+        }
+
+        if (momentProperties.length > 0) {
+            for (i in momentProperties) {
+                prop = momentProperties[i];
+                val = from[prop];
+                if (!isUndefined(val)) {
+                    to[prop] = val;
+                }
+            }
+        }
+
+        return to;
+    }
+
+    var updateInProgress = false;
+
+    // Moment prototype object
+    function Moment(config) {
+        copyConfig(this, config);
+        this._d = new Date(config._d != null ? config._d.getTime() : NaN);
+        // Prevent infinite loop in case updateOffset creates new moment
+        // objects.
+        if (updateInProgress === false) {
+            updateInProgress = true;
+            utils_hooks__hooks.updateOffset(this);
+            updateInProgress = false;
+        }
+    }
+
+    function isMoment (obj) {
+        return obj instanceof Moment || (obj != null && obj._isAMomentObject != null);
+    }
+
+    function absFloor (number) {
+        if (number < 0) {
+            return Math.ceil(number);
+        } else {
+            return Math.floor(number);
+        }
+    }
+
+    function toInt(argumentForCoercion) {
+        var coercedNumber = +argumentForCoercion,
+            value = 0;
+
+        if (coercedNumber !== 0 && isFinite(coercedNumber)) {
+            value = absFloor(coercedNumber);
+        }
+
+        return value;
+    }
+
+    // compare two arrays, return the number of differences
+    function compareArrays(array1, array2, dontConvert) {
+        var len = Math.min(array1.length, array2.length),
+            lengthDiff = Math.abs(array1.length - array2.length),
+            diffs = 0,
+            i;
+        for (i = 0; i < len; i++) {
+            if ((dontConvert && array1[i] !== array2[i]) ||
+                (!dontConvert && toInt(array1[i]) !== toInt(array2[i]))) {
+                diffs++;
+            }
+        }
+        return diffs + lengthDiff;
+    }
+
+    function warn(msg) {
+        if (utils_hooks__hooks.suppressDeprecationWarnings === false &&
+                (typeof console !==  'undefined') && console.warn) {
+            console.warn('Deprecation warning: ' + msg);
+        }
+    }
+
+    function deprecate(msg, fn) {
+        var firstTime = true;
+
+        return extend(function () {
+            if (utils_hooks__hooks.deprecationHandler != null) {
+                utils_hooks__hooks.deprecationHandler(null, msg);
+            }
+            if (firstTime) {
+                warn(msg + '\nArguments: ' + Array.prototype.slice.call(arguments).join(', ') + '\n' + (new Error()).stack);
+                firstTime = false;
+            }
+            return fn.apply(this, arguments);
+        }, fn);
+    }
+
+    var deprecations = {};
+
+    function deprecateSimple(name, msg) {
+        if (utils_hooks__hooks.deprecationHandler != null) {
+            utils_hooks__hooks.deprecationHandler(name, msg);
+        }
+        if (!deprecations[name]) {
+            warn(msg);
+            deprecations[name] = true;
+        }
+    }
+
+    utils_hooks__hooks.suppressDeprecationWarnings = false;
+    utils_hooks__hooks.deprecationHandler = null;
+
+    function isFunction(input) {
+        return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
+    }
+
+    function isObject(input) {
+        return Object.prototype.toString.call(input) === '[object Object]';
+    }
+
+    function locale_set__set (config) {
+        var prop, i;
+        for (i in config) {
+            prop = config[i];
+            if (isFunction(prop)) {
+                this[i] = prop;
+            } else {
+                this['_' + i] = prop;
+            }
+        }
+        this._config = config;
+        // Lenient ordinal parsing accepts just a number in addition to
+        // number + (possibly) stuff coming from _ordinalParseLenient.
+        this._ordinalParseLenient = new RegExp(this._ordinalParse.source + '|' + (/\d{1,2}/).source);
+    }
+
+    function mergeConfigs(parentConfig, childConfig) {
+        var res = extend({}, parentConfig), prop;
+        for (prop in childConfig) {
+            if (hasOwnProp(childConfig, prop)) {
+                if (isObject(parentConfig[prop]) && isObject(childConfig[prop])) {
+                    res[prop] = {};
+                    extend(res[prop], parentConfig[prop]);
+                    extend(res[prop], childConfig[prop]);
+                } else if (childConfig[prop] != null) {
+                    res[prop] = childConfig[prop];
+                } else {
+                    delete res[prop];
+                }
+            }
+        }
+        return res;
+    }
+
+    function Locale(config) {
+        if (config != null) {
+            this.set(config);
+        }
+    }
+
+    var keys;
+
+    if (Object.keys) {
+        keys = Object.keys;
+    } else {
+        keys = function (obj) {
+            var i, res = [];
+            for (i in obj) {
+                if (hasOwnProp(obj, i)) {
+                    res.push(i);
+                }
+            }
+            return res;
+        };
+    }
+
+    // internal storage for locale config files
+    var locales = {};
+    var globalLocale;
+
+    function normalizeLocale(key) {
+        return key ? key.toLowerCase().replace('_', '-') : key;
+    }
+
+    // pick the locale from the array
+    // try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
+    // substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
+    function chooseLocale(names) {
+        var i = 0, j, next, locale, split;
+
+        while (i < names.length) {
+            split = normalizeLocale(names[i]).split('-');
+            j = split.length;
+            next = normalizeLocale(names[i + 1]);
+            next = next ? next.split('-') : null;
+            while (j > 0) {
+                locale = loadLocale(split.slice(0, j).join('-'));
+                if (locale) {
+                    return locale;
+                }
+                if (next && next.length >= j && compareArrays(split, next, true) >= j - 1) {
+                    //the next array item is better than a shallower substring of this one
+                    break;
+                }
+                j--;
+            }
+            i++;
+        }
+        return null;
+    }
+
+    function loadLocale(name) {
+        var oldLocale = null;
+        // TODO: Find a better way to register and load all the locales in Node
+        if (!locales[name] && (typeof module !== 'undefined') &&
+                module && module.exports) {
+            try {
+                oldLocale = globalLocale._abbr;
+                require('./locale/' + name);
+                // because defineLocale currently also sets the global locale, we
+                // want to undo that for lazy loaded locales
+                locale_locales__getSetGlobalLocale(oldLocale);
+            } catch (e) { }
+        }
+        return locales[name];
+    }
+
+    // This function will load locale and then set the global locale.  If
+    // no arguments are passed in, it will simply return the current global
+    // locale key.
+    function locale_locales__getSetGlobalLocale (key, values) {
+        var data;
+        if (key) {
+            if (isUndefined(values)) {
+                data = locale_locales__getLocale(key);
+            }
+            else {
+                data = defineLocale(key, values);
+            }
+
+            if (data) {
+                // moment.duration._locale = moment._locale = data;
+                globalLocale = data;
+            }
+        }
+
+        return globalLocale._abbr;
+    }
+
+    function defineLocale (name, config) {
+        if (config !== null) {
+            config.abbr = name;
+            if (locales[name] != null) {
+                deprecateSimple('defineLocaleOverride',
+                        'use moment.updateLocale(localeName, config) to change ' +
+                        'an existing locale. moment.defineLocale(localeName, ' +
+                        'config) should only be used for creating a new locale');
+                config = mergeConfigs(locales[name]._config, config);
+            } else if (config.parentLocale != null) {
+                if (locales[config.parentLocale] != null) {
+                    config = mergeConfigs(locales[config.parentLocale]._config, config);
+                } else {
+                    // treat as if there is no base config
+                    deprecateSimple('parentLocaleUndefined',
+                            'specified parentLocale is not defined yet');
+                }
+            }
+            locales[name] = new Locale(config);
+
+            // backwards compat for now: also set the locale
+            locale_locales__getSetGlobalLocale(name);
+
+            return locales[name];
+        } else {
+            // useful for testing
+            delete locales[name];
+            return null;
+        }
+    }
+
+    function updateLocale(name, config) {
+        if (config != null) {
+            var locale;
+            if (locales[name] != null) {
+                config = mergeConfigs(locales[name]._config, config);
+            }
+            locale = new Locale(config);
+            locale.parentLocale = locales[name];
+            locales[name] = locale;
+
+            // backwards compat for now: also set the locale
+            locale_locales__getSetGlobalLocale(name);
+        } else {
+            // pass null for config to unupdate, useful for tests
+            if (locales[name] != null) {
+                if (locales[name].parentLocale != null) {
+                    locales[name] = locales[name].parentLocale;
+                } else if (locales[name] != null) {
+                    delete locales[name];
+                }
+            }
+        }
+        return locales[name];
+    }
+
+    // returns locale data
+    function locale_locales__getLocale (key) {
+        var locale;
+
+        if (key && key._locale && key._locale._abbr) {
+            key = key._locale._abbr;
+        }
+
+        if (!key) {
+            return globalLocale;
+        }
+
+        if (!isArray(key)) {
+            //short-circuit everything else
+            locale = loadLocale(key);
+            if (locale) {
+                return locale;
+            }
+            key = [key];
+        }
+
+        return chooseLocale(key);
+    }
+
+    function locale_locales__listLocales() {
+        return keys(locales);
+    }
+
+    var aliases = {};
+
+    function addUnitAlias (unit, shorthand) {
+        var lowerCase = unit.toLowerCase();
+        aliases[lowerCase] = aliases[lowerCase + 's'] = aliases[shorthand] = unit;
+    }
+
+    function normalizeUnits(units) {
+        return typeof units === 'string' ? aliases[units] || aliases[units.toLowerCase()] : undefined;
+    }
+
+    function normalizeObjectUnits(inputObject) {
+        var normalizedInput = {},
+            normalizedProp,
+            prop;
+
+        for (prop in inputObject) {
+            if (hasOwnProp(inputObject, prop)) {
+                normalizedProp = normalizeUnits(prop);
+                if (normalizedProp) {
+                    normalizedInput[normalizedProp] = inputObject[prop];
+                }
+            }
+        }
+
+        return normalizedInput;
+    }
+
+    function makeGetSet (unit, keepTime) {
+        return function (value) {
+            if (value != null) {
+                get_set__set(this, unit, value);
+                utils_hooks__hooks.updateOffset(this, keepTime);
+                return this;
+            } else {
+                return get_set__get(this, unit);
+            }
+        };
+    }
+
+    function get_set__get (mom, unit) {
+        return mom.isValid() ?
+            mom._d['get' + (mom._isUTC ? 'UTC' : '') + unit]() : NaN;
+    }
+
+    function get_set__set (mom, unit, value) {
+        if (mom.isValid()) {
+            mom._d['set' + (mom._isUTC ? 'UTC' : '') + unit](value);
+        }
+    }
+
+    // MOMENTS
+
+    function getSet (units, value) {
+        var unit;
+        if (typeof units === 'object') {
+            for (unit in units) {
+                this.set(unit, units[unit]);
+            }
+        } else {
+            units = normalizeUnits(units);
+            if (isFunction(this[units])) {
+                return this[units](value);
+            }
+        }
+        return this;
+    }
+
+    function zeroFill(number, targetLength, forceSign) {
+        var absNumber = '' + Math.abs(number),
+            zerosToFill = targetLength - absNumber.length,
+            sign = number >= 0;
+        return (sign ? (forceSign ? '+' : '') : '-') +
+            Math.pow(10, Math.max(0, zerosToFill)).toString().substr(1) + absNumber;
+    }
+
+    var formattingTokens = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g;
+
+    var localFormattingTokens = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g;
+
+    var formatFunctions = {};
+
+    var formatTokenFunctions = {};
+
+    // token:    'M'
+    // padded:   ['MM', 2]
+    // ordinal:  'Mo'
+    // callback: function () { this.month() + 1 }
+    function addFormatToken (token, padded, ordinal, callback) {
+        var func = callback;
+        if (typeof callback === 'string') {
+            func = function () {
+                return this[callback]();
+            };
+        }
+        if (token) {
+            formatTokenFunctions[token] = func;
+        }
+        if (padded) {
+            formatTokenFunctions[padded[0]] = function () {
+                return zeroFill(func.apply(this, arguments), padded[1], padded[2]);
+            };
+        }
+        if (ordinal) {
+            formatTokenFunctions[ordinal] = function () {
+                return this.localeData().ordinal(func.apply(this, arguments), token);
+            };
+        }
+    }
+
+    function removeFormattingTokens(input) {
+        if (input.match(/\[[\s\S]/)) {
+            return input.replace(/^\[|\]$/g, '');
+        }
+        return input.replace(/\\/g, '');
+    }
+
+    function makeFormatFunction(format) {
+        var array = format.match(formattingTokens), i, length;
+
+        for (i = 0, length = array.length; i < length; i++) {
+            if (formatTokenFunctions[array[i]]) {
+                array[i] = formatTokenFunctions[array[i]];
+            } else {
+                array[i] = removeFormattingTokens(array[i]);
+            }
+        }
+
+        return function (mom) {
+            var output = '', i;
+            for (i = 0; i < length; i++) {
+                output += array[i] instanceof Function ? array[i].call(mom, format) : array[i];
+            }
+            return output;
+        };
+    }
+
+    // format date using native date object
+    function formatMoment(m, format) {
+        if (!m.isValid()) {
+            return m.localeData().invalidDate();
+        }
+
+        format = expandFormat(format, m.localeData());
+        formatFunctions[format] = formatFunctions[format] || makeFormatFunction(format);
+
+        return formatFunctions[format](m);
+    }
+
+    function expandFormat(format, locale) {
+        var i = 5;
+
+        function replaceLongDateFormatTokens(input) {
+            return locale.longDateFormat(input) || input;
+        }
+
+        localFormattingTokens.lastIndex = 0;
+        while (i >= 0 && localFormattingTokens.test(format)) {
+            format = format.replace(localFormattingTokens, replaceLongDateFormatTokens);
+            localFormattingTokens.lastIndex = 0;
+            i -= 1;
+        }
+
+        return format;
+    }
+
+    var match1         = /\d/;            //       0 - 9
+    var match2         = /\d\d/;          //      00 - 99
+    var match3         = /\d{3}/;         //     000 - 999
+    var match4         = /\d{4}/;         //    0000 - 9999
+    var match6         = /[+-]?\d{6}/;    // -999999 - 999999
+    var match1to2      = /\d\d?/;         //       0 - 99
+    var match3to4      = /\d\d\d\d?/;     //     999 - 9999
+    var match5to6      = /\d\d\d\d\d\d?/; //   99999 - 999999
+    var match1to3      = /\d{1,3}/;       //       0 - 999
+    var match1to4      = /\d{1,4}/;       //       0 - 9999
+    var match1to6      = /[+-]?\d{1,6}/;  // -999999 - 999999
+
+    var matchUnsigned  = /\d+/;           //       0 - inf
+    var matchSigned    = /[+-]?\d+/;      //    -inf - inf
+
+    var matchOffset    = /Z|[+-]\d\d:?\d\d/gi; // +00:00 -00:00 +0000 -0000 or Z
+    var matchShortOffset = /Z|[+-]\d\d(?::?\d\d)?/gi; // +00 -00 +00:00 -00:00 +0000 -0000 or Z
+
+    var matchTimestamp = /[+-]?\d+(\.\d{1,3})?/; // 123456789 123456789.123
+
+    // any word (or two) characters or numbers including two/three word month in arabic.
+    // includes scottish gaelic two word and hyphenated months
+    var matchWord = /[0-9]*['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+|[\u0600-\u06FF\/]+(\s*?[\u0600-\u06FF]+){1,2}/i;
+
+
+    var regexes = {};
+
+    function addRegexToken (token, regex, strictRegex) {
+        regexes[token] = isFunction(regex) ? regex : function (isStrict, localeData) {
+            return (isStrict && strictRegex) ? strictRegex : regex;
+        };
+    }
+
+    function getParseRegexForToken (token, config) {
+        if (!hasOwnProp(regexes, token)) {
+            return new RegExp(unescapeFormat(token));
+        }
+
+        return regexes[token](config._strict, config._locale);
+    }
+
+    // Code from http://stackoverflow.com/questions/3561493/is-there-a-regexp-escape-function-in-javascript
+    function unescapeFormat(s) {
+        return regexEscape(s.replace('\\', '').replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g, function (matched, p1, p2, p3, p4) {
+            return p1 || p2 || p3 || p4;
+        }));
+    }
+
+    function regexEscape(s) {
+        return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    }
+
+    var tokens = {};
+
+    function addParseToken (token, callback) {
+        var i, func = callback;
+        if (typeof token === 'string') {
+            token = [token];
+        }
+        if (typeof callback === 'number') {
+            func = function (input, array) {
+                array[callback] = toInt(input);
+            };
+        }
+        for (i = 0; i < token.length; i++) {
+            tokens[token[i]] = func;
+        }
+    }
+
+    function addWeekParseToken (token, callback) {
+        addParseToken(token, function (input, array, config, token) {
+            config._w = config._w || {};
+            callback(input, config._w, config, token);
+        });
+    }
+
+    function addTimeToArrayFromToken(token, input, config) {
+        if (input != null && hasOwnProp(tokens, token)) {
+            tokens[token](input, config._a, config, token);
+        }
+    }
+
+    var YEAR = 0;
+    var MONTH = 1;
+    var DATE = 2;
+    var HOUR = 3;
+    var MINUTE = 4;
+    var SECOND = 5;
+    var MILLISECOND = 6;
+    var WEEK = 7;
+    var WEEKDAY = 8;
+
+    var indexOf;
+
+    if (Array.prototype.indexOf) {
+        indexOf = Array.prototype.indexOf;
+    } else {
+        indexOf = function (o) {
+            // I know
+            var i;
+            for (i = 0; i < this.length; ++i) {
+                if (this[i] === o) {
+                    return i;
+                }
+            }
+            return -1;
+        };
+    }
+
+    function daysInMonth(year, month) {
+        return new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+    }
+
+    // FORMATTING
+
+    addFormatToken('M', ['MM', 2], 'Mo', function () {
+        return this.month() + 1;
+    });
+
+    addFormatToken('MMM', 0, 0, function (format) {
+        return this.localeData().monthsShort(this, format);
+    });
+
+    addFormatToken('MMMM', 0, 0, function (format) {
+        return this.localeData().months(this, format);
+    });
+
+    // ALIASES
+
+    addUnitAlias('month', 'M');
+
+    // PARSING
+
+    addRegexToken('M',    match1to2);
+    addRegexToken('MM',   match1to2, match2);
+    addRegexToken('MMM',  function (isStrict, locale) {
+        return locale.monthsShortRegex(isStrict);
+    });
+    addRegexToken('MMMM', function (isStrict, locale) {
+        return locale.monthsRegex(isStrict);
+    });
+
+    addParseToken(['M', 'MM'], function (input, array) {
+        array[MONTH] = toInt(input) - 1;
+    });
+
+    addParseToken(['MMM', 'MMMM'], function (input, array, config, token) {
+        var month = config._locale.monthsParse(input, token, config._strict);
+        // if we didn't find a month name, mark the date as invalid.
+        if (month != null) {
+            array[MONTH] = month;
+        } else {
+            getParsingFlags(config).invalidMonth = input;
+        }
+    });
+
+    // LOCALES
+
+    var MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/;
+    var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
+    function localeMonths (m, format) {
+        return isArray(this._months) ? this._months[m.month()] :
+            this._months[MONTHS_IN_FORMAT.test(format) ? 'format' : 'standalone'][m.month()];
+    }
+
+    var defaultLocaleMonthsShort = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_');
+    function localeMonthsShort (m, format) {
+        return isArray(this._monthsShort) ? this._monthsShort[m.month()] :
+            this._monthsShort[MONTHS_IN_FORMAT.test(format) ? 'format' : 'standalone'][m.month()];
+    }
+
+    function units_month__handleStrictParse(monthName, format, strict) {
+        var i, ii, mom, llc = monthName.toLocaleLowerCase();
+        if (!this._monthsParse) {
+            // this is not used
+            this._monthsParse = [];
+            this._longMonthsParse = [];
+            this._shortMonthsParse = [];
+            for (i = 0; i < 12; ++i) {
+                mom = create_utc__createUTC([2000, i]);
+                this._shortMonthsParse[i] = this.monthsShort(mom, '').toLocaleLowerCase();
+                this._longMonthsParse[i] = this.months(mom, '').toLocaleLowerCase();
+            }
+        }
+
+        if (strict) {
+            if (format === 'MMM') {
+                ii = indexOf.call(this._shortMonthsParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._longMonthsParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        } else {
+            if (format === 'MMM') {
+                ii = indexOf.call(this._shortMonthsParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._longMonthsParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._longMonthsParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._shortMonthsParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        }
+    }
+
+    function localeMonthsParse (monthName, format, strict) {
+        var i, mom, regex;
+
+        if (this._monthsParseExact) {
+            return units_month__handleStrictParse.call(this, monthName, format, strict);
+        }
+
+        if (!this._monthsParse) {
+            this._monthsParse = [];
+            this._longMonthsParse = [];
+            this._shortMonthsParse = [];
+        }
+
+        // TODO: add sorting
+        // Sorting makes sure if one month (or abbr) is a prefix of another
+        // see sorting in computeMonthsParse
+        for (i = 0; i < 12; i++) {
+            // make the regex if we don't have it already
+            mom = create_utc__createUTC([2000, i]);
+            if (strict && !this._longMonthsParse[i]) {
+                this._longMonthsParse[i] = new RegExp('^' + this.months(mom, '').replace('.', '') + '$', 'i');
+                this._shortMonthsParse[i] = new RegExp('^' + this.monthsShort(mom, '').replace('.', '') + '$', 'i');
+            }
+            if (!strict && !this._monthsParse[i]) {
+                regex = '^' + this.months(mom, '') + '|^' + this.monthsShort(mom, '');
+                this._monthsParse[i] = new RegExp(regex.replace('.', ''), 'i');
+            }
+            // test the regex
+            if (strict && format === 'MMMM' && this._longMonthsParse[i].test(monthName)) {
+                return i;
+            } else if (strict && format === 'MMM' && this._shortMonthsParse[i].test(monthName)) {
+                return i;
+            } else if (!strict && this._monthsParse[i].test(monthName)) {
+                return i;
+            }
+        }
+    }
+
+    // MOMENTS
+
+    function setMonth (mom, value) {
+        var dayOfMonth;
+
+        if (!mom.isValid()) {
+            // No op
+            return mom;
+        }
+
+        if (typeof value === 'string') {
+            if (/^\d+$/.test(value)) {
+                value = toInt(value);
+            } else {
+                value = mom.localeData().monthsParse(value);
+                // TODO: Another silent failure?
+                if (typeof value !== 'number') {
+                    return mom;
+                }
+            }
+        }
+
+        dayOfMonth = Math.min(mom.date(), daysInMonth(mom.year(), value));
+        mom._d['set' + (mom._isUTC ? 'UTC' : '') + 'Month'](value, dayOfMonth);
+        return mom;
+    }
+
+    function getSetMonth (value) {
+        if (value != null) {
+            setMonth(this, value);
+            utils_hooks__hooks.updateOffset(this, true);
+            return this;
+        } else {
+            return get_set__get(this, 'Month');
+        }
+    }
+
+    function getDaysInMonth () {
+        return daysInMonth(this.year(), this.month());
+    }
+
+    var defaultMonthsShortRegex = matchWord;
+    function monthsShortRegex (isStrict) {
+        if (this._monthsParseExact) {
+            if (!hasOwnProp(this, '_monthsRegex')) {
+                computeMonthsParse.call(this);
+            }
+            if (isStrict) {
+                return this._monthsShortStrictRegex;
+            } else {
+                return this._monthsShortRegex;
+            }
+        } else {
+            return this._monthsShortStrictRegex && isStrict ?
+                this._monthsShortStrictRegex : this._monthsShortRegex;
+        }
+    }
+
+    var defaultMonthsRegex = matchWord;
+    function monthsRegex (isStrict) {
+        if (this._monthsParseExact) {
+            if (!hasOwnProp(this, '_monthsRegex')) {
+                computeMonthsParse.call(this);
+            }
+            if (isStrict) {
+                return this._monthsStrictRegex;
+            } else {
+                return this._monthsRegex;
+            }
+        } else {
+            return this._monthsStrictRegex && isStrict ?
+                this._monthsStrictRegex : this._monthsRegex;
+        }
+    }
+
+    function computeMonthsParse () {
+        function cmpLenRev(a, b) {
+            return b.length - a.length;
+        }
+
+        var shortPieces = [], longPieces = [], mixedPieces = [],
+            i, mom;
+        for (i = 0; i < 12; i++) {
+            // make the regex if we don't have it already
+            mom = create_utc__createUTC([2000, i]);
+            shortPieces.push(this.monthsShort(mom, ''));
+            longPieces.push(this.months(mom, ''));
+            mixedPieces.push(this.months(mom, ''));
+            mixedPieces.push(this.monthsShort(mom, ''));
+        }
+        // Sorting makes sure if one month (or abbr) is a prefix of another it
+        // will match the longer piece.
+        shortPieces.sort(cmpLenRev);
+        longPieces.sort(cmpLenRev);
+        mixedPieces.sort(cmpLenRev);
+        for (i = 0; i < 12; i++) {
+            shortPieces[i] = regexEscape(shortPieces[i]);
+            longPieces[i] = regexEscape(longPieces[i]);
+            mixedPieces[i] = regexEscape(mixedPieces[i]);
+        }
+
+        this._monthsRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+        this._monthsShortRegex = this._monthsRegex;
+        this._monthsStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+        this._monthsShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+    }
+
+    function checkOverflow (m) {
+        var overflow;
+        var a = m._a;
+
+        if (a && getParsingFlags(m).overflow === -2) {
+            overflow =
+                a[MONTH]       < 0 || a[MONTH]       > 11  ? MONTH :
+                a[DATE]        < 1 || a[DATE]        > daysInMonth(a[YEAR], a[MONTH]) ? DATE :
+                a[HOUR]        < 0 || a[HOUR]        > 24 || (a[HOUR] === 24 && (a[MINUTE] !== 0 || a[SECOND] !== 0 || a[MILLISECOND] !== 0)) ? HOUR :
+                a[MINUTE]      < 0 || a[MINUTE]      > 59  ? MINUTE :
+                a[SECOND]      < 0 || a[SECOND]      > 59  ? SECOND :
+                a[MILLISECOND] < 0 || a[MILLISECOND] > 999 ? MILLISECOND :
+                -1;
+
+            if (getParsingFlags(m)._overflowDayOfYear && (overflow < YEAR || overflow > DATE)) {
+                overflow = DATE;
+            }
+            if (getParsingFlags(m)._overflowWeeks && overflow === -1) {
+                overflow = WEEK;
+            }
+            if (getParsingFlags(m)._overflowWeekday && overflow === -1) {
+                overflow = WEEKDAY;
+            }
+
+            getParsingFlags(m).overflow = overflow;
+        }
+
+        return m;
+    }
+
+    // iso 8601 regex
+    // 0000-00-00 0000-W00 or 0000-W00-0 + T + 00 or 00:00 or 00:00:00 or 00:00:00.000 + +00:00 or +0000 or +00)
+    var extendedIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?/;
+    var basicIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?/;
+
+    var tzRegex = /Z|[+-]\d\d(?::?\d\d)?/;
+
+    var isoDates = [
+        ['YYYYYY-MM-DD', /[+-]\d{6}-\d\d-\d\d/],
+        ['YYYY-MM-DD', /\d{4}-\d\d-\d\d/],
+        ['GGGG-[W]WW-E', /\d{4}-W\d\d-\d/],
+        ['GGGG-[W]WW', /\d{4}-W\d\d/, false],
+        ['YYYY-DDD', /\d{4}-\d{3}/],
+        ['YYYY-MM', /\d{4}-\d\d/, false],
+        ['YYYYYYMMDD', /[+-]\d{10}/],
+        ['YYYYMMDD', /\d{8}/],
+        // YYYYMM is NOT allowed by the standard
+        ['GGGG[W]WWE', /\d{4}W\d{3}/],
+        ['GGGG[W]WW', /\d{4}W\d{2}/, false],
+        ['YYYYDDD', /\d{7}/]
+    ];
+
+    // iso time formats and regexes
+    var isoTimes = [
+        ['HH:mm:ss.SSSS', /\d\d:\d\d:\d\d\.\d+/],
+        ['HH:mm:ss,SSSS', /\d\d:\d\d:\d\d,\d+/],
+        ['HH:mm:ss', /\d\d:\d\d:\d\d/],
+        ['HH:mm', /\d\d:\d\d/],
+        ['HHmmss.SSSS', /\d\d\d\d\d\d\.\d+/],
+        ['HHmmss,SSSS', /\d\d\d\d\d\d,\d+/],
+        ['HHmmss', /\d\d\d\d\d\d/],
+        ['HHmm', /\d\d\d\d/],
+        ['HH', /\d\d/]
+    ];
+
+    var aspNetJsonRegex = /^\/?Date\((\-?\d+)/i;
+
+    // date from iso format
+    function configFromISO(config) {
+        var i, l,
+            string = config._i,
+            match = extendedIsoRegex.exec(string) || basicIsoRegex.exec(string),
+            allowTime, dateFormat, timeFormat, tzFormat;
+
+        if (match) {
+            getParsingFlags(config).iso = true;
+
+            for (i = 0, l = isoDates.length; i < l; i++) {
+                if (isoDates[i][1].exec(match[1])) {
+                    dateFormat = isoDates[i][0];
+                    allowTime = isoDates[i][2] !== false;
+                    break;
+                }
+            }
+            if (dateFormat == null) {
+                config._isValid = false;
+                return;
+            }
+            if (match[3]) {
+                for (i = 0, l = isoTimes.length; i < l; i++) {
+                    if (isoTimes[i][1].exec(match[3])) {
+                        // match[2] should be 'T' or space
+                        timeFormat = (match[2] || ' ') + isoTimes[i][0];
+                        break;
+                    }
+                }
+                if (timeFormat == null) {
+                    config._isValid = false;
+                    return;
+                }
+            }
+            if (!allowTime && timeFormat != null) {
+                config._isValid = false;
+                return;
+            }
+            if (match[4]) {
+                if (tzRegex.exec(match[4])) {
+                    tzFormat = 'Z';
+                } else {
+                    config._isValid = false;
+                    return;
+                }
+            }
+            config._f = dateFormat + (timeFormat || '') + (tzFormat || '');
+            configFromStringAndFormat(config);
+        } else {
+            config._isValid = false;
+        }
+    }
+
+    // date from iso format or fallback
+    function configFromString(config) {
+        var matched = aspNetJsonRegex.exec(config._i);
+
+        if (matched !== null) {
+            config._d = new Date(+matched[1]);
+            return;
+        }
+
+        configFromISO(config);
+        if (config._isValid === false) {
+            delete config._isValid;
+            utils_hooks__hooks.createFromInputFallback(config);
+        }
+    }
+
+    utils_hooks__hooks.createFromInputFallback = deprecate(
+        'moment construction falls back to js Date. This is ' +
+        'discouraged and will be removed in upcoming major ' +
+        'release. Please refer to ' +
+        'https://github.com/moment/moment/issues/1407 for more info.',
+        function (config) {
+            config._d = new Date(config._i + (config._useUTC ? ' UTC' : ''));
+        }
+    );
+
+    function createDate (y, m, d, h, M, s, ms) {
+        //can't just apply() to create a date:
+        //http://stackoverflow.com/questions/181348/instantiating-a-javascript-object-by-calling-prototype-constructor-apply
+        var date = new Date(y, m, d, h, M, s, ms);
+
+        //the date constructor remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
+            date.setFullYear(y);
+        }
+        return date;
+    }
+
+    function createUTCDate (y) {
+        var date = new Date(Date.UTC.apply(null, arguments));
+
+        //the Date.UTC function remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
+            date.setUTCFullYear(y);
+        }
+        return date;
+    }
+
+    // FORMATTING
+
+    addFormatToken('Y', 0, 0, function () {
+        var y = this.year();
+        return y <= 9999 ? '' + y : '+' + y;
+    });
+
+    addFormatToken(0, ['YY', 2], 0, function () {
+        return this.year() % 100;
+    });
+
+    addFormatToken(0, ['YYYY',   4],       0, 'year');
+    addFormatToken(0, ['YYYYY',  5],       0, 'year');
+    addFormatToken(0, ['YYYYYY', 6, true], 0, 'year');
+
+    // ALIASES
+
+    addUnitAlias('year', 'y');
+
+    // PARSING
+
+    addRegexToken('Y',      matchSigned);
+    addRegexToken('YY',     match1to2, match2);
+    addRegexToken('YYYY',   match1to4, match4);
+    addRegexToken('YYYYY',  match1to6, match6);
+    addRegexToken('YYYYYY', match1to6, match6);
+
+    addParseToken(['YYYYY', 'YYYYYY'], YEAR);
+    addParseToken('YYYY', function (input, array) {
+        array[YEAR] = input.length === 2 ? utils_hooks__hooks.parseTwoDigitYear(input) : toInt(input);
+    });
+    addParseToken('YY', function (input, array) {
+        array[YEAR] = utils_hooks__hooks.parseTwoDigitYear(input);
+    });
+    addParseToken('Y', function (input, array) {
+        array[YEAR] = parseInt(input, 10);
+    });
+
+    // HELPERS
+
+    function daysInYear(year) {
+        return isLeapYear(year) ? 366 : 365;
+    }
+
+    function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+    }
+
+    // HOOKS
+
+    utils_hooks__hooks.parseTwoDigitYear = function (input) {
+        return toInt(input) + (toInt(input) > 68 ? 1900 : 2000);
+    };
+
+    // MOMENTS
+
+    var getSetYear = makeGetSet('FullYear', true);
+
+    function getIsLeapYear () {
+        return isLeapYear(this.year());
+    }
+
+    // start-of-first-week - start-of-year
+    function firstWeekOffset(year, dow, doy) {
+        var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
+            fwd = 7 + dow - doy,
+            // first-week day local weekday -- which local weekday is fwd
+            fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
+
+        return -fwdlw + fwd - 1;
+    }
+
+    //http://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+    function dayOfYearFromWeeks(year, week, weekday, dow, doy) {
+        var localWeekday = (7 + weekday - dow) % 7,
+            weekOffset = firstWeekOffset(year, dow, doy),
+            dayOfYear = 1 + 7 * (week - 1) + localWeekday + weekOffset,
+            resYear, resDayOfYear;
+
+        if (dayOfYear <= 0) {
+            resYear = year - 1;
+            resDayOfYear = daysInYear(resYear) + dayOfYear;
+        } else if (dayOfYear > daysInYear(year)) {
+            resYear = year + 1;
+            resDayOfYear = dayOfYear - daysInYear(year);
+        } else {
+            resYear = year;
+            resDayOfYear = dayOfYear;
+        }
+
+        return {
+            year: resYear,
+            dayOfYear: resDayOfYear
+        };
+    }
+
+    function weekOfYear(mom, dow, doy) {
+        var weekOffset = firstWeekOffset(mom.year(), dow, doy),
+            week = Math.floor((mom.dayOfYear() - weekOffset - 1) / 7) + 1,
+            resWeek, resYear;
+
+        if (week < 1) {
+            resYear = mom.year() - 1;
+            resWeek = week + weeksInYear(resYear, dow, doy);
+        } else if (week > weeksInYear(mom.year(), dow, doy)) {
+            resWeek = week - weeksInYear(mom.year(), dow, doy);
+            resYear = mom.year() + 1;
+        } else {
+            resYear = mom.year();
+            resWeek = week;
+        }
+
+        return {
+            week: resWeek,
+            year: resYear
+        };
+    }
+
+    function weeksInYear(year, dow, doy) {
+        var weekOffset = firstWeekOffset(year, dow, doy),
+            weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
+        return (daysInYear(year) - weekOffset + weekOffsetNext) / 7;
+    }
+
+    // Pick the first defined of two or three arguments.
+    function defaults(a, b, c) {
+        if (a != null) {
+            return a;
+        }
+        if (b != null) {
+            return b;
+        }
+        return c;
+    }
+
+    function currentDateArray(config) {
+        // hooks is actually the exported moment object
+        var nowValue = new Date(utils_hooks__hooks.now());
+        if (config._useUTC) {
+            return [nowValue.getUTCFullYear(), nowValue.getUTCMonth(), nowValue.getUTCDate()];
+        }
+        return [nowValue.getFullYear(), nowValue.getMonth(), nowValue.getDate()];
+    }
+
+    // convert an array to a date.
+    // the array should mirror the parameters below
+    // note: all values past the year are optional and will default to the lowest possible value.
+    // [year, month, day , hour, minute, second, millisecond]
+    function configFromArray (config) {
+        var i, date, input = [], currentDate, yearToUse;
+
+        if (config._d) {
+            return;
+        }
+
+        currentDate = currentDateArray(config);
+
+        //compute day of the year from weeks and weekdays
+        if (config._w && config._a[DATE] == null && config._a[MONTH] == null) {
+            dayOfYearFromWeekInfo(config);
+        }
+
+        //if the day of the year is set, figure out what it is
+        if (config._dayOfYear) {
+            yearToUse = defaults(config._a[YEAR], currentDate[YEAR]);
+
+            if (config._dayOfYear > daysInYear(yearToUse)) {
+                getParsingFlags(config)._overflowDayOfYear = true;
+            }
+
+            date = createUTCDate(yearToUse, 0, config._dayOfYear);
+            config._a[MONTH] = date.getUTCMonth();
+            config._a[DATE] = date.getUTCDate();
+        }
+
+        // Default to current date.
+        // * if no year, month, day of month are given, default to today
+        // * if day of month is given, default month and year
+        // * if month is given, default only year
+        // * if year is given, don't default anything
+        for (i = 0; i < 3 && config._a[i] == null; ++i) {
+            config._a[i] = input[i] = currentDate[i];
+        }
+
+        // Zero out whatever was not defaulted, including time
+        for (; i < 7; i++) {
+            config._a[i] = input[i] = (config._a[i] == null) ? (i === 2 ? 1 : 0) : config._a[i];
+        }
+
+        // Check for 24:00:00.000
+        if (config._a[HOUR] === 24 &&
+                config._a[MINUTE] === 0 &&
+                config._a[SECOND] === 0 &&
+                config._a[MILLISECOND] === 0) {
+            config._nextDay = true;
+            config._a[HOUR] = 0;
+        }
+
+        config._d = (config._useUTC ? createUTCDate : createDate).apply(null, input);
+        // Apply timezone offset from input. The actual utcOffset can be changed
+        // with parseZone.
+        if (config._tzm != null) {
+            config._d.setUTCMinutes(config._d.getUTCMinutes() - config._tzm);
+        }
+
+        if (config._nextDay) {
+            config._a[HOUR] = 24;
+        }
+    }
+
+    function dayOfYearFromWeekInfo(config) {
+        var w, weekYear, week, weekday, dow, doy, temp, weekdayOverflow;
+
+        w = config._w;
+        if (w.GG != null || w.W != null || w.E != null) {
+            dow = 1;
+            doy = 4;
+
+            // TODO: We need to take the current isoWeekYear, but that depends on
+            // how we interpret now (local, utc, fixed offset). So create
+            // a now version of current config (take local/utc/offset flags, and
+            // create now).
+            weekYear = defaults(w.GG, config._a[YEAR], weekOfYear(local__createLocal(), 1, 4).year);
+            week = defaults(w.W, 1);
+            weekday = defaults(w.E, 1);
+            if (weekday < 1 || weekday > 7) {
+                weekdayOverflow = true;
+            }
+        } else {
+            dow = config._locale._week.dow;
+            doy = config._locale._week.doy;
+
+            weekYear = defaults(w.gg, config._a[YEAR], weekOfYear(local__createLocal(), dow, doy).year);
+            week = defaults(w.w, 1);
+
+            if (w.d != null) {
+                // weekday -- low day numbers are considered next week
+                weekday = w.d;
+                if (weekday < 0 || weekday > 6) {
+                    weekdayOverflow = true;
+                }
+            } else if (w.e != null) {
+                // local weekday -- counting starts from begining of week
+                weekday = w.e + dow;
+                if (w.e < 0 || w.e > 6) {
+                    weekdayOverflow = true;
+                }
+            } else {
+                // default to begining of week
+                weekday = dow;
+            }
+        }
+        if (week < 1 || week > weeksInYear(weekYear, dow, doy)) {
+            getParsingFlags(config)._overflowWeeks = true;
+        } else if (weekdayOverflow != null) {
+            getParsingFlags(config)._overflowWeekday = true;
+        } else {
+            temp = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy);
+            config._a[YEAR] = temp.year;
+            config._dayOfYear = temp.dayOfYear;
+        }
+    }
+
+    // constant that refers to the ISO standard
+    utils_hooks__hooks.ISO_8601 = function () {};
+
+    // date from string and format string
+    function configFromStringAndFormat(config) {
+        // TODO: Move this to another part of the creation flow to prevent circular deps
+        if (config._f === utils_hooks__hooks.ISO_8601) {
+            configFromISO(config);
+            return;
+        }
+
+        config._a = [];
+        getParsingFlags(config).empty = true;
+
+        // This array is used to make a Date, either with `new Date` or `Date.UTC`
+        var string = '' + config._i,
+            i, parsedInput, tokens, token, skipped,
+            stringLength = string.length,
+            totalParsedInputLength = 0;
+
+        tokens = expandFormat(config._f, config._locale).match(formattingTokens) || [];
+
+        for (i = 0; i < tokens.length; i++) {
+            token = tokens[i];
+            parsedInput = (string.match(getParseRegexForToken(token, config)) || [])[0];
+            // console.log('token', token, 'parsedInput', parsedInput,
+            //         'regex', getParseRegexForToken(token, config));
+            if (parsedInput) {
+                skipped = string.substr(0, string.indexOf(parsedInput));
+                if (skipped.length > 0) {
+                    getParsingFlags(config).unusedInput.push(skipped);
+                }
+                string = string.slice(string.indexOf(parsedInput) + parsedInput.length);
+                totalParsedInputLength += parsedInput.length;
+            }
+            // don't parse if it's not a known token
+            if (formatTokenFunctions[token]) {
+                if (parsedInput) {
+                    getParsingFlags(config).empty = false;
+                }
+                else {
+                    getParsingFlags(config).unusedTokens.push(token);
+                }
+                addTimeToArrayFromToken(token, parsedInput, config);
+            }
+            else if (config._strict && !parsedInput) {
+                getParsingFlags(config).unusedTokens.push(token);
+            }
+        }
+
+        // add remaining unparsed input length to the string
+        getParsingFlags(config).charsLeftOver = stringLength - totalParsedInputLength;
+        if (string.length > 0) {
+            getParsingFlags(config).unusedInput.push(string);
+        }
+
+        // clear _12h flag if hour is <= 12
+        if (getParsingFlags(config).bigHour === true &&
+                config._a[HOUR] <= 12 &&
+                config._a[HOUR] > 0) {
+            getParsingFlags(config).bigHour = undefined;
+        }
+
+        getParsingFlags(config).parsedDateParts = config._a.slice(0);
+        getParsingFlags(config).meridiem = config._meridiem;
+        // handle meridiem
+        config._a[HOUR] = meridiemFixWrap(config._locale, config._a[HOUR], config._meridiem);
+
+        configFromArray(config);
+        checkOverflow(config);
+    }
+
+
+    function meridiemFixWrap (locale, hour, meridiem) {
+        var isPm;
+
+        if (meridiem == null) {
+            // nothing to do
+            return hour;
+        }
+        if (locale.meridiemHour != null) {
+            return locale.meridiemHour(hour, meridiem);
+        } else if (locale.isPM != null) {
+            // Fallback
+            isPm = locale.isPM(meridiem);
+            if (isPm && hour < 12) {
+                hour += 12;
+            }
+            if (!isPm && hour === 12) {
+                hour = 0;
+            }
+            return hour;
+        } else {
+            // this is not supposed to happen
+            return hour;
+        }
+    }
+
+    // date from string and array of format strings
+    function configFromStringAndArray(config) {
+        var tempConfig,
+            bestMoment,
+
+            scoreToBeat,
+            i,
+            currentScore;
+
+        if (config._f.length === 0) {
+            getParsingFlags(config).invalidFormat = true;
+            config._d = new Date(NaN);
+            return;
+        }
+
+        for (i = 0; i < config._f.length; i++) {
+            currentScore = 0;
+            tempConfig = copyConfig({}, config);
+            if (config._useUTC != null) {
+                tempConfig._useUTC = config._useUTC;
+            }
+            tempConfig._f = config._f[i];
+            configFromStringAndFormat(tempConfig);
+
+            if (!valid__isValid(tempConfig)) {
+                continue;
+            }
+
+            // if there is any input that was not parsed add a penalty for that format
+            currentScore += getParsingFlags(tempConfig).charsLeftOver;
+
+            //or tokens
+            currentScore += getParsingFlags(tempConfig).unusedTokens.length * 10;
+
+            getParsingFlags(tempConfig).score = currentScore;
+
+            if (scoreToBeat == null || currentScore < scoreToBeat) {
+                scoreToBeat = currentScore;
+                bestMoment = tempConfig;
+            }
+        }
+
+        extend(config, bestMoment || tempConfig);
+    }
+
+    function configFromObject(config) {
+        if (config._d) {
+            return;
+        }
+
+        var i = normalizeObjectUnits(config._i);
+        config._a = map([i.year, i.month, i.day || i.date, i.hour, i.minute, i.second, i.millisecond], function (obj) {
+            return obj && parseInt(obj, 10);
+        });
+
+        configFromArray(config);
+    }
+
+    function createFromConfig (config) {
+        var res = new Moment(checkOverflow(prepareConfig(config)));
+        if (res._nextDay) {
+            // Adding is smart enough around DST
+            res.add(1, 'd');
+            res._nextDay = undefined;
+        }
+
+        return res;
+    }
+
+    function prepareConfig (config) {
+        var input = config._i,
+            format = config._f;
+
+        config._locale = config._locale || locale_locales__getLocale(config._l);
+
+        if (input === null || (format === undefined && input === '')) {
+            return valid__createInvalid({nullInput: true});
+        }
+
+        if (typeof input === 'string') {
+            config._i = input = config._locale.preparse(input);
+        }
+
+        if (isMoment(input)) {
+            return new Moment(checkOverflow(input));
+        } else if (isArray(format)) {
+            configFromStringAndArray(config);
+        } else if (format) {
+            configFromStringAndFormat(config);
+        } else if (isDate(input)) {
+            config._d = input;
+        } else {
+            configFromInput(config);
+        }
+
+        if (!valid__isValid(config)) {
+            config._d = null;
+        }
+
+        return config;
+    }
+
+    function configFromInput(config) {
+        var input = config._i;
+        if (input === undefined) {
+            config._d = new Date(utils_hooks__hooks.now());
+        } else if (isDate(input)) {
+            config._d = new Date(input.valueOf());
+        } else if (typeof input === 'string') {
+            configFromString(config);
+        } else if (isArray(input)) {
+            config._a = map(input.slice(0), function (obj) {
+                return parseInt(obj, 10);
+            });
+            configFromArray(config);
+        } else if (typeof(input) === 'object') {
+            configFromObject(config);
+        } else if (typeof(input) === 'number') {
+            // from milliseconds
+            config._d = new Date(input);
+        } else {
+            utils_hooks__hooks.createFromInputFallback(config);
+        }
+    }
+
+    function createLocalOrUTC (input, format, locale, strict, isUTC) {
+        var c = {};
+
+        if (typeof(locale) === 'boolean') {
+            strict = locale;
+            locale = undefined;
+        }
+        // object construction must be done this way.
+        // https://github.com/moment/moment/issues/1423
+        c._isAMomentObject = true;
+        c._useUTC = c._isUTC = isUTC;
+        c._l = locale;
+        c._i = input;
+        c._f = format;
+        c._strict = strict;
+
+        return createFromConfig(c);
+    }
+
+    function local__createLocal (input, format, locale, strict) {
+        return createLocalOrUTC(input, format, locale, strict, false);
+    }
+
+    var prototypeMin = deprecate(
+         'moment().min is deprecated, use moment.max instead. https://github.com/moment/moment/issues/1548',
+         function () {
+             var other = local__createLocal.apply(null, arguments);
+             if (this.isValid() && other.isValid()) {
+                 return other < this ? this : other;
+             } else {
+                 return valid__createInvalid();
+             }
+         }
+     );
+
+    var prototypeMax = deprecate(
+        'moment().max is deprecated, use moment.min instead. https://github.com/moment/moment/issues/1548',
+        function () {
+            var other = local__createLocal.apply(null, arguments);
+            if (this.isValid() && other.isValid()) {
+                return other > this ? this : other;
+            } else {
+                return valid__createInvalid();
+            }
+        }
+    );
+
+    // Pick a moment m from moments so that m[fn](other) is true for all
+    // other. This relies on the function fn to be transitive.
+    //
+    // moments should either be an array of moment objects or an array, whose
+    // first element is an array of moment objects.
+    function pickBy(fn, moments) {
+        var res, i;
+        if (moments.length === 1 && isArray(moments[0])) {
+            moments = moments[0];
+        }
+        if (!moments.length) {
+            return local__createLocal();
+        }
+        res = moments[0];
+        for (i = 1; i < moments.length; ++i) {
+            if (!moments[i].isValid() || moments[i][fn](res)) {
+                res = moments[i];
+            }
+        }
+        return res;
+    }
+
+    // TODO: Use [].sort instead?
+    function min () {
+        var args = [].slice.call(arguments, 0);
+
+        return pickBy('isBefore', args);
+    }
+
+    function max () {
+        var args = [].slice.call(arguments, 0);
+
+        return pickBy('isAfter', args);
+    }
+
+    var now = function () {
+        return Date.now ? Date.now() : +(new Date());
+    };
+
+    function Duration (duration) {
+        var normalizedInput = normalizeObjectUnits(duration),
+            years = normalizedInput.year || 0,
+            quarters = normalizedInput.quarter || 0,
+            months = normalizedInput.month || 0,
+            weeks = normalizedInput.week || 0,
+            days = normalizedInput.day || 0,
+            hours = normalizedInput.hour || 0,
+            minutes = normalizedInput.minute || 0,
+            seconds = normalizedInput.second || 0,
+            milliseconds = normalizedInput.millisecond || 0;
+
+        // representation for dateAddRemove
+        this._milliseconds = +milliseconds +
+            seconds * 1e3 + // 1000
+            minutes * 6e4 + // 1000 * 60
+            hours * 1000 * 60 * 60; //using 1000 * 60 * 60 instead of 36e5 to avoid floating point rounding errors https://github.com/moment/moment/issues/2978
+        // Because of dateAddRemove treats 24 hours as different from a
+        // day when working around DST, we need to store them separately
+        this._days = +days +
+            weeks * 7;
+        // It is impossible translate months into days without knowing
+        // which months you are are talking about, so we have to store
+        // it separately.
+        this._months = +months +
+            quarters * 3 +
+            years * 12;
+
+        this._data = {};
+
+        this._locale = locale_locales__getLocale();
+
+        this._bubble();
+    }
+
+    function isDuration (obj) {
+        return obj instanceof Duration;
+    }
+
+    // FORMATTING
+
+    function offset (token, separator) {
+        addFormatToken(token, 0, 0, function () {
+            var offset = this.utcOffset();
+            var sign = '+';
+            if (offset < 0) {
+                offset = -offset;
+                sign = '-';
+            }
+            return sign + zeroFill(~~(offset / 60), 2) + separator + zeroFill(~~(offset) % 60, 2);
+        });
+    }
+
+    offset('Z', ':');
+    offset('ZZ', '');
+
+    // PARSING
+
+    addRegexToken('Z',  matchShortOffset);
+    addRegexToken('ZZ', matchShortOffset);
+    addParseToken(['Z', 'ZZ'], function (input, array, config) {
+        config._useUTC = true;
+        config._tzm = offsetFromString(matchShortOffset, input);
+    });
+
+    // HELPERS
+
+    // timezone chunker
+    // '+10:00' > ['10',  '00']
+    // '-1530'  > ['-15', '30']
+    var chunkOffset = /([\+\-]|\d\d)/gi;
+
+    function offsetFromString(matcher, string) {
+        var matches = ((string || '').match(matcher) || []);
+        var chunk   = matches[matches.length - 1] || [];
+        var parts   = (chunk + '').match(chunkOffset) || ['-', 0, 0];
+        var minutes = +(parts[1] * 60) + toInt(parts[2]);
+
+        return parts[0] === '+' ? minutes : -minutes;
+    }
+
+    // Return a moment from input, that is local/utc/zone equivalent to model.
+    function cloneWithOffset(input, model) {
+        var res, diff;
+        if (model._isUTC) {
+            res = model.clone();
+            diff = (isMoment(input) || isDate(input) ? input.valueOf() : local__createLocal(input).valueOf()) - res.valueOf();
+            // Use low-level api, because this fn is low-level api.
+            res._d.setTime(res._d.valueOf() + diff);
+            utils_hooks__hooks.updateOffset(res, false);
+            return res;
+        } else {
+            return local__createLocal(input).local();
+        }
+    }
+
+    function getDateOffset (m) {
+        // On Firefox.24 Date#getTimezoneOffset returns a floating point.
+        // https://github.com/moment/moment/pull/1871
+        return -Math.round(m._d.getTimezoneOffset() / 15) * 15;
+    }
+
+    // HOOKS
+
+    // This function will be called whenever a moment is mutated.
+    // It is intended to keep the offset in sync with the timezone.
+    utils_hooks__hooks.updateOffset = function () {};
+
+    // MOMENTS
+
+    // keepLocalTime = true means only change the timezone, without
+    // affecting the local hour. So 5:31:26 +0300 --[utcOffset(2, true)]-->
+    // 5:31:26 +0200 It is possible that 5:31:26 doesn't exist with offset
+    // +0200, so we adjust the time as needed, to be valid.
+    //
+    // Keeping the time actually adds/subtracts (one hour)
+    // from the actual represented time. That is why we call updateOffset
+    // a second time. In case it wants us to change the offset again
+    // _changeInProgress == true case, then we have to adjust, because
+    // there is no such time in the given timezone.
+    function getSetOffset (input, keepLocalTime) {
+        var offset = this._offset || 0,
+            localAdjust;
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        if (input != null) {
+            if (typeof input === 'string') {
+                input = offsetFromString(matchShortOffset, input);
+            } else if (Math.abs(input) < 16) {
+                input = input * 60;
+            }
+            if (!this._isUTC && keepLocalTime) {
+                localAdjust = getDateOffset(this);
+            }
+            this._offset = input;
+            this._isUTC = true;
+            if (localAdjust != null) {
+                this.add(localAdjust, 'm');
+            }
+            if (offset !== input) {
+                if (!keepLocalTime || this._changeInProgress) {
+                    add_subtract__addSubtract(this, create__createDuration(input - offset, 'm'), 1, false);
+                } else if (!this._changeInProgress) {
+                    this._changeInProgress = true;
+                    utils_hooks__hooks.updateOffset(this, true);
+                    this._changeInProgress = null;
+                }
+            }
+            return this;
+        } else {
+            return this._isUTC ? offset : getDateOffset(this);
+        }
+    }
+
+    function getSetZone (input, keepLocalTime) {
+        if (input != null) {
+            if (typeof input !== 'string') {
+                input = -input;
+            }
+
+            this.utcOffset(input, keepLocalTime);
+
+            return this;
+        } else {
+            return -this.utcOffset();
+        }
+    }
+
+    function setOffsetToUTC (keepLocalTime) {
+        return this.utcOffset(0, keepLocalTime);
+    }
+
+    function setOffsetToLocal (keepLocalTime) {
+        if (this._isUTC) {
+            this.utcOffset(0, keepLocalTime);
+            this._isUTC = false;
+
+            if (keepLocalTime) {
+                this.subtract(getDateOffset(this), 'm');
+            }
+        }
+        return this;
+    }
+
+    function setOffsetToParsedOffset () {
+        if (this._tzm) {
+            this.utcOffset(this._tzm);
+        } else if (typeof this._i === 'string') {
+            this.utcOffset(offsetFromString(matchOffset, this._i));
+        }
+        return this;
+    }
+
+    function hasAlignedHourOffset (input) {
+        if (!this.isValid()) {
+            return false;
+        }
+        input = input ? local__createLocal(input).utcOffset() : 0;
+
+        return (this.utcOffset() - input) % 60 === 0;
+    }
+
+    function isDaylightSavingTime () {
+        return (
+            this.utcOffset() > this.clone().month(0).utcOffset() ||
+            this.utcOffset() > this.clone().month(5).utcOffset()
+        );
+    }
+
+    function isDaylightSavingTimeShifted () {
+        if (!isUndefined(this._isDSTShifted)) {
+            return this._isDSTShifted;
+        }
+
+        var c = {};
+
+        copyConfig(c, this);
+        c = prepareConfig(c);
+
+        if (c._a) {
+            var other = c._isUTC ? create_utc__createUTC(c._a) : local__createLocal(c._a);
+            this._isDSTShifted = this.isValid() &&
+                compareArrays(c._a, other.toArray()) > 0;
+        } else {
+            this._isDSTShifted = false;
+        }
+
+        return this._isDSTShifted;
+    }
+
+    function isLocal () {
+        return this.isValid() ? !this._isUTC : false;
+    }
+
+    function isUtcOffset () {
+        return this.isValid() ? this._isUTC : false;
+    }
+
+    function isUtc () {
+        return this.isValid() ? this._isUTC && this._offset === 0 : false;
+    }
+
+    // ASP.NET json date format regex
+    var aspNetRegex = /^(\-)?(?:(\d*)[. ])?(\d+)\:(\d+)(?:\:(\d+)\.?(\d{3})?\d*)?$/;
+
+    // from http://docs.closure-library.googlecode.com/git/closure_goog_date_date.js.source.html
+    // somewhat more in line with 4.4.3.2 2004 spec, but allows decimal anywhere
+    // and further modified to allow for strings containing both week and day
+    var isoRegex = /^(-)?P(?:(-?[0-9,.]*)Y)?(?:(-?[0-9,.]*)M)?(?:(-?[0-9,.]*)W)?(?:(-?[0-9,.]*)D)?(?:T(?:(-?[0-9,.]*)H)?(?:(-?[0-9,.]*)M)?(?:(-?[0-9,.]*)S)?)?$/;
+
+    function create__createDuration (input, key) {
+        var duration = input,
+            // matching against regexp is expensive, do it on demand
+            match = null,
+            sign,
+            ret,
+            diffRes;
+
+        if (isDuration(input)) {
+            duration = {
+                ms : input._milliseconds,
+                d  : input._days,
+                M  : input._months
+            };
+        } else if (typeof input === 'number') {
+            duration = {};
+            if (key) {
+                duration[key] = input;
+            } else {
+                duration.milliseconds = input;
+            }
+        } else if (!!(match = aspNetRegex.exec(input))) {
+            sign = (match[1] === '-') ? -1 : 1;
+            duration = {
+                y  : 0,
+                d  : toInt(match[DATE])        * sign,
+                h  : toInt(match[HOUR])        * sign,
+                m  : toInt(match[MINUTE])      * sign,
+                s  : toInt(match[SECOND])      * sign,
+                ms : toInt(match[MILLISECOND]) * sign
+            };
+        } else if (!!(match = isoRegex.exec(input))) {
+            sign = (match[1] === '-') ? -1 : 1;
+            duration = {
+                y : parseIso(match[2], sign),
+                M : parseIso(match[3], sign),
+                w : parseIso(match[4], sign),
+                d : parseIso(match[5], sign),
+                h : parseIso(match[6], sign),
+                m : parseIso(match[7], sign),
+                s : parseIso(match[8], sign)
+            };
+        } else if (duration == null) {// checks for null or undefined
+            duration = {};
+        } else if (typeof duration === 'object' && ('from' in duration || 'to' in duration)) {
+            diffRes = momentsDifference(local__createLocal(duration.from), local__createLocal(duration.to));
+
+            duration = {};
+            duration.ms = diffRes.milliseconds;
+            duration.M = diffRes.months;
+        }
+
+        ret = new Duration(duration);
+
+        if (isDuration(input) && hasOwnProp(input, '_locale')) {
+            ret._locale = input._locale;
+        }
+
+        return ret;
+    }
+
+    create__createDuration.fn = Duration.prototype;
+
+    function parseIso (inp, sign) {
+        // We'd normally use ~~inp for this, but unfortunately it also
+        // converts floats to ints.
+        // inp may be undefined, so careful calling replace on it.
+        var res = inp && parseFloat(inp.replace(',', '.'));
+        // apply sign while we're at it
+        return (isNaN(res) ? 0 : res) * sign;
+    }
+
+    function positiveMomentsDifference(base, other) {
+        var res = {milliseconds: 0, months: 0};
+
+        res.months = other.month() - base.month() +
+            (other.year() - base.year()) * 12;
+        if (base.clone().add(res.months, 'M').isAfter(other)) {
+            --res.months;
+        }
+
+        res.milliseconds = +other - +(base.clone().add(res.months, 'M'));
+
+        return res;
+    }
+
+    function momentsDifference(base, other) {
+        var res;
+        if (!(base.isValid() && other.isValid())) {
+            return {milliseconds: 0, months: 0};
+        }
+
+        other = cloneWithOffset(other, base);
+        if (base.isBefore(other)) {
+            res = positiveMomentsDifference(base, other);
+        } else {
+            res = positiveMomentsDifference(other, base);
+            res.milliseconds = -res.milliseconds;
+            res.months = -res.months;
+        }
+
+        return res;
+    }
+
+    function absRound (number) {
+        if (number < 0) {
+            return Math.round(-1 * number) * -1;
+        } else {
+            return Math.round(number);
+        }
+    }
+
+    // TODO: remove 'name' arg after deprecation is removed
+    function createAdder(direction, name) {
+        return function (val, period) {
+            var dur, tmp;
+            //invert the arguments, but complain about it
+            if (period !== null && !isNaN(+period)) {
+                deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period).');
+                tmp = val; val = period; period = tmp;
+            }
+
+            val = typeof val === 'string' ? +val : val;
+            dur = create__createDuration(val, period);
+            add_subtract__addSubtract(this, dur, direction);
+            return this;
+        };
+    }
+
+    function add_subtract__addSubtract (mom, duration, isAdding, updateOffset) {
+        var milliseconds = duration._milliseconds,
+            days = absRound(duration._days),
+            months = absRound(duration._months);
+
+        if (!mom.isValid()) {
+            // No op
+            return;
+        }
+
+        updateOffset = updateOffset == null ? true : updateOffset;
+
+        if (milliseconds) {
+            mom._d.setTime(mom._d.valueOf() + milliseconds * isAdding);
+        }
+        if (days) {
+            get_set__set(mom, 'Date', get_set__get(mom, 'Date') + days * isAdding);
+        }
+        if (months) {
+            setMonth(mom, get_set__get(mom, 'Month') + months * isAdding);
+        }
+        if (updateOffset) {
+            utils_hooks__hooks.updateOffset(mom, days || months);
+        }
+    }
+
+    var add_subtract__add      = createAdder(1, 'add');
+    var add_subtract__subtract = createAdder(-1, 'subtract');
+
+    function moment_calendar__calendar (time, formats) {
+        // We want to compare the start of today, vs this.
+        // Getting start-of-today depends on whether we're local/utc/offset or not.
+        var now = time || local__createLocal(),
+            sod = cloneWithOffset(now, this).startOf('day'),
+            diff = this.diff(sod, 'days', true),
+            format = diff < -6 ? 'sameElse' :
+                diff < -1 ? 'lastWeek' :
+                diff < 0 ? 'lastDay' :
+                diff < 1 ? 'sameDay' :
+                diff < 2 ? 'nextDay' :
+                diff < 7 ? 'nextWeek' : 'sameElse';
+
+        var output = formats && (isFunction(formats[format]) ? formats[format]() : formats[format]);
+
+        return this.format(output || this.localeData().calendar(format, this, local__createLocal(now)));
+    }
+
+    function clone () {
+        return new Moment(this);
+    }
+
+    function isAfter (input, units) {
+        var localInput = isMoment(input) ? input : local__createLocal(input);
+        if (!(this.isValid() && localInput.isValid())) {
+            return false;
+        }
+        units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+        if (units === 'millisecond') {
+            return this.valueOf() > localInput.valueOf();
+        } else {
+            return localInput.valueOf() < this.clone().startOf(units).valueOf();
+        }
+    }
+
+    function isBefore (input, units) {
+        var localInput = isMoment(input) ? input : local__createLocal(input);
+        if (!(this.isValid() && localInput.isValid())) {
+            return false;
+        }
+        units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+        if (units === 'millisecond') {
+            return this.valueOf() < localInput.valueOf();
+        } else {
+            return this.clone().endOf(units).valueOf() < localInput.valueOf();
+        }
+    }
+
+    function isBetween (from, to, units, inclusivity) {
+        inclusivity = inclusivity || '()';
+        return (inclusivity[0] === '(' ? this.isAfter(from, units) : !this.isBefore(from, units)) &&
+            (inclusivity[1] === ')' ? this.isBefore(to, units) : !this.isAfter(to, units));
+    }
+
+    function isSame (input, units) {
+        var localInput = isMoment(input) ? input : local__createLocal(input),
+            inputMs;
+        if (!(this.isValid() && localInput.isValid())) {
+            return false;
+        }
+        units = normalizeUnits(units || 'millisecond');
+        if (units === 'millisecond') {
+            return this.valueOf() === localInput.valueOf();
+        } else {
+            inputMs = localInput.valueOf();
+            return this.clone().startOf(units).valueOf() <= inputMs && inputMs <= this.clone().endOf(units).valueOf();
+        }
+    }
+
+    function isSameOrAfter (input, units) {
+        return this.isSame(input, units) || this.isAfter(input,units);
+    }
+
+    function isSameOrBefore (input, units) {
+        return this.isSame(input, units) || this.isBefore(input,units);
+    }
+
+    function diff (input, units, asFloat) {
+        var that,
+            zoneDelta,
+            delta, output;
+
+        if (!this.isValid()) {
+            return NaN;
+        }
+
+        that = cloneWithOffset(input, this);
+
+        if (!that.isValid()) {
+            return NaN;
+        }
+
+        zoneDelta = (that.utcOffset() - this.utcOffset()) * 6e4;
+
+        units = normalizeUnits(units);
+
+        if (units === 'year' || units === 'month' || units === 'quarter') {
+            output = monthDiff(this, that);
+            if (units === 'quarter') {
+                output = output / 3;
+            } else if (units === 'year') {
+                output = output / 12;
+            }
+        } else {
+            delta = this - that;
+            output = units === 'second' ? delta / 1e3 : // 1000
+                units === 'minute' ? delta / 6e4 : // 1000 * 60
+                units === 'hour' ? delta / 36e5 : // 1000 * 60 * 60
+                units === 'day' ? (delta - zoneDelta) / 864e5 : // 1000 * 60 * 60 * 24, negate dst
+                units === 'week' ? (delta - zoneDelta) / 6048e5 : // 1000 * 60 * 60 * 24 * 7, negate dst
+                delta;
+        }
+        return asFloat ? output : absFloor(output);
+    }
+
+    function monthDiff (a, b) {
+        // difference in months
+        var wholeMonthDiff = ((b.year() - a.year()) * 12) + (b.month() - a.month()),
+            // b is in (anchor - 1 month, anchor + 1 month)
+            anchor = a.clone().add(wholeMonthDiff, 'months'),
+            anchor2, adjust;
+
+        if (b - anchor < 0) {
+            anchor2 = a.clone().add(wholeMonthDiff - 1, 'months');
+            // linear across the month
+            adjust = (b - anchor) / (anchor - anchor2);
+        } else {
+            anchor2 = a.clone().add(wholeMonthDiff + 1, 'months');
+            // linear across the month
+            adjust = (b - anchor) / (anchor2 - anchor);
+        }
+
+        //check for negative zero, return zero if negative zero
+        return -(wholeMonthDiff + adjust) || 0;
+    }
+
+    utils_hooks__hooks.defaultFormat = 'YYYY-MM-DDTHH:mm:ssZ';
+    utils_hooks__hooks.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]';
+
+    function toString () {
+        return this.clone().locale('en').format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ');
+    }
+
+    function moment_format__toISOString () {
+        var m = this.clone().utc();
+        if (0 < m.year() && m.year() <= 9999) {
+            if (isFunction(Date.prototype.toISOString)) {
+                // native implementation is ~50x faster, use it when we can
+                return this.toDate().toISOString();
+            } else {
+                return formatMoment(m, 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]');
+            }
+        } else {
+            return formatMoment(m, 'YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]');
+        }
+    }
+
+    function format (inputString) {
+        if (!inputString) {
+            inputString = this.isUtc() ? utils_hooks__hooks.defaultFormatUtc : utils_hooks__hooks.defaultFormat;
+        }
+        var output = formatMoment(this, inputString);
+        return this.localeData().postformat(output);
+    }
+
+    function from (time, withoutSuffix) {
+        if (this.isValid() &&
+                ((isMoment(time) && time.isValid()) ||
+                 local__createLocal(time).isValid())) {
+            return create__createDuration({to: this, from: time}).locale(this.locale()).humanize(!withoutSuffix);
+        } else {
+            return this.localeData().invalidDate();
+        }
+    }
+
+    function fromNow (withoutSuffix) {
+        return this.from(local__createLocal(), withoutSuffix);
+    }
+
+    function to (time, withoutSuffix) {
+        if (this.isValid() &&
+                ((isMoment(time) && time.isValid()) ||
+                 local__createLocal(time).isValid())) {
+            return create__createDuration({from: this, to: time}).locale(this.locale()).humanize(!withoutSuffix);
+        } else {
+            return this.localeData().invalidDate();
+        }
+    }
+
+    function toNow (withoutSuffix) {
+        return this.to(local__createLocal(), withoutSuffix);
+    }
+
+    // If passed a locale key, it will set the locale for this
+    // instance.  Otherwise, it will return the locale configuration
+    // variables for this instance.
+    function locale (key) {
+        var newLocaleData;
+
+        if (key === undefined) {
+            return this._locale._abbr;
+        } else {
+            newLocaleData = locale_locales__getLocale(key);
+            if (newLocaleData != null) {
+                this._locale = newLocaleData;
+            }
+            return this;
+        }
+    }
+
+    var lang = deprecate(
+        'moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.',
+        function (key) {
+            if (key === undefined) {
+                return this.localeData();
+            } else {
+                return this.locale(key);
+            }
+        }
+    );
+
+    function localeData () {
+        return this._locale;
+    }
+
+    function startOf (units) {
+        units = normalizeUnits(units);
+        // the following switch intentionally omits break keywords
+        // to utilize falling through the cases.
+        switch (units) {
+        case 'year':
+            this.month(0);
+            /* falls through */
+        case 'quarter':
+        case 'month':
+            this.date(1);
+            /* falls through */
+        case 'week':
+        case 'isoWeek':
+        case 'day':
+        case 'date':
+            this.hours(0);
+            /* falls through */
+        case 'hour':
+            this.minutes(0);
+            /* falls through */
+        case 'minute':
+            this.seconds(0);
+            /* falls through */
+        case 'second':
+            this.milliseconds(0);
+        }
+
+        // weeks are a special case
+        if (units === 'week') {
+            this.weekday(0);
+        }
+        if (units === 'isoWeek') {
+            this.isoWeekday(1);
+        }
+
+        // quarters are also special
+        if (units === 'quarter') {
+            this.month(Math.floor(this.month() / 3) * 3);
+        }
+
+        return this;
+    }
+
+    function endOf (units) {
+        units = normalizeUnits(units);
+        if (units === undefined || units === 'millisecond') {
+            return this;
+        }
+
+        // 'date' is an alias for 'day', so it should be considered as such.
+        if (units === 'date') {
+            units = 'day';
+        }
+
+        return this.startOf(units).add(1, (units === 'isoWeek' ? 'week' : units)).subtract(1, 'ms');
+    }
+
+    function to_type__valueOf () {
+        return this._d.valueOf() - ((this._offset || 0) * 60000);
+    }
+
+    function unix () {
+        return Math.floor(this.valueOf() / 1000);
+    }
+
+    function toDate () {
+        return this._offset ? new Date(this.valueOf()) : this._d;
+    }
+
+    function toArray () {
+        var m = this;
+        return [m.year(), m.month(), m.date(), m.hour(), m.minute(), m.second(), m.millisecond()];
+    }
+
+    function toObject () {
+        var m = this;
+        return {
+            years: m.year(),
+            months: m.month(),
+            date: m.date(),
+            hours: m.hours(),
+            minutes: m.minutes(),
+            seconds: m.seconds(),
+            milliseconds: m.milliseconds()
+        };
+    }
+
+    function toJSON () {
+        // new Date(NaN).toJSON() === null
+        return this.isValid() ? this.toISOString() : null;
+    }
+
+    function moment_valid__isValid () {
+        return valid__isValid(this);
+    }
+
+    function parsingFlags () {
+        return extend({}, getParsingFlags(this));
+    }
+
+    function invalidAt () {
+        return getParsingFlags(this).overflow;
+    }
+
+    function creationData() {
+        return {
+            input: this._i,
+            format: this._f,
+            locale: this._locale,
+            isUTC: this._isUTC,
+            strict: this._strict
+        };
+    }
+
+    // FORMATTING
+
+    addFormatToken(0, ['gg', 2], 0, function () {
+        return this.weekYear() % 100;
+    });
+
+    addFormatToken(0, ['GG', 2], 0, function () {
+        return this.isoWeekYear() % 100;
+    });
+
+    function addWeekYearFormatToken (token, getter) {
+        addFormatToken(0, [token, token.length], 0, getter);
+    }
+
+    addWeekYearFormatToken('gggg',     'weekYear');
+    addWeekYearFormatToken('ggggg',    'weekYear');
+    addWeekYearFormatToken('GGGG',  'isoWeekYear');
+    addWeekYearFormatToken('GGGGG', 'isoWeekYear');
+
+    // ALIASES
+
+    addUnitAlias('weekYear', 'gg');
+    addUnitAlias('isoWeekYear', 'GG');
+
+    // PARSING
+
+    addRegexToken('G',      matchSigned);
+    addRegexToken('g',      matchSigned);
+    addRegexToken('GG',     match1to2, match2);
+    addRegexToken('gg',     match1to2, match2);
+    addRegexToken('GGGG',   match1to4, match4);
+    addRegexToken('gggg',   match1to4, match4);
+    addRegexToken('GGGGG',  match1to6, match6);
+    addRegexToken('ggggg',  match1to6, match6);
+
+    addWeekParseToken(['gggg', 'ggggg', 'GGGG', 'GGGGG'], function (input, week, config, token) {
+        week[token.substr(0, 2)] = toInt(input);
+    });
+
+    addWeekParseToken(['gg', 'GG'], function (input, week, config, token) {
+        week[token] = utils_hooks__hooks.parseTwoDigitYear(input);
+    });
+
+    // MOMENTS
+
+    function getSetWeekYear (input) {
+        return getSetWeekYearHelper.call(this,
+                input,
+                this.week(),
+                this.weekday(),
+                this.localeData()._week.dow,
+                this.localeData()._week.doy);
+    }
+
+    function getSetISOWeekYear (input) {
+        return getSetWeekYearHelper.call(this,
+                input, this.isoWeek(), this.isoWeekday(), 1, 4);
+    }
+
+    function getISOWeeksInYear () {
+        return weeksInYear(this.year(), 1, 4);
+    }
+
+    function getWeeksInYear () {
+        var weekInfo = this.localeData()._week;
+        return weeksInYear(this.year(), weekInfo.dow, weekInfo.doy);
+    }
+
+    function getSetWeekYearHelper(input, week, weekday, dow, doy) {
+        var weeksTarget;
+        if (input == null) {
+            return weekOfYear(this, dow, doy).year;
+        } else {
+            weeksTarget = weeksInYear(input, dow, doy);
+            if (week > weeksTarget) {
+                week = weeksTarget;
+            }
+            return setWeekAll.call(this, input, week, weekday, dow, doy);
+        }
+    }
+
+    function setWeekAll(weekYear, week, weekday, dow, doy) {
+        var dayOfYearData = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy),
+            date = createUTCDate(dayOfYearData.year, 0, dayOfYearData.dayOfYear);
+
+        this.year(date.getUTCFullYear());
+        this.month(date.getUTCMonth());
+        this.date(date.getUTCDate());
+        return this;
+    }
+
+    // FORMATTING
+
+    addFormatToken('Q', 0, 'Qo', 'quarter');
+
+    // ALIASES
+
+    addUnitAlias('quarter', 'Q');
+
+    // PARSING
+
+    addRegexToken('Q', match1);
+    addParseToken('Q', function (input, array) {
+        array[MONTH] = (toInt(input) - 1) * 3;
+    });
+
+    // MOMENTS
+
+    function getSetQuarter (input) {
+        return input == null ? Math.ceil((this.month() + 1) / 3) : this.month((input - 1) * 3 + this.month() % 3);
+    }
+
+    // FORMATTING
+
+    addFormatToken('w', ['ww', 2], 'wo', 'week');
+    addFormatToken('W', ['WW', 2], 'Wo', 'isoWeek');
+
+    // ALIASES
+
+    addUnitAlias('week', 'w');
+    addUnitAlias('isoWeek', 'W');
+
+    // PARSING
+
+    addRegexToken('w',  match1to2);
+    addRegexToken('ww', match1to2, match2);
+    addRegexToken('W',  match1to2);
+    addRegexToken('WW', match1to2, match2);
+
+    addWeekParseToken(['w', 'ww', 'W', 'WW'], function (input, week, config, token) {
+        week[token.substr(0, 1)] = toInt(input);
+    });
+
+    // HELPERS
+
+    // LOCALES
+
+    function localeWeek (mom) {
+        return weekOfYear(mom, this._week.dow, this._week.doy).week;
+    }
+
+    var defaultLocaleWeek = {
+        dow : 0, // Sunday is the first day of the week.
+        doy : 6  // The week that contains Jan 1st is the first week of the year.
+    };
+
+    function localeFirstDayOfWeek () {
+        return this._week.dow;
+    }
+
+    function localeFirstDayOfYear () {
+        return this._week.doy;
+    }
+
+    // MOMENTS
+
+    function getSetWeek (input) {
+        var week = this.localeData().week(this);
+        return input == null ? week : this.add((input - week) * 7, 'd');
+    }
+
+    function getSetISOWeek (input) {
+        var week = weekOfYear(this, 1, 4).week;
+        return input == null ? week : this.add((input - week) * 7, 'd');
+    }
+
+    // FORMATTING
+
+    addFormatToken('D', ['DD', 2], 'Do', 'date');
+
+    // ALIASES
+
+    addUnitAlias('date', 'D');
+
+    // PARSING
+
+    addRegexToken('D',  match1to2);
+    addRegexToken('DD', match1to2, match2);
+    addRegexToken('Do', function (isStrict, locale) {
+        return isStrict ? locale._ordinalParse : locale._ordinalParseLenient;
+    });
+
+    addParseToken(['D', 'DD'], DATE);
+    addParseToken('Do', function (input, array) {
+        array[DATE] = toInt(input.match(match1to2)[0], 10);
+    });
+
+    // MOMENTS
+
+    var getSetDayOfMonth = makeGetSet('Date', true);
+
+    // FORMATTING
+
+    addFormatToken('d', 0, 'do', 'day');
+
+    addFormatToken('dd', 0, 0, function (format) {
+        return this.localeData().weekdaysMin(this, format);
+    });
+
+    addFormatToken('ddd', 0, 0, function (format) {
+        return this.localeData().weekdaysShort(this, format);
+    });
+
+    addFormatToken('dddd', 0, 0, function (format) {
+        return this.localeData().weekdays(this, format);
+    });
+
+    addFormatToken('e', 0, 0, 'weekday');
+    addFormatToken('E', 0, 0, 'isoWeekday');
+
+    // ALIASES
+
+    addUnitAlias('day', 'd');
+    addUnitAlias('weekday', 'e');
+    addUnitAlias('isoWeekday', 'E');
+
+    // PARSING
+
+    addRegexToken('d',    match1to2);
+    addRegexToken('e',    match1to2);
+    addRegexToken('E',    match1to2);
+    addRegexToken('dd',   function (isStrict, locale) {
+        return locale.weekdaysMinRegex(isStrict);
+    });
+    addRegexToken('ddd',   function (isStrict, locale) {
+        return locale.weekdaysShortRegex(isStrict);
+    });
+    addRegexToken('dddd',   function (isStrict, locale) {
+        return locale.weekdaysRegex(isStrict);
+    });
+
+    addWeekParseToken(['dd', 'ddd', 'dddd'], function (input, week, config, token) {
+        var weekday = config._locale.weekdaysParse(input, token, config._strict);
+        // if we didn't get a weekday name, mark the date as invalid
+        if (weekday != null) {
+            week.d = weekday;
+        } else {
+            getParsingFlags(config).invalidWeekday = input;
+        }
+    });
+
+    addWeekParseToken(['d', 'e', 'E'], function (input, week, config, token) {
+        week[token] = toInt(input);
+    });
+
+    // HELPERS
+
+    function parseWeekday(input, locale) {
+        if (typeof input !== 'string') {
+            return input;
+        }
+
+        if (!isNaN(input)) {
+            return parseInt(input, 10);
+        }
+
+        input = locale.weekdaysParse(input);
+        if (typeof input === 'number') {
+            return input;
+        }
+
+        return null;
+    }
+
+    // LOCALES
+
+    var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
+    function localeWeekdays (m, format) {
+        return isArray(this._weekdays) ? this._weekdays[m.day()] :
+            this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
+    }
+
+    var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
+    function localeWeekdaysShort (m) {
+        return this._weekdaysShort[m.day()];
+    }
+
+    var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
+    function localeWeekdaysMin (m) {
+        return this._weekdaysMin[m.day()];
+    }
+
+    function day_of_week__handleStrictParse(weekdayName, format, strict) {
+        var i, ii, mom, llc = weekdayName.toLocaleLowerCase();
+        if (!this._weekdaysParse) {
+            this._weekdaysParse = [];
+            this._shortWeekdaysParse = [];
+            this._minWeekdaysParse = [];
+
+            for (i = 0; i < 7; ++i) {
+                mom = create_utc__createUTC([2000, 1]).day(i);
+                this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
+                this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
+                this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
+            }
+        }
+
+        if (strict) {
+            if (format === 'dddd') {
+                ii = indexOf.call(this._weekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else if (format === 'ddd') {
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        } else {
+            if (format === 'dddd') {
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else if (format === 'ddd') {
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        }
+    }
+
+    function localeWeekdaysParse (weekdayName, format, strict) {
+        var i, mom, regex;
+
+        if (this._weekdaysParseExact) {
+            return day_of_week__handleStrictParse.call(this, weekdayName, format, strict);
+        }
+
+        if (!this._weekdaysParse) {
+            this._weekdaysParse = [];
+            this._minWeekdaysParse = [];
+            this._shortWeekdaysParse = [];
+            this._fullWeekdaysParse = [];
+        }
+
+        for (i = 0; i < 7; i++) {
+            // make the regex if we don't have it already
+
+            mom = create_utc__createUTC([2000, 1]).day(i);
+            if (strict && !this._fullWeekdaysParse[i]) {
+                this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
+                this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
+                this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
+            }
+            if (!this._weekdaysParse[i]) {
+                regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
+                this._weekdaysParse[i] = new RegExp(regex.replace('.', ''), 'i');
+            }
+            // test the regex
+            if (strict && format === 'dddd' && this._fullWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (strict && format === 'ddd' && this._shortWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (strict && format === 'dd' && this._minWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (!strict && this._weekdaysParse[i].test(weekdayName)) {
+                return i;
+            }
+        }
+    }
+
+    // MOMENTS
+
+    function getSetDayOfWeek (input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
+        if (input != null) {
+            input = parseWeekday(input, this.localeData());
+            return this.add(input - day, 'd');
+        } else {
+            return day;
+        }
+    }
+
+    function getSetLocaleDayOfWeek (input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
+        return input == null ? weekday : this.add(input - weekday, 'd');
+    }
+
+    function getSetISODayOfWeek (input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        // behaves the same as moment#day except
+        // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
+        // as a setter, sunday should belong to the previous week.
+        return input == null ? this.day() || 7 : this.day(this.day() % 7 ? input : input - 7);
+    }
+
+    var defaultWeekdaysRegex = matchWord;
+    function weekdaysRegex (isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysStrictRegex;
+            } else {
+                return this._weekdaysRegex;
+            }
+        } else {
+            return this._weekdaysStrictRegex && isStrict ?
+                this._weekdaysStrictRegex : this._weekdaysRegex;
+        }
+    }
+
+    var defaultWeekdaysShortRegex = matchWord;
+    function weekdaysShortRegex (isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysShortStrictRegex;
+            } else {
+                return this._weekdaysShortRegex;
+            }
+        } else {
+            return this._weekdaysShortStrictRegex && isStrict ?
+                this._weekdaysShortStrictRegex : this._weekdaysShortRegex;
+        }
+    }
+
+    var defaultWeekdaysMinRegex = matchWord;
+    function weekdaysMinRegex (isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysMinStrictRegex;
+            } else {
+                return this._weekdaysMinRegex;
+            }
+        } else {
+            return this._weekdaysMinStrictRegex && isStrict ?
+                this._weekdaysMinStrictRegex : this._weekdaysMinRegex;
+        }
+    }
+
+
+    function computeWeekdaysParse () {
+        function cmpLenRev(a, b) {
+            return b.length - a.length;
+        }
+
+        var minPieces = [], shortPieces = [], longPieces = [], mixedPieces = [],
+            i, mom, minp, shortp, longp;
+        for (i = 0; i < 7; i++) {
+            // make the regex if we don't have it already
+            mom = create_utc__createUTC([2000, 1]).day(i);
+            minp = this.weekdaysMin(mom, '');
+            shortp = this.weekdaysShort(mom, '');
+            longp = this.weekdays(mom, '');
+            minPieces.push(minp);
+            shortPieces.push(shortp);
+            longPieces.push(longp);
+            mixedPieces.push(minp);
+            mixedPieces.push(shortp);
+            mixedPieces.push(longp);
+        }
+        // Sorting makes sure if one weekday (or abbr) is a prefix of another it
+        // will match the longer piece.
+        minPieces.sort(cmpLenRev);
+        shortPieces.sort(cmpLenRev);
+        longPieces.sort(cmpLenRev);
+        mixedPieces.sort(cmpLenRev);
+        for (i = 0; i < 7; i++) {
+            shortPieces[i] = regexEscape(shortPieces[i]);
+            longPieces[i] = regexEscape(longPieces[i]);
+            mixedPieces[i] = regexEscape(mixedPieces[i]);
+        }
+
+        this._weekdaysRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+        this._weekdaysShortRegex = this._weekdaysRegex;
+        this._weekdaysMinRegex = this._weekdaysRegex;
+
+        this._weekdaysStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+        this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+        this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
+    }
+
+    // FORMATTING
+
+    addFormatToken('DDD', ['DDDD', 3], 'DDDo', 'dayOfYear');
+
+    // ALIASES
+
+    addUnitAlias('dayOfYear', 'DDD');
+
+    // PARSING
+
+    addRegexToken('DDD',  match1to3);
+    addRegexToken('DDDD', match3);
+    addParseToken(['DDD', 'DDDD'], function (input, array, config) {
+        config._dayOfYear = toInt(input);
+    });
+
+    // HELPERS
+
+    // MOMENTS
+
+    function getSetDayOfYear (input) {
+        var dayOfYear = Math.round((this.clone().startOf('day') - this.clone().startOf('year')) / 864e5) + 1;
+        return input == null ? dayOfYear : this.add((input - dayOfYear), 'd');
+    }
+
+    // FORMATTING
+
+    function hFormat() {
+        return this.hours() % 12 || 12;
+    }
+
+    function kFormat() {
+        return this.hours() || 24;
+    }
+
+    addFormatToken('H', ['HH', 2], 0, 'hour');
+    addFormatToken('h', ['hh', 2], 0, hFormat);
+    addFormatToken('k', ['kk', 2], 0, kFormat);
+
+    addFormatToken('hmm', 0, 0, function () {
+        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2);
+    });
+
+    addFormatToken('hmmss', 0, 0, function () {
+        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2) +
+            zeroFill(this.seconds(), 2);
+    });
+
+    addFormatToken('Hmm', 0, 0, function () {
+        return '' + this.hours() + zeroFill(this.minutes(), 2);
+    });
+
+    addFormatToken('Hmmss', 0, 0, function () {
+        return '' + this.hours() + zeroFill(this.minutes(), 2) +
+            zeroFill(this.seconds(), 2);
+    });
+
+    function meridiem (token, lowercase) {
+        addFormatToken(token, 0, 0, function () {
+            return this.localeData().meridiem(this.hours(), this.minutes(), lowercase);
+        });
+    }
+
+    meridiem('a', true);
+    meridiem('A', false);
+
+    // ALIASES
+
+    addUnitAlias('hour', 'h');
+
+    // PARSING
+
+    function matchMeridiem (isStrict, locale) {
+        return locale._meridiemParse;
+    }
+
+    addRegexToken('a',  matchMeridiem);
+    addRegexToken('A',  matchMeridiem);
+    addRegexToken('H',  match1to2);
+    addRegexToken('h',  match1to2);
+    addRegexToken('HH', match1to2, match2);
+    addRegexToken('hh', match1to2, match2);
+
+    addRegexToken('hmm', match3to4);
+    addRegexToken('hmmss', match5to6);
+    addRegexToken('Hmm', match3to4);
+    addRegexToken('Hmmss', match5to6);
+
+    addParseToken(['H', 'HH'], HOUR);
+    addParseToken(['a', 'A'], function (input, array, config) {
+        config._isPm = config._locale.isPM(input);
+        config._meridiem = input;
+    });
+    addParseToken(['h', 'hh'], function (input, array, config) {
+        array[HOUR] = toInt(input);
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('hmm', function (input, array, config) {
+        var pos = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos));
+        array[MINUTE] = toInt(input.substr(pos));
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('hmmss', function (input, array, config) {
+        var pos1 = input.length - 4;
+        var pos2 = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos1));
+        array[MINUTE] = toInt(input.substr(pos1, 2));
+        array[SECOND] = toInt(input.substr(pos2));
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('Hmm', function (input, array, config) {
+        var pos = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos));
+        array[MINUTE] = toInt(input.substr(pos));
+    });
+    addParseToken('Hmmss', function (input, array, config) {
+        var pos1 = input.length - 4;
+        var pos2 = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos1));
+        array[MINUTE] = toInt(input.substr(pos1, 2));
+        array[SECOND] = toInt(input.substr(pos2));
+    });
+
+    // LOCALES
+
+    function localeIsPM (input) {
+        // IE8 Quirks Mode & IE7 Standards Mode do not allow accessing strings like arrays
+        // Using charAt should be more compatible.
+        return ((input + '').toLowerCase().charAt(0) === 'p');
+    }
+
+    var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
+    function localeMeridiem (hours, minutes, isLower) {
+        if (hours > 11) {
+            return isLower ? 'pm' : 'PM';
+        } else {
+            return isLower ? 'am' : 'AM';
+        }
+    }
+
+
+    // MOMENTS
+
+    // Setting the hour should keep the time, because the user explicitly
+    // specified which hour he wants. So trying to maintain the same hour (in
+    // a new timezone) makes sense. Adding/subtracting hours does not follow
+    // this rule.
+    var getSetHour = makeGetSet('Hours', true);
+
+    // FORMATTING
+
+    addFormatToken('m', ['mm', 2], 0, 'minute');
+
+    // ALIASES
+
+    addUnitAlias('minute', 'm');
+
+    // PARSING
+
+    addRegexToken('m',  match1to2);
+    addRegexToken('mm', match1to2, match2);
+    addParseToken(['m', 'mm'], MINUTE);
+
+    // MOMENTS
+
+    var getSetMinute = makeGetSet('Minutes', false);
+
+    // FORMATTING
+
+    addFormatToken('s', ['ss', 2], 0, 'second');
+
+    // ALIASES
+
+    addUnitAlias('second', 's');
+
+    // PARSING
+
+    addRegexToken('s',  match1to2);
+    addRegexToken('ss', match1to2, match2);
+    addParseToken(['s', 'ss'], SECOND);
+
+    // MOMENTS
+
+    var getSetSecond = makeGetSet('Seconds', false);
+
+    // FORMATTING
+
+    addFormatToken('S', 0, 0, function () {
+        return ~~(this.millisecond() / 100);
+    });
+
+    addFormatToken(0, ['SS', 2], 0, function () {
+        return ~~(this.millisecond() / 10);
+    });
+
+    addFormatToken(0, ['SSS', 3], 0, 'millisecond');
+    addFormatToken(0, ['SSSS', 4], 0, function () {
+        return this.millisecond() * 10;
+    });
+    addFormatToken(0, ['SSSSS', 5], 0, function () {
+        return this.millisecond() * 100;
+    });
+    addFormatToken(0, ['SSSSSS', 6], 0, function () {
+        return this.millisecond() * 1000;
+    });
+    addFormatToken(0, ['SSSSSSS', 7], 0, function () {
+        return this.millisecond() * 10000;
+    });
+    addFormatToken(0, ['SSSSSSSS', 8], 0, function () {
+        return this.millisecond() * 100000;
+    });
+    addFormatToken(0, ['SSSSSSSSS', 9], 0, function () {
+        return this.millisecond() * 1000000;
+    });
+
+
+    // ALIASES
+
+    addUnitAlias('millisecond', 'ms');
+
+    // PARSING
+
+    addRegexToken('S',    match1to3, match1);
+    addRegexToken('SS',   match1to3, match2);
+    addRegexToken('SSS',  match1to3, match3);
+
+    var token;
+    for (token = 'SSSS'; token.length <= 9; token += 'S') {
+        addRegexToken(token, matchUnsigned);
+    }
+
+    function parseMs(input, array) {
+        array[MILLISECOND] = toInt(('0.' + input) * 1000);
+    }
+
+    for (token = 'S'; token.length <= 9; token += 'S') {
+        addParseToken(token, parseMs);
+    }
+    // MOMENTS
+
+    var getSetMillisecond = makeGetSet('Milliseconds', false);
+
+    // FORMATTING
+
+    addFormatToken('z',  0, 0, 'zoneAbbr');
+    addFormatToken('zz', 0, 0, 'zoneName');
+
+    // MOMENTS
+
+    function getZoneAbbr () {
+        return this._isUTC ? 'UTC' : '';
+    }
+
+    function getZoneName () {
+        return this._isUTC ? 'Coordinated Universal Time' : '';
+    }
+
+    var momentPrototype__proto = Moment.prototype;
+
+    momentPrototype__proto.add               = add_subtract__add;
+    momentPrototype__proto.calendar          = moment_calendar__calendar;
+    momentPrototype__proto.clone             = clone;
+    momentPrototype__proto.diff              = diff;
+    momentPrototype__proto.endOf             = endOf;
+    momentPrototype__proto.format            = format;
+    momentPrototype__proto.from              = from;
+    momentPrototype__proto.fromNow           = fromNow;
+    momentPrototype__proto.to                = to;
+    momentPrototype__proto.toNow             = toNow;
+    momentPrototype__proto.get               = getSet;
+    momentPrototype__proto.invalidAt         = invalidAt;
+    momentPrototype__proto.isAfter           = isAfter;
+    momentPrototype__proto.isBefore          = isBefore;
+    momentPrototype__proto.isBetween         = isBetween;
+    momentPrototype__proto.isSame            = isSame;
+    momentPrototype__proto.isSameOrAfter     = isSameOrAfter;
+    momentPrototype__proto.isSameOrBefore    = isSameOrBefore;
+    momentPrototype__proto.isValid           = moment_valid__isValid;
+    momentPrototype__proto.lang              = lang;
+    momentPrototype__proto.locale            = locale;
+    momentPrototype__proto.localeData        = localeData;
+    momentPrototype__proto.max               = prototypeMax;
+    momentPrototype__proto.min               = prototypeMin;
+    momentPrototype__proto.parsingFlags      = parsingFlags;
+    momentPrototype__proto.set               = getSet;
+    momentPrototype__proto.startOf           = startOf;
+    momentPrototype__proto.subtract          = add_subtract__subtract;
+    momentPrototype__proto.toArray           = toArray;
+    momentPrototype__proto.toObject          = toObject;
+    momentPrototype__proto.toDate            = toDate;
+    momentPrototype__proto.toISOString       = moment_format__toISOString;
+    momentPrototype__proto.toJSON            = toJSON;
+    momentPrototype__proto.toString          = toString;
+    momentPrototype__proto.unix              = unix;
+    momentPrototype__proto.valueOf           = to_type__valueOf;
+    momentPrototype__proto.creationData      = creationData;
+
+    // Year
+    momentPrototype__proto.year       = getSetYear;
+    momentPrototype__proto.isLeapYear = getIsLeapYear;
+
+    // Week Year
+    momentPrototype__proto.weekYear    = getSetWeekYear;
+    momentPrototype__proto.isoWeekYear = getSetISOWeekYear;
+
+    // Quarter
+    momentPrototype__proto.quarter = momentPrototype__proto.quarters = getSetQuarter;
+
+    // Month
+    momentPrototype__proto.month       = getSetMonth;
+    momentPrototype__proto.daysInMonth = getDaysInMonth;
+
+    // Week
+    momentPrototype__proto.week           = momentPrototype__proto.weeks        = getSetWeek;
+    momentPrototype__proto.isoWeek        = momentPrototype__proto.isoWeeks     = getSetISOWeek;
+    momentPrototype__proto.weeksInYear    = getWeeksInYear;
+    momentPrototype__proto.isoWeeksInYear = getISOWeeksInYear;
+
+    // Day
+    momentPrototype__proto.date       = getSetDayOfMonth;
+    momentPrototype__proto.day        = momentPrototype__proto.days             = getSetDayOfWeek;
+    momentPrototype__proto.weekday    = getSetLocaleDayOfWeek;
+    momentPrototype__proto.isoWeekday = getSetISODayOfWeek;
+    momentPrototype__proto.dayOfYear  = getSetDayOfYear;
+
+    // Hour
+    momentPrototype__proto.hour = momentPrototype__proto.hours = getSetHour;
+
+    // Minute
+    momentPrototype__proto.minute = momentPrototype__proto.minutes = getSetMinute;
+
+    // Second
+    momentPrototype__proto.second = momentPrototype__proto.seconds = getSetSecond;
+
+    // Millisecond
+    momentPrototype__proto.millisecond = momentPrototype__proto.milliseconds = getSetMillisecond;
+
+    // Offset
+    momentPrototype__proto.utcOffset            = getSetOffset;
+    momentPrototype__proto.utc                  = setOffsetToUTC;
+    momentPrototype__proto.local                = setOffsetToLocal;
+    momentPrototype__proto.parseZone            = setOffsetToParsedOffset;
+    momentPrototype__proto.hasAlignedHourOffset = hasAlignedHourOffset;
+    momentPrototype__proto.isDST                = isDaylightSavingTime;
+    momentPrototype__proto.isDSTShifted         = isDaylightSavingTimeShifted;
+    momentPrototype__proto.isLocal              = isLocal;
+    momentPrototype__proto.isUtcOffset          = isUtcOffset;
+    momentPrototype__proto.isUtc                = isUtc;
+    momentPrototype__proto.isUTC                = isUtc;
+
+    // Timezone
+    momentPrototype__proto.zoneAbbr = getZoneAbbr;
+    momentPrototype__proto.zoneName = getZoneName;
+
+    // Deprecations
+    momentPrototype__proto.dates  = deprecate('dates accessor is deprecated. Use date instead.', getSetDayOfMonth);
+    momentPrototype__proto.months = deprecate('months accessor is deprecated. Use month instead', getSetMonth);
+    momentPrototype__proto.years  = deprecate('years accessor is deprecated. Use year instead', getSetYear);
+    momentPrototype__proto.zone   = deprecate('moment().zone is deprecated, use moment().utcOffset instead. https://github.com/moment/moment/issues/1779', getSetZone);
+
+    var momentPrototype = momentPrototype__proto;
+
+    function moment__createUnix (input) {
+        return local__createLocal(input * 1000);
+    }
+
+    function moment__createInZone () {
+        return local__createLocal.apply(null, arguments).parseZone();
+    }
+
+    var defaultCalendar = {
+        sameDay : '[Today at] LT',
+        nextDay : '[Tomorrow at] LT',
+        nextWeek : 'dddd [at] LT',
+        lastDay : '[Yesterday at] LT',
+        lastWeek : '[Last] dddd [at] LT',
+        sameElse : 'L'
+    };
+
+    function locale_calendar__calendar (key, mom, now) {
+        var output = this._calendar[key];
+        return isFunction(output) ? output.call(mom, now) : output;
+    }
+
+    var defaultLongDateFormat = {
+        LTS  : 'h:mm:ss A',
+        LT   : 'h:mm A',
+        L    : 'MM/DD/YYYY',
+        LL   : 'MMMM D, YYYY',
+        LLL  : 'MMMM D, YYYY h:mm A',
+        LLLL : 'dddd, MMMM D, YYYY h:mm A'
+    };
+
+    function longDateFormat (key) {
+        var format = this._longDateFormat[key],
+            formatUpper = this._longDateFormat[key.toUpperCase()];
+
+        if (format || !formatUpper) {
+            return format;
+        }
+
+        this._longDateFormat[key] = formatUpper.replace(/MMMM|MM|DD|dddd/g, function (val) {
+            return val.slice(1);
+        });
+
+        return this._longDateFormat[key];
+    }
+
+    var defaultInvalidDate = 'Invalid date';
+
+    function invalidDate () {
+        return this._invalidDate;
+    }
+
+    var defaultOrdinal = '%d';
+    var defaultOrdinalParse = /\d{1,2}/;
+
+    function ordinal (number) {
+        return this._ordinal.replace('%d', number);
+    }
+
+    function preParsePostFormat (string) {
+        return string;
+    }
+
+    var defaultRelativeTime = {
+        future : 'in %s',
+        past   : '%s ago',
+        s  : 'a few seconds',
+        m  : 'a minute',
+        mm : '%d minutes',
+        h  : 'an hour',
+        hh : '%d hours',
+        d  : 'a day',
+        dd : '%d days',
+        M  : 'a month',
+        MM : '%d months',
+        y  : 'a year',
+        yy : '%d years'
+    };
+
+    function relative__relativeTime (number, withoutSuffix, string, isFuture) {
+        var output = this._relativeTime[string];
+        return (isFunction(output)) ?
+            output(number, withoutSuffix, string, isFuture) :
+            output.replace(/%d/i, number);
+    }
+
+    function pastFuture (diff, output) {
+        var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
+        return isFunction(format) ? format(output) : format.replace(/%s/i, output);
+    }
+
+    var prototype__proto = Locale.prototype;
+
+    prototype__proto._calendar       = defaultCalendar;
+    prototype__proto.calendar        = locale_calendar__calendar;
+    prototype__proto._longDateFormat = defaultLongDateFormat;
+    prototype__proto.longDateFormat  = longDateFormat;
+    prototype__proto._invalidDate    = defaultInvalidDate;
+    prototype__proto.invalidDate     = invalidDate;
+    prototype__proto._ordinal        = defaultOrdinal;
+    prototype__proto.ordinal         = ordinal;
+    prototype__proto._ordinalParse   = defaultOrdinalParse;
+    prototype__proto.preparse        = preParsePostFormat;
+    prototype__proto.postformat      = preParsePostFormat;
+    prototype__proto._relativeTime   = defaultRelativeTime;
+    prototype__proto.relativeTime    = relative__relativeTime;
+    prototype__proto.pastFuture      = pastFuture;
+    prototype__proto.set             = locale_set__set;
+
+    // Month
+    prototype__proto.months            =        localeMonths;
+    prototype__proto._months           = defaultLocaleMonths;
+    prototype__proto.monthsShort       =        localeMonthsShort;
+    prototype__proto._monthsShort      = defaultLocaleMonthsShort;
+    prototype__proto.monthsParse       =        localeMonthsParse;
+    prototype__proto._monthsRegex      = defaultMonthsRegex;
+    prototype__proto.monthsRegex       = monthsRegex;
+    prototype__proto._monthsShortRegex = defaultMonthsShortRegex;
+    prototype__proto.monthsShortRegex  = monthsShortRegex;
+
+    // Week
+    prototype__proto.week = localeWeek;
+    prototype__proto._week = defaultLocaleWeek;
+    prototype__proto.firstDayOfYear = localeFirstDayOfYear;
+    prototype__proto.firstDayOfWeek = localeFirstDayOfWeek;
+
+    // Day of Week
+    prototype__proto.weekdays       =        localeWeekdays;
+    prototype__proto._weekdays      = defaultLocaleWeekdays;
+    prototype__proto.weekdaysMin    =        localeWeekdaysMin;
+    prototype__proto._weekdaysMin   = defaultLocaleWeekdaysMin;
+    prototype__proto.weekdaysShort  =        localeWeekdaysShort;
+    prototype__proto._weekdaysShort = defaultLocaleWeekdaysShort;
+    prototype__proto.weekdaysParse  =        localeWeekdaysParse;
+
+    prototype__proto._weekdaysRegex      = defaultWeekdaysRegex;
+    prototype__proto.weekdaysRegex       =        weekdaysRegex;
+    prototype__proto._weekdaysShortRegex = defaultWeekdaysShortRegex;
+    prototype__proto.weekdaysShortRegex  =        weekdaysShortRegex;
+    prototype__proto._weekdaysMinRegex   = defaultWeekdaysMinRegex;
+    prototype__proto.weekdaysMinRegex    =        weekdaysMinRegex;
+
+    // Hours
+    prototype__proto.isPM = localeIsPM;
+    prototype__proto._meridiemParse = defaultLocaleMeridiemParse;
+    prototype__proto.meridiem = localeMeridiem;
+
+    function lists__get (format, index, field, setter) {
+        var locale = locale_locales__getLocale();
+        var utc = create_utc__createUTC().set(setter, index);
+        return locale[field](utc, format);
+    }
+
+    function listMonthsImpl (format, index, field) {
+        if (typeof format === 'number') {
+            index = format;
+            format = undefined;
+        }
+
+        format = format || '';
+
+        if (index != null) {
+            return lists__get(format, index, field, 'month');
+        }
+
+        var i;
+        var out = [];
+        for (i = 0; i < 12; i++) {
+            out[i] = lists__get(format, i, field, 'month');
+        }
+        return out;
+    }
+
+    // ()
+    // (5)
+    // (fmt, 5)
+    // (fmt)
+    // (true)
+    // (true, 5)
+    // (true, fmt, 5)
+    // (true, fmt)
+    function listWeekdaysImpl (localeSorted, format, index, field) {
+        if (typeof localeSorted === 'boolean') {
+            if (typeof format === 'number') {
+                index = format;
+                format = undefined;
+            }
+
+            format = format || '';
+        } else {
+            format = localeSorted;
+            index = format;
+            localeSorted = false;
+
+            if (typeof format === 'number') {
+                index = format;
+                format = undefined;
+            }
+
+            format = format || '';
+        }
+
+        var locale = locale_locales__getLocale(),
+            shift = localeSorted ? locale._week.dow : 0;
+
+        if (index != null) {
+            return lists__get(format, (index + shift) % 7, field, 'day');
+        }
+
+        var i;
+        var out = [];
+        for (i = 0; i < 7; i++) {
+            out[i] = lists__get(format, (i + shift) % 7, field, 'day');
+        }
+        return out;
+    }
+
+    function lists__listMonths (format, index) {
+        return listMonthsImpl(format, index, 'months');
+    }
+
+    function lists__listMonthsShort (format, index) {
+        return listMonthsImpl(format, index, 'monthsShort');
+    }
+
+    function lists__listWeekdays (localeSorted, format, index) {
+        return listWeekdaysImpl(localeSorted, format, index, 'weekdays');
+    }
+
+    function lists__listWeekdaysShort (localeSorted, format, index) {
+        return listWeekdaysImpl(localeSorted, format, index, 'weekdaysShort');
+    }
+
+    function lists__listWeekdaysMin (localeSorted, format, index) {
+        return listWeekdaysImpl(localeSorted, format, index, 'weekdaysMin');
+    }
+
+    locale_locales__getSetGlobalLocale('en', {
+        ordinalParse: /\d{1,2}(th|st|nd|rd)/,
+        ordinal : function (number) {
+            var b = number % 10,
+                output = (toInt(number % 100 / 10) === 1) ? 'th' :
+                (b === 1) ? 'st' :
+                (b === 2) ? 'nd' :
+                (b === 3) ? 'rd' : 'th';
+            return number + output;
+        }
+    });
+
+    // Side effect imports
+    utils_hooks__hooks.lang = deprecate('moment.lang is deprecated. Use moment.locale instead.', locale_locales__getSetGlobalLocale);
+    utils_hooks__hooks.langData = deprecate('moment.langData is deprecated. Use moment.localeData instead.', locale_locales__getLocale);
+
+    var mathAbs = Math.abs;
+
+    function duration_abs__abs () {
+        var data           = this._data;
+
+        this._milliseconds = mathAbs(this._milliseconds);
+        this._days         = mathAbs(this._days);
+        this._months       = mathAbs(this._months);
+
+        data.milliseconds  = mathAbs(data.milliseconds);
+        data.seconds       = mathAbs(data.seconds);
+        data.minutes       = mathAbs(data.minutes);
+        data.hours         = mathAbs(data.hours);
+        data.months        = mathAbs(data.months);
+        data.years         = mathAbs(data.years);
+
+        return this;
+    }
+
+    function duration_add_subtract__addSubtract (duration, input, value, direction) {
+        var other = create__createDuration(input, value);
+
+        duration._milliseconds += direction * other._milliseconds;
+        duration._days         += direction * other._days;
+        duration._months       += direction * other._months;
+
+        return duration._bubble();
+    }
+
+    // supports only 2.0-style add(1, 's') or add(duration)
+    function duration_add_subtract__add (input, value) {
+        return duration_add_subtract__addSubtract(this, input, value, 1);
+    }
+
+    // supports only 2.0-style subtract(1, 's') or subtract(duration)
+    function duration_add_subtract__subtract (input, value) {
+        return duration_add_subtract__addSubtract(this, input, value, -1);
+    }
+
+    function absCeil (number) {
+        if (number < 0) {
+            return Math.floor(number);
+        } else {
+            return Math.ceil(number);
+        }
+    }
+
+    function bubble () {
+        var milliseconds = this._milliseconds;
+        var days         = this._days;
+        var months       = this._months;
+        var data         = this._data;
+        var seconds, minutes, hours, years, monthsFromDays;
+
+        // if we have a mix of positive and negative values, bubble down first
+        // check: https://github.com/moment/moment/issues/2166
+        if (!((milliseconds >= 0 && days >= 0 && months >= 0) ||
+                (milliseconds <= 0 && days <= 0 && months <= 0))) {
+            milliseconds += absCeil(monthsToDays(months) + days) * 864e5;
+            days = 0;
+            months = 0;
+        }
+
+        // The following code bubbles up values, see the tests for
+        // examples of what that means.
+        data.milliseconds = milliseconds % 1000;
+
+        seconds           = absFloor(milliseconds / 1000);
+        data.seconds      = seconds % 60;
+
+        minutes           = absFloor(seconds / 60);
+        data.minutes      = minutes % 60;
+
+        hours             = absFloor(minutes / 60);
+        data.hours        = hours % 24;
+
+        days += absFloor(hours / 24);
+
+        // convert days to months
+        monthsFromDays = absFloor(daysToMonths(days));
+        months += monthsFromDays;
+        days -= absCeil(monthsToDays(monthsFromDays));
+
+        // 12 months -> 1 year
+        years = absFloor(months / 12);
+        months %= 12;
+
+        data.days   = days;
+        data.months = months;
+        data.years  = years;
+
+        return this;
+    }
+
+    function daysToMonths (days) {
+        // 400 years have 146097 days (taking into account leap year rules)
+        // 400 years have 12 months === 4800
+        return days * 4800 / 146097;
+    }
+
+    function monthsToDays (months) {
+        // the reverse of daysToMonths
+        return months * 146097 / 4800;
+    }
+
+    function as (units) {
+        var days;
+        var months;
+        var milliseconds = this._milliseconds;
+
+        units = normalizeUnits(units);
+
+        if (units === 'month' || units === 'year') {
+            days   = this._days   + milliseconds / 864e5;
+            months = this._months + daysToMonths(days);
+            return units === 'month' ? months : months / 12;
+        } else {
+            // handle milliseconds separately because of floating point math errors (issue #1867)
+            days = this._days + Math.round(monthsToDays(this._months));
+            switch (units) {
+                case 'week'   : return days / 7     + milliseconds / 6048e5;
+                case 'day'    : return days         + milliseconds / 864e5;
+                case 'hour'   : return days * 24    + milliseconds / 36e5;
+                case 'minute' : return days * 1440  + milliseconds / 6e4;
+                case 'second' : return days * 86400 + milliseconds / 1000;
+                // Math.floor prevents floating point math errors here
+                case 'millisecond': return Math.floor(days * 864e5) + milliseconds;
+                default: throw new Error('Unknown unit ' + units);
+            }
+        }
+    }
+
+    // TODO: Use this.as('ms')?
+    function duration_as__valueOf () {
+        return (
+            this._milliseconds +
+            this._days * 864e5 +
+            (this._months % 12) * 2592e6 +
+            toInt(this._months / 12) * 31536e6
+        );
+    }
+
+    function makeAs (alias) {
+        return function () {
+            return this.as(alias);
+        };
+    }
+
+    var asMilliseconds = makeAs('ms');
+    var asSeconds      = makeAs('s');
+    var asMinutes      = makeAs('m');
+    var asHours        = makeAs('h');
+    var asDays         = makeAs('d');
+    var asWeeks        = makeAs('w');
+    var asMonths       = makeAs('M');
+    var asYears        = makeAs('y');
+
+    function duration_get__get (units) {
+        units = normalizeUnits(units);
+        return this[units + 's']();
+    }
+
+    function makeGetter(name) {
+        return function () {
+            return this._data[name];
+        };
+    }
+
+    var milliseconds = makeGetter('milliseconds');
+    var seconds      = makeGetter('seconds');
+    var minutes      = makeGetter('minutes');
+    var hours        = makeGetter('hours');
+    var days         = makeGetter('days');
+    var months       = makeGetter('months');
+    var years        = makeGetter('years');
+
+    function weeks () {
+        return absFloor(this.days() / 7);
+    }
+
+    var round = Math.round;
+    var thresholds = {
+        s: 45,  // seconds to minute
+        m: 45,  // minutes to hour
+        h: 22,  // hours to day
+        d: 26,  // days to month
+        M: 11   // months to year
+    };
+
+    // helper function for moment.fn.from, moment.fn.fromNow, and moment.duration.fn.humanize
+    function substituteTimeAgo(string, number, withoutSuffix, isFuture, locale) {
+        return locale.relativeTime(number || 1, !!withoutSuffix, string, isFuture);
+    }
+
+    function duration_humanize__relativeTime (posNegDuration, withoutSuffix, locale) {
+        var duration = create__createDuration(posNegDuration).abs();
+        var seconds  = round(duration.as('s'));
+        var minutes  = round(duration.as('m'));
+        var hours    = round(duration.as('h'));
+        var days     = round(duration.as('d'));
+        var months   = round(duration.as('M'));
+        var years    = round(duration.as('y'));
+
+        var a = seconds < thresholds.s && ['s', seconds]  ||
+                minutes <= 1           && ['m']           ||
+                minutes < thresholds.m && ['mm', minutes] ||
+                hours   <= 1           && ['h']           ||
+                hours   < thresholds.h && ['hh', hours]   ||
+                days    <= 1           && ['d']           ||
+                days    < thresholds.d && ['dd', days]    ||
+                months  <= 1           && ['M']           ||
+                months  < thresholds.M && ['MM', months]  ||
+                years   <= 1           && ['y']           || ['yy', years];
+
+        a[2] = withoutSuffix;
+        a[3] = +posNegDuration > 0;
+        a[4] = locale;
+        return substituteTimeAgo.apply(null, a);
+    }
+
+    // This function allows you to set a threshold for relative time strings
+    function duration_humanize__getSetRelativeTimeThreshold (threshold, limit) {
+        if (thresholds[threshold] === undefined) {
+            return false;
+        }
+        if (limit === undefined) {
+            return thresholds[threshold];
+        }
+        thresholds[threshold] = limit;
+        return true;
+    }
+
+    function humanize (withSuffix) {
+        var locale = this.localeData();
+        var output = duration_humanize__relativeTime(this, !withSuffix, locale);
+
+        if (withSuffix) {
+            output = locale.pastFuture(+this, output);
+        }
+
+        return locale.postformat(output);
+    }
+
+    var iso_string__abs = Math.abs;
+
+    function iso_string__toISOString() {
+        // for ISO strings we do not use the normal bubbling rules:
+        //  * milliseconds bubble up until they become hours
+        //  * days do not bubble at all
+        //  * months bubble up until they become years
+        // This is because there is no context-free conversion between hours and days
+        // (think of clock changes)
+        // and also not between days and months (28-31 days per month)
+        var seconds = iso_string__abs(this._milliseconds) / 1000;
+        var days         = iso_string__abs(this._days);
+        var months       = iso_string__abs(this._months);
+        var minutes, hours, years;
+
+        // 3600 seconds -> 60 minutes -> 1 hour
+        minutes           = absFloor(seconds / 60);
+        hours             = absFloor(minutes / 60);
+        seconds %= 60;
+        minutes %= 60;
+
+        // 12 months -> 1 year
+        years  = absFloor(months / 12);
+        months %= 12;
+
+
+        // inspired by https://github.com/dordille/moment-isoduration/blob/master/moment.isoduration.js
+        var Y = years;
+        var M = months;
+        var D = days;
+        var h = hours;
+        var m = minutes;
+        var s = seconds;
+        var total = this.asSeconds();
+
+        if (!total) {
+            // this is the same as C#'s (Noda) and python (isodate)...
+            // but not other JS (goog.date)
+            return 'P0D';
+        }
+
+        return (total < 0 ? '-' : '') +
+            'P' +
+            (Y ? Y + 'Y' : '') +
+            (M ? M + 'M' : '') +
+            (D ? D + 'D' : '') +
+            ((h || m || s) ? 'T' : '') +
+            (h ? h + 'H' : '') +
+            (m ? m + 'M' : '') +
+            (s ? s + 'S' : '');
+    }
+
+    var duration_prototype__proto = Duration.prototype;
+
+    duration_prototype__proto.abs            = duration_abs__abs;
+    duration_prototype__proto.add            = duration_add_subtract__add;
+    duration_prototype__proto.subtract       = duration_add_subtract__subtract;
+    duration_prototype__proto.as             = as;
+    duration_prototype__proto.asMilliseconds = asMilliseconds;
+    duration_prototype__proto.asSeconds      = asSeconds;
+    duration_prototype__proto.asMinutes      = asMinutes;
+    duration_prototype__proto.asHours        = asHours;
+    duration_prototype__proto.asDays         = asDays;
+    duration_prototype__proto.asWeeks        = asWeeks;
+    duration_prototype__proto.asMonths       = asMonths;
+    duration_prototype__proto.asYears        = asYears;
+    duration_prototype__proto.valueOf        = duration_as__valueOf;
+    duration_prototype__proto._bubble        = bubble;
+    duration_prototype__proto.get            = duration_get__get;
+    duration_prototype__proto.milliseconds   = milliseconds;
+    duration_prototype__proto.seconds        = seconds;
+    duration_prototype__proto.minutes        = minutes;
+    duration_prototype__proto.hours          = hours;
+    duration_prototype__proto.days           = days;
+    duration_prototype__proto.weeks          = weeks;
+    duration_prototype__proto.months         = months;
+    duration_prototype__proto.years          = years;
+    duration_prototype__proto.humanize       = humanize;
+    duration_prototype__proto.toISOString    = iso_string__toISOString;
+    duration_prototype__proto.toString       = iso_string__toISOString;
+    duration_prototype__proto.toJSON         = iso_string__toISOString;
+    duration_prototype__proto.locale         = locale;
+    duration_prototype__proto.localeData     = localeData;
+
+    // Deprecations
+    duration_prototype__proto.toIsoString = deprecate('toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)', iso_string__toISOString);
+    duration_prototype__proto.lang = lang;
+
+    // Side effect imports
+
+    // FORMATTING
+
+    addFormatToken('X', 0, 0, 'unix');
+    addFormatToken('x', 0, 0, 'valueOf');
+
+    // PARSING
+
+    addRegexToken('x', matchSigned);
+    addRegexToken('X', matchTimestamp);
+    addParseToken('X', function (input, array, config) {
+        config._d = new Date(parseFloat(input, 10) * 1000);
+    });
+    addParseToken('x', function (input, array, config) {
+        config._d = new Date(toInt(input));
+    });
+
+    // Side effect imports
+
+
+    utils_hooks__hooks.version = '2.13.0';
+
+    setHookCallback(local__createLocal);
+
+    utils_hooks__hooks.fn                    = momentPrototype;
+    utils_hooks__hooks.min                   = min;
+    utils_hooks__hooks.max                   = max;
+    utils_hooks__hooks.now                   = now;
+    utils_hooks__hooks.utc                   = create_utc__createUTC;
+    utils_hooks__hooks.unix                  = moment__createUnix;
+    utils_hooks__hooks.months                = lists__listMonths;
+    utils_hooks__hooks.isDate                = isDate;
+    utils_hooks__hooks.locale                = locale_locales__getSetGlobalLocale;
+    utils_hooks__hooks.invalid               = valid__createInvalid;
+    utils_hooks__hooks.duration              = create__createDuration;
+    utils_hooks__hooks.isMoment              = isMoment;
+    utils_hooks__hooks.weekdays              = lists__listWeekdays;
+    utils_hooks__hooks.parseZone             = moment__createInZone;
+    utils_hooks__hooks.localeData            = locale_locales__getLocale;
+    utils_hooks__hooks.isDuration            = isDuration;
+    utils_hooks__hooks.monthsShort           = lists__listMonthsShort;
+    utils_hooks__hooks.weekdaysMin           = lists__listWeekdaysMin;
+    utils_hooks__hooks.defineLocale          = defineLocale;
+    utils_hooks__hooks.updateLocale          = updateLocale;
+    utils_hooks__hooks.locales               = locale_locales__listLocales;
+    utils_hooks__hooks.weekdaysShort         = lists__listWeekdaysShort;
+    utils_hooks__hooks.normalizeUnits        = normalizeUnits;
+    utils_hooks__hooks.relativeTimeThreshold = duration_humanize__getSetRelativeTimeThreshold;
+    utils_hooks__hooks.prototype             = momentPrototype;
+
+    var _moment = utils_hooks__hooks;
+
+    return _moment;
+
+}));
+},{}],37:[function(require,module,exports){
 /* eslint-disable no-unused-vars */
 'use strict';
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -1273,7 +14791,7 @@ module.exports = Object.assign || function (target, source) {
 	return to;
 };
 
-},{}],28:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -1366,12 +14884,12 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],29:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOM');
 
-},{"react/lib/ReactDOM":63}],30:[function(require,module,exports){
+},{"react/lib/ReactDOM":73}],40:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1396,7 +14914,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactDOMComponentTree":67,"fbjs/lib/focusNode":10}],31:[function(require,module,exports){
+},{"./ReactDOMComponentTree":77,"fbjs/lib/focusNode":19}],41:[function(require,module,exports){
 /**
  * Copyright 2013-present Facebook, Inc.
  * All rights reserved.
@@ -1785,7 +15303,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventConstants":44,"./EventPropagators":48,"./FallbackCompositionState":49,"./SyntheticCompositionEvent":123,"./SyntheticInputEvent":127,"fbjs/lib/ExecutionEnvironment":2,"fbjs/lib/keyOf":20}],32:[function(require,module,exports){
+},{"./EventConstants":54,"./EventPropagators":58,"./FallbackCompositionState":59,"./SyntheticCompositionEvent":133,"./SyntheticInputEvent":137,"fbjs/lib/ExecutionEnvironment":11,"fbjs/lib/keyOf":29}],42:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1934,7 +15452,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],33:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -2142,7 +15660,7 @@ ReactPerf.measureMethods(CSSPropertyOperations, 'CSSPropertyOperations', {
 
 module.exports = CSSPropertyOperations;
 }).call(this,require('_process'))
-},{"./CSSProperty":32,"./ReactPerf":108,"./dangerousStyleValue":140,"_process":28,"fbjs/lib/ExecutionEnvironment":2,"fbjs/lib/camelizeStyleName":4,"fbjs/lib/hyphenateStyleName":15,"fbjs/lib/memoizeStringOnly":22,"fbjs/lib/warning":26}],34:[function(require,module,exports){
+},{"./CSSProperty":42,"./ReactPerf":118,"./dangerousStyleValue":150,"_process":38,"fbjs/lib/ExecutionEnvironment":11,"fbjs/lib/camelizeStyleName":13,"fbjs/lib/hyphenateStyleName":24,"fbjs/lib/memoizeStringOnly":31,"fbjs/lib/warning":35}],44:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -2250,7 +15768,7 @@ PooledClass.addPoolingTo(CallbackQueue);
 
 module.exports = CallbackQueue;
 }).call(this,require('_process'))
-},{"./PooledClass":52,"_process":28,"fbjs/lib/invariant":16,"object-assign":27}],35:[function(require,module,exports){
+},{"./PooledClass":62,"_process":38,"fbjs/lib/invariant":25,"object-assign":37}],45:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2576,7 +16094,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventConstants":44,"./EventPluginHub":45,"./EventPropagators":48,"./ReactDOMComponentTree":67,"./ReactUpdates":116,"./SyntheticEvent":125,"./getEventTarget":148,"./isEventSupported":155,"./isTextInputElement":156,"fbjs/lib/ExecutionEnvironment":2,"fbjs/lib/keyOf":20}],36:[function(require,module,exports){
+},{"./EventConstants":54,"./EventPluginHub":55,"./EventPropagators":58,"./ReactDOMComponentTree":77,"./ReactUpdates":126,"./SyntheticEvent":135,"./getEventTarget":158,"./isEventSupported":165,"./isTextInputElement":166,"fbjs/lib/ExecutionEnvironment":11,"fbjs/lib/keyOf":29}],46:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2736,7 +16254,7 @@ ReactPerf.measureMethods(DOMChildrenOperations, 'DOMChildrenOperations', {
 });
 
 module.exports = DOMChildrenOperations;
-},{"./DOMLazyTree":37,"./Danger":41,"./ReactMultiChildUpdateTypes":103,"./ReactPerf":108,"./createMicrosoftUnsafeLocalFunction":139,"./setInnerHTML":160,"./setTextContent":161}],37:[function(require,module,exports){
+},{"./DOMLazyTree":47,"./Danger":51,"./ReactMultiChildUpdateTypes":113,"./ReactPerf":118,"./createMicrosoftUnsafeLocalFunction":149,"./setInnerHTML":170,"./setTextContent":171}],47:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -2842,7 +16360,7 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-},{"./createMicrosoftUnsafeLocalFunction":139,"./setTextContent":161}],38:[function(require,module,exports){
+},{"./createMicrosoftUnsafeLocalFunction":149,"./setTextContent":171}],48:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2863,7 +16381,7 @@ var DOMNamespaces = {
 };
 
 module.exports = DOMNamespaces;
-},{}],39:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3079,7 +16597,7 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":16}],40:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/invariant":25}],50:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3295,7 +16813,7 @@ ReactPerf.measureMethods(DOMPropertyOperations, 'DOMPropertyOperations', {
 
 module.exports = DOMPropertyOperations;
 }).call(this,require('_process'))
-},{"./DOMProperty":39,"./ReactDOMInstrumentation":75,"./ReactPerf":108,"./quoteAttributeValueForBrowser":158,"_process":28,"fbjs/lib/warning":26}],41:[function(require,module,exports){
+},{"./DOMProperty":49,"./ReactDOMInstrumentation":85,"./ReactPerf":118,"./quoteAttributeValueForBrowser":168,"_process":38,"fbjs/lib/warning":35}],51:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3442,7 +16960,7 @@ var Danger = {
 
 module.exports = Danger;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":37,"_process":28,"fbjs/lib/ExecutionEnvironment":2,"fbjs/lib/createNodesFromMarkup":7,"fbjs/lib/emptyFunction":8,"fbjs/lib/getMarkupWrap":12,"fbjs/lib/invariant":16}],42:[function(require,module,exports){
+},{"./DOMLazyTree":47,"_process":38,"fbjs/lib/ExecutionEnvironment":11,"fbjs/lib/createNodesFromMarkup":16,"fbjs/lib/emptyFunction":17,"fbjs/lib/getMarkupWrap":21,"fbjs/lib/invariant":25}],52:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3470,7 +16988,7 @@ var keyOf = require('fbjs/lib/keyOf');
 var DefaultEventPluginOrder = [keyOf({ ResponderEventPlugin: null }), keyOf({ SimpleEventPlugin: null }), keyOf({ TapEventPlugin: null }), keyOf({ EnterLeaveEventPlugin: null }), keyOf({ ChangeEventPlugin: null }), keyOf({ SelectEventPlugin: null }), keyOf({ BeforeInputEventPlugin: null })];
 
 module.exports = DefaultEventPluginOrder;
-},{"fbjs/lib/keyOf":20}],43:[function(require,module,exports){
+},{"fbjs/lib/keyOf":29}],53:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3576,7 +17094,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventConstants":44,"./EventPropagators":48,"./ReactDOMComponentTree":67,"./SyntheticMouseEvent":129,"fbjs/lib/keyOf":20}],44:[function(require,module,exports){
+},{"./EventConstants":54,"./EventPropagators":58,"./ReactDOMComponentTree":77,"./SyntheticMouseEvent":139,"fbjs/lib/keyOf":29}],54:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3674,7 +17192,7 @@ var EventConstants = {
 };
 
 module.exports = EventConstants;
-},{"fbjs/lib/keyMirror":19}],45:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":28}],55:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3912,7 +17430,7 @@ var EventPluginHub = {
 
 module.exports = EventPluginHub;
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":46,"./EventPluginUtils":47,"./ReactErrorUtils":91,"./accumulateInto":136,"./forEachAccumulated":144,"_process":28,"fbjs/lib/invariant":16}],46:[function(require,module,exports){
+},{"./EventPluginRegistry":56,"./EventPluginUtils":57,"./ReactErrorUtils":101,"./accumulateInto":146,"./forEachAccumulated":154,"_process":38,"fbjs/lib/invariant":25}],56:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4156,7 +17674,7 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":16}],47:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/invariant":25}],57:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4386,7 +17904,7 @@ var EventPluginUtils = {
 
 module.exports = EventPluginUtils;
 }).call(this,require('_process'))
-},{"./EventConstants":44,"./ReactErrorUtils":91,"_process":28,"fbjs/lib/invariant":16,"fbjs/lib/warning":26}],48:[function(require,module,exports){
+},{"./EventConstants":54,"./ReactErrorUtils":101,"_process":38,"fbjs/lib/invariant":25,"fbjs/lib/warning":35}],58:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4526,7 +18044,7 @@ var EventPropagators = {
 
 module.exports = EventPropagators;
 }).call(this,require('_process'))
-},{"./EventConstants":44,"./EventPluginHub":45,"./EventPluginUtils":47,"./accumulateInto":136,"./forEachAccumulated":144,"_process":28,"fbjs/lib/warning":26}],49:[function(require,module,exports){
+},{"./EventConstants":54,"./EventPluginHub":55,"./EventPluginUtils":57,"./accumulateInto":146,"./forEachAccumulated":154,"_process":38,"fbjs/lib/warning":35}],59:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -4622,7 +18140,7 @@ _assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./PooledClass":52,"./getTextContentAccessor":152,"object-assign":27}],50:[function(require,module,exports){
+},{"./PooledClass":62,"./getTextContentAccessor":162,"object-assign":37}],60:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -4832,7 +18350,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":39}],51:[function(require,module,exports){
+},{"./DOMProperty":49}],61:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4968,7 +18486,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocations":110,"./ReactPropTypes":111,"_process":28,"fbjs/lib/invariant":16,"fbjs/lib/warning":26}],52:[function(require,module,exports){
+},{"./ReactPropTypeLocations":120,"./ReactPropTypes":121,"_process":38,"fbjs/lib/invariant":25,"fbjs/lib/warning":35}],62:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -5090,7 +18608,7 @@ var PooledClass = {
 
 module.exports = PooledClass;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":16}],53:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/invariant":25}],63:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -5180,7 +18698,7 @@ var React = {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactChildren":56,"./ReactClass":57,"./ReactComponent":58,"./ReactDOMFactories":71,"./ReactElement":88,"./ReactElementValidator":89,"./ReactPropTypes":111,"./ReactVersion":117,"./onlyChild":157,"_process":28,"fbjs/lib/warning":26,"object-assign":27}],54:[function(require,module,exports){
+},{"./ReactChildren":66,"./ReactClass":67,"./ReactComponent":68,"./ReactDOMFactories":81,"./ReactElement":98,"./ReactElementValidator":99,"./ReactPropTypes":121,"./ReactVersion":127,"./onlyChild":167,"_process":38,"fbjs/lib/warning":35,"object-assign":37}],64:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -5498,7 +19016,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventConstants":44,"./EventPluginRegistry":46,"./ReactEventEmitterMixin":92,"./ViewportMetrics":135,"./getVendorPrefixedEventName":153,"./isEventSupported":155,"object-assign":27}],55:[function(require,module,exports){
+},{"./EventConstants":54,"./EventPluginRegistry":56,"./ReactEventEmitterMixin":102,"./ViewportMetrics":145,"./getVendorPrefixedEventName":163,"./isEventSupported":165,"object-assign":37}],65:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -5625,7 +19143,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./ReactReconciler":113,"./instantiateReactComponent":154,"./shouldUpdateReactComponent":162,"./traverseAllChildren":163,"_process":28,"fbjs/lib/warning":26}],56:[function(require,module,exports){
+},{"./ReactReconciler":123,"./instantiateReactComponent":164,"./shouldUpdateReactComponent":172,"./traverseAllChildren":173,"_process":38,"fbjs/lib/warning":35}],66:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -5809,7 +19327,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":52,"./ReactElement":88,"./traverseAllChildren":163,"fbjs/lib/emptyFunction":8}],57:[function(require,module,exports){
+},{"./PooledClass":62,"./ReactElement":98,"./traverseAllChildren":173,"fbjs/lib/emptyFunction":17}],67:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -6535,7 +20053,7 @@ var ReactClass = {
 
 module.exports = ReactClass;
 }).call(this,require('_process'))
-},{"./ReactComponent":58,"./ReactElement":88,"./ReactNoopUpdateQueue":106,"./ReactPropTypeLocationNames":109,"./ReactPropTypeLocations":110,"_process":28,"fbjs/lib/emptyObject":9,"fbjs/lib/invariant":16,"fbjs/lib/keyMirror":19,"fbjs/lib/keyOf":20,"fbjs/lib/warning":26,"object-assign":27}],58:[function(require,module,exports){
+},{"./ReactComponent":68,"./ReactElement":98,"./ReactNoopUpdateQueue":116,"./ReactPropTypeLocationNames":119,"./ReactPropTypeLocations":120,"_process":38,"fbjs/lib/emptyObject":18,"fbjs/lib/invariant":25,"fbjs/lib/keyMirror":28,"fbjs/lib/keyOf":29,"fbjs/lib/warning":35,"object-assign":37}],68:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -6659,7 +20177,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactComponent;
 }).call(this,require('_process'))
-},{"./ReactInstrumentation":98,"./ReactNoopUpdateQueue":106,"./canDefineProperty":138,"_process":28,"fbjs/lib/emptyObject":9,"fbjs/lib/invariant":16,"fbjs/lib/warning":26}],59:[function(require,module,exports){
+},{"./ReactInstrumentation":108,"./ReactNoopUpdateQueue":116,"./canDefineProperty":148,"_process":38,"fbjs/lib/emptyObject":18,"fbjs/lib/invariant":25,"fbjs/lib/warning":35}],69:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6704,7 +20222,7 @@ ReactPerf.measureMethods(ReactComponentBrowserEnvironment, 'ReactComponentBrowse
 });
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./DOMChildrenOperations":36,"./ReactDOMIDOperations":73,"./ReactPerf":108}],60:[function(require,module,exports){
+},{"./DOMChildrenOperations":46,"./ReactDOMIDOperations":83,"./ReactPerf":118}],70:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -6758,7 +20276,7 @@ var ReactComponentEnvironment = {
 
 module.exports = ReactComponentEnvironment;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":16}],61:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/invariant":25}],71:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -7547,7 +21065,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-},{"./ReactComponentEnvironment":60,"./ReactCurrentOwner":62,"./ReactElement":88,"./ReactErrorUtils":91,"./ReactInstanceMap":97,"./ReactInstrumentation":98,"./ReactNodeTypes":105,"./ReactPerf":108,"./ReactPropTypeLocationNames":109,"./ReactPropTypeLocations":110,"./ReactReconciler":113,"./ReactUpdateQueue":115,"./shouldUpdateReactComponent":162,"_process":28,"fbjs/lib/emptyObject":9,"fbjs/lib/invariant":16,"fbjs/lib/warning":26,"object-assign":27}],62:[function(require,module,exports){
+},{"./ReactComponentEnvironment":70,"./ReactCurrentOwner":72,"./ReactElement":98,"./ReactErrorUtils":101,"./ReactInstanceMap":107,"./ReactInstrumentation":108,"./ReactNodeTypes":115,"./ReactPerf":118,"./ReactPropTypeLocationNames":119,"./ReactPropTypeLocations":120,"./ReactReconciler":123,"./ReactUpdateQueue":125,"./shouldUpdateReactComponent":172,"_process":38,"fbjs/lib/emptyObject":18,"fbjs/lib/invariant":25,"fbjs/lib/warning":35,"object-assign":37}],72:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7579,7 +21097,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],63:[function(require,module,exports){
+},{}],73:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -7686,7 +21204,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":67,"./ReactDefaultInjection":85,"./ReactMount":101,"./ReactPerf":108,"./ReactReconciler":113,"./ReactUpdates":116,"./ReactVersion":117,"./findDOMNode":142,"./getNativeComponentFromComposite":150,"./renderSubtreeIntoContainer":159,"_process":28,"fbjs/lib/ExecutionEnvironment":2,"fbjs/lib/warning":26}],64:[function(require,module,exports){
+},{"./ReactDOMComponentTree":77,"./ReactDefaultInjection":95,"./ReactMount":111,"./ReactPerf":118,"./ReactReconciler":123,"./ReactUpdates":126,"./ReactVersion":127,"./findDOMNode":152,"./getNativeComponentFromComposite":160,"./renderSubtreeIntoContainer":169,"_process":38,"fbjs/lib/ExecutionEnvironment":11,"fbjs/lib/warning":35}],74:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7737,7 +21255,7 @@ var ReactDOMButton = {
 };
 
 module.exports = ReactDOMButton;
-},{}],65:[function(require,module,exports){
+},{}],75:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8645,7 +22163,7 @@ _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mi
 
 module.exports = ReactDOMComponent;
 }).call(this,require('_process'))
-},{"./AutoFocusUtils":30,"./CSSPropertyOperations":33,"./DOMLazyTree":37,"./DOMNamespaces":38,"./DOMProperty":39,"./DOMPropertyOperations":40,"./EventConstants":44,"./EventPluginHub":45,"./EventPluginRegistry":46,"./ReactBrowserEventEmitter":54,"./ReactComponentBrowserEnvironment":59,"./ReactDOMButton":64,"./ReactDOMComponentFlags":66,"./ReactDOMComponentTree":67,"./ReactDOMInput":74,"./ReactDOMOption":76,"./ReactDOMSelect":77,"./ReactDOMTextarea":80,"./ReactMultiChild":102,"./ReactPerf":108,"./escapeTextContentForBrowser":141,"./isEventSupported":155,"./validateDOMNesting":164,"_process":28,"fbjs/lib/invariant":16,"fbjs/lib/keyOf":20,"fbjs/lib/shallowEqual":25,"fbjs/lib/warning":26,"object-assign":27}],66:[function(require,module,exports){
+},{"./AutoFocusUtils":40,"./CSSPropertyOperations":43,"./DOMLazyTree":47,"./DOMNamespaces":48,"./DOMProperty":49,"./DOMPropertyOperations":50,"./EventConstants":54,"./EventPluginHub":55,"./EventPluginRegistry":56,"./ReactBrowserEventEmitter":64,"./ReactComponentBrowserEnvironment":69,"./ReactDOMButton":74,"./ReactDOMComponentFlags":76,"./ReactDOMComponentTree":77,"./ReactDOMInput":84,"./ReactDOMOption":86,"./ReactDOMSelect":87,"./ReactDOMTextarea":90,"./ReactMultiChild":112,"./ReactPerf":118,"./escapeTextContentForBrowser":151,"./isEventSupported":165,"./validateDOMNesting":174,"_process":38,"fbjs/lib/invariant":25,"fbjs/lib/keyOf":29,"fbjs/lib/shallowEqual":34,"fbjs/lib/warning":35,"object-assign":37}],76:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -8664,7 +22182,7 @@ var ReactDOMComponentFlags = {
 };
 
 module.exports = ReactDOMComponentFlags;
-},{}],67:[function(require,module,exports){
+},{}],77:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8853,7 +22371,7 @@ var ReactDOMComponentTree = {
 
 module.exports = ReactDOMComponentTree;
 }).call(this,require('_process'))
-},{"./DOMProperty":39,"./ReactDOMComponentFlags":66,"_process":28,"fbjs/lib/invariant":16}],68:[function(require,module,exports){
+},{"./DOMProperty":49,"./ReactDOMComponentFlags":76,"_process":38,"fbjs/lib/invariant":25}],78:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8888,7 +22406,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 
 module.exports = ReactDOMContainerInfo;
 }).call(this,require('_process'))
-},{"./validateDOMNesting":164,"_process":28}],69:[function(require,module,exports){
+},{"./validateDOMNesting":174,"_process":38}],79:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8952,7 +22470,7 @@ ReactDOMDebugTool.addDevtool(ReactDOMUnknownPropertyDevtool);
 
 module.exports = ReactDOMDebugTool;
 }).call(this,require('_process'))
-},{"./ReactDOMUnknownPropertyDevtool":82,"_process":28,"fbjs/lib/warning":26}],70:[function(require,module,exports){
+},{"./ReactDOMUnknownPropertyDevtool":92,"_process":38,"fbjs/lib/warning":35}],80:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -9013,7 +22531,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 });
 
 module.exports = ReactDOMEmptyComponent;
-},{"./DOMLazyTree":37,"./ReactDOMComponentTree":67,"object-assign":27}],71:[function(require,module,exports){
+},{"./DOMLazyTree":47,"./ReactDOMComponentTree":77,"object-assign":37}],81:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9192,7 +22710,7 @@ var ReactDOMFactories = mapObject({
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-},{"./ReactElement":88,"./ReactElementValidator":89,"_process":28,"fbjs/lib/mapObject":21}],72:[function(require,module,exports){
+},{"./ReactElement":98,"./ReactElementValidator":99,"_process":38,"fbjs/lib/mapObject":30}],82:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9211,7 +22729,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],73:[function(require,module,exports){
+},{}],83:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9251,7 +22769,7 @@ ReactPerf.measureMethods(ReactDOMIDOperations, 'ReactDOMIDOperations', {
 });
 
 module.exports = ReactDOMIDOperations;
-},{"./DOMChildrenOperations":36,"./ReactDOMComponentTree":67,"./ReactPerf":108}],74:[function(require,module,exports){
+},{"./DOMChildrenOperations":46,"./ReactDOMComponentTree":77,"./ReactPerf":118}],84:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9457,7 +22975,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMInput;
 }).call(this,require('_process'))
-},{"./DOMPropertyOperations":40,"./LinkedValueUtils":51,"./ReactDOMComponentTree":67,"./ReactUpdates":116,"_process":28,"fbjs/lib/invariant":16,"fbjs/lib/warning":26,"object-assign":27}],75:[function(require,module,exports){
+},{"./DOMPropertyOperations":50,"./LinkedValueUtils":61,"./ReactDOMComponentTree":77,"./ReactUpdates":126,"_process":38,"fbjs/lib/invariant":25,"fbjs/lib/warning":35,"object-assign":37}],85:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9474,7 +22992,7 @@ module.exports = ReactDOMInput;
 var ReactDOMDebugTool = require('./ReactDOMDebugTool');
 
 module.exports = { debugTool: ReactDOMDebugTool };
-},{"./ReactDOMDebugTool":69}],76:[function(require,module,exports){
+},{"./ReactDOMDebugTool":79}],86:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9578,7 +23096,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-},{"./ReactChildren":56,"./ReactDOMComponentTree":67,"./ReactDOMSelect":77,"_process":28,"fbjs/lib/warning":26,"object-assign":27}],77:[function(require,module,exports){
+},{"./ReactChildren":66,"./ReactDOMComponentTree":77,"./ReactDOMSelect":87,"_process":38,"fbjs/lib/warning":35,"object-assign":37}],87:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9793,7 +23311,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMSelect;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":51,"./ReactDOMComponentTree":67,"./ReactUpdates":116,"_process":28,"fbjs/lib/warning":26,"object-assign":27}],78:[function(require,module,exports){
+},{"./LinkedValueUtils":61,"./ReactDOMComponentTree":77,"./ReactUpdates":126,"_process":38,"fbjs/lib/warning":35,"object-assign":37}],88:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10006,7 +23524,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":151,"./getTextContentAccessor":152,"fbjs/lib/ExecutionEnvironment":2}],79:[function(require,module,exports){
+},{"./getNodeForCharacterOffset":161,"./getTextContentAccessor":162,"fbjs/lib/ExecutionEnvironment":11}],89:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10178,7 +23696,7 @@ ReactPerf.measureMethods(ReactDOMTextComponent.prototype, 'ReactDOMTextComponent
 
 module.exports = ReactDOMTextComponent;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":36,"./DOMLazyTree":37,"./ReactDOMComponentTree":67,"./ReactPerf":108,"./escapeTextContentForBrowser":141,"./validateDOMNesting":164,"_process":28,"fbjs/lib/invariant":16,"object-assign":27}],80:[function(require,module,exports){
+},{"./DOMChildrenOperations":46,"./DOMLazyTree":47,"./ReactDOMComponentTree":77,"./ReactPerf":118,"./escapeTextContentForBrowser":151,"./validateDOMNesting":174,"_process":38,"fbjs/lib/invariant":25,"object-assign":37}],90:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10322,7 +23840,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMTextarea;
 }).call(this,require('_process'))
-},{"./DOMPropertyOperations":40,"./LinkedValueUtils":51,"./ReactDOMComponentTree":67,"./ReactUpdates":116,"_process":28,"fbjs/lib/invariant":16,"fbjs/lib/warning":26,"object-assign":27}],81:[function(require,module,exports){
+},{"./DOMPropertyOperations":50,"./LinkedValueUtils":61,"./ReactDOMComponentTree":77,"./ReactUpdates":126,"_process":38,"fbjs/lib/invariant":25,"fbjs/lib/warning":35,"object-assign":37}],91:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -10459,7 +23977,7 @@ module.exports = {
   traverseEnterLeave: traverseEnterLeave
 };
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":16}],82:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/invariant":25}],92:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10526,7 +24044,7 @@ var ReactDOMUnknownPropertyDevtool = {
 
 module.exports = ReactDOMUnknownPropertyDevtool;
 }).call(this,require('_process'))
-},{"./DOMProperty":39,"./EventPluginRegistry":46,"_process":28,"fbjs/lib/warning":26}],83:[function(require,module,exports){
+},{"./DOMProperty":49,"./EventPluginRegistry":56,"_process":38,"fbjs/lib/warning":35}],93:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -10601,7 +24119,7 @@ ReactDebugTool.addDevtool(ReactInvalidSetStateWarningDevTool);
 
 module.exports = ReactDebugTool;
 }).call(this,require('_process'))
-},{"./ReactInvalidSetStateWarningDevTool":99,"_process":28,"fbjs/lib/warning":26}],84:[function(require,module,exports){
+},{"./ReactInvalidSetStateWarningDevTool":109,"_process":38,"fbjs/lib/warning":35}],94:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10670,7 +24188,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./ReactUpdates":116,"./Transaction":134,"fbjs/lib/emptyFunction":8,"object-assign":27}],85:[function(require,module,exports){
+},{"./ReactUpdates":126,"./Transaction":144,"fbjs/lib/emptyFunction":17,"object-assign":37}],95:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10766,7 +24284,7 @@ module.exports = {
   inject: inject
 };
 }).call(this,require('_process'))
-},{"./BeforeInputEventPlugin":31,"./ChangeEventPlugin":35,"./DefaultEventPluginOrder":42,"./EnterLeaveEventPlugin":43,"./HTMLDOMPropertyConfig":50,"./ReactComponentBrowserEnvironment":59,"./ReactDOMComponent":65,"./ReactDOMComponentTree":67,"./ReactDOMEmptyComponent":70,"./ReactDOMTextComponent":79,"./ReactDOMTreeTraversal":81,"./ReactDefaultBatchingStrategy":84,"./ReactDefaultPerf":86,"./ReactEventListener":93,"./ReactInjection":95,"./ReactReconcileTransaction":112,"./SVGDOMPropertyConfig":118,"./SelectEventPlugin":119,"./SimpleEventPlugin":120,"_process":28,"fbjs/lib/ExecutionEnvironment":2}],86:[function(require,module,exports){
+},{"./BeforeInputEventPlugin":41,"./ChangeEventPlugin":45,"./DefaultEventPluginOrder":52,"./EnterLeaveEventPlugin":53,"./HTMLDOMPropertyConfig":60,"./ReactComponentBrowserEnvironment":69,"./ReactDOMComponent":75,"./ReactDOMComponentTree":77,"./ReactDOMEmptyComponent":80,"./ReactDOMTextComponent":89,"./ReactDOMTreeTraversal":91,"./ReactDefaultBatchingStrategy":94,"./ReactDefaultPerf":96,"./ReactEventListener":103,"./ReactInjection":105,"./ReactReconcileTransaction":122,"./SVGDOMPropertyConfig":128,"./SelectEventPlugin":129,"./SimpleEventPlugin":130,"_process":38,"fbjs/lib/ExecutionEnvironment":11}],96:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -11085,7 +24603,7 @@ var ReactDefaultPerf = {
 
 module.exports = ReactDefaultPerf;
 }).call(this,require('_process'))
-},{"./DOMProperty":39,"./ReactDOMComponentTree":67,"./ReactDefaultPerfAnalysis":87,"./ReactMount":101,"./ReactPerf":108,"_process":28,"fbjs/lib/performanceNow":24,"fbjs/lib/warning":26}],87:[function(require,module,exports){
+},{"./DOMProperty":49,"./ReactDOMComponentTree":77,"./ReactDefaultPerfAnalysis":97,"./ReactMount":111,"./ReactPerf":118,"_process":38,"fbjs/lib/performanceNow":33,"fbjs/lib/warning":35}],97:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11295,7 +24813,7 @@ var ReactDefaultPerfAnalysis = {
 };
 
 module.exports = ReactDefaultPerfAnalysis;
-},{"object-assign":27}],88:[function(require,module,exports){
+},{"object-assign":37}],98:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -11585,7 +25103,7 @@ ReactElement.isValidElement = function (object) {
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":62,"./canDefineProperty":138,"_process":28,"fbjs/lib/warning":26,"object-assign":27}],89:[function(require,module,exports){
+},{"./ReactCurrentOwner":72,"./canDefineProperty":148,"_process":38,"fbjs/lib/warning":35,"object-assign":37}],99:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -11869,7 +25387,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":62,"./ReactElement":88,"./ReactPropTypeLocationNames":109,"./ReactPropTypeLocations":110,"./canDefineProperty":138,"./getIteratorFn":149,"_process":28,"fbjs/lib/invariant":16,"fbjs/lib/warning":26}],90:[function(require,module,exports){
+},{"./ReactCurrentOwner":72,"./ReactElement":98,"./ReactPropTypeLocationNames":119,"./ReactPropTypeLocations":120,"./canDefineProperty":148,"./getIteratorFn":159,"_process":38,"fbjs/lib/invariant":25,"fbjs/lib/warning":35}],100:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -11900,7 +25418,7 @@ var ReactEmptyComponent = {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{}],91:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -11979,7 +25497,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactErrorUtils;
 }).call(this,require('_process'))
-},{"_process":28}],92:[function(require,module,exports){
+},{"_process":38}],102:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12013,7 +25531,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":45}],93:[function(require,module,exports){
+},{"./EventPluginHub":55}],103:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12171,7 +25689,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./PooledClass":52,"./ReactDOMComponentTree":67,"./ReactUpdates":116,"./getEventTarget":148,"fbjs/lib/EventListener":1,"fbjs/lib/ExecutionEnvironment":2,"fbjs/lib/getUnboundedScrollPosition":13,"object-assign":27}],94:[function(require,module,exports){
+},{"./PooledClass":62,"./ReactDOMComponentTree":77,"./ReactUpdates":126,"./getEventTarget":158,"fbjs/lib/EventListener":10,"fbjs/lib/ExecutionEnvironment":11,"fbjs/lib/getUnboundedScrollPosition":22,"object-assign":37}],104:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12193,7 +25711,7 @@ var ReactFeatureFlags = {
 };
 
 module.exports = ReactFeatureFlags;
-},{}],95:[function(require,module,exports){
+},{}],105:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12232,7 +25750,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":39,"./EventPluginHub":45,"./EventPluginUtils":47,"./ReactBrowserEventEmitter":54,"./ReactClass":57,"./ReactComponentEnvironment":60,"./ReactEmptyComponent":90,"./ReactNativeComponent":104,"./ReactPerf":108,"./ReactUpdates":116}],96:[function(require,module,exports){
+},{"./DOMProperty":49,"./EventPluginHub":55,"./EventPluginUtils":57,"./ReactBrowserEventEmitter":64,"./ReactClass":67,"./ReactComponentEnvironment":70,"./ReactEmptyComponent":100,"./ReactNativeComponent":114,"./ReactPerf":118,"./ReactUpdates":126}],106:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12357,7 +25875,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":78,"fbjs/lib/containsNode":5,"fbjs/lib/focusNode":10,"fbjs/lib/getActiveElement":11}],97:[function(require,module,exports){
+},{"./ReactDOMSelection":88,"fbjs/lib/containsNode":14,"fbjs/lib/focusNode":19,"fbjs/lib/getActiveElement":20}],107:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12406,7 +25924,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],98:[function(require,module,exports){
+},{}],108:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -12423,7 +25941,7 @@ module.exports = ReactInstanceMap;
 var ReactDebugTool = require('./ReactDebugTool');
 
 module.exports = { debugTool: ReactDebugTool };
-},{"./ReactDebugTool":83}],99:[function(require,module,exports){
+},{"./ReactDebugTool":93}],109:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -12462,7 +25980,7 @@ var ReactInvalidSetStateWarningDevTool = {
 
 module.exports = ReactInvalidSetStateWarningDevTool;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/warning":26}],100:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/warning":35}],110:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12513,7 +26031,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":137}],101:[function(require,module,exports){
+},{"./adler32":147}],111:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -12994,7 +26512,7 @@ ReactPerf.measureMethods(ReactMount, 'ReactMount', {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":37,"./DOMProperty":39,"./ReactBrowserEventEmitter":54,"./ReactCurrentOwner":62,"./ReactDOMComponentTree":67,"./ReactDOMContainerInfo":68,"./ReactDOMFeatureFlags":72,"./ReactElement":88,"./ReactFeatureFlags":94,"./ReactInstrumentation":98,"./ReactMarkupChecksum":100,"./ReactPerf":108,"./ReactReconciler":113,"./ReactUpdateQueue":115,"./ReactUpdates":116,"./instantiateReactComponent":154,"./setInnerHTML":160,"./shouldUpdateReactComponent":162,"_process":28,"fbjs/lib/emptyObject":9,"fbjs/lib/invariant":16,"fbjs/lib/warning":26}],102:[function(require,module,exports){
+},{"./DOMLazyTree":47,"./DOMProperty":49,"./ReactBrowserEventEmitter":64,"./ReactCurrentOwner":72,"./ReactDOMComponentTree":77,"./ReactDOMContainerInfo":78,"./ReactDOMFeatureFlags":82,"./ReactElement":98,"./ReactFeatureFlags":104,"./ReactInstrumentation":108,"./ReactMarkupChecksum":110,"./ReactPerf":118,"./ReactReconciler":123,"./ReactUpdateQueue":125,"./ReactUpdates":126,"./instantiateReactComponent":164,"./setInnerHTML":170,"./shouldUpdateReactComponent":172,"_process":38,"fbjs/lib/emptyObject":18,"fbjs/lib/invariant":25,"fbjs/lib/warning":35}],112:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13399,7 +26917,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-},{"./ReactChildReconciler":55,"./ReactComponentEnvironment":60,"./ReactCurrentOwner":62,"./ReactMultiChildUpdateTypes":103,"./ReactReconciler":113,"./flattenChildren":143,"_process":28,"fbjs/lib/invariant":16}],103:[function(require,module,exports){
+},{"./ReactChildReconciler":65,"./ReactComponentEnvironment":70,"./ReactCurrentOwner":72,"./ReactMultiChildUpdateTypes":113,"./ReactReconciler":123,"./flattenChildren":153,"_process":38,"fbjs/lib/invariant":25}],113:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13432,7 +26950,7 @@ var ReactMultiChildUpdateTypes = keyMirror({
 });
 
 module.exports = ReactMultiChildUpdateTypes;
-},{"fbjs/lib/keyMirror":19}],104:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":28}],114:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -13530,7 +27048,7 @@ var ReactNativeComponent = {
 
 module.exports = ReactNativeComponent;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":16,"object-assign":27}],105:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/invariant":25,"object-assign":37}],115:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13570,7 +27088,7 @@ var ReactNodeTypes = {
 
 module.exports = ReactNodeTypes;
 }).call(this,require('_process'))
-},{"./ReactElement":88,"_process":28,"fbjs/lib/invariant":16}],106:[function(require,module,exports){
+},{"./ReactElement":98,"_process":38,"fbjs/lib/invariant":25}],116:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -13668,7 +27186,7 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/warning":26}],107:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/warning":35}],117:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13763,7 +27281,7 @@ var ReactOwner = {
 
 module.exports = ReactOwner;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":16}],108:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/invariant":25}],118:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13862,7 +27380,7 @@ function _noMeasure(objName, fnName, func) {
 
 module.exports = ReactPerf;
 }).call(this,require('_process'))
-},{"_process":28}],109:[function(require,module,exports){
+},{"_process":38}],119:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13889,7 +27407,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactPropTypeLocationNames;
 }).call(this,require('_process'))
-},{"_process":28}],110:[function(require,module,exports){
+},{"_process":38}],120:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13912,7 +27430,7 @@ var ReactPropTypeLocations = keyMirror({
 });
 
 module.exports = ReactPropTypeLocations;
-},{"fbjs/lib/keyMirror":19}],111:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":28}],121:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14293,7 +27811,7 @@ function getClassName(propValue) {
 }
 
 module.exports = ReactPropTypes;
-},{"./ReactElement":88,"./ReactPropTypeLocationNames":109,"./getIteratorFn":149,"fbjs/lib/emptyFunction":8}],112:[function(require,module,exports){
+},{"./ReactElement":98,"./ReactPropTypeLocationNames":119,"./getIteratorFn":159,"fbjs/lib/emptyFunction":17}],122:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14456,7 +27974,7 @@ _assign(ReactReconcileTransaction.prototype, Transaction.Mixin, Mixin);
 PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
-},{"./CallbackQueue":34,"./PooledClass":52,"./ReactBrowserEventEmitter":54,"./ReactInputSelection":96,"./Transaction":134,"object-assign":27}],113:[function(require,module,exports){
+},{"./CallbackQueue":44,"./PooledClass":62,"./ReactBrowserEventEmitter":64,"./ReactInputSelection":106,"./Transaction":144,"object-assign":37}],123:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14589,7 +28107,7 @@ var ReactReconciler = {
 
 module.exports = ReactReconciler;
 }).call(this,require('_process'))
-},{"./ReactInstrumentation":98,"./ReactRef":114,"_process":28}],114:[function(require,module,exports){
+},{"./ReactInstrumentation":108,"./ReactRef":124,"_process":38}],124:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14668,7 +28186,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":107}],115:[function(require,module,exports){
+},{"./ReactOwner":117}],125:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -14886,7 +28404,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":62,"./ReactInstanceMap":97,"./ReactUpdates":116,"_process":28,"fbjs/lib/invariant":16,"fbjs/lib/warning":26}],116:[function(require,module,exports){
+},{"./ReactCurrentOwner":72,"./ReactInstanceMap":107,"./ReactUpdates":126,"_process":38,"fbjs/lib/invariant":25,"fbjs/lib/warning":35}],126:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -15130,7 +28648,7 @@ var ReactUpdates = {
 
 module.exports = ReactUpdates;
 }).call(this,require('_process'))
-},{"./CallbackQueue":34,"./PooledClass":52,"./ReactFeatureFlags":94,"./ReactPerf":108,"./ReactReconciler":113,"./Transaction":134,"_process":28,"fbjs/lib/invariant":16,"object-assign":27}],117:[function(require,module,exports){
+},{"./CallbackQueue":44,"./PooledClass":62,"./ReactFeatureFlags":104,"./ReactPerf":118,"./ReactReconciler":123,"./Transaction":144,"_process":38,"fbjs/lib/invariant":25,"object-assign":37}],127:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15145,7 +28663,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '15.0.1';
-},{}],118:[function(require,module,exports){
+},{}],128:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15446,7 +28964,7 @@ Object.keys(ATTRS).map(function (key) {
 });
 
 module.exports = SVGDOMPropertyConfig;
-},{}],119:[function(require,module,exports){
+},{}],129:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15643,7 +29161,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventConstants":44,"./EventPropagators":48,"./ReactDOMComponentTree":67,"./ReactInputSelection":96,"./SyntheticEvent":125,"./isTextInputElement":156,"fbjs/lib/ExecutionEnvironment":2,"fbjs/lib/getActiveElement":11,"fbjs/lib/keyOf":20,"fbjs/lib/shallowEqual":25}],120:[function(require,module,exports){
+},{"./EventConstants":54,"./EventPropagators":58,"./ReactDOMComponentTree":77,"./ReactInputSelection":106,"./SyntheticEvent":135,"./isTextInputElement":166,"fbjs/lib/ExecutionEnvironment":11,"fbjs/lib/getActiveElement":20,"fbjs/lib/keyOf":29,"fbjs/lib/shallowEqual":34}],130:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -16273,7 +29791,7 @@ var SimpleEventPlugin = {
 
 module.exports = SimpleEventPlugin;
 }).call(this,require('_process'))
-},{"./EventConstants":44,"./EventPropagators":48,"./ReactDOMComponentTree":67,"./SyntheticAnimationEvent":121,"./SyntheticClipboardEvent":122,"./SyntheticDragEvent":124,"./SyntheticEvent":125,"./SyntheticFocusEvent":126,"./SyntheticKeyboardEvent":128,"./SyntheticMouseEvent":129,"./SyntheticTouchEvent":130,"./SyntheticTransitionEvent":131,"./SyntheticUIEvent":132,"./SyntheticWheelEvent":133,"./getEventCharCode":145,"_process":28,"fbjs/lib/EventListener":1,"fbjs/lib/emptyFunction":8,"fbjs/lib/invariant":16,"fbjs/lib/keyOf":20}],121:[function(require,module,exports){
+},{"./EventConstants":54,"./EventPropagators":58,"./ReactDOMComponentTree":77,"./SyntheticAnimationEvent":131,"./SyntheticClipboardEvent":132,"./SyntheticDragEvent":134,"./SyntheticEvent":135,"./SyntheticFocusEvent":136,"./SyntheticKeyboardEvent":138,"./SyntheticMouseEvent":139,"./SyntheticTouchEvent":140,"./SyntheticTransitionEvent":141,"./SyntheticUIEvent":142,"./SyntheticWheelEvent":143,"./getEventCharCode":155,"_process":38,"fbjs/lib/EventListener":10,"fbjs/lib/emptyFunction":17,"fbjs/lib/invariant":25,"fbjs/lib/keyOf":29}],131:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16313,7 +29831,7 @@ function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 
 module.exports = SyntheticAnimationEvent;
-},{"./SyntheticEvent":125}],122:[function(require,module,exports){
+},{"./SyntheticEvent":135}],132:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16352,7 +29870,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":125}],123:[function(require,module,exports){
+},{"./SyntheticEvent":135}],133:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16389,7 +29907,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":125}],124:[function(require,module,exports){
+},{"./SyntheticEvent":135}],134:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16426,7 +29944,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":129}],125:[function(require,module,exports){
+},{"./SyntheticMouseEvent":139}],135:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -16690,7 +30208,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
   }
 }
 }).call(this,require('_process'))
-},{"./PooledClass":52,"_process":28,"fbjs/lib/emptyFunction":8,"fbjs/lib/warning":26,"object-assign":27}],126:[function(require,module,exports){
+},{"./PooledClass":62,"_process":38,"fbjs/lib/emptyFunction":17,"fbjs/lib/warning":35,"object-assign":37}],136:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16727,7 +30245,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":132}],127:[function(require,module,exports){
+},{"./SyntheticUIEvent":142}],137:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16765,7 +30283,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":125}],128:[function(require,module,exports){
+},{"./SyntheticEvent":135}],138:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16850,7 +30368,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":132,"./getEventCharCode":145,"./getEventKey":146,"./getEventModifierState":147}],129:[function(require,module,exports){
+},{"./SyntheticUIEvent":142,"./getEventCharCode":155,"./getEventKey":156,"./getEventModifierState":157}],139:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16923,7 +30441,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":132,"./ViewportMetrics":135,"./getEventModifierState":147}],130:[function(require,module,exports){
+},{"./SyntheticUIEvent":142,"./ViewportMetrics":145,"./getEventModifierState":157}],140:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16969,7 +30487,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":132,"./getEventModifierState":147}],131:[function(require,module,exports){
+},{"./SyntheticUIEvent":142,"./getEventModifierState":157}],141:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17009,7 +30527,7 @@ function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, n
 SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 
 module.exports = SyntheticTransitionEvent;
-},{"./SyntheticEvent":125}],132:[function(require,module,exports){
+},{"./SyntheticEvent":135}],142:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17069,7 +30587,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":125,"./getEventTarget":148}],133:[function(require,module,exports){
+},{"./SyntheticEvent":135,"./getEventTarget":158}],143:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17124,7 +30642,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":129}],134:[function(require,module,exports){
+},{"./SyntheticMouseEvent":139}],144:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17358,7 +30876,7 @@ var Transaction = {
 
 module.exports = Transaction;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":16}],135:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/invariant":25}],145:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17386,7 +30904,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],136:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -17448,7 +30966,7 @@ function accumulateInto(current, next) {
 
 module.exports = accumulateInto;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/invariant":16}],137:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/invariant":25}],147:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17492,7 +31010,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],138:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17519,7 +31037,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-},{"_process":28}],139:[function(require,module,exports){
+},{"_process":38}],149:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17552,7 +31070,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 };
 
 module.exports = createMicrosoftUnsafeLocalFunction;
-},{}],140:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17632,7 +31150,7 @@ function dangerousStyleValue(name, value, component) {
 
 module.exports = dangerousStyleValue;
 }).call(this,require('_process'))
-},{"./CSSProperty":32,"_process":28,"fbjs/lib/warning":26}],141:[function(require,module,exports){
+},{"./CSSProperty":42,"_process":38,"fbjs/lib/warning":35}],151:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17671,7 +31189,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],142:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17730,7 +31248,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":62,"./ReactDOMComponentTree":67,"./ReactInstanceMap":97,"./getNativeComponentFromComposite":150,"_process":28,"fbjs/lib/invariant":16,"fbjs/lib/warning":26}],143:[function(require,module,exports){
+},{"./ReactCurrentOwner":72,"./ReactDOMComponentTree":77,"./ReactInstanceMap":107,"./getNativeComponentFromComposite":160,"_process":38,"fbjs/lib/invariant":25,"fbjs/lib/warning":35}],153:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17781,7 +31299,7 @@ function flattenChildren(children) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./traverseAllChildren":163,"_process":28,"fbjs/lib/warning":26}],144:[function(require,module,exports){
+},{"./traverseAllChildren":173,"_process":38,"fbjs/lib/warning":35}],154:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17812,7 +31330,7 @@ var forEachAccumulated = function (arr, cb, scope) {
 };
 
 module.exports = forEachAccumulated;
-},{}],145:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17863,7 +31381,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],146:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17966,7 +31484,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":145}],147:[function(require,module,exports){
+},{"./getEventCharCode":155}],157:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18010,7 +31528,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],148:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18046,7 +31564,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],149:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18087,7 +31605,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],150:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18118,7 +31636,7 @@ function getNativeComponentFromComposite(inst) {
 }
 
 module.exports = getNativeComponentFromComposite;
-},{"./ReactNodeTypes":105}],151:[function(require,module,exports){
+},{"./ReactNodeTypes":115}],161:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18193,7 +31711,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],152:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18227,7 +31745,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":2}],153:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":11}],163:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18329,7 +31847,7 @@ function getVendorPrefixedEventName(eventName) {
 }
 
 module.exports = getVendorPrefixedEventName;
-},{"fbjs/lib/ExecutionEnvironment":2}],154:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":11}],164:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18443,7 +31961,7 @@ function instantiateReactComponent(node) {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-},{"./ReactCompositeComponent":61,"./ReactEmptyComponent":90,"./ReactNativeComponent":104,"_process":28,"fbjs/lib/invariant":16,"fbjs/lib/warning":26,"object-assign":27}],155:[function(require,module,exports){
+},{"./ReactCompositeComponent":71,"./ReactEmptyComponent":100,"./ReactNativeComponent":114,"_process":38,"fbjs/lib/invariant":25,"fbjs/lib/warning":35,"object-assign":37}],165:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18504,7 +32022,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":2}],156:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":11}],166:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18546,7 +32064,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],157:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18582,7 +32100,7 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-},{"./ReactElement":88,"_process":28,"fbjs/lib/invariant":16}],158:[function(require,module,exports){
+},{"./ReactElement":98,"_process":38,"fbjs/lib/invariant":25}],168:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18609,7 +32127,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":141}],159:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":151}],169:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18626,7 +32144,7 @@ module.exports = quoteAttributeValueForBrowser;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":101}],160:[function(require,module,exports){
+},{"./ReactMount":111}],170:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18709,7 +32227,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"./createMicrosoftUnsafeLocalFunction":139,"fbjs/lib/ExecutionEnvironment":2}],161:[function(require,module,exports){
+},{"./createMicrosoftUnsafeLocalFunction":149,"fbjs/lib/ExecutionEnvironment":11}],171:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18750,7 +32268,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":141,"./setInnerHTML":160,"fbjs/lib/ExecutionEnvironment":2}],162:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":151,"./setInnerHTML":170,"fbjs/lib/ExecutionEnvironment":11}],172:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18793,7 +32311,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],163:[function(require,module,exports){
+},{}],173:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18985,7 +32503,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":62,"./ReactElement":88,"./getIteratorFn":149,"_process":28,"fbjs/lib/invariant":16,"fbjs/lib/warning":26}],164:[function(require,module,exports){
+},{"./ReactCurrentOwner":72,"./ReactElement":98,"./getIteratorFn":159,"_process":38,"fbjs/lib/invariant":25,"fbjs/lib/warning":35}],174:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -19356,12 +32874,1562 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = validateDOMNesting;
 }).call(this,require('_process'))
-},{"_process":28,"fbjs/lib/emptyFunction":8,"fbjs/lib/warning":26,"object-assign":27}],165:[function(require,module,exports){
+},{"_process":38,"fbjs/lib/emptyFunction":17,"fbjs/lib/warning":35,"object-assign":37}],175:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":53}],166:[function(require,module,exports){
+},{"./lib/React":63}],176:[function(require,module,exports){
+//     Underscore.js 1.8.3
+//     http://underscorejs.org
+//     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+//     Underscore may be freely distributed under the MIT license.
+
+(function() {
+
+  // Baseline setup
+  // --------------
+
+  // Establish the root object, `window` in the browser, or `exports` on the server.
+  var root = this;
+
+  // Save the previous value of the `_` variable.
+  var previousUnderscore = root._;
+
+  // Save bytes in the minified (but not gzipped) version:
+  var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype;
+
+  // Create quick reference variables for speed access to core prototypes.
+  var
+    push             = ArrayProto.push,
+    slice            = ArrayProto.slice,
+    toString         = ObjProto.toString,
+    hasOwnProperty   = ObjProto.hasOwnProperty;
+
+  // All **ECMAScript 5** native function implementations that we hope to use
+  // are declared here.
+  var
+    nativeIsArray      = Array.isArray,
+    nativeKeys         = Object.keys,
+    nativeBind         = FuncProto.bind,
+    nativeCreate       = Object.create;
+
+  // Naked function reference for surrogate-prototype-swapping.
+  var Ctor = function(){};
+
+  // Create a safe reference to the Underscore object for use below.
+  var _ = function(obj) {
+    if (obj instanceof _) return obj;
+    if (!(this instanceof _)) return new _(obj);
+    this._wrapped = obj;
+  };
+
+  // Export the Underscore object for **Node.js**, with
+  // backwards-compatibility for the old `require()` API. If we're in
+  // the browser, add `_` as a global object.
+  if (typeof exports !== 'undefined') {
+    if (typeof module !== 'undefined' && module.exports) {
+      exports = module.exports = _;
+    }
+    exports._ = _;
+  } else {
+    root._ = _;
+  }
+
+  // Current version.
+  _.VERSION = '1.8.3';
+
+  // Internal function that returns an efficient (for current engines) version
+  // of the passed-in callback, to be repeatedly applied in other Underscore
+  // functions.
+  var optimizeCb = function(func, context, argCount) {
+    if (context === void 0) return func;
+    switch (argCount == null ? 3 : argCount) {
+      case 1: return function(value) {
+        return func.call(context, value);
+      };
+      case 2: return function(value, other) {
+        return func.call(context, value, other);
+      };
+      case 3: return function(value, index, collection) {
+        return func.call(context, value, index, collection);
+      };
+      case 4: return function(accumulator, value, index, collection) {
+        return func.call(context, accumulator, value, index, collection);
+      };
+    }
+    return function() {
+      return func.apply(context, arguments);
+    };
+  };
+
+  // A mostly-internal function to generate callbacks that can be applied
+  // to each element in a collection, returning the desired result — either
+  // identity, an arbitrary callback, a property matcher, or a property accessor.
+  var cb = function(value, context, argCount) {
+    if (value == null) return _.identity;
+    if (_.isFunction(value)) return optimizeCb(value, context, argCount);
+    if (_.isObject(value)) return _.matcher(value);
+    return _.property(value);
+  };
+  _.iteratee = function(value, context) {
+    return cb(value, context, Infinity);
+  };
+
+  // An internal function for creating assigner functions.
+  var createAssigner = function(keysFunc, undefinedOnly) {
+    return function(obj) {
+      var length = arguments.length;
+      if (length < 2 || obj == null) return obj;
+      for (var index = 1; index < length; index++) {
+        var source = arguments[index],
+            keys = keysFunc(source),
+            l = keys.length;
+        for (var i = 0; i < l; i++) {
+          var key = keys[i];
+          if (!undefinedOnly || obj[key] === void 0) obj[key] = source[key];
+        }
+      }
+      return obj;
+    };
+  };
+
+  // An internal function for creating a new object that inherits from another.
+  var baseCreate = function(prototype) {
+    if (!_.isObject(prototype)) return {};
+    if (nativeCreate) return nativeCreate(prototype);
+    Ctor.prototype = prototype;
+    var result = new Ctor;
+    Ctor.prototype = null;
+    return result;
+  };
+
+  var property = function(key) {
+    return function(obj) {
+      return obj == null ? void 0 : obj[key];
+    };
+  };
+
+  // Helper for collection methods to determine whether a collection
+  // should be iterated as an array or as an object
+  // Related: http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength
+  // Avoids a very nasty iOS 8 JIT bug on ARM-64. #2094
+  var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
+  var getLength = property('length');
+  var isArrayLike = function(collection) {
+    var length = getLength(collection);
+    return typeof length == 'number' && length >= 0 && length <= MAX_ARRAY_INDEX;
+  };
+
+  // Collection Functions
+  // --------------------
+
+  // The cornerstone, an `each` implementation, aka `forEach`.
+  // Handles raw objects in addition to array-likes. Treats all
+  // sparse array-likes as if they were dense.
+  _.each = _.forEach = function(obj, iteratee, context) {
+    iteratee = optimizeCb(iteratee, context);
+    var i, length;
+    if (isArrayLike(obj)) {
+      for (i = 0, length = obj.length; i < length; i++) {
+        iteratee(obj[i], i, obj);
+      }
+    } else {
+      var keys = _.keys(obj);
+      for (i = 0, length = keys.length; i < length; i++) {
+        iteratee(obj[keys[i]], keys[i], obj);
+      }
+    }
+    return obj;
+  };
+
+  // Return the results of applying the iteratee to each element.
+  _.map = _.collect = function(obj, iteratee, context) {
+    iteratee = cb(iteratee, context);
+    var keys = !isArrayLike(obj) && _.keys(obj),
+        length = (keys || obj).length,
+        results = Array(length);
+    for (var index = 0; index < length; index++) {
+      var currentKey = keys ? keys[index] : index;
+      results[index] = iteratee(obj[currentKey], currentKey, obj);
+    }
+    return results;
+  };
+
+  // Create a reducing function iterating left or right.
+  function createReduce(dir) {
+    // Optimized iterator function as using arguments.length
+    // in the main function will deoptimize the, see #1991.
+    function iterator(obj, iteratee, memo, keys, index, length) {
+      for (; index >= 0 && index < length; index += dir) {
+        var currentKey = keys ? keys[index] : index;
+        memo = iteratee(memo, obj[currentKey], currentKey, obj);
+      }
+      return memo;
+    }
+
+    return function(obj, iteratee, memo, context) {
+      iteratee = optimizeCb(iteratee, context, 4);
+      var keys = !isArrayLike(obj) && _.keys(obj),
+          length = (keys || obj).length,
+          index = dir > 0 ? 0 : length - 1;
+      // Determine the initial value if none is provided.
+      if (arguments.length < 3) {
+        memo = obj[keys ? keys[index] : index];
+        index += dir;
+      }
+      return iterator(obj, iteratee, memo, keys, index, length);
+    };
+  }
+
+  // **Reduce** builds up a single result from a list of values, aka `inject`,
+  // or `foldl`.
+  _.reduce = _.foldl = _.inject = createReduce(1);
+
+  // The right-associative version of reduce, also known as `foldr`.
+  _.reduceRight = _.foldr = createReduce(-1);
+
+  // Return the first value which passes a truth test. Aliased as `detect`.
+  _.find = _.detect = function(obj, predicate, context) {
+    var key;
+    if (isArrayLike(obj)) {
+      key = _.findIndex(obj, predicate, context);
+    } else {
+      key = _.findKey(obj, predicate, context);
+    }
+    if (key !== void 0 && key !== -1) return obj[key];
+  };
+
+  // Return all the elements that pass a truth test.
+  // Aliased as `select`.
+  _.filter = _.select = function(obj, predicate, context) {
+    var results = [];
+    predicate = cb(predicate, context);
+    _.each(obj, function(value, index, list) {
+      if (predicate(value, index, list)) results.push(value);
+    });
+    return results;
+  };
+
+  // Return all the elements for which a truth test fails.
+  _.reject = function(obj, predicate, context) {
+    return _.filter(obj, _.negate(cb(predicate)), context);
+  };
+
+  // Determine whether all of the elements match a truth test.
+  // Aliased as `all`.
+  _.every = _.all = function(obj, predicate, context) {
+    predicate = cb(predicate, context);
+    var keys = !isArrayLike(obj) && _.keys(obj),
+        length = (keys || obj).length;
+    for (var index = 0; index < length; index++) {
+      var currentKey = keys ? keys[index] : index;
+      if (!predicate(obj[currentKey], currentKey, obj)) return false;
+    }
+    return true;
+  };
+
+  // Determine if at least one element in the object matches a truth test.
+  // Aliased as `any`.
+  _.some = _.any = function(obj, predicate, context) {
+    predicate = cb(predicate, context);
+    var keys = !isArrayLike(obj) && _.keys(obj),
+        length = (keys || obj).length;
+    for (var index = 0; index < length; index++) {
+      var currentKey = keys ? keys[index] : index;
+      if (predicate(obj[currentKey], currentKey, obj)) return true;
+    }
+    return false;
+  };
+
+  // Determine if the array or object contains a given item (using `===`).
+  // Aliased as `includes` and `include`.
+  _.contains = _.includes = _.include = function(obj, item, fromIndex, guard) {
+    if (!isArrayLike(obj)) obj = _.values(obj);
+    if (typeof fromIndex != 'number' || guard) fromIndex = 0;
+    return _.indexOf(obj, item, fromIndex) >= 0;
+  };
+
+  // Invoke a method (with arguments) on every item in a collection.
+  _.invoke = function(obj, method) {
+    var args = slice.call(arguments, 2);
+    var isFunc = _.isFunction(method);
+    return _.map(obj, function(value) {
+      var func = isFunc ? method : value[method];
+      return func == null ? func : func.apply(value, args);
+    });
+  };
+
+  // Convenience version of a common use case of `map`: fetching a property.
+  _.pluck = function(obj, key) {
+    return _.map(obj, _.property(key));
+  };
+
+  // Convenience version of a common use case of `filter`: selecting only objects
+  // containing specific `key:value` pairs.
+  _.where = function(obj, attrs) {
+    return _.filter(obj, _.matcher(attrs));
+  };
+
+  // Convenience version of a common use case of `find`: getting the first object
+  // containing specific `key:value` pairs.
+  _.findWhere = function(obj, attrs) {
+    return _.find(obj, _.matcher(attrs));
+  };
+
+  // Return the maximum element (or element-based computation).
+  _.max = function(obj, iteratee, context) {
+    var result = -Infinity, lastComputed = -Infinity,
+        value, computed;
+    if (iteratee == null && obj != null) {
+      obj = isArrayLike(obj) ? obj : _.values(obj);
+      for (var i = 0, length = obj.length; i < length; i++) {
+        value = obj[i];
+        if (value > result) {
+          result = value;
+        }
+      }
+    } else {
+      iteratee = cb(iteratee, context);
+      _.each(obj, function(value, index, list) {
+        computed = iteratee(value, index, list);
+        if (computed > lastComputed || computed === -Infinity && result === -Infinity) {
+          result = value;
+          lastComputed = computed;
+        }
+      });
+    }
+    return result;
+  };
+
+  // Return the minimum element (or element-based computation).
+  _.min = function(obj, iteratee, context) {
+    var result = Infinity, lastComputed = Infinity,
+        value, computed;
+    if (iteratee == null && obj != null) {
+      obj = isArrayLike(obj) ? obj : _.values(obj);
+      for (var i = 0, length = obj.length; i < length; i++) {
+        value = obj[i];
+        if (value < result) {
+          result = value;
+        }
+      }
+    } else {
+      iteratee = cb(iteratee, context);
+      _.each(obj, function(value, index, list) {
+        computed = iteratee(value, index, list);
+        if (computed < lastComputed || computed === Infinity && result === Infinity) {
+          result = value;
+          lastComputed = computed;
+        }
+      });
+    }
+    return result;
+  };
+
+  // Shuffle a collection, using the modern version of the
+  // [Fisher-Yates shuffle](http://en.wikipedia.org/wiki/Fisher–Yates_shuffle).
+  _.shuffle = function(obj) {
+    var set = isArrayLike(obj) ? obj : _.values(obj);
+    var length = set.length;
+    var shuffled = Array(length);
+    for (var index = 0, rand; index < length; index++) {
+      rand = _.random(0, index);
+      if (rand !== index) shuffled[index] = shuffled[rand];
+      shuffled[rand] = set[index];
+    }
+    return shuffled;
+  };
+
+  // Sample **n** random values from a collection.
+  // If **n** is not specified, returns a single random element.
+  // The internal `guard` argument allows it to work with `map`.
+  _.sample = function(obj, n, guard) {
+    if (n == null || guard) {
+      if (!isArrayLike(obj)) obj = _.values(obj);
+      return obj[_.random(obj.length - 1)];
+    }
+    return _.shuffle(obj).slice(0, Math.max(0, n));
+  };
+
+  // Sort the object's values by a criterion produced by an iteratee.
+  _.sortBy = function(obj, iteratee, context) {
+    iteratee = cb(iteratee, context);
+    return _.pluck(_.map(obj, function(value, index, list) {
+      return {
+        value: value,
+        index: index,
+        criteria: iteratee(value, index, list)
+      };
+    }).sort(function(left, right) {
+      var a = left.criteria;
+      var b = right.criteria;
+      if (a !== b) {
+        if (a > b || a === void 0) return 1;
+        if (a < b || b === void 0) return -1;
+      }
+      return left.index - right.index;
+    }), 'value');
+  };
+
+  // An internal function used for aggregate "group by" operations.
+  var group = function(behavior) {
+    return function(obj, iteratee, context) {
+      var result = {};
+      iteratee = cb(iteratee, context);
+      _.each(obj, function(value, index) {
+        var key = iteratee(value, index, obj);
+        behavior(result, value, key);
+      });
+      return result;
+    };
+  };
+
+  // Groups the object's values by a criterion. Pass either a string attribute
+  // to group by, or a function that returns the criterion.
+  _.groupBy = group(function(result, value, key) {
+    if (_.has(result, key)) result[key].push(value); else result[key] = [value];
+  });
+
+  // Indexes the object's values by a criterion, similar to `groupBy`, but for
+  // when you know that your index values will be unique.
+  _.indexBy = group(function(result, value, key) {
+    result[key] = value;
+  });
+
+  // Counts instances of an object that group by a certain criterion. Pass
+  // either a string attribute to count by, or a function that returns the
+  // criterion.
+  _.countBy = group(function(result, value, key) {
+    if (_.has(result, key)) result[key]++; else result[key] = 1;
+  });
+
+  // Safely create a real, live array from anything iterable.
+  _.toArray = function(obj) {
+    if (!obj) return [];
+    if (_.isArray(obj)) return slice.call(obj);
+    if (isArrayLike(obj)) return _.map(obj, _.identity);
+    return _.values(obj);
+  };
+
+  // Return the number of elements in an object.
+  _.size = function(obj) {
+    if (obj == null) return 0;
+    return isArrayLike(obj) ? obj.length : _.keys(obj).length;
+  };
+
+  // Split a collection into two arrays: one whose elements all satisfy the given
+  // predicate, and one whose elements all do not satisfy the predicate.
+  _.partition = function(obj, predicate, context) {
+    predicate = cb(predicate, context);
+    var pass = [], fail = [];
+    _.each(obj, function(value, key, obj) {
+      (predicate(value, key, obj) ? pass : fail).push(value);
+    });
+    return [pass, fail];
+  };
+
+  // Array Functions
+  // ---------------
+
+  // Get the first element of an array. Passing **n** will return the first N
+  // values in the array. Aliased as `head` and `take`. The **guard** check
+  // allows it to work with `_.map`.
+  _.first = _.head = _.take = function(array, n, guard) {
+    if (array == null) return void 0;
+    if (n == null || guard) return array[0];
+    return _.initial(array, array.length - n);
+  };
+
+  // Returns everything but the last entry of the array. Especially useful on
+  // the arguments object. Passing **n** will return all the values in
+  // the array, excluding the last N.
+  _.initial = function(array, n, guard) {
+    return slice.call(array, 0, Math.max(0, array.length - (n == null || guard ? 1 : n)));
+  };
+
+  // Get the last element of an array. Passing **n** will return the last N
+  // values in the array.
+  _.last = function(array, n, guard) {
+    if (array == null) return void 0;
+    if (n == null || guard) return array[array.length - 1];
+    return _.rest(array, Math.max(0, array.length - n));
+  };
+
+  // Returns everything but the first entry of the array. Aliased as `tail` and `drop`.
+  // Especially useful on the arguments object. Passing an **n** will return
+  // the rest N values in the array.
+  _.rest = _.tail = _.drop = function(array, n, guard) {
+    return slice.call(array, n == null || guard ? 1 : n);
+  };
+
+  // Trim out all falsy values from an array.
+  _.compact = function(array) {
+    return _.filter(array, _.identity);
+  };
+
+  // Internal implementation of a recursive `flatten` function.
+  var flatten = function(input, shallow, strict, startIndex) {
+    var output = [], idx = 0;
+    for (var i = startIndex || 0, length = getLength(input); i < length; i++) {
+      var value = input[i];
+      if (isArrayLike(value) && (_.isArray(value) || _.isArguments(value))) {
+        //flatten current level of array or arguments object
+        if (!shallow) value = flatten(value, shallow, strict);
+        var j = 0, len = value.length;
+        output.length += len;
+        while (j < len) {
+          output[idx++] = value[j++];
+        }
+      } else if (!strict) {
+        output[idx++] = value;
+      }
+    }
+    return output;
+  };
+
+  // Flatten out an array, either recursively (by default), or just one level.
+  _.flatten = function(array, shallow) {
+    return flatten(array, shallow, false);
+  };
+
+  // Return a version of the array that does not contain the specified value(s).
+  _.without = function(array) {
+    return _.difference(array, slice.call(arguments, 1));
+  };
+
+  // Produce a duplicate-free version of the array. If the array has already
+  // been sorted, you have the option of using a faster algorithm.
+  // Aliased as `unique`.
+  _.uniq = _.unique = function(array, isSorted, iteratee, context) {
+    if (!_.isBoolean(isSorted)) {
+      context = iteratee;
+      iteratee = isSorted;
+      isSorted = false;
+    }
+    if (iteratee != null) iteratee = cb(iteratee, context);
+    var result = [];
+    var seen = [];
+    for (var i = 0, length = getLength(array); i < length; i++) {
+      var value = array[i],
+          computed = iteratee ? iteratee(value, i, array) : value;
+      if (isSorted) {
+        if (!i || seen !== computed) result.push(value);
+        seen = computed;
+      } else if (iteratee) {
+        if (!_.contains(seen, computed)) {
+          seen.push(computed);
+          result.push(value);
+        }
+      } else if (!_.contains(result, value)) {
+        result.push(value);
+      }
+    }
+    return result;
+  };
+
+  // Produce an array that contains the union: each distinct element from all of
+  // the passed-in arrays.
+  _.union = function() {
+    return _.uniq(flatten(arguments, true, true));
+  };
+
+  // Produce an array that contains every item shared between all the
+  // passed-in arrays.
+  _.intersection = function(array) {
+    var result = [];
+    var argsLength = arguments.length;
+    for (var i = 0, length = getLength(array); i < length; i++) {
+      var item = array[i];
+      if (_.contains(result, item)) continue;
+      for (var j = 1; j < argsLength; j++) {
+        if (!_.contains(arguments[j], item)) break;
+      }
+      if (j === argsLength) result.push(item);
+    }
+    return result;
+  };
+
+  // Take the difference between one array and a number of other arrays.
+  // Only the elements present in just the first array will remain.
+  _.difference = function(array) {
+    var rest = flatten(arguments, true, true, 1);
+    return _.filter(array, function(value){
+      return !_.contains(rest, value);
+    });
+  };
+
+  // Zip together multiple lists into a single array -- elements that share
+  // an index go together.
+  _.zip = function() {
+    return _.unzip(arguments);
+  };
+
+  // Complement of _.zip. Unzip accepts an array of arrays and groups
+  // each array's elements on shared indices
+  _.unzip = function(array) {
+    var length = array && _.max(array, getLength).length || 0;
+    var result = Array(length);
+
+    for (var index = 0; index < length; index++) {
+      result[index] = _.pluck(array, index);
+    }
+    return result;
+  };
+
+  // Converts lists into objects. Pass either a single array of `[key, value]`
+  // pairs, or two parallel arrays of the same length -- one of keys, and one of
+  // the corresponding values.
+  _.object = function(list, values) {
+    var result = {};
+    for (var i = 0, length = getLength(list); i < length; i++) {
+      if (values) {
+        result[list[i]] = values[i];
+      } else {
+        result[list[i][0]] = list[i][1];
+      }
+    }
+    return result;
+  };
+
+  // Generator function to create the findIndex and findLastIndex functions
+  function createPredicateIndexFinder(dir) {
+    return function(array, predicate, context) {
+      predicate = cb(predicate, context);
+      var length = getLength(array);
+      var index = dir > 0 ? 0 : length - 1;
+      for (; index >= 0 && index < length; index += dir) {
+        if (predicate(array[index], index, array)) return index;
+      }
+      return -1;
+    };
+  }
+
+  // Returns the first index on an array-like that passes a predicate test
+  _.findIndex = createPredicateIndexFinder(1);
+  _.findLastIndex = createPredicateIndexFinder(-1);
+
+  // Use a comparator function to figure out the smallest index at which
+  // an object should be inserted so as to maintain order. Uses binary search.
+  _.sortedIndex = function(array, obj, iteratee, context) {
+    iteratee = cb(iteratee, context, 1);
+    var value = iteratee(obj);
+    var low = 0, high = getLength(array);
+    while (low < high) {
+      var mid = Math.floor((low + high) / 2);
+      if (iteratee(array[mid]) < value) low = mid + 1; else high = mid;
+    }
+    return low;
+  };
+
+  // Generator function to create the indexOf and lastIndexOf functions
+  function createIndexFinder(dir, predicateFind, sortedIndex) {
+    return function(array, item, idx) {
+      var i = 0, length = getLength(array);
+      if (typeof idx == 'number') {
+        if (dir > 0) {
+            i = idx >= 0 ? idx : Math.max(idx + length, i);
+        } else {
+            length = idx >= 0 ? Math.min(idx + 1, length) : idx + length + 1;
+        }
+      } else if (sortedIndex && idx && length) {
+        idx = sortedIndex(array, item);
+        return array[idx] === item ? idx : -1;
+      }
+      if (item !== item) {
+        idx = predicateFind(slice.call(array, i, length), _.isNaN);
+        return idx >= 0 ? idx + i : -1;
+      }
+      for (idx = dir > 0 ? i : length - 1; idx >= 0 && idx < length; idx += dir) {
+        if (array[idx] === item) return idx;
+      }
+      return -1;
+    };
+  }
+
+  // Return the position of the first occurrence of an item in an array,
+  // or -1 if the item is not included in the array.
+  // If the array is large and already in sort order, pass `true`
+  // for **isSorted** to use binary search.
+  _.indexOf = createIndexFinder(1, _.findIndex, _.sortedIndex);
+  _.lastIndexOf = createIndexFinder(-1, _.findLastIndex);
+
+  // Generate an integer Array containing an arithmetic progression. A port of
+  // the native Python `range()` function. See
+  // [the Python documentation](http://docs.python.org/library/functions.html#range).
+  _.range = function(start, stop, step) {
+    if (stop == null) {
+      stop = start || 0;
+      start = 0;
+    }
+    step = step || 1;
+
+    var length = Math.max(Math.ceil((stop - start) / step), 0);
+    var range = Array(length);
+
+    for (var idx = 0; idx < length; idx++, start += step) {
+      range[idx] = start;
+    }
+
+    return range;
+  };
+
+  // Function (ahem) Functions
+  // ------------------
+
+  // Determines whether to execute a function as a constructor
+  // or a normal function with the provided arguments
+  var executeBound = function(sourceFunc, boundFunc, context, callingContext, args) {
+    if (!(callingContext instanceof boundFunc)) return sourceFunc.apply(context, args);
+    var self = baseCreate(sourceFunc.prototype);
+    var result = sourceFunc.apply(self, args);
+    if (_.isObject(result)) return result;
+    return self;
+  };
+
+  // Create a function bound to a given object (assigning `this`, and arguments,
+  // optionally). Delegates to **ECMAScript 5**'s native `Function.bind` if
+  // available.
+  _.bind = function(func, context) {
+    if (nativeBind && func.bind === nativeBind) return nativeBind.apply(func, slice.call(arguments, 1));
+    if (!_.isFunction(func)) throw new TypeError('Bind must be called on a function');
+    var args = slice.call(arguments, 2);
+    var bound = function() {
+      return executeBound(func, bound, context, this, args.concat(slice.call(arguments)));
+    };
+    return bound;
+  };
+
+  // Partially apply a function by creating a version that has had some of its
+  // arguments pre-filled, without changing its dynamic `this` context. _ acts
+  // as a placeholder, allowing any combination of arguments to be pre-filled.
+  _.partial = function(func) {
+    var boundArgs = slice.call(arguments, 1);
+    var bound = function() {
+      var position = 0, length = boundArgs.length;
+      var args = Array(length);
+      for (var i = 0; i < length; i++) {
+        args[i] = boundArgs[i] === _ ? arguments[position++] : boundArgs[i];
+      }
+      while (position < arguments.length) args.push(arguments[position++]);
+      return executeBound(func, bound, this, this, args);
+    };
+    return bound;
+  };
+
+  // Bind a number of an object's methods to that object. Remaining arguments
+  // are the method names to be bound. Useful for ensuring that all callbacks
+  // defined on an object belong to it.
+  _.bindAll = function(obj) {
+    var i, length = arguments.length, key;
+    if (length <= 1) throw new Error('bindAll must be passed function names');
+    for (i = 1; i < length; i++) {
+      key = arguments[i];
+      obj[key] = _.bind(obj[key], obj);
+    }
+    return obj;
+  };
+
+  // Memoize an expensive function by storing its results.
+  _.memoize = function(func, hasher) {
+    var memoize = function(key) {
+      var cache = memoize.cache;
+      var address = '' + (hasher ? hasher.apply(this, arguments) : key);
+      if (!_.has(cache, address)) cache[address] = func.apply(this, arguments);
+      return cache[address];
+    };
+    memoize.cache = {};
+    return memoize;
+  };
+
+  // Delays a function for the given number of milliseconds, and then calls
+  // it with the arguments supplied.
+  _.delay = function(func, wait) {
+    var args = slice.call(arguments, 2);
+    return setTimeout(function(){
+      return func.apply(null, args);
+    }, wait);
+  };
+
+  // Defers a function, scheduling it to run after the current call stack has
+  // cleared.
+  _.defer = _.partial(_.delay, _, 1);
+
+  // Returns a function, that, when invoked, will only be triggered at most once
+  // during a given window of time. Normally, the throttled function will run
+  // as much as it can, without ever going more than once per `wait` duration;
+  // but if you'd like to disable the execution on the leading edge, pass
+  // `{leading: false}`. To disable execution on the trailing edge, ditto.
+  _.throttle = function(func, wait, options) {
+    var context, args, result;
+    var timeout = null;
+    var previous = 0;
+    if (!options) options = {};
+    var later = function() {
+      previous = options.leading === false ? 0 : _.now();
+      timeout = null;
+      result = func.apply(context, args);
+      if (!timeout) context = args = null;
+    };
+    return function() {
+      var now = _.now();
+      if (!previous && options.leading === false) previous = now;
+      var remaining = wait - (now - previous);
+      context = this;
+      args = arguments;
+      if (remaining <= 0 || remaining > wait) {
+        if (timeout) {
+          clearTimeout(timeout);
+          timeout = null;
+        }
+        previous = now;
+        result = func.apply(context, args);
+        if (!timeout) context = args = null;
+      } else if (!timeout && options.trailing !== false) {
+        timeout = setTimeout(later, remaining);
+      }
+      return result;
+    };
+  };
+
+  // Returns a function, that, as long as it continues to be invoked, will not
+  // be triggered. The function will be called after it stops being called for
+  // N milliseconds. If `immediate` is passed, trigger the function on the
+  // leading edge, instead of the trailing.
+  _.debounce = function(func, wait, immediate) {
+    var timeout, args, context, timestamp, result;
+
+    var later = function() {
+      var last = _.now() - timestamp;
+
+      if (last < wait && last >= 0) {
+        timeout = setTimeout(later, wait - last);
+      } else {
+        timeout = null;
+        if (!immediate) {
+          result = func.apply(context, args);
+          if (!timeout) context = args = null;
+        }
+      }
+    };
+
+    return function() {
+      context = this;
+      args = arguments;
+      timestamp = _.now();
+      var callNow = immediate && !timeout;
+      if (!timeout) timeout = setTimeout(later, wait);
+      if (callNow) {
+        result = func.apply(context, args);
+        context = args = null;
+      }
+
+      return result;
+    };
+  };
+
+  // Returns the first function passed as an argument to the second,
+  // allowing you to adjust arguments, run code before and after, and
+  // conditionally execute the original function.
+  _.wrap = function(func, wrapper) {
+    return _.partial(wrapper, func);
+  };
+
+  // Returns a negated version of the passed-in predicate.
+  _.negate = function(predicate) {
+    return function() {
+      return !predicate.apply(this, arguments);
+    };
+  };
+
+  // Returns a function that is the composition of a list of functions, each
+  // consuming the return value of the function that follows.
+  _.compose = function() {
+    var args = arguments;
+    var start = args.length - 1;
+    return function() {
+      var i = start;
+      var result = args[start].apply(this, arguments);
+      while (i--) result = args[i].call(this, result);
+      return result;
+    };
+  };
+
+  // Returns a function that will only be executed on and after the Nth call.
+  _.after = function(times, func) {
+    return function() {
+      if (--times < 1) {
+        return func.apply(this, arguments);
+      }
+    };
+  };
+
+  // Returns a function that will only be executed up to (but not including) the Nth call.
+  _.before = function(times, func) {
+    var memo;
+    return function() {
+      if (--times > 0) {
+        memo = func.apply(this, arguments);
+      }
+      if (times <= 1) func = null;
+      return memo;
+    };
+  };
+
+  // Returns a function that will be executed at most one time, no matter how
+  // often you call it. Useful for lazy initialization.
+  _.once = _.partial(_.before, 2);
+
+  // Object Functions
+  // ----------------
+
+  // Keys in IE < 9 that won't be iterated by `for key in ...` and thus missed.
+  var hasEnumBug = !{toString: null}.propertyIsEnumerable('toString');
+  var nonEnumerableProps = ['valueOf', 'isPrototypeOf', 'toString',
+                      'propertyIsEnumerable', 'hasOwnProperty', 'toLocaleString'];
+
+  function collectNonEnumProps(obj, keys) {
+    var nonEnumIdx = nonEnumerableProps.length;
+    var constructor = obj.constructor;
+    var proto = (_.isFunction(constructor) && constructor.prototype) || ObjProto;
+
+    // Constructor is a special case.
+    var prop = 'constructor';
+    if (_.has(obj, prop) && !_.contains(keys, prop)) keys.push(prop);
+
+    while (nonEnumIdx--) {
+      prop = nonEnumerableProps[nonEnumIdx];
+      if (prop in obj && obj[prop] !== proto[prop] && !_.contains(keys, prop)) {
+        keys.push(prop);
+      }
+    }
+  }
+
+  // Retrieve the names of an object's own properties.
+  // Delegates to **ECMAScript 5**'s native `Object.keys`
+  _.keys = function(obj) {
+    if (!_.isObject(obj)) return [];
+    if (nativeKeys) return nativeKeys(obj);
+    var keys = [];
+    for (var key in obj) if (_.has(obj, key)) keys.push(key);
+    // Ahem, IE < 9.
+    if (hasEnumBug) collectNonEnumProps(obj, keys);
+    return keys;
+  };
+
+  // Retrieve all the property names of an object.
+  _.allKeys = function(obj) {
+    if (!_.isObject(obj)) return [];
+    var keys = [];
+    for (var key in obj) keys.push(key);
+    // Ahem, IE < 9.
+    if (hasEnumBug) collectNonEnumProps(obj, keys);
+    return keys;
+  };
+
+  // Retrieve the values of an object's properties.
+  _.values = function(obj) {
+    var keys = _.keys(obj);
+    var length = keys.length;
+    var values = Array(length);
+    for (var i = 0; i < length; i++) {
+      values[i] = obj[keys[i]];
+    }
+    return values;
+  };
+
+  // Returns the results of applying the iteratee to each element of the object
+  // In contrast to _.map it returns an object
+  _.mapObject = function(obj, iteratee, context) {
+    iteratee = cb(iteratee, context);
+    var keys =  _.keys(obj),
+          length = keys.length,
+          results = {},
+          currentKey;
+      for (var index = 0; index < length; index++) {
+        currentKey = keys[index];
+        results[currentKey] = iteratee(obj[currentKey], currentKey, obj);
+      }
+      return results;
+  };
+
+  // Convert an object into a list of `[key, value]` pairs.
+  _.pairs = function(obj) {
+    var keys = _.keys(obj);
+    var length = keys.length;
+    var pairs = Array(length);
+    for (var i = 0; i < length; i++) {
+      pairs[i] = [keys[i], obj[keys[i]]];
+    }
+    return pairs;
+  };
+
+  // Invert the keys and values of an object. The values must be serializable.
+  _.invert = function(obj) {
+    var result = {};
+    var keys = _.keys(obj);
+    for (var i = 0, length = keys.length; i < length; i++) {
+      result[obj[keys[i]]] = keys[i];
+    }
+    return result;
+  };
+
+  // Return a sorted list of the function names available on the object.
+  // Aliased as `methods`
+  _.functions = _.methods = function(obj) {
+    var names = [];
+    for (var key in obj) {
+      if (_.isFunction(obj[key])) names.push(key);
+    }
+    return names.sort();
+  };
+
+  // Extend a given object with all the properties in passed-in object(s).
+  _.extend = createAssigner(_.allKeys);
+
+  // Assigns a given object with all the own properties in the passed-in object(s)
+  // (https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+  _.extendOwn = _.assign = createAssigner(_.keys);
+
+  // Returns the first key on an object that passes a predicate test
+  _.findKey = function(obj, predicate, context) {
+    predicate = cb(predicate, context);
+    var keys = _.keys(obj), key;
+    for (var i = 0, length = keys.length; i < length; i++) {
+      key = keys[i];
+      if (predicate(obj[key], key, obj)) return key;
+    }
+  };
+
+  // Return a copy of the object only containing the whitelisted properties.
+  _.pick = function(object, oiteratee, context) {
+    var result = {}, obj = object, iteratee, keys;
+    if (obj == null) return result;
+    if (_.isFunction(oiteratee)) {
+      keys = _.allKeys(obj);
+      iteratee = optimizeCb(oiteratee, context);
+    } else {
+      keys = flatten(arguments, false, false, 1);
+      iteratee = function(value, key, obj) { return key in obj; };
+      obj = Object(obj);
+    }
+    for (var i = 0, length = keys.length; i < length; i++) {
+      var key = keys[i];
+      var value = obj[key];
+      if (iteratee(value, key, obj)) result[key] = value;
+    }
+    return result;
+  };
+
+   // Return a copy of the object without the blacklisted properties.
+  _.omit = function(obj, iteratee, context) {
+    if (_.isFunction(iteratee)) {
+      iteratee = _.negate(iteratee);
+    } else {
+      var keys = _.map(flatten(arguments, false, false, 1), String);
+      iteratee = function(value, key) {
+        return !_.contains(keys, key);
+      };
+    }
+    return _.pick(obj, iteratee, context);
+  };
+
+  // Fill in a given object with default properties.
+  _.defaults = createAssigner(_.allKeys, true);
+
+  // Creates an object that inherits from the given prototype object.
+  // If additional properties are provided then they will be added to the
+  // created object.
+  _.create = function(prototype, props) {
+    var result = baseCreate(prototype);
+    if (props) _.extendOwn(result, props);
+    return result;
+  };
+
+  // Create a (shallow-cloned) duplicate of an object.
+  _.clone = function(obj) {
+    if (!_.isObject(obj)) return obj;
+    return _.isArray(obj) ? obj.slice() : _.extend({}, obj);
+  };
+
+  // Invokes interceptor with the obj, and then returns obj.
+  // The primary purpose of this method is to "tap into" a method chain, in
+  // order to perform operations on intermediate results within the chain.
+  _.tap = function(obj, interceptor) {
+    interceptor(obj);
+    return obj;
+  };
+
+  // Returns whether an object has a given set of `key:value` pairs.
+  _.isMatch = function(object, attrs) {
+    var keys = _.keys(attrs), length = keys.length;
+    if (object == null) return !length;
+    var obj = Object(object);
+    for (var i = 0; i < length; i++) {
+      var key = keys[i];
+      if (attrs[key] !== obj[key] || !(key in obj)) return false;
+    }
+    return true;
+  };
+
+
+  // Internal recursive comparison function for `isEqual`.
+  var eq = function(a, b, aStack, bStack) {
+    // Identical objects are equal. `0 === -0`, but they aren't identical.
+    // See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
+    if (a === b) return a !== 0 || 1 / a === 1 / b;
+    // A strict comparison is necessary because `null == undefined`.
+    if (a == null || b == null) return a === b;
+    // Unwrap any wrapped objects.
+    if (a instanceof _) a = a._wrapped;
+    if (b instanceof _) b = b._wrapped;
+    // Compare `[[Class]]` names.
+    var className = toString.call(a);
+    if (className !== toString.call(b)) return false;
+    switch (className) {
+      // Strings, numbers, regular expressions, dates, and booleans are compared by value.
+      case '[object RegExp]':
+      // RegExps are coerced to strings for comparison (Note: '' + /a/i === '/a/i')
+      case '[object String]':
+        // Primitives and their corresponding object wrappers are equivalent; thus, `"5"` is
+        // equivalent to `new String("5")`.
+        return '' + a === '' + b;
+      case '[object Number]':
+        // `NaN`s are equivalent, but non-reflexive.
+        // Object(NaN) is equivalent to NaN
+        if (+a !== +a) return +b !== +b;
+        // An `egal` comparison is performed for other numeric values.
+        return +a === 0 ? 1 / +a === 1 / b : +a === +b;
+      case '[object Date]':
+      case '[object Boolean]':
+        // Coerce dates and booleans to numeric primitive values. Dates are compared by their
+        // millisecond representations. Note that invalid dates with millisecond representations
+        // of `NaN` are not equivalent.
+        return +a === +b;
+    }
+
+    var areArrays = className === '[object Array]';
+    if (!areArrays) {
+      if (typeof a != 'object' || typeof b != 'object') return false;
+
+      // Objects with different constructors are not equivalent, but `Object`s or `Array`s
+      // from different frames are.
+      var aCtor = a.constructor, bCtor = b.constructor;
+      if (aCtor !== bCtor && !(_.isFunction(aCtor) && aCtor instanceof aCtor &&
+                               _.isFunction(bCtor) && bCtor instanceof bCtor)
+                          && ('constructor' in a && 'constructor' in b)) {
+        return false;
+      }
+    }
+    // Assume equality for cyclic structures. The algorithm for detecting cyclic
+    // structures is adapted from ES 5.1 section 15.12.3, abstract operation `JO`.
+
+    // Initializing stack of traversed objects.
+    // It's done here since we only need them for objects and arrays comparison.
+    aStack = aStack || [];
+    bStack = bStack || [];
+    var length = aStack.length;
+    while (length--) {
+      // Linear search. Performance is inversely proportional to the number of
+      // unique nested structures.
+      if (aStack[length] === a) return bStack[length] === b;
+    }
+
+    // Add the first object to the stack of traversed objects.
+    aStack.push(a);
+    bStack.push(b);
+
+    // Recursively compare objects and arrays.
+    if (areArrays) {
+      // Compare array lengths to determine if a deep comparison is necessary.
+      length = a.length;
+      if (length !== b.length) return false;
+      // Deep compare the contents, ignoring non-numeric properties.
+      while (length--) {
+        if (!eq(a[length], b[length], aStack, bStack)) return false;
+      }
+    } else {
+      // Deep compare objects.
+      var keys = _.keys(a), key;
+      length = keys.length;
+      // Ensure that both objects contain the same number of properties before comparing deep equality.
+      if (_.keys(b).length !== length) return false;
+      while (length--) {
+        // Deep compare each member
+        key = keys[length];
+        if (!(_.has(b, key) && eq(a[key], b[key], aStack, bStack))) return false;
+      }
+    }
+    // Remove the first object from the stack of traversed objects.
+    aStack.pop();
+    bStack.pop();
+    return true;
+  };
+
+  // Perform a deep comparison to check if two objects are equal.
+  _.isEqual = function(a, b) {
+    return eq(a, b);
+  };
+
+  // Is a given array, string, or object empty?
+  // An "empty" object has no enumerable own-properties.
+  _.isEmpty = function(obj) {
+    if (obj == null) return true;
+    if (isArrayLike(obj) && (_.isArray(obj) || _.isString(obj) || _.isArguments(obj))) return obj.length === 0;
+    return _.keys(obj).length === 0;
+  };
+
+  // Is a given value a DOM element?
+  _.isElement = function(obj) {
+    return !!(obj && obj.nodeType === 1);
+  };
+
+  // Is a given value an array?
+  // Delegates to ECMA5's native Array.isArray
+  _.isArray = nativeIsArray || function(obj) {
+    return toString.call(obj) === '[object Array]';
+  };
+
+  // Is a given variable an object?
+  _.isObject = function(obj) {
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+  };
+
+  // Add some isType methods: isArguments, isFunction, isString, isNumber, isDate, isRegExp, isError.
+  _.each(['Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp', 'Error'], function(name) {
+    _['is' + name] = function(obj) {
+      return toString.call(obj) === '[object ' + name + ']';
+    };
+  });
+
+  // Define a fallback version of the method in browsers (ahem, IE < 9), where
+  // there isn't any inspectable "Arguments" type.
+  if (!_.isArguments(arguments)) {
+    _.isArguments = function(obj) {
+      return _.has(obj, 'callee');
+    };
+  }
+
+  // Optimize `isFunction` if appropriate. Work around some typeof bugs in old v8,
+  // IE 11 (#1621), and in Safari 8 (#1929).
+  if (typeof /./ != 'function' && typeof Int8Array != 'object') {
+    _.isFunction = function(obj) {
+      return typeof obj == 'function' || false;
+    };
+  }
+
+  // Is a given object a finite number?
+  _.isFinite = function(obj) {
+    return isFinite(obj) && !isNaN(parseFloat(obj));
+  };
+
+  // Is the given value `NaN`? (NaN is the only number which does not equal itself).
+  _.isNaN = function(obj) {
+    return _.isNumber(obj) && obj !== +obj;
+  };
+
+  // Is a given value a boolean?
+  _.isBoolean = function(obj) {
+    return obj === true || obj === false || toString.call(obj) === '[object Boolean]';
+  };
+
+  // Is a given value equal to null?
+  _.isNull = function(obj) {
+    return obj === null;
+  };
+
+  // Is a given variable undefined?
+  _.isUndefined = function(obj) {
+    return obj === void 0;
+  };
+
+  // Shortcut function for checking if an object has a given property directly
+  // on itself (in other words, not on a prototype).
+  _.has = function(obj, key) {
+    return obj != null && hasOwnProperty.call(obj, key);
+  };
+
+  // Utility Functions
+  // -----------------
+
+  // Run Underscore.js in *noConflict* mode, returning the `_` variable to its
+  // previous owner. Returns a reference to the Underscore object.
+  _.noConflict = function() {
+    root._ = previousUnderscore;
+    return this;
+  };
+
+  // Keep the identity function around for default iteratees.
+  _.identity = function(value) {
+    return value;
+  };
+
+  // Predicate-generating functions. Often useful outside of Underscore.
+  _.constant = function(value) {
+    return function() {
+      return value;
+    };
+  };
+
+  _.noop = function(){};
+
+  _.property = property;
+
+  // Generates a function for a given object that returns a given property.
+  _.propertyOf = function(obj) {
+    return obj == null ? function(){} : function(key) {
+      return obj[key];
+    };
+  };
+
+  // Returns a predicate for checking whether an object has a given set of
+  // `key:value` pairs.
+  _.matcher = _.matches = function(attrs) {
+    attrs = _.extendOwn({}, attrs);
+    return function(obj) {
+      return _.isMatch(obj, attrs);
+    };
+  };
+
+  // Run a function **n** times.
+  _.times = function(n, iteratee, context) {
+    var accum = Array(Math.max(0, n));
+    iteratee = optimizeCb(iteratee, context, 1);
+    for (var i = 0; i < n; i++) accum[i] = iteratee(i);
+    return accum;
+  };
+
+  // Return a random integer between min and max (inclusive).
+  _.random = function(min, max) {
+    if (max == null) {
+      max = min;
+      min = 0;
+    }
+    return min + Math.floor(Math.random() * (max - min + 1));
+  };
+
+  // A (possibly faster) way to get the current timestamp as an integer.
+  _.now = Date.now || function() {
+    return new Date().getTime();
+  };
+
+   // List of HTML entities for escaping.
+  var escapeMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#x27;',
+    '`': '&#x60;'
+  };
+  var unescapeMap = _.invert(escapeMap);
+
+  // Functions for escaping and unescaping strings to/from HTML interpolation.
+  var createEscaper = function(map) {
+    var escaper = function(match) {
+      return map[match];
+    };
+    // Regexes for identifying a key that needs to be escaped
+    var source = '(?:' + _.keys(map).join('|') + ')';
+    var testRegexp = RegExp(source);
+    var replaceRegexp = RegExp(source, 'g');
+    return function(string) {
+      string = string == null ? '' : '' + string;
+      return testRegexp.test(string) ? string.replace(replaceRegexp, escaper) : string;
+    };
+  };
+  _.escape = createEscaper(escapeMap);
+  _.unescape = createEscaper(unescapeMap);
+
+  // If the value of the named `property` is a function then invoke it with the
+  // `object` as context; otherwise, return it.
+  _.result = function(object, property, fallback) {
+    var value = object == null ? void 0 : object[property];
+    if (value === void 0) {
+      value = fallback;
+    }
+    return _.isFunction(value) ? value.call(object) : value;
+  };
+
+  // Generate a unique integer id (unique within the entire client session).
+  // Useful for temporary DOM ids.
+  var idCounter = 0;
+  _.uniqueId = function(prefix) {
+    var id = ++idCounter + '';
+    return prefix ? prefix + id : id;
+  };
+
+  // By default, Underscore uses ERB-style template delimiters, change the
+  // following template settings to use alternative delimiters.
+  _.templateSettings = {
+    evaluate    : /<%([\s\S]+?)%>/g,
+    interpolate : /<%=([\s\S]+?)%>/g,
+    escape      : /<%-([\s\S]+?)%>/g
+  };
+
+  // When customizing `templateSettings`, if you don't want to define an
+  // interpolation, evaluation or escaping regex, we need one that is
+  // guaranteed not to match.
+  var noMatch = /(.)^/;
+
+  // Certain characters need to be escaped so that they can be put into a
+  // string literal.
+  var escapes = {
+    "'":      "'",
+    '\\':     '\\',
+    '\r':     'r',
+    '\n':     'n',
+    '\u2028': 'u2028',
+    '\u2029': 'u2029'
+  };
+
+  var escaper = /\\|'|\r|\n|\u2028|\u2029/g;
+
+  var escapeChar = function(match) {
+    return '\\' + escapes[match];
+  };
+
+  // JavaScript micro-templating, similar to John Resig's implementation.
+  // Underscore templating handles arbitrary delimiters, preserves whitespace,
+  // and correctly escapes quotes within interpolated code.
+  // NB: `oldSettings` only exists for backwards compatibility.
+  _.template = function(text, settings, oldSettings) {
+    if (!settings && oldSettings) settings = oldSettings;
+    settings = _.defaults({}, settings, _.templateSettings);
+
+    // Combine delimiters into one regular expression via alternation.
+    var matcher = RegExp([
+      (settings.escape || noMatch).source,
+      (settings.interpolate || noMatch).source,
+      (settings.evaluate || noMatch).source
+    ].join('|') + '|$', 'g');
+
+    // Compile the template source, escaping string literals appropriately.
+    var index = 0;
+    var source = "__p+='";
+    text.replace(matcher, function(match, escape, interpolate, evaluate, offset) {
+      source += text.slice(index, offset).replace(escaper, escapeChar);
+      index = offset + match.length;
+
+      if (escape) {
+        source += "'+\n((__t=(" + escape + "))==null?'':_.escape(__t))+\n'";
+      } else if (interpolate) {
+        source += "'+\n((__t=(" + interpolate + "))==null?'':__t)+\n'";
+      } else if (evaluate) {
+        source += "';\n" + evaluate + "\n__p+='";
+      }
+
+      // Adobe VMs need the match returned to produce the correct offest.
+      return match;
+    });
+    source += "';\n";
+
+    // If a variable is not specified, place data values in local scope.
+    if (!settings.variable) source = 'with(obj||{}){\n' + source + '}\n';
+
+    source = "var __t,__p='',__j=Array.prototype.join," +
+      "print=function(){__p+=__j.call(arguments,'');};\n" +
+      source + 'return __p;\n';
+
+    try {
+      var render = new Function(settings.variable || 'obj', '_', source);
+    } catch (e) {
+      e.source = source;
+      throw e;
+    }
+
+    var template = function(data) {
+      return render.call(this, data, _);
+    };
+
+    // Provide the compiled source as a convenience for precompilation.
+    var argument = settings.variable || 'obj';
+    template.source = 'function(' + argument + '){\n' + source + '}';
+
+    return template;
+  };
+
+  // Add a "chain" function. Start chaining a wrapped Underscore object.
+  _.chain = function(obj) {
+    var instance = _(obj);
+    instance._chain = true;
+    return instance;
+  };
+
+  // OOP
+  // ---------------
+  // If Underscore is called as a function, it returns a wrapped object that
+  // can be used OO-style. This wrapper holds altered versions of all the
+  // underscore functions. Wrapped objects may be chained.
+
+  // Helper function to continue chaining intermediate results.
+  var result = function(instance, obj) {
+    return instance._chain ? _(obj).chain() : obj;
+  };
+
+  // Add your own custom functions to the Underscore object.
+  _.mixin = function(obj) {
+    _.each(_.functions(obj), function(name) {
+      var func = _[name] = obj[name];
+      _.prototype[name] = function() {
+        var args = [this._wrapped];
+        push.apply(args, arguments);
+        return result(this, func.apply(_, args));
+      };
+    });
+  };
+
+  // Add all of the Underscore functions to the wrapper object.
+  _.mixin(_);
+
+  // Add all mutator Array functions to the wrapper.
+  _.each(['pop', 'push', 'reverse', 'shift', 'sort', 'splice', 'unshift'], function(name) {
+    var method = ArrayProto[name];
+    _.prototype[name] = function() {
+      var obj = this._wrapped;
+      method.apply(obj, arguments);
+      if ((name === 'shift' || name === 'splice') && obj.length === 0) delete obj[0];
+      return result(this, obj);
+    };
+  });
+
+  // Add all accessor Array functions to the wrapper.
+  _.each(['concat', 'join', 'slice'], function(name) {
+    var method = ArrayProto[name];
+    _.prototype[name] = function() {
+      return result(this, method.apply(this._wrapped, arguments));
+    };
+  });
+
+  // Extracts the result from a wrapped and chained object.
+  _.prototype.value = function() {
+    return this._wrapped;
+  };
+
+  // Provide unwrapping proxy for some methods used in engine operations
+  // such as arithmetic and JSON stringification.
+  _.prototype.valueOf = _.prototype.toJSON = _.prototype.value;
+
+  _.prototype.toString = function() {
+    return '' + this._wrapped;
+  };
+
+  // AMD registration happens at the end for compatibility with AMD loaders
+  // that may not enforce next-turn semantics on modules. Even though general
+  // practice for AMD registration is to be anonymous, underscore registers
+  // as a named module because, like jQuery, it is a base library that is
+  // popular enough to be bundled in a third party lib, but not be part of
+  // an AMD load request. Those cases could generate an error when an
+  // anonymous define() is called outside of a loader request.
+  if (typeof define === 'function' && define.amd) {
+    define('underscore', [], function() {
+      return _;
+    });
+  }
+}.call(this));
+
+},{}],177:[function(require,module,exports){
 (function(self) {
   'use strict';
 
@@ -19752,7 +34820,7 @@ module.exports = require('./lib/React');
   self.fetch.polyfill = true
 })(typeof self !== 'undefined' ? self : this);
 
-},{}],167:[function(require,module,exports){
+},{}],178:[function(require,module,exports){
 var React = require('react');
 
 var CurrentWeather = React.createClass({
@@ -19763,12 +34831,18 @@ var CurrentWeather = React.createClass({
             fontSize: 58,
             margin: 20
         };
+
         //color: "white",
         //fontWeight: "bold",
         //textAlign: "center"
         var windIcon = {
             fontSize: 30,
-            marginRight: 10
+            marginRight: 10,
+            marginLeft: 5
+        };
+
+        var styleWind = {
+            fontSize: 11
         };
 
         return React.createElement(
@@ -19780,12 +34854,12 @@ var CurrentWeather = React.createClass({
                 React.createElement(
                     "div",
                     { className: "col-xs-6" },
-                    React.createElement("i", { className: "wi wi-owm-701" })
+                    React.createElement("i", { className: "wi wi-owm-" + this.props.weatherID })
                 ),
                 React.createElement(
                     "div",
                     { className: "col-xs-6" },
-                    "29°"
+                    this.props.tempNow
                 )
             ),
             React.createElement(
@@ -19797,9 +34871,13 @@ var CurrentWeather = React.createClass({
                     React.createElement(
                         "span",
                         { style: windIcon },
-                        React.createElement("i", { className: "wi wi-wind wi-from-ssw" })
+                        React.createElement("i", { className: this.props.windCardinal })
                     ),
-                    "NORTH WEST"
+                    React.createElement(
+                        "span",
+                        { style: styleWind },
+                        this.props.windDirection
+                    )
                 ),
                 React.createElement(
                     "div",
@@ -19809,7 +34887,12 @@ var CurrentWeather = React.createClass({
                         { style: windIcon },
                         React.createElement("i", { className: "wi wi-strong-wind" })
                     ),
-                    "7 MPH"
+                    React.createElement("span", null),
+                    React.createElement(
+                        "span",
+                        { style: styleWind },
+                        this.props.windSpeed
+                    )
                 )
             )
         );
@@ -19818,7 +34901,7 @@ var CurrentWeather = React.createClass({
 
 module.exports = CurrentWeather;
 
-},{"react":165}],168:[function(require,module,exports){
+},{"react":175}],179:[function(require,module,exports){
 var React = require('react');
 
 var ForecastDay = require('./ForecastDay.jsx');
@@ -19839,9 +34922,10 @@ var Forecast = React.createClass({
                     React.createElement(
                         'tbody',
                         null,
-                        React.createElement(ForecastDay, null),
-                        React.createElement(ForecastDay, null),
-                        React.createElement(ForecastDay, null)
+                        React.createElement(ForecastDay, { day: this.props.day1, id: this.props.id1, temp: this.props.temp1 }),
+                        React.createElement(ForecastDay, { day: this.props.day2, id: this.props.id2, temp: this.props.temp2 }),
+                        React.createElement(ForecastDay, { day: this.props.day3, id: this.props.id3, temp: this.props.temp3 }),
+                        React.createElement(ForecastDay, { day: this.props.day4, id: this.props.id4, temp: this.props.temp4 })
                     )
                 )
             )
@@ -19851,7 +34935,7 @@ var Forecast = React.createClass({
 
 module.exports = Forecast;
 
-},{"./ForecastDay.jsx":169,"react":165}],169:[function(require,module,exports){
+},{"./ForecastDay.jsx":180,"react":175}],180:[function(require,module,exports){
 var React = require('react');
 
 var ForecastDay = React.createClass({
@@ -19870,17 +34954,17 @@ var ForecastDay = React.createClass({
             React.createElement(
                 "td",
                 null,
-                "26 August"
+                this.props.day
             ),
             React.createElement(
                 "td",
                 { style: weatherIcon },
-                React.createElement("i", { className: "wi wi-owm-701" })
+                React.createElement("i", { className: "wi wi-owm-" + this.props.id })
             ),
             React.createElement(
                 "td",
                 null,
-                "12°/29°"
+                this.props.temp
             )
         );
     }
@@ -19889,40 +34973,223 @@ var ForecastDay = React.createClass({
 
 module.exports = ForecastDay;
 
-},{"react":165}],170:[function(require,module,exports){
+},{"react":175}],181:[function(require,module,exports){
 var React = require('react');
-var Moment;
+var moment = require('moment'); // moment.js - Parse, validate, manipulate, and display dates in JavaScript.
+var countries = require('country-data').countries; //used this package to convert country code to country name - https://github.com/OpenBookPrices/country-data/
 var CurrentWeather = require('./CurrentWeather.jsx');
 var Forecast = require('./Forecast.jsx');
-
-//var countries = require('country-data').countries;
-
 var HTTP = require('../services/httpservice.js');
 
+//URL to call current weather data by city id for default location - Guangzhou, China
 var CurrentWeatherURL = 'weather?id=1809858&APPID=0714f981f51874d28ea137e3c989f0a3&units=imperial';
+//URL to call 4 day / daily forecast data by city id for default location - Guangzhou, China
+var ForecastWeatherURL = 'forecast/daily?id=1809858&APPID=0714f981f51874d28ea137e3c989f0a3&units=imperial&cnt=4';
 
 var Weather = React.createClass({
     displayName: 'Weather',
 
     getInitialState: function () {
+        var localTime = Math.floor(Date.now() / 1000);
+        //var urlAPIID = "&APPID=0714f981f51874d28ea137e3c989f0a3";
         return {
-            WeatherNow: "",
+            //WeatherNow:"",
             value: ""
         };
     },
-    componentDidMount: function () {
+    //locationLookup:"",
+    //LookUpCity:"",
+    //LookUpCityURL:"",
+    //localTime: localTime,
+    //urlCurrent:"weather?id=",
+    //urlCity:"1809858",
+    //urlAPIID: urlAPIID,
+    //urlUnits:"&units=imperial",
+    componentWillMount: function () {
+        //Call current weather data for default location
         HTTP.get(CurrentWeatherURL).then(function (data) {
             this.setState({ WeatherNow: data });
         }.bind(this));
+        //Call forecast weather data for default location
+        HTTP.get(ForecastWeatherURL).then(function (data) {
+            this.setState({ Forecast: data });
+        }.bind(this));
     },
+    onChange: function (e) {
+        this.setState({ value: e.target.value });
+    },
+    getCityID: function () {
+        //called when user clicks 'search' - Use the 'accurate' parameter with the users search text as the city country parameter in the URL to call OpenWeatherMap and look for the city ID - city id parameter will then be used in getWeather function
+        console.log("We Got to getCityID");
+        locationLookup = this.state.value;
+        console.log(locationLookup);
+        // example url to get city id for Beijing China - var LookUpCityURL = "find?q=beijing,china&type=accurate&APPID=0714f981f51874d28ea137e3c989f0a3&units=imperial";
+        var LookUpCityURL = "find?q=" + locationLookup + "&type=accurate&APPID=0714f981f51874d28ea137e3c989f0a3&units=imperial";
+        console.log(LookUpCityURL);
+        HTTP.get(LookUpCityURL).then(function (data) {
+            this.setState({ LookUpCity: data });
+        }.bind(this));
+    },
+    getWeather: function () {
+        console.log("we got to getWeather");
+        //build the URL with the city id to get current weather - var CurrentWeatherURL = "weather?id=1816670&APPID=0714f981f51874d28ea137e3c989f0a3&units=imperial";
+        var CurrentWeatherURL = "weather?id=" + this.state.LookUpCity.list[0].id + "&APPID=0714f981f51874d28ea137e3c989f0a3&units=imperial";
+        HTTP.get(CurrentWeatherURL).then(function (data) {
+            this.setState({ WeatherNow: data });
+        }.bind(this));
+        //build the URL with the city id to get forecast  -var ForecastWeatherURL = 'forecast/daily?id=1809858&APPID=0714f981f51874d28ea137e3c989f0a3&units=imperial&cnt=4';
+        var ForecastWeatherURL = "forecast/daily?id=" + this.state.LookUpCity.list[0].id + "&APPID=0714f981f51874d28ea137e3c989f0a3&units=imperial&cnt=4";
+        HTTP.get(ForecastWeatherURL).then(function (data) {
+            this.setState({ Forecast: data });
+        }.bind(this));
+    },
+    toTextualDescription: function (degree) {
+        // Change degree to text descrition - got this code from here: http://stackoverflow.com/questions/36475255
+        if (degree > 337.5) return 'NORTH';
+        if (degree > 292.5) return 'NORTH WEST';
+        if (degree > 247.5) return 'WEST';
+        if (degree > 202.5) return 'SOUTH WEST';
+        if (degree > 157.5) return 'SOUTH';
+        if (degree > 122.5) return 'SOUTH EAST';
+        if (degree > 67.5) return 'EAST';
+        if (degree > 22.5) {
+            return 'NORTH EAST';
+        }
+        return 'NORTH';
+    },
+    toWindCardinal: function (windDirection) {
+        if (windDirection == 'NORTH') return 'wi-towards-n';
+        if (windDirection == 'NORTH WEST') return 'wi-towards-nw';
+        if (windDirection == 'WEST') return 'wi-towards-w';
+        if (windDirection == 'SOUTH WEST') return 'wi-towards-sw';
+        if (windDirection == 'SOUTH') return 'wi-towards-s';
+        if (windDirection == 'SOUTH EAST') return 'wi-towards-se';
+        if (windDirection == 'EAST') return 'wi-towards-e';
+        if (windDirection == 'NORTH EAST') {
+            return 'wi-towards-ne';
+        }
+        return 'wi-towards-e';
+    },
+    clearState: function () {
+        this.setState({ LookUpCity: "" });
+        this.setState({ value: "" });
+    },
+
     render: function () {
-        console.log(this.state.WeatherNow);
-        console.log(this.state.WeatherNow.name);
-        console.log(this.state.WeatherNow.sys);
-        //console.log(this.state.WeatherNow.sys.country);
+        //var timeTest = moment.unix(1462848402).format('dddd, MMMM Do YYYY, h:mm:ss a');
+        //console.log(timeTest);
+        // use moment.js to get time
+        var localTime = moment().unix();
+        console.log(localTime);
+
+        if (this.state.WeatherNow) {
+            //var cityID = this.state.WeatherNow.list[0].id
+            var cityName = this.state.WeatherNow.name;
+            var cityIDCurrent = this.state.WeatherNow.id;
+            var countryCode = this.state.WeatherNow.sys.country;
+            //use https://github.com/OpenBookPrices/country-data/ package to convert country code returned by OpenWeatherMap api to full country name
+            var countryName = countries[countryCode].name;
+            //console.log(countryName);
+            //console.log(cityID);
+            console.log(this.state.WeatherNow.weather[0].id);
+            var weatherNowID = this.state.WeatherNow.weather[0].id;
+            console.log(this.state.WeatherNow.main.temp);
+            var weatherNowTemp = Math.ceil(this.state.WeatherNow.main.temp) + "°";
+            console.log(weatherNowTemp);
+            var windDirection = this.toTextualDescription(this.state.WeatherNow.wind.deg);
+            console.log(windDirection);
+            var localTime = this.state.WeatherNow.dt;
+            console.log(this.state.WeatherNow.dt);
+            var windSpeed = Math.ceil(this.state.WeatherNow.wind.speed) + " MPH";
+            console.log(this.state.WeatherNow.wind.speed);
+            var windCardinal = "wi wi-wind" + " " + this.toWindCardinal(windDirection);
+            console.log(windCardinal);
+        } else {
+            var cityName = "Loading";
+            var countryName = "Loading";
+        }
+
+        if (this.state.Forecast) {
+            //I should have used .map to parse the array returned for from OpenWeatherMap for the forecast call. I hope to update this later
+            console.log('we got the default Forecast');
+            console.log(this.state.Forecast);
+            console.log(this.state.Forecast.list[0].dt);
+            ForecastDate0 = moment.unix(this.state.Forecast.list[0].dt).format('D MMMM');
+            console.log(ForecastDate0);
+            ForecastDate1 = moment.unix(this.state.Forecast.list[1].dt).format('D MMMM');
+            console.log(ForecastDate1);
+            ForecastDate2 = moment.unix(this.state.Forecast.list[2].dt).format('D MMMM');
+            console.log(ForecastDate2);
+            ForecastDate3 = moment.unix(this.state.Forecast.list[3].dt).format('D MMMM');
+            console.log(ForecastDate3);
+            console.log(this.state.Forecast.list[0].weather[0].id);
+            ForecastWeatherID0 = this.state.Forecast.list[0].weather[0].id;
+            ForecastWeatherID1 = this.state.Forecast.list[1].weather[0].id;
+            ForecastWeatherID2 = this.state.Forecast.list[2].weather[0].id;
+            ForecastWeatherID3 = this.state.Forecast.list[3].weather[0].id;
+            console.log(this.state.Forecast.list[0].temp.min);
+            console.log(this.state.Forecast.list[0].temp.max);
+            var ForecastTempMinMax0 = Math.ceil(this.state.Forecast.list[0].temp.min) + "°" + " " + "/" + " " + Math.ceil(this.state.Forecast.list[0].temp.max) + "°";
+            var ForecastTempMinMax1 = Math.ceil(this.state.Forecast.list[1].temp.min) + "°" + " " + "/" + " " + Math.ceil(this.state.Forecast.list[1].temp.max) + "°";
+            var ForecastTempMinMax2 = Math.ceil(this.state.Forecast.list[2].temp.min) + "°" + " " + "/" + " " + Math.ceil(this.state.Forecast.list[2].temp.max) + "°";
+            var ForecastTempMinMax3 = Math.ceil(this.state.Forecast.list[3].temp.min) + "°" + " " + "/" + " " + Math.ceil(this.state.Forecast.list[3].temp.max) + "°";
+            console.log(ForecastTempMinMax0);
+        } else {
+            var ForecastDate0 = "Loading";
+            var ForecastDate1 = "Loading";
+            var ForecastDate2 = "Loading";
+            var ForecastDate3 = "Loading";
+            var ForecastWeatherID0 = "Loading";
+            var ForecastWeatherID1 = "Loading";
+            var ForecastWeatherID2 = "Loading";
+            var ForecastWeatherID3 = "Loading";
+            var ForecastTempMinMax0 = "Loading";
+            var ForecastTempMinMax1 = "Loading";
+            var ForecastTempMinMax2 = "Loading";
+            var ForecastTempMinMax3 = "Loading";
+        }
+
+        if (this.state.LookUpCity) {
+            //The following section is to get the city id from the search parameter
+            console.log(this.state.LookUpCity);
+            if (this.state.LookUpCity.cod == '404') {
+                console.log("The search query is invalid; openweathermap returns 404");
+                alert("Your search could not be processed. Please enter a city and country sepertated by a comma. e.g. New York, USA -- Beijing, China");
+                //this.setState({LookUpCity:""});
+                //this.componentWillMount();
+                //this.getWeather();
+                this.clearState();
+            } else if (this.state.LookUpCity.count == '0') {
+                console.log("The search query is invalid; openweathermap returns count 0");
+                alert("Your search could not be processed. Please enter a city and country sepertated by a comma. e.g. New York, USA -- Beijing, China");
+                //this.setState({LookUpCity:""});
+                this.clearState();
+            } else {
+                if (this.state.LookUpCity.list[0].id) {
+                    console.log("the api returned a cityID");
+                    var cityID = this.state.LookUpCity.list[0].id;
+                    console.log(cityID);
+                    console.log(cityIDCurrent);
+                    if (cityID != cityIDCurrent) {
+                        this.getWeather();
+                    } else {
+                        console.log("evaluation failed");
+                        console.log(this.state.WeatherNow);
+                    }
+                } else {
+                    console.log("the api did NOT return a cityID");
+                    alert("The system could not match a city with the city and country you entered. Check your spelling and try again. -- Please enter a city and country sepertated by a comma. e.g. New York, USA -- Beijing, China.");
+                    //this.setState({LookUpCity:""});
+                    //this.componentWillMount();
+                    this.clearState();
+                }
+            }
+        } else {
+            console.log("we could not get LookUpCity");
+        }
 
         var currentWeatherBackground = {
-            backgroundColor: '#ec4444',
+            backgroundColor: '#79b8af',
             color: 'white',
             fontWeight: 'bold',
             textAlign: 'center'
@@ -19933,11 +35200,20 @@ var Weather = React.createClass({
             padding: 0
         };
 
+        var fixDate = {
+            textAlign: 'left',
+            fontSize: 12,
+            marginLeft: 5
+        };
+        var fixSearch = {
+            marginLeft: -15
+        };
+
         if (this.props.bgColor) currentWeatherBackground.backgroundColor = this.props.bgColor;
 
         return React.createElement(
             'div',
-            { className: 'col-xs-4' },
+            { className: 'col-xs-3' },
             React.createElement(
                 'div',
                 { className: 'panel panel-default' },
@@ -19951,27 +35227,37 @@ var Weather = React.createClass({
                         React.createElement(
                             'div',
                             { className: 'col-xs-10' },
-                            React.createElement('input', { className: 'form-control', placeholder: this.state.WeatherNow.name, value: this.state.value })
+                            React.createElement('input', { className: 'form-control', placeholder: cityName + ", " + countryName, onChange: this.onChange, value: this.state.value })
                         ),
                         React.createElement(
                             'div',
-                            { className: 'col-xs-2' },
+                            { className: 'col-xs-2', style: fixSearch },
                             React.createElement(
                                 'button',
-                                { className: 'btn btn-default btn-xs' },
-                                React.createElement('span', { className: 'glyphicon glyphicon-search' })
+                                { className: 'btn btn-default btn-sm', onClick: this.getCityID },
+                                React.createElement('span', { className: 'glyphicon glyphicon-search', 'aria-hidden': 'true' })
                             )
-                        ),
+                        )
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'row', style: fixDate },
                         React.createElement(
                             'p',
                             null,
-                            this.state.WeatherNow.name
+                            'Current Weather Data for: ',
+                            cityName,
+                            ', ',
+                            countryName,
+                            ' ',
+                            React.createElement('br', null),
+                            moment.unix(localTime).format('dddd, MMMM Do YYYY, h:mm:ss a')
                         )
                     ),
                     React.createElement(
                         'div',
                         { className: 'row' },
-                        React.createElement(CurrentWeather, null)
+                        React.createElement(CurrentWeather, { weatherID: weatherNowID, tempNow: weatherNowTemp, windDirection: windDirection, windSpeed: windSpeed, windCardinal: windCardinal })
                     )
                 ),
                 React.createElement(
@@ -19980,7 +35266,7 @@ var Weather = React.createClass({
                     React.createElement(
                         'div',
                         null,
-                        React.createElement(Forecast, null)
+                        React.createElement(Forecast, { day1: ForecastDate0, day2: ForecastDate1, day3: ForecastDate2, day4: ForecastDate3, id1: ForecastWeatherID0, id2: ForecastWeatherID1, id3: ForecastWeatherID2, id4: ForecastWeatherID3, temp1: ForecastTempMinMax0, temp2: ForecastTempMinMax1, temp3: ForecastTempMinMax2, temp4: ForecastTempMinMax3 })
                     )
                 )
             )
@@ -19990,14 +35276,16 @@ var Weather = React.createClass({
 
 module.exports = Weather;
 
-},{"../services/httpservice.js":172,"./CurrentWeather.jsx":167,"./Forecast.jsx":168,"react":165}],171:[function(require,module,exports){
+},{"../services/httpservice.js":183,"./CurrentWeather.jsx":178,"./Forecast.jsx":179,"country-data":6,"moment":36,"react":175}],182:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Weather = require('./components/Weather.jsx');
 
-ReactDOM.render(React.createElement(Weather, { bgColor: 'red' }), document.getElementById('main'));
+ReactDOM.render(React.createElement(Weather, { bgColor: '#ec4444' }), document.getElementById('main'));
+ReactDOM.render(React.createElement(Weather, { bgColor: '#357db5' }), document.getElementById('second'));
+ReactDOM.render(React.createElement(Weather, null), document.getElementById('third'));
 
-},{"./components/Weather.jsx":170,"react":165,"react-dom":29}],172:[function(require,module,exports){
+},{"./components/Weather.jsx":181,"react":175,"react-dom":39}],183:[function(require,module,exports){
 var Fetch = require('whatwg-fetch');
 var baseURL = 'http://api.openweathermap.org/data/2.5/';
 
@@ -20012,4 +35300,4 @@ var service = {
 
 module.exports = service;
 
-},{"whatwg-fetch":166}]},{},[171]);
+},{"whatwg-fetch":177}]},{},[182]);

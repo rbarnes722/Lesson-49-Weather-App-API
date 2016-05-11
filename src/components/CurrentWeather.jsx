@@ -9,21 +9,26 @@ var CurrentWeather = React.createClass({
             //fontWeight: "bold",
             //textAlign: "center"
         }
+
         var windIcon = {
             fontSize: 30,
             marginRight: 10,
+            marginLeft: 5,
         }
 
+        var styleWind = {
+            fontSize: 11
+        }
 
         return(
             <div>
                 <div className="row" style={mainIcon}>
-                    <div className="col-xs-6"><i className="wi wi-owm-701"></i></div>
-                    <div className="col-xs-6">29°</div>
+                    <div className="col-xs-6"><i className={"wi wi-owm-" + (this.props.weatherID)}></i></div>
+                    <div className="col-xs-6">{this.props.tempNow}</div>
                 </div>
                 <div className="row">
-                    <div className="col-xs-6"><span style={windIcon}><i className="wi wi-wind wi-from-ssw"></i></span>NORTH WEST</div>
-                    <div className="col-xs-6"><span style={windIcon}><i className="wi wi-strong-wind"></i></span>7 MPH</div>
+                    <div className="col-xs-6"><span style={windIcon}><i className={this.props.windCardinal}></i></span><span style={styleWind}>{this.props.windDirection}</span></div>
+                    <div className="col-xs-6"><span style={windIcon}><i className="wi wi-strong-wind"></i></span><span></span><span style={styleWind}>{this.props.windSpeed}</span></div>
                 </div>
             </div>
         );

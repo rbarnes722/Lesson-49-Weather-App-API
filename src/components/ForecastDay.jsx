@@ -10,9 +10,9 @@ var ForecastDay = React.createClass({
         }
         return (
             <tr style={tableCenter}>
-              <td>26 August</td>
-              <td style={weatherIcon}><i className="wi wi-owm-701"></i></td>
-              <td>12&deg;/29&deg;</td>
+              <td>{this.props.day}</td>
+              <td style={weatherIcon}><i className={"wi wi-owm-" + (this.props.id)}></i></td>
+              <td>{this.props.temp}</td>
             </tr>
         );
     }
